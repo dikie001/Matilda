@@ -417,10 +417,10 @@ const QuizApp: React.FC = () => {
   // Loading screen: Centered spinner with consistent background
   if (state.loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-100 to-purple-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-indigo-500 border-t-transparent mx-auto mb-4"></div>
-          <p className="text-indigo-600 dark:text-indigo-400 text-lg font-semibold">
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-pink-400 border-t-transparent mx-auto mb-4"></div>
+          <p className="text-pink-600 dark:text-pink-400 text-lg font-semibold">
             Loading Quiz Data...
           </p>
         </div>
@@ -431,10 +431,10 @@ const QuizApp: React.FC = () => {
   // Error screen: Card-style error display with retry option
   if (state.error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-100 to-purple-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
         <div className="text-center max-w-md">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
-            <XCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
+            <XCircle className="w-16 h-16 text-rose-400 mx-auto mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Error Loading Quiz
             </h2>
@@ -443,7 +443,7 @@ const QuizApp: React.FC = () => {
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-gradient-to-r from-indigo-700 to-indigo-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg transition-all duration-300 hover:scale-105"
             >
               Retry Loading
             </button>
@@ -456,10 +456,10 @@ const QuizApp: React.FC = () => {
   // No data available: Card-style message when quiz data is missing
   if (!state.quizData || state.quizData.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-100 to-purple-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
         <div className="text-center max-w-md">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
-            <BookOpen className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
+            <BookOpen className="w-16 h-16 text-amber-400 mx-auto mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               No Quiz Data Available
             </h2>
@@ -467,9 +467,9 @@ const QuizApp: React.FC = () => {
               Please ensure your RandomQuiz.json file is properly imported and
               contains valid Quick Quizions.
             </p>
-            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 text-left text-sm text-gray-600 dark:text-gray-400">
+            <div className="bg-rose-50 dark:bg-gray-700 rounded-lg p-4 text-left text-sm text-gray-600 dark:text-gray-400">
               <p className="mb-2 font-medium">Expected format:</p>
-              <code className="text-indigo-600 dark:text-indigo-400">
+              <code className="text-pink-600 dark:text-pink-400">
                 [
                 {`{question: "...", options: {...}, correctAnswer: "A", explanation: "..."}`}
                 , ...]
@@ -484,7 +484,7 @@ const QuizApp: React.FC = () => {
   // Home Screen: Displays welcome, user stats, and action buttons for starting or viewing results
   if (state.gameState === "home") {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-rose-50 via-fuchsia-50/50 to-purple-100/50 dark:from-gray-950 dark:via-fuchsia-950/20 dark:to-gray-950 relative transition-colors duration-300">
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
@@ -494,14 +494,14 @@ const QuizApp: React.FC = () => {
         <main className="flex-1 flex flex-col  justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100/50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 text-pink-700 dark:text-pink-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />
               <span> Assessment Dashboard</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
                 {user.name}
               </span>
             </h1>
@@ -517,7 +517,7 @@ const QuizApp: React.FC = () => {
             {[
               {
                 icon: (
-                  <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <BookOpen className="w-5 h-5 text-pink-500 dark:text-pink-400" />
                 ),
                 label: "Questions",
                 value: state.quizData.length,
@@ -525,7 +525,7 @@ const QuizApp: React.FC = () => {
               },
               {
                 icon: (
-                  <Target className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <Target className="w-5 h-5 text-fuchsia-600 dark:text-fuchsia-400" />
                 ),
                 label: "Tests",
                 value: getTotalTests(),
@@ -533,7 +533,7 @@ const QuizApp: React.FC = () => {
               },
               {
                 icon: (
-                  <Trophy className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                  <Trophy className="w-5 h-5 text-rose-500 dark:text-rose-400" />
                 ),
                 label: "Completed",
                 value: state.testResults.length,
@@ -541,7 +541,7 @@ const QuizApp: React.FC = () => {
               },
               {
                 icon: (
-                  <TrendingUp className="w-5 h-5 text-rose-600 dark:text-rose-400" />
+                  <TrendingUp className="w-5 h-5 text-violet-600 dark:text-violet-400" />
                 ),
                 label: "Success Rate",
                 value:
@@ -559,9 +559,9 @@ const QuizApp: React.FC = () => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-5 border border-gray-200/50 dark:border-gray-700/50 shadow-sm flex flex-col items-center text-center justify-center group transition-all duration-300 hover:-translate-y-1  hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-200/50 dark:hover:border-indigo-500/30"
+                className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-5 border border-rose-100 dark:border-gray-700/50 shadow-sm flex flex-col items-center text-center justify-center group transition-all duration-300 hover:-translate-y-1  hover:shadow-xl hover:shadow-pink-500/10 hover:border-pink-200/50 dark:hover:border-pink-500/30"
               >
-                <div className="mb-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-700 transition-all duration-300 ring-1 ring-transparent group-hover:ring-indigo-100 dark:group-hover:ring-indigo-500/20">
+                <div className="mb-3 p-2.5 rounded-xl bg-rose-50 dark:bg-gray-800 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-700 transition-all duration-300 ring-1 ring-transparent group-hover:ring-pink-100 dark:group-hover:ring-pink-500/20">
                   {stat.icon}
                 </div>
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
@@ -586,11 +586,11 @@ const QuizApp: React.FC = () => {
                   playSend();
                   startTest(state.currentTest);
                 }}
-                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 to-indigo-700 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-indigo-500/25"
+                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-pink-500 to-rose-500 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-pink-500/25"
               >
-                <div className="relative flex items-center justify-between rounded-[14px] bg-indigo-600/10 px-6 py-5 sm:px-8 sm:py-6 transition-colors group-hover:bg-indigo-600/0">
+                <div className="relative flex items-center justify-between rounded-[14px] bg-white/10 px-6 py-5 sm:px-8 sm:py-6 transition-colors group-hover:bg-white/0">
                   <div className="flex flex-col text-left">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-200">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-rose-100">
                       {state.testResults.length === 0
                         ? "Get Started"
                         : "Up Next"}
@@ -601,7 +601,7 @@ const QuizApp: React.FC = () => {
                         : `Continue Test ${state.currentTest + 1}`}
                     </span>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-indigo-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-pink-600">
                     <Play className="w-6 h-6 ml-1 fill-current" />
                   </div>
                 </div>
@@ -616,9 +616,9 @@ const QuizApp: React.FC = () => {
                     playSend();
                     navigate("/results");
                   }}
-                  className="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
+                  className="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-rose-50 dark:hover:bg-gray-700 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
                 >
-                  <Trophy className="w-5 h-5 text-amber-500 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
+                  <Trophy className="w-5 h-5 text-amber-400 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
                   View Analytics
                 </button>
 
@@ -646,7 +646,7 @@ const QuizApp: React.FC = () => {
 
     if (!currentQ) {
       return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
+        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-100 to-purple-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
           <Navbar currentPage="Quick Quiz" />
           <div className="text-center pt-16">
             <p className="text-gray-900 dark:text-white text-xl font-semibold mb-4">
@@ -657,7 +657,7 @@ const QuizApp: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors font-semibold"
+              className="flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -668,7 +668,7 @@ const QuizApp: React.FC = () => {
     }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent p-4 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-100 to-purple-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent p-4 transition-colors duration-300">
         <Navbar currentPage="Quick Quiz" />
         <div className="max-w-4xl mx-auto pt-16 ">
           {/* Header */}
@@ -678,7 +678,7 @@ const QuizApp: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors font-semibold"
+              className="flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -691,13 +691,13 @@ const QuizApp: React.FC = () => {
                 </h2>
                 <img src={logo} className="h-10" alt="logo" />
               </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+              <p className="text-fuchsia-600 dark:text-fuchsia-400 font-medium">
                 {currentQ.subject}
               </p>
             </div>
 
             <div className="text-right">
-              <p className="text-indigo-500 dark:text-indigo-400 font-semibold">
+              <p className="text-pink-500 dark:text-pink-400 font-semibold">
                 Question {state.currentQuestion + 1}/{currentQuestions.length}
               </p>
               {state.startTime && (
@@ -712,9 +712,9 @@ const QuizApp: React.FC = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-8 overflow-hidden">
+          <div className="bg-rose-100 dark:bg-gray-700 rounded-full h-3 mb-8 overflow-hidden">
             <div
-              className="bg-indigo-500 h-full transition-all duration-500 ease-out"
+              className="bg-pink-500 h-full transition-all duration-500 ease-out"
               style={{
                 width: `${
                   ((state.currentQuestion + 1) / currentQuestions.length) * 100
@@ -724,7 +724,7 @@ const QuizApp: React.FC = () => {
           </div>
 
           {/* Question Card */}
-          <div className="bg-gray-100 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl px-6 py-6 border border-indigo-300 dark:border-indigo-700 shadow-lg shadow-indigo-200/20 dark:shadow-indigo-900/40 transition-all duration-300">
+          <div className="bg-white/80 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl px-6 py-6 border border-pink-200 dark:border-pink-900 shadow-lg shadow-pink-200/20 dark:shadow-pink-900/40 transition-all duration-300">
             {/* Question */}
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white leading-relaxed mb-6">
               {currentQ.question}
@@ -744,21 +744,21 @@ const QuizApp: React.FC = () => {
                 if (!state.showFeedback) {
                   base +=
                     state.selectedAnswer === key
-                      ? " bg-indigo-500 border-indigo-500 text-white shadow-md"
-                      : " bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-indigo-50 dark:hover:bg-indigo-900 hover:border-indigo-400";
+                      ? " bg-pink-500 border-pink-500 text-white shadow-md"
+                      : " bg-white/50 dark:bg-gray-700 border-rose-100 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-rose-50 dark:hover:bg-pink-900 hover:border-pink-300";
                 } else {
                   if (key === currentQ.correctAnswer) {
                     base +=
-                      " bg-green-600/20 border-green-500 text-green-800 dark:text-green-100 shadow-md ring-1 ring-green-500";
+                      " bg-green-50 border-green-400 text-green-800 dark:text-green-100 shadow-md ring-1 ring-green-400";
                   } else if (
                     key === state.selectedAnswer &&
                     key !== currentQ.correctAnswer
                   ) {
                     base +=
-                      " bg-red-600/20 border-red-500 text-red-800 dark:text-red-100 shadow-md";
+                      " bg-rose-50 border-rose-400 text-rose-800 dark:text-rose-100 shadow-md";
                   } else {
                     base +=
-                      " bg-gray-100 dark:bg-gray-700/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 opacity-70";
+                      " bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 opacity-70";
                   }
                 }
 
@@ -769,7 +769,7 @@ const QuizApp: React.FC = () => {
                     className={base}
                     disabled={state.showFeedback}
                   >
-                    <span className="min-w-8 min-h-8 rounded-full bg-gray-300/20 dark:bg-gray-600/20 flex items-center justify-center mr-3 font-bold">
+                    <span className="min-w-8 min-h-8 rounded-full bg-rose-200/50 dark:bg-gray-600/20 flex items-center justify-center mr-3 font-bold">
                       {key}
                     </span>
                     <span className="flex-1">{value}</span>
@@ -779,7 +779,7 @@ const QuizApp: React.FC = () => {
                     {state.showFeedback &&
                       key === state.selectedAnswer &&
                       key !== currentQ.correctAnswer && (
-                        <XCircle className="w-6 h-6 text-red-500 ml-2" />
+                        <XCircle className="w-6 h-6 text-rose-500 ml-2" />
                       )}
                   </button>
                 );
@@ -790,7 +790,7 @@ const QuizApp: React.FC = () => {
             {state.showFeedback && (
               <button
                 onClick={handleNext}
-                className="w-full mt-4 bg-gradient-to-r from-indigo-600 to-indigo-700 dark:from-indigo-700 dark:to-indigo-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-indigo-200/20 dark:shadow-indigo-900/40 flex items-center justify-center gap-2"
+                className="w-full mt-4 bg-gradient-to-r from-pink-500 to-rose-500 dark:from-pink-600 dark:to-rose-700 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-pink-300/30 dark:shadow-pink-900/40 flex items-center justify-center gap-2"
               >
                 {state.currentQuestion < currentQuestions.length - 1
                   ? "Next Question"
@@ -803,7 +803,7 @@ const QuizApp: React.FC = () => {
         {/* Feedback */}
         {state.showFeedback && (
           <div className="fixed top-6 left-4  right-4 md:left-1/2 md:-translate-x-1/2 md:max-w-3xl z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
-            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl p-5 rounded-2xl border border-indigo-200 dark:border-indigo-700 shadow-2xl shadow-indigo-500/20 dark:shadow-black/50 ring-1 ring-black/5">
+            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl p-5 rounded-2xl border border-pink-200 dark:border-pink-800 shadow-2xl shadow-pink-500/10 dark:shadow-black/50 ring-1 ring-black/5">
               <div className="flex items-start gap-4">
                 {state.selectedAnswer === currentQ.correctAnswer ? (
                   <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-full flex-shrink-0">
@@ -859,9 +859,9 @@ const QuizApp: React.FC = () => {
 
     const themeColor =
       latestResult.percentage >= 90
-        ? "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200"
+        ? "text-fuchsia-600 bg-fuchsia-50 dark:bg-fuchsia-900/20 border-fuchsia-200"
         : latestResult.percentage >= 70
-        ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
+        ? "text-pink-600 bg-pink-50 dark:bg-pink-900/20 border-pink-200"
         : latestResult.percentage >= 50
         ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
         : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
@@ -869,11 +869,11 @@ const QuizApp: React.FC = () => {
     const accentColor = themeColor.split(" ")[0]; // Extract text color for icons
 
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-rose-50 dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Navbar currentPage="Test Results" />
 
         <div className="flex-1 flex items-center  mt-16 justify-center p-4 sm:p-6 animate-fade-in-up">
-          <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden">
+          <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-rose-100 dark:border-gray-800 overflow-hidden">
             {/* Header Section */}
             <div className="pt-4 pb-6 px-8 text-center">
               <div
@@ -917,7 +917,7 @@ const QuizApp: React.FC = () => {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 divide-x divide-gray-100 dark:divide-gray-800 bg-gray-50/50 dark:bg-gray-800/20">
+            <div className="grid grid-cols-3 divide-x divide-gray-100 dark:divide-gray-800 bg-rose-50/30 dark:bg-gray-800/20">
               <div className="p-4 flex flex-col items-center text-center">
                 <BookOpen className="w-4 h-4 text-gray-400 mb-1" />
                 <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">
@@ -962,7 +962,7 @@ const QuizApp: React.FC = () => {
                     playSend();
                     startTest(state.currentTest);
                   }}
-                  className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold h-12 rounded-xl transition-all transform active:scale-[0.98] shadow-md shadow-indigo-200 dark:shadow-none"
+                  className="w-full flex items-center justify-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold h-12 rounded-xl transition-all transform active:scale-[0.98] shadow-md shadow-pink-200 dark:shadow-none"
                 >
                   Start Next Test <Play className="w-4 h-4" />
                 </button>
@@ -978,7 +978,7 @@ const QuizApp: React.FC = () => {
                     playSend();
                     setGameState("home");
                   }}
-                  className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium h-10 rounded-xl transition-colors"
+                  className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-rose-50 dark:hover:bg-gray-700 font-medium h-10 rounded-xl transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" /> Home
                 </button>
@@ -989,7 +989,7 @@ const QuizApp: React.FC = () => {
                       playSend();
                       navigate("/results");
                     }}
-                    className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium h-10 rounded-xl transition-colors"
+                    className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-rose-50 dark:hover:bg-gray-700 font-medium h-10 rounded-xl transition-colors"
                   >
                     <Trophy className="w-4 h-4" /> History
                   </button>

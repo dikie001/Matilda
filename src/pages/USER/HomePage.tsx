@@ -38,9 +38,9 @@ const HomePage: React.FC = () => {
     name: "Quick Quiz",
     icon: <CircleHelp />,
     description: "Test yourself with fast, fun questions.",
-    color: "from-cyan-500 to-blue-600",
+    color: "from-pink-500 to-rose-600",
     bgGradient:
-      "from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20",
+      "from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20",
     to: "quick-quiz",
   };
 
@@ -50,25 +50,25 @@ const HomePage: React.FC = () => {
       name: "Quick Challenges",
       icon: <Zap />,
       description: "Fast logic hits to sharpen your mind",
-      color: "from-purple-500 to-indigo-600",
+      color: "from-fuchsia-500 to-purple-600",
       bgGradient:
-        "from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20",
+        "from-fuchsia-50 to-purple-50 dark:from-fuchsia-900/20 dark:to-purple-900/20",
       to: "/quick-challenges",
     },
     {
       name: "Flash Stories",
       icon: <FileText />,
       description: "Short, powerful stories to spark ideas",
-      color: "from-emerald-500 to-teal-600",
+      color: "from-violet-500 to-indigo-600",
       bgGradient:
-        "from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20",
+        "from-violet-50 to-indigo-50 dark:from-violet-900/20 dark:to-indigo-900/20",
       to: "/flash-stories",
     },
     {
       name: "Life Gems",
       icon: <Sparkles />,
       description: "Quick life tips to level up your mindset",
-      color: "from-amber-500 to-orange-600",
+      color: "from-amber-400 to-orange-500",
       bgGradient:
         "from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20",
       to: "/life-gems",
@@ -77,25 +77,25 @@ const HomePage: React.FC = () => {
       name: "Clear Speech",
       icon: <Mic />,
       description: "Improve fluency and pronunciation",
-      color: "from-pink-500 to-rose-600",
+      color: "from-rose-400 to-pink-600",
       bgGradient:
-        "from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20",
+        "from-rose-50 to-pink-50 dark:from-rose-900/20 dark:to-pink-900/20",
       to: "/clear-speech",
     },
     {
       name: "Fun Facts",
       icon: <Lightbulb />,
       description: "Cool and surprising facts",
-      color: "from-violet-500 to-purple-600",
+      color: "from-purple-400 to-violet-600",
       bgGradient:
-        "from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20",
+        "from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20",
       to: "/fun-facts",
     },
     {
       name: "Word Power",
       icon: <BookOpen />,
       description: "Level up your language skills",
-      color: "from-gray-900 to-orange-900 shadow-lg",
+      color: "from-rose-900 to-pink-900 shadow-lg",
       to: "/word-power",
     },
   ];
@@ -123,7 +123,7 @@ const HomePage: React.FC = () => {
   const totalProgress = completed.stories + completed.quiz;
 
   return (
-    <div className="min-h-screen text-gray-900 dark:text-white bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex flex-col relative overflow-hidden transition-colors duration-500">
+    <div className="min-h-screen text-gray-900 dark:text-white bg-gradient-to-br from-rose-50 via-fuchsia-50/30 to-purple-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex flex-col relative overflow-hidden transition-colors duration-500">
       <Animation />
 
       <Navbar />
@@ -132,12 +132,12 @@ const HomePage: React.FC = () => {
         {/* Header Section */}
         <div className="text-center mb-6 md:mb-10 space-y-2 md:space-y-4 animate-in fade-in duration-700">
           {totalProgress > 0 && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-700 to-indigo-800 text-white rounded-3xl shadow-md text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-3xl shadow-md text-sm font-semibold mb-4">
               <TrendingUp className="w-4 h-4" />
               <span>{totalProgress} Activities Completed!</span>
             </div>
           )}
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-pink-600 via-fuchsia-600 to-purple-600 bg-clip-text text-transparent">
             Learn. Grow. Excel.
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
@@ -149,7 +149,7 @@ const HomePage: React.FC = () => {
         <div className="mb-4 md:mb-6  flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <button
             onClick={() => HandleCategoryClick(quizSection.to)}
-            className="group cursor-pointer relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 backdrop-blur-sm"
+            className="group cursor-pointer relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-800/50 border border-rose-100 dark:border-gray-700/50 shadow-xl hover:shadow-2xl hover:shadow-pink-500/10 transition-all duration-500 backdrop-blur-sm"
           >
             {/* Top gradient bar */}
             <div
@@ -182,12 +182,12 @@ const HomePage: React.FC = () => {
                 {/* Middle: Text Content */}
                 <div className="flex-col flex gap-1 overflow-hidden">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-xl md:text-3xl font-extrabold text-gray-900 dark:text-white truncate group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-colors duration-300">
+                    <h3 className="text-xl md:text-3xl font-extrabold text-gray-900 dark:text-white truncate group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-rose-600 group-hover:bg-clip-text group-hover:text-transparent transition-colors duration-300">
                       {quizSection.name}
                     </h3>
                     {/* Mobile-only Tiny Stat */}
                     {completed.quiz > 0 && (
-                      <span className="md:hidden flex-shrink-0 text-[10px] font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-900/30 px-2 py-0.5 rounded-full">
+                      <span className="md:hidden flex-shrink-0 text-[10px] font-bold text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/30 px-2 py-0.5 rounded-full">
                         {completed.quiz} Done
                       </span>
                     )}
@@ -225,8 +225,8 @@ const HomePage: React.FC = () => {
                 </div>
 
                 {/* Simple Arrow for Mobile */}
-                <div className="md:hidden p-2 rounded-full bg-gray-100 dark:bg-gray-700/50 group-hover:bg-cyan-50 dark:group-hover:bg-cyan-900/20 transition-colors">
-                  <ArrowRight className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400" />
+                <div className="md:hidden p-2 rounded-full bg-gray-100 dark:bg-gray-700/50 group-hover:bg-rose-50 dark:group-hover:bg-rose-900/20 transition-colors">
+                  <ArrowRight className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-rose-600 dark:group-hover:text-rose-400" />
                 </div>
               </div>
             </div>
@@ -244,7 +244,7 @@ const HomePage: React.FC = () => {
               <button
                 key={section.name}
                 onClick={() => HandleCategoryClick(section.to)}
-                className="group cursor-pointer relative p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm overflow-hidden flex flex-col items-center text-center"
+                className="group cursor-pointer relative p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 dark:bg-gray-800/50 border border-rose-100 dark:border-gray-700/50 backdrop-blur-sm overflow-hidden flex flex-col items-center text-center"
                 style={{
                   animationDelay: `${index * 100}ms`,
                   animation: "slideUp 0.6s ease-out forwards",
@@ -268,7 +268,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
                   {section.name}
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
