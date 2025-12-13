@@ -122,7 +122,7 @@ const Results = () => {
           {isClient && graphData.length > 0 && (
             <PDFDownloadLink
               document={<ReportDocument stats={stats} graphData={graphData} />}
-              fileName="dikie-learning-report.pdf"
+              fileName="Matilda Awino's Report.pdf"
             >
               {({ loading: pdfLoading }) => (
                 <Button 
