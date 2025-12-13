@@ -1,185 +1,227 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-    Document,
-    Page,
-    StyleSheet,
-    Text,
-    View
+  Document,
+  Page,
+  StyleSheet,
+  Text,
+  View,
+  Svg,
+  Path,
+  Line,
+  Defs,
+  LinearGradient,
+  Stop,
+  Circle,
 } from "@react-pdf/renderer";
 
-// --- STYLES ---
+// --- MODERN PALETTE (Tailwind Slate/Indigo) ---
+const theme = {
+  primary: "#4F46E5", // Indigo 600
+  primaryLight: "#EEF2FF", // Indigo 50
+  secondary: "#64748B", // Slate 500
+  success: "#10B981", // Emerald 500
+  successBg: "#ECFDF5",
+  warning: "#F59E0B", // Amber 500
+  warningBg: "#FFFBEB",
+  danger: "#EF4444", // Red 500
+  dangerBg: "#FEF2F2",
+  dark: "#0F172A", // Slate 900
+  text: "#334155", // Slate 700
+  muted: "#94A3B8", // Slate 400
+  border: "#E2E8F0", // Slate 200
+  bg: "#F8FAFC", // Slate 50
+  white: "#FFFFFF",
+};
+
 const styles = StyleSheet.create({
   page: {
-    paddingBottom: 40,
-    paddingTop: 40,
-    paddingHorizontal: 40,
-    backgroundColor: "#FFFFFF",
+    padding: 40,
+    backgroundColor: theme.white,
     fontFamily: "Helvetica",
-    color: "#1f2937",
-  },
-  // Header
-  headerSection: {
-    marginBottom: 30,
-    borderBottomWidth: 2,
-    borderBottomColor: "#4f46e5", // Indigo-600
-    paddingBottom: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-end",
-  },
-  appTitle: {
-    fontSize: 28,
-    fontWeight: "heavy",
-    color: "#4f46e5",
-    letterSpacing: -0.5,
-  },
-  reportTitle: {
-    fontSize: 10,
-    color: "#6b7280",
-    textTransform: "uppercase",
-    letterSpacing: 2,
-    marginBottom: 2,
-  },
-  userInfo: {
-    textAlign: "right",
-  },
-  userName: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#111827",
-  },
-  dateText: {
-    fontSize: 9,
-    color: "#9ca3af",
-    marginTop: 2,
+    color: theme.text,
   },
 
-  // Stats Grid
-  statsGrid: {
+  // --- UPDATED CENTERED HEADER ---
+  header: {
+    marginBottom: 40,
+    flexDirection: "column",
+    alignItems: "center", // Center horizontally
+    justifyContent: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: theme.border,
+    paddingBottom: 25,
+  },
+  headerUser: {
+    fontSize: 32, // Large and focused
+    fontWeight: "heavy", // Boldest font
+    color: theme.primary, // Indigo color
+    letterSpacing: -0.5,
+    marginBottom: 6,
+    textAlign: "center",
+    textTransform: "uppercase", // Optional: Makes name stand out more
+  },
+  headerSubDetail: {
+    fontSize: 10,
+    color: theme.secondary,
+    textTransform: "uppercase",
+    letterSpacing: 2, // Wide spacing for elegance
+    fontWeight: "bold",
+    marginBottom: 4,
+  },
+  headerDate: {
+    fontSize: 9,
+    color: theme.muted,
+    marginTop: 4,
+  },
+
+  // --- STATS CARDS (Untouched) ---
+  statsContainer: {
     flexDirection: "row",
-    gap: 12,
+    justifyContent: "space-between",
     marginBottom: 30,
   },
   statCard: {
-    flex: 1,
-    padding: 12,
-    backgroundColor: "#f8fafc", // Slate-50
-    borderLeftWidth: 3,
-    borderColor: "#e2e8f0",
-    borderRadius: 4,
-  },
-  statValue: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#1f2937",
+    width: "31%",
+    backgroundColor: theme.bg,
+    borderRadius: 12,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: theme.border,
   },
   statLabel: {
     fontSize: 8,
-    color: "#64748b",
+    color: theme.secondary,
     textTransform: "uppercase",
     fontWeight: "bold",
-    marginTop: 4,
+    letterSpacing: 0.5,
+    marginBottom: 6,
   },
-
-  // Chart Section
-  chartSection: {
-    marginBottom: 30,
-    padding: 15,
-    backgroundColor: "#ffffff",
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#f1f5f9",
-  },
-  chartTitle: {
-    fontSize: 11,
+  statValue: {
+    fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 15,
-    color: "#334155",
-  },
-  chartContainer: {
-    height: 120,
-    flexDirection: "row",
-    alignItems: "flex-end",
-    gap: 6,
-  },
-  barCol: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-end",
-  },
-  bar: {
-    width: "100%",
-    borderRadius: 2,
-    opacity: 0.9,
-  },
-  barText: {
-    fontSize: 6,
-    color: "#64748b",
-    marginTop: 4,
-    textAlign: "center",
+    color: theme.dark,
   },
 
-  // Table Section
-  tableContainer: {
-    marginTop: 10,
-    width: "100%",
+  // --- GRAPH (Untouched) ---
+  graphContainer: {
+    backgroundColor: theme.white,
+    borderRadius: 16,
     borderWidth: 1,
-    borderColor: "#e2e8f0",
-    borderRadius: 6,
+    borderColor: theme.border,
+    padding: 20,
+    marginBottom: 30,
+    height: 220,
+  },
+  graphHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 15,
+  },
+  graphTitle: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: theme.dark,
+  },
+
+  // --- MODERN TABLE (Untouched) ---
+  tableSection: {
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: theme.border,
     overflow: "hidden",
   },
   tableHeader: {
     flexDirection: "row",
-    backgroundColor: "#f1f5f9", // Slate-100
-    paddingVertical: 8,
-    paddingHorizontal: 10,
+    backgroundColor: theme.bg,
     borderBottomWidth: 1,
-    borderBottomColor: "#e2e8f0",
+    borderBottomColor: theme.border,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
   },
-  tableHeaderCell: {
+  th: {
     fontSize: 9,
     fontWeight: "bold",
-    color: "#475569",
+    color: theme.secondary,
     textTransform: "uppercase",
   },
   tableRow: {
     flexDirection: "row",
-    paddingVertical: 8,
-    paddingHorizontal: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
     borderBottomWidth: 1,
-    borderBottomColor: "#f1f5f9",
+    borderBottomColor: theme.border,
+    alignItems: "center",
   },
-  tableRowEven: {
-    backgroundColor: "#f8fafc",
+  td: {
+    fontSize: 10,
+    color: theme.dark,
   },
-  tableCell: {
-    fontSize: 9,
-    color: "#334155",
+  badge: {
+    borderRadius: 12,
+    paddingVertical: 2,
+    paddingHorizontal: 8,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  
-  // Footer
+  badgeText: {
+    fontSize: 8,
+    fontWeight: "bold",
+  },
+
+  // --- FOOTER (Untouched) ---
   footer: {
     position: "absolute",
-    bottom: 20,
+    bottom: 30,
     left: 40,
     right: 40,
-    borderTopWidth: 1,
-    borderTopColor: "#e2e8f0",
-    paddingTop: 10,
     flexDirection: "row",
     justifyContent: "space-between",
+    borderTopWidth: 1,
+    borderTopColor: theme.border,
+    paddingTop: 10,
   },
   footerText: {
     fontSize: 8,
-    color: "#94a3b8",
+    color: theme.muted,
   },
 });
 
-const getScoreColor = (score: number) => {
-  if (score >= 90) return "#10b981"; // Emerald
-  if (score >= 70) return "#6366f1"; // Indigo
-  if (score >= 50) return "#f59e0b"; // Amber
-  return "#ef4444"; // Red
+// --- MATH HELPERS FOR SMOOTH CURVES (Bezier) ---
+const svgPath = (points: any[], command: any) => {
+  return points.reduce(
+    (acc, point, i, a) =>
+      i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${command(point, i, a)}`,
+    ""
+  );
+};
+const line = (pointA: any, pointB: any) => {
+  const lengthX = pointB[0] - pointA[0];
+  const lengthY = pointB[1] - pointA[1];
+  return {
+    length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+    angle: Math.atan2(lengthY, lengthX),
+  };
+};
+const controlPoint = (
+  current: any,
+  previous: any,
+  next: any,
+  reverse?: any
+) => {
+  const p = previous || current;
+  const n = next || current;
+  const smoothing = 0.2;
+  const o = line(p, n);
+  const angle = o.angle + (reverse ? Math.PI : 0);
+  const length = o.length * smoothing;
+  const x = current[0] + Math.cos(angle) * length;
+  const y = current[1] + Math.sin(angle) * length;
+  return [x, y];
+};
+const bezierCommand = (point: any, i: any, a: any) => {
+  const [cpsX, cpsY] = controlPoint(a[i - 1], a[i - 2], point);
+  const [cpeX, cpeY] = controlPoint(point, a[i - 1], a[i + 1], true);
+  return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`;
 };
 
 interface ReportProps {
@@ -189,133 +231,232 @@ interface ReportProps {
   appName?: string;
 }
 
-export const ReportDocument = ({ 
-  stats, 
-  graphData, 
-  userName = "Dikie", 
-  appName = "Learning App" 
+export const ReportDocument = ({
+  stats,
+  graphData,
+  userName = "Matilda Awino", // Default Name
+  appName = "Brillia", // Default App Name
 }: ReportProps) => {
-  
-  // Logic: For the visual graph, only show the last 15 items so bars don't get too thin.
-  // The TABLE will show all data.
-  const chartData = graphData.length > 15 ? graphData.slice(-15) : graphData;
+  // Logic: Graph shows last 15, Table shows all.
+  const chartData = graphData.slice(-15);
+
+  // Graph Dimensions
+  const width = 450;
+  const height = 150;
+  const paddingX = 10;
+  const paddingY = 10;
+  const maxScore = 100;
+
+  // Generate Points [x, y]
+  const points = chartData.map((d, i) => {
+    const x = (i / Math.max(chartData.length - 1, 1)) * width + paddingX;
+    const y = height - (d.score / maxScore) * height + paddingY;
+    return [x, y];
+  });
+
+  // Generate Smooth Path
+  const pathD = svgPath(points, bezierCommand);
+  const areaD = `${pathD} L ${width + paddingX},${
+    height + paddingY
+  } L ${paddingX},${height + paddingY} Z`;
 
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        
-        {/* --- HEADER (Fixed on all pages) --- */}
-        <View style={styles.headerSection} fixed>
-          <View>
-            <Text style={styles.reportTitle}>Performance Report</Text>
-            <Text style={styles.appTitle}>{appName}</Text>
-          </View>
-          <View style={styles.userInfo}>
-            <Text style={styles.userName}>{userName}</Text>
-            <Text style={styles.dateText}>
-              {new Date().toLocaleDateString("en-US", { 
-                year: 'numeric', month: 'long', day: 'numeric' 
-              })}
-            </Text>
-          </View>
+        {/* --- NEW HEADER STRUCTURE --- */}
+        <View style={styles.header}>
+          {/* Main Focus: Name */}
+          <Text style={styles.headerUser}>{userName}</Text>
+
+          {/* Sub Detail: App Name */}
+          <Text style={styles.headerSubDetail}>
+            REPORT GENERATED BY {appName}
+          </Text>
+
+          {/* Date */}
+          <Text style={styles.headerDate}>
+            {new Date().toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </Text>
         </View>
 
-        {/* --- STATS SUMMARY --- */}
-        <View style={styles.statsGrid}>
-          <View style={[styles.statCard, { borderColor: "#6366f1" }]}>
-            <Text style={styles.statLabel}>Tests Completed</Text>
+        {/* STATS CARDS */}
+        <View style={styles.statsContainer}>
+          <View
+            style={[
+              styles.statCard,
+              { borderLeftWidth: 4, borderLeftColor: theme.primary },
+            ]}
+          >
+            <Text style={styles.statLabel}>Tests Taken</Text>
             <Text style={styles.statValue}>{stats.testsDone}</Text>
           </View>
-          <View style={[styles.statCard, { borderColor: "#f59e0b" }]}>
+          <View
+            style={[
+              styles.statCard,
+              { borderLeftWidth: 4, borderLeftColor: theme.warning },
+            ]}
+          >
             <Text style={styles.statLabel}>Average Score</Text>
             <Text style={styles.statValue}>{stats.averageScore}%</Text>
           </View>
-          <View style={[styles.statCard, { borderColor: "#10b981" }]}>
-            <Text style={styles.statLabel}>Performance Rating</Text>
-            <Text style={styles.statValue}>
-              {stats.averageScore >= 90 ? "Excellent" : stats.averageScore >= 70 ? "Good" : "Average"}
+          <View
+            style={[
+              styles.statCard,
+              { borderLeftWidth: 4, borderLeftColor: theme.success },
+            ]}
+          >
+            <Text style={styles.statLabel}>Rating</Text>
+            <Text style={{ ...styles.statValue, color: theme.success }}>
+              {stats.averageScore >= 80
+                ? "Expert"
+                : stats.averageScore >= 60
+                ? "Pro"
+                : "Rookie"}
             </Text>
           </View>
         </View>
 
-        {/* --- CHART (Visual Highlight) --- */}
-        <View style={styles.chartSection} wrap={false}>
-          <Text style={styles.chartTitle}>
-            Recent Progress (Last {chartData.length} Tests)
-          </Text>
-          {chartData.length > 0 ? (
-            <View style={styles.chartContainer}>
-              {chartData.map((item: any, i: number) => (
-                <View key={i} style={styles.barCol}>
-                  <Text style={{fontSize: 7, marginBottom: 2, color: getScoreColor(item.score)}}>{item.score}</Text>
-                  <View 
-                    style={[
-                      styles.bar, 
-                      { 
-                        height: `${Math.max(item.score, 2)}%`, // Ensure 0 score has small height
-                        backgroundColor: getScoreColor(item.score)
-                      }
-                    ]} 
-                  />
-                  <Text style={styles.barText}>{`T${graphData.length - chartData.length + i + 1}`}</Text>
-                </View>
-              ))}
-            </View>
-          ) : (
-            <Text style={{fontSize: 10, color: '#94a3b8', textAlign: 'center', padding: 20}}>
-              Not enough data for visualization.
+        {/* GRAPH */}
+        <View style={styles.graphContainer} wrap={false}>
+          <View style={styles.graphHeader}>
+            <Text style={styles.graphTitle}>Performance Curve</Text>
+            <Text style={{ fontSize: 9, color: theme.muted }}>
+              Last 15 Tests
             </Text>
+          </View>
+
+          {chartData.length > 1 ? (
+            <Svg height={height + 40} width={width + 20}>
+              <Defs>
+                <LinearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                  <Stop
+                    offset="0%"
+                    stopColor={theme.primary}
+                    stopOpacity={0.2}
+                  />
+                  <Stop
+                    offset="100%"
+                    stopColor={theme.primary}
+                    stopOpacity={0}
+                  />
+                </LinearGradient>
+              </Defs>
+
+              {/* Grid Lines */}
+              {[0, 0.25, 0.5, 0.75, 1].map((t, i) => (
+                <Line
+                  key={i}
+                  x1={paddingX}
+                  y1={height * t + paddingY}
+                  x2={width + paddingX}
+                  y2={height * t + paddingY}
+                  stroke={theme.border}
+                  strokeDasharray="4 4"
+                  strokeWidth={1}
+                />
+              ))}
+
+              {/* Area & Line */}
+              <Path d={areaD} fill="url(#gradient)" />
+              <Path
+                d={pathD}
+                stroke={theme.primary}
+                strokeWidth={2}
+                fill="none"
+              />
+
+              {/* Dots */}
+              {points.map(([x, y], i) => (
+                <Circle
+                  key={i}
+                  cx={x}
+                  cy={y}
+                  r={3}
+                  fill={theme.white}
+                  stroke={theme.primary}
+                  strokeWidth={2}
+                />
+              ))}
+            </Svg>
+          ) : (
+            <View
+              style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ fontSize: 10, color: theme.muted }}>
+                Take more tests to see your curve.
+              </Text>
+            </View>
           )}
         </View>
 
-        {/* --- DETAILED DATA TABLE --- */}
-        <Text style={{ fontSize: 12, fontWeight: 'bold', marginBottom: 10, color: '#334155' }}>
-          Complete History
+        {/* TABLE */}
+        <Text style={{ ...styles.graphTitle, marginBottom: 10 }}>
+          Detailed History
         </Text>
-        
-        <View style={styles.tableContainer}>
-          {/* Table Header */}
+        <View style={styles.tableSection}>
           <View style={styles.tableHeader}>
-            <Text style={[styles.tableHeaderCell, { width: '15%' }]}>Date</Text>
-            <Text style={[styles.tableHeaderCell, { width: '55%' }]}>Test Name</Text>
-            <Text style={[styles.tableHeaderCell, { width: '15%', textAlign: 'center' }]}>Score</Text>
-            <Text style={[styles.tableHeaderCell, { width: '15%', textAlign: 'right' }]}>Status</Text>
+            <Text style={[styles.th, { width: "25%" }]}>Date</Text>
+            <Text style={[styles.th, { width: "50%" }]}>Test Name</Text>
+            <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>
+              Score
+            </Text>
           </View>
 
-          {/* Table Body - Maps all data, no matter how long */}
-          {graphData.map((item, index) => (
-            <View 
-              key={index} 
-              style={[
-                styles.tableRow, 
-                index % 2 !== 0 ? styles.tableRowEven : {} // Zebra striping
-              ]}
-            >
-              <Text style={[styles.tableCell, { width: '15%' }]}>{item.fullDate}</Text>
-              <Text style={[styles.tableCell, { width: '55%' }]}>{item.name}</Text>
-              <Text style={[styles.tableCell, { width: '15%', textAlign: 'center', fontWeight: 'bold' }]}>
-                {item.score}%
-              </Text>
-              <Text 
+          {graphData.map((row, i) => {
+            const isPass = row.score >= 70;
+            const badgeBg = isPass ? theme.successBg : theme.warningBg;
+            const badgeColor = isPass ? theme.success : theme.warning;
+
+            return (
+              <View
+                key={i}
                 style={[
-                  styles.tableCell, 
-                  { width: '15%', textAlign: 'right', fontWeight: 'bold', color: getScoreColor(item.score) }
+                  styles.tableRow,
+                  i % 2 === 0
+                    ? { backgroundColor: theme.white }
+                    : { backgroundColor: theme.bg },
                 ]}
               >
-                {item.score >= 70 ? "Pass" : "Revise"}
-              </Text>
-            </View>
-          ))}
+                <Text
+                  style={[styles.td, { width: "25%", color: theme.secondary }]}
+                >
+                  {row.fullDate}
+                </Text>
+                <Text style={[styles.td, { width: "50%", fontWeight: "bold" }]}>
+                  {row.name}
+                </Text>
+
+                {/* Score Pill */}
+                <View style={{ width: "25%", alignItems: "flex-end" }}>
+                  <View style={[styles.badge, { backgroundColor: badgeBg }]}>
+                    <Text style={[styles.badgeText, { color: badgeColor }]}>
+                      {row.score}% {isPass ? "PASS" : "LOW"}
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            );
+          })}
         </View>
 
-        {/* --- FOOTER (Fixed on all pages) --- */}
+        {/* FOOTER */}
         <View style={styles.footer} fixed>
-          <Text style={styles.footerText}>Generated by {appName}</Text>
-          <Text style={styles.footerText} render={({ pageNumber, totalPages }) => (
-            `${pageNumber} / ${totalPages}`
-          )} />
+          <Text style={styles.footerText}>Generated via {appName}</Text>
+          <Text
+            style={styles.footerText}
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} / ${totalPages}`
+            }
+          />
         </View>
-
       </Page>
     </Document>
   );
