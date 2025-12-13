@@ -163,7 +163,7 @@ export default function SettingsPage() {
             <Card className="rounded-[2rem] border-0 shadow-xl shadow-slate-200/50 dark:shadow-black/40 overflow-hidden bg-white dark:bg-slate-900">
               {/* Artistic Header */}
               <div className="h-28 -mt-6 bg-gradient-to-br from-rose-500 to-pink-500 relative">
-                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
+       
               </div>
               
               <CardContent className="px-6 pb-8 relative">
