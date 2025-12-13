@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import Navbar from "@/components/app/Navbar";
 import { STORIES_READ, TEST_RESULTS } from "@/constants";
-import { FileCheck, Loader2, TrendingUp, Trophy } from "lucide-react";
+import { FileCheck, Loader2, TrendingUp, Trophy, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   Bar,
@@ -14,6 +16,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { ReportDocument } from "@/components/app/ReportDocument"; // Import the new file
+import { Button } from "@/components/ui/button"; // Shadcn Button
 
 // --- TYPES ---
 interface TestResult {
@@ -44,9 +49,12 @@ const Results = () => {
     storiesRead: 0,
     averageScore: 0,
   });
-  const [graphData, setGraphData] = useState<unknown[]>([]);
+  const [graphData, setGraphData] = useState<any[]>([]);
+  // Used to prevent hydration errors with PDF generation in Next.js
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     // 1. Fetch Data from LocalStorage
     const rawResults = localStorage.getItem(TEST_RESULTS);
     // const rawUserInfo = localStorage.getItem("user-info");
@@ -99,14 +107,38 @@ const Results = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <Navbar />
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500">
-            Learning Results
-          </h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-400">
-            Overview of your tests and reading milestones.
-          </p>
+        {/* Header - MODIFIED TO INCLUDE DOWNLOAD BUTTON */}
+        <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500">
+              Learning Results
+            </h1>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              Overview of your tests and reading milestones.
+            </p>
+          </div>
+          
+          {/* PDF DOWNLOAD BUTTON */}
+          {isClient && graphData.length > 0 && (
+            <PDFDownloadLink
+              document={<ReportDocument stats={stats} graphData={graphData} />}
+              fileName="dikie-learning-report.pdf"
+            >
+              {({ loading: pdfLoading }) => (
+                <Button 
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
+                    disabled={pdfLoading}
+                >
+                  {pdfLoading ? (
+                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                     <Download className="w-4 h-4 mr-2" />
+                  )}
+                  {pdfLoading ? "Preparing..." : "Download Report"}
+                </Button>
+              )}
+            </PDFDownloadLink>
+          )}
         </div>
 
         {/* --- STATS ROW --- */}
