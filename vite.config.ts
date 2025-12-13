@@ -10,8 +10,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      // 1. CHANGE THIS TO 'prompt'
-      // This gives your UI control over when to activate the new version
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
+
       registerType: "prompt",
 
       injectRegister: "auto",

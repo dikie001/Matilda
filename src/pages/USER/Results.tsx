@@ -126,7 +126,7 @@ const Results = () => {
             >
               {({ loading: pdfLoading }) => (
                 <Button 
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
+                    className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
                     disabled={pdfLoading}
                 >
                   {pdfLoading ? (

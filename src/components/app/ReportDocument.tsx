@@ -12,73 +12,93 @@ import {
   LinearGradient,
   Stop,
   Circle,
+  Image,
 } from "@react-pdf/renderer";
 
-// --- MODERN PALETTE (Tailwind Slate/Indigo) ---
+// --- THEME ---
 const theme = {
   primary: "#4F46E5", // Indigo 600
-  primaryLight: "#EEF2FF", // Indigo 50
-  secondary: "#64748B", // Slate 500
-  success: "#10B981", // Emerald 500
+  secondary: "#64748B",
+  success: "#10B981",
   successBg: "#ECFDF5",
-  warning: "#F59E0B", // Amber 500
+  warning: "#F59E0B",
   warningBg: "#FFFBEB",
-  danger: "#EF4444", // Red 500
-  dangerBg: "#FEF2F2",
-  dark: "#0F172A", // Slate 900
-  text: "#334155", // Slate 700
-  muted: "#94A3B8", // Slate 400
-  border: "#E2E8F0", // Slate 200
-  bg: "#F8FAFC", // Slate 50
   white: "#FFFFFF",
+  bg: "#F8FAFC",
+  border: "#E2E8F0",
+  text: "#334155",
 };
 
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
+    padding: 0,
     backgroundColor: theme.white,
     fontFamily: "Helvetica",
     color: theme.text,
+    paddingBottom: 40,
   },
 
-  // --- UPDATED CENTERED HEADER ---
-  header: {
-    marginBottom: 40,
-    flexDirection: "column",
-    alignItems: "center", // Center horizontally
+  // --- HEADER ---
+  headerContainer: {
+    height: 190,
+    marginBottom: 20,
     justifyContent: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: theme.border,
-    paddingBottom: 25,
+    alignItems: "center",
+    position: "relative",
   },
-  headerUser: {
-    fontSize: 32, // Large and focused
-    fontWeight: "heavy", // Boldest font
-    color: theme.primary, // Indigo color
-    letterSpacing: -0.5,
-    marginBottom: 6,
-    textAlign: "center",
-    textTransform: "uppercase", // Optional: Makes name stand out more
+  headerContent: {
+    alignItems: "center",
+    marginTop: 20,
   },
-  headerSubDetail: {
-    fontSize: 10,
-    color: theme.secondary,
-    textTransform: "uppercase",
-    letterSpacing: 2, // Wide spacing for elegance
-    fontWeight: "bold",
+  avatarContainer: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    marginBottom: 12,
+    borderWidth: 3,
+    borderColor: "rgba(255,255,255,0.4)",
+    overflow: "hidden",
+    backgroundColor: theme.white,
+    position: "relative",
+    zIndex: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  avatarImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+  headerName: {
+    fontFamily: "Times-Roman",
+    fontSize: 34,
+    color: theme.white,
     marginBottom: 4,
+    textTransform: "capitalize",
+    fontWeight: "bold",
   },
-  headerDate: {
-    fontSize: 9,
-    color: theme.muted,
-    marginTop: 4,
+  headerAppTag: {
+    fontSize: 10,
+    color: "rgba(255,255,255,0.9)",
+    textTransform: "uppercase",
+    letterSpacing: 2,
+    backgroundColor: "rgba(0,0,0,0.15)",
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 20,
   },
 
-  // --- STATS CARDS (Untouched) ---
+  // --- BODY ---
+  body: {
+    paddingHorizontal: 40,
+  },
+
+  // --- STATS ---
   statsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 30,
+    marginTop: 10,
   },
   statCard: {
     width: "31%",
@@ -99,10 +119,10 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 22,
     fontWeight: "bold",
-    color: theme.dark,
+    color: "#0F172A",
   },
 
-  // --- GRAPH (Untouched) ---
+  // --- GRAPH ---
   graphContainer: {
     backgroundColor: theme.white,
     borderRadius: 16,
@@ -110,20 +130,20 @@ const styles = StyleSheet.create({
     borderColor: theme.border,
     padding: 20,
     marginBottom: 30,
-    height: 220,
+    height: 260,
   },
   graphHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 15,
+    marginBottom: 20,
   },
   graphTitle: {
     fontSize: 12,
     fontWeight: "bold",
-    color: theme.dark,
+    color: "#0F172A",
   },
 
-  // --- MODERN TABLE (Untouched) ---
+  // --- TABLE ---
   tableSection: {
     borderRadius: 12,
     borderWidth: 1,
@@ -154,7 +174,7 @@ const styles = StyleSheet.create({
   },
   td: {
     fontSize: 10,
-    color: theme.dark,
+    color: "#0F172A",
   },
   badge: {
     borderRadius: 12,
@@ -168,7 +188,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  // --- FOOTER (Untouched) ---
+  // --- FOOTER ---
   footer: {
     position: "absolute",
     bottom: 30,
@@ -182,15 +202,17 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 8,
-    color: theme.muted,
+    color: theme.secondary,
   },
 });
 
-// --- MATH HELPERS FOR SMOOTH CURVES (Bezier) ---
+// --- MATH HELPERS ---
 const svgPath = (points: any[], command: any) => {
   return points.reduce(
     (acc, point, i, a) =>
-      i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${command(point, i, a)}`,
+      i === 0
+        ? `M ${point[0]},${point[1]}`
+        : `${acc} ${command(point, i, a)}`,
     ""
   );
 };
@@ -234,217 +256,266 @@ interface ReportProps {
 export const ReportDocument = ({
   stats,
   graphData,
-  userName = "Matilda Awino", // Default Name
-  appName = "Brillia", // Default App Name
+  userName = "Matilda Awino",
+  appName = "Brillia",
 }: ReportProps) => {
-  // Logic: Graph shows last 15, Table shows all.
+  // 1. LIMIT TO LAST 15 TESTS
   const chartData = graphData.slice(-15);
 
-  // Graph Dimensions
-  const width = 450;
+  // 2. DIMENSIONS
+  const width = 420;
   const height = 150;
-  const paddingX = 10;
-  const paddingY = 10;
+  const paddingLeft = 30;
+  const paddingBottom = 20;
+
   const maxScore = 100;
 
-  // Generate Points [x, y]
   const points = chartData.map((d, i) => {
-    const x = (i / Math.max(chartData.length - 1, 1)) * width + paddingX;
-    const y = height - (d.score / maxScore) * height + paddingY;
+    const div = chartData.length > 1 ? chartData.length - 1 : 1;
+    const x = (i / div) * width + paddingLeft;
+    const y = height - (d.score / maxScore) * height;
     return [x, y];
   });
 
-  // Generate Smooth Path
   const pathD = svgPath(points, bezierCommand);
-  const areaD = `${pathD} L ${width + paddingX},${
-    height + paddingY
-  } L ${paddingX},${height + paddingY} Z`;
+  const areaD = `${pathD} L ${width + paddingLeft},${height} L ${paddingLeft},${height} Z`;
 
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {/* --- NEW HEADER STRUCTURE --- */}
-        <View style={styles.header}>
-          {/* Main Focus: Name */}
-          <Text style={styles.headerUser}>{userName}</Text>
-
-          {/* Sub Detail: App Name */}
-          <Text style={styles.headerSubDetail}>
-            REPORT GENERATED BY {appName}
-          </Text>
-
-          {/* Date */}
-          <Text style={styles.headerDate}>
-            {new Date().toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </Text>
-        </View>
-
-        {/* STATS CARDS */}
-        <View style={styles.statsContainer}>
-          <View
-            style={[
-              styles.statCard,
-              { borderLeftWidth: 4, borderLeftColor: theme.primary },
-            ]}
+        {/* --- HEADER --- */}
+        <View style={styles.headerContainer}>
+          <Svg
+            height="190"
+            width="600"
+            style={{ position: "absolute", top: 0, left: 0 }}
           >
-            <Text style={styles.statLabel}>Tests Taken</Text>
-            <Text style={styles.statValue}>{stats.testsDone}</Text>
-          </View>
-          <View
-            style={[
-              styles.statCard,
-              { borderLeftWidth: 4, borderLeftColor: theme.warning },
-            ]}
-          >
-            <Text style={styles.statLabel}>Average Score</Text>
-            <Text style={styles.statValue}>{stats.averageScore}%</Text>
-          </View>
-          <View
-            style={[
-              styles.statCard,
-              { borderLeftWidth: 4, borderLeftColor: theme.success },
-            ]}
-          >
-            <Text style={styles.statLabel}>Rating</Text>
-            <Text style={{ ...styles.statValue, color: theme.success }}>
-              {stats.averageScore >= 80
-                ? "Expert"
-                : stats.averageScore >= 60
-                ? "Pro"
-                : "Rookie"}
-            </Text>
+            <Defs>
+              <LinearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="1">
+                <Stop offset="0%" stopColor="#6366f1" />
+                <Stop offset="100%" stopColor="#a855f7" />
+              </LinearGradient>
+            </Defs>
+            <Path
+              d="M0,0 L600,0 L600,140 Q300,210 0,140 Z"
+              fill="url(#headerGrad)"
+            />
+          </Svg>
+
+          <View style={styles.headerContent}>
+            <View style={styles.avatarContainer}>
+              <Image src="/images/logo.png" style={styles.avatarImage} />
+            </View>
+
+            <Text style={styles.headerName}>{userName}</Text>
+
+            <View style={styles.headerAppTag}>
+              <Text>{appName} Performance Report</Text>
+            </View>
           </View>
         </View>
 
-        {/* GRAPH */}
-        <View style={styles.graphContainer} wrap={false}>
-          <View style={styles.graphHeader}>
-            <Text style={styles.graphTitle}>Performance Curve</Text>
-            <Text style={{ fontSize: 9, color: theme.muted }}>
-              Last 15 Tests
-            </Text>
-          </View>
-
-          {chartData.length > 1 ? (
-            <Svg height={height + 40} width={width + 20}>
-              <Defs>
-                <LinearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                  <Stop
-                    offset="0%"
-                    stopColor={theme.primary}
-                    stopOpacity={0.2}
-                  />
-                  <Stop
-                    offset="100%"
-                    stopColor={theme.primary}
-                    stopOpacity={0}
-                  />
-                </LinearGradient>
-              </Defs>
-
-              {/* Grid Lines */}
-              {[0, 0.25, 0.5, 0.75, 1].map((t, i) => (
-                <Line
-                  key={i}
-                  x1={paddingX}
-                  y1={height * t + paddingY}
-                  x2={width + paddingX}
-                  y2={height * t + paddingY}
-                  stroke={theme.border}
-                  strokeDasharray="4 4"
-                  strokeWidth={1}
-                />
-              ))}
-
-              {/* Area & Line */}
-              <Path d={areaD} fill="url(#gradient)" />
-              <Path
-                d={pathD}
-                stroke={theme.primary}
-                strokeWidth={2}
-                fill="none"
-              />
-
-              {/* Dots */}
-              {points.map(([x, y], i) => (
-                <Circle
-                  key={i}
-                  cx={x}
-                  cy={y}
-                  r={3}
-                  fill={theme.white}
-                  stroke={theme.primary}
-                  strokeWidth={2}
-                />
-              ))}
-            </Svg>
-          ) : (
+        {/* --- BODY --- */}
+        <View style={styles.body}>
+          {/* STATS */}
+          <View style={styles.statsContainer}>
             <View
-              style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              style={[
+                styles.statCard,
+                { borderLeftWidth: 4, borderLeftColor: theme.primary },
+              ]}
             >
-              <Text style={{ fontSize: 10, color: theme.muted }}>
-                Take more tests to see your curve.
+              <Text style={styles.statLabel}>Tests Taken</Text>
+              <Text style={styles.statValue}>{stats.testsDone}</Text>
+            </View>
+            <View
+              style={[
+                styles.statCard,
+                { borderLeftWidth: 4, borderLeftColor: theme.warning },
+              ]}
+            >
+              <Text style={styles.statLabel}>Average Score</Text>
+              <Text style={styles.statValue}>{stats.averageScore}%</Text>
+            </View>
+            <View
+              style={[
+                styles.statCard,
+                { borderLeftWidth: 4, borderLeftColor: theme.success },
+              ]}
+            >
+              <Text style={styles.statLabel}>Rating</Text>
+              <Text style={{ ...styles.statValue, color: theme.success }}>
+                {stats.averageScore >= 80
+                  ? "Expert"
+                  : stats.averageScore >= 60
+                  ? "Pro"
+                  : "Rookie"}
               </Text>
             </View>
-          )}
-        </View>
-
-        {/* TABLE */}
-        <Text style={{ ...styles.graphTitle, marginBottom: 10 }}>
-          Detailed History
-        </Text>
-        <View style={styles.tableSection}>
-          <View style={styles.tableHeader}>
-            <Text style={[styles.th, { width: "25%" }]}>Date</Text>
-            <Text style={[styles.th, { width: "50%" }]}>Test Name</Text>
-            <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>
-              Score
-            </Text>
           </View>
 
-          {graphData.map((row, i) => {
-            const isPass = row.score >= 70;
-            const badgeBg = isPass ? theme.successBg : theme.warningBg;
-            const badgeColor = isPass ? theme.success : theme.warning;
+          {/* GRAPH */}
+          <View style={styles.graphContainer} wrap={false}>
+            <View style={styles.graphHeader}>
+              <Text style={styles.graphTitle}>Recent Progress</Text>
+              <Text style={{ fontSize: 9, color: theme.secondary }}>
+                Last 15 Tests
+              </Text>
+            </View>
 
-            return (
-              <View
-                key={i}
-                style={[
-                  styles.tableRow,
-                  i % 2 === 0
-                    ? { backgroundColor: theme.white }
-                    : { backgroundColor: theme.bg },
-                ]}
-              >
+            {chartData.length > 1 ? (
+              <Svg height={height + paddingBottom + 10} width={width + 50}>
+                <Defs>
+                  <LinearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <Stop
+                      offset="0%"
+                      stopColor={theme.primary}
+                      stopOpacity={0.2}
+                    />
+                    <Stop
+                      offset="100%"
+                      stopColor={theme.primary}
+                      stopOpacity={0}
+                    />
+                  </LinearGradient>
+                </Defs>
+
+                {/* --- Y-AXIS LABELS (FIXED) --- */}
+                {/* 100% */}
                 <Text
-                  style={[styles.td, { width: "25%", color: theme.secondary }]}
+                  x={0}
+                  y={10}
+                  style={{ fill: theme.secondary, fontSize: 9 }}
                 >
-                  {row.fullDate}
+                  100
                 </Text>
-                <Text style={[styles.td, { width: "50%", fontWeight: "bold" }]}>
-                  {row.name}
+                {/* 50% */}
+                <Text
+                  x={5}
+                  y={height / 2}
+                  style={{ fill: theme.secondary, fontSize: 9 }}
+                >
+                  50
+                </Text>
+                {/* 0% */}
+                <Text
+                  x={10}
+                  y={height}
+                  style={{ fill: theme.secondary, fontSize: 9 }}
+                >
+                  0
                 </Text>
 
-                {/* Score Pill */}
-                <View style={{ width: "25%", alignItems: "flex-end" }}>
-                  <View style={[styles.badge, { backgroundColor: badgeBg }]}>
-                    <Text style={[styles.badgeText, { color: badgeColor }]}>
-                      {row.score}% {isPass ? "PASS" : "LOW"}
+                {/* --- GRID LINES --- */}
+                {[0, 0.5, 1].map((t, i) => (
+                  <Line
+                    key={i}
+                    x1={paddingLeft}
+                    y1={height * t}
+                    x2={width + paddingLeft}
+                    y2={height * t}
+                    stroke={theme.border}
+                    strokeDasharray="4 4"
+                    strokeWidth={1}
+                  />
+                ))}
+
+                {/* --- DATA PATHS --- */}
+                <Path d={areaD} fill="url(#chartGrad)" />
+                <Path
+                  d={pathD}
+                  stroke={theme.primary}
+                  strokeWidth={2}
+                  fill="none"
+                />
+
+                {/* --- X-AXIS LABELS (FIXED) --- */}
+                {points.map(([x, y], i) => (
+                  <React.Fragment key={i}>
+                    <Circle
+                      cx={x}
+                      cy={y}
+                      r={3}
+                      fill={theme.white}
+                      stroke={theme.primary}
+                      strokeWidth={2}
+                    />
+                    <Text
+                      x={x}
+                      y={height + 15}
+                      style={{
+                        fontSize: 8,
+                        fill: theme.secondary,
+                        textAnchor: "middle"
+                      }}
+                    >
+                      {`T${i + 1}`}
                     </Text>
+                  </React.Fragment>
+                ))}
+              </Svg>
+            ) : (
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ fontSize: 10, color: theme.secondary }}>
+                  Take more tests to see your curve.
+                </Text>
+              </View>
+            )}
+          </View>
+
+          {/* TABLE */}
+          <Text style={{ ...styles.graphTitle, marginBottom: 10 }}>
+            Detailed History
+          </Text>
+          <View style={styles.tableSection}>
+            <View style={styles.tableHeader}>
+              <Text style={[styles.th, { width: "25%" }]}>Date</Text>
+              <Text style={[styles.th, { width: "50%" }]}>Test Name</Text>
+              <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>
+                Score
+              </Text>
+            </View>
+
+            {/* Render ALL data in table */}
+            {graphData.map((row, i) => {
+              const isPass = row.score >= 70;
+              const badgeBg = isPass ? theme.successBg : theme.warningBg;
+              const badgeColor = isPass ? theme.success : theme.warning;
+
+              return (
+                <View
+                  key={i}
+                  style={[
+                    styles.tableRow,
+                    i % 2 === 0
+                      ? { backgroundColor: theme.white }
+                      : { backgroundColor: theme.bg },
+                  ]}
+                >
+                  <Text style={[styles.td, { width: "25%", color: theme.secondary }]}>
+                    {row.fullDate}
+                  </Text>
+                  <Text style={[styles.td, { width: "50%", fontWeight: "bold" }]}>
+                    {row.name}
+                  </Text>
+
+                  <View style={{ width: "25%", alignItems: "flex-end" }}>
+                    <View style={[styles.badge, { backgroundColor: badgeBg }]}>
+                      <Text style={[styles.badgeText, { color: badgeColor }]}>
+                        {row.score}% {isPass ? "PASS" : "LOW"}
+                      </Text>
+                    </View>
                   </View>
                 </View>
-              </View>
-            );
-          })}
+              );
+            })}
+          </View>
         </View>
 
         {/* FOOTER */}
@@ -461,3 +532,6 @@ export const ReportDocument = ({
     </Document>
   );
 };
+
+// Needed for Fragment usage
+import React from 'react';
