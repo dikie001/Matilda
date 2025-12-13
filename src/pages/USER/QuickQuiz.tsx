@@ -645,7 +645,8 @@ const QuizApp: React.FC = () => {
 
     if (!currentQ) {
       return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
+        // Updated Background: Dull pink/slate gradient
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-pink-50 to-rose-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
           <Navbar currentPage="Quick Quiz" />
           <div className="text-center pt-16">
             <p className="text-gray-900 dark:text-white text-xl font-semibold mb-4">
@@ -656,7 +657,8 @@ const QuizApp: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors font-semibold"
+              // Updated Button Colors
+              className="flex items-center text-rose-600 dark:text-rose-400 hover:text-rose-700 dark:hover:text-rose-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -667,17 +669,19 @@ const QuizApp: React.FC = () => {
     }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent p-4 transition-colors duration-300">
+      // Updated Background: Dull pink/slate gradient
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-pink-50 to-rose-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent p-4 transition-colors duration-300">
         <Navbar currentPage="Quick Quiz" />
-        <div className="max-w-4xl mx-auto pt-16 ">
+        <div className="max-w-4xl mx-auto pt-16 md:pt-12 ">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6 mt-1">
+          <div className="flex items-center justify-between mb-6 md:mb-2 mt-1">
             <button
               onClick={() => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors font-semibold"
+              // Updated Back Button
+              className="flex items-center text-rose-600 dark:text-rose-400 hover:text-rose-700 dark:hover:text-rose-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -690,13 +694,15 @@ const QuizApp: React.FC = () => {
                 </h2>
                 <img src={logo} className="h-10" alt="logo" />
               </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+              {/* Subject Text: Rose instead of Indigo */}
+              <p className="text-rose-600 dark:text-rose-400 font-medium">
                 {currentQ.subject}
               </p>
             </div>
 
             <div className="text-right">
-              <p className="text-indigo-500 dark:text-indigo-400 font-semibold">
+              {/* Counter Text: Pink/Rose */}
+              <p className="text-pink-600 dark:text-pink-400 font-semibold">
                 Question {state.currentQuestion + 1}/{currentQuestions.length}
               </p>
               {state.startTime && (
@@ -713,7 +719,8 @@ const QuizApp: React.FC = () => {
           {/* Progress Bar */}
           <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-8 overflow-hidden">
             <div
-              className="bg-indigo-500 h-full transition-all duration-500 ease-out"
+              // Progress Fill: Rose 500
+              className="bg-rose-500 h-full transition-all duration-500 ease-out"
               style={{
                 width: `${
                   ((state.currentQuestion + 1) / currentQuestions.length) * 100
@@ -723,7 +730,8 @@ const QuizApp: React.FC = () => {
           </div>
 
           {/* Question Card */}
-          <div className="bg-gray-100 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl px-6 py-6 border border-indigo-300 dark:border-indigo-700 shadow-lg shadow-indigo-200/20 dark:shadow-indigo-900/40 transition-all duration-300">
+          {/* Updated Border/Shadow to soft pinks */}
+          <div className="bg-gray-50/80 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl px-6 py-6 border border-pink-200 dark:border-pink-900/30 shadow-lg shadow-pink-200/20 dark:shadow-none transition-all duration-300">
             {/* Question */}
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white leading-relaxed mb-6">
               {currentQ.question}
@@ -743,8 +751,8 @@ const QuizApp: React.FC = () => {
                 if (!state.showFeedback) {
                   base +=
                     state.selectedAnswer === key
-                      ? " bg-indigo-500 border-indigo-500 text-white shadow-md"
-                      : " bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-indigo-50 dark:hover:bg-indigo-900 hover:border-indigo-400";
+                      ? " bg-rose-500 border-rose-500 text-white shadow-md" // Selected: Rose
+                      : " bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:border-pink-300"; // Hover: Soft Pink
                 } else {
                   if (key === currentQ.correctAnswer) {
                     base +=
@@ -757,7 +765,7 @@ const QuizApp: React.FC = () => {
                       " bg-red-600/20 border-red-500 text-red-800 dark:text-red-100 shadow-md";
                   } else {
                     base +=
-                      " bg-gray-100 dark:bg-gray-700/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 opacity-70";
+                      " bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 opacity-70";
                   }
                 }
 
@@ -768,7 +776,7 @@ const QuizApp: React.FC = () => {
                     className={base}
                     disabled={state.showFeedback}
                   >
-                    <span className="min-w-8 min-h-8 rounded-full bg-gray-300/20 dark:bg-gray-600/20 flex items-center justify-center mr-3 font-bold">
+                    <span className="min-w-8 min-h-8 rounded-full bg-gray-200/50 dark:bg-gray-600/20 flex items-center justify-center mr-3 font-bold">
                       {key}
                     </span>
                     <span className="flex-1">{value}</span>
@@ -789,7 +797,8 @@ const QuizApp: React.FC = () => {
             {state.showFeedback && (
               <button
                 onClick={handleNext}
-                className="w-full mt-4 bg-gradient-to-r from-indigo-600 to-indigo-700 dark:from-indigo-700 dark:to-indigo-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-indigo-200/20 dark:shadow-indigo-900/40 flex items-center justify-center gap-2"
+                // Gradient: Rose to Pink
+                className="w-full mt-4 bg-gradient-to-r from-rose-500 to-pink-600 dark:from-rose-700 dark:to-pink-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-pink-200/40 dark:shadow-none flex items-center justify-center gap-2"
               >
                 {state.currentQuestion < currentQuestions.length - 1
                   ? "Next Question"
@@ -799,10 +808,11 @@ const QuizApp: React.FC = () => {
             )}
           </div>
         </div>
-        {/* Feedback */}
+        {/* Feedback Modal */}
         {state.showFeedback && (
           <div className="fixed top-6 left-4  right-4 md:left-1/2 md:-translate-x-1/2 md:max-w-3xl z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
-            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl p-5 rounded-2xl border border-indigo-200 dark:border-indigo-700 shadow-2xl shadow-indigo-500/20 dark:shadow-black/50 ring-1 ring-black/5">
+            {/* Modal Border: Pink */}
+            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl p-5 rounded-2xl border border-pink-200 dark:border-pink-900 shadow-2xl shadow-pink-500/10 dark:shadow-black/50 ring-1 ring-black/5">
               <div className="flex items-start gap-4">
                 {state.selectedAnswer === currentQ.correctAnswer ? (
                   <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-full flex-shrink-0">
@@ -849,7 +859,7 @@ const QuizApp: React.FC = () => {
   }
 
   // Single Test Results Screen: Displays the outcome of the just completed test
-  if (state.gameState === "results") {
+if (state.gameState === "results") {
     const latestResult = state.testResults[state.testResults.length - 1];
 
     // Logic for styling based on score
@@ -868,11 +878,13 @@ const QuizApp: React.FC = () => {
     const accentColor = themeColor.split(" ")[0]; // Extract text color for icons
 
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      // 1. Theme Background: Soft Slate to Pink/Rose Gradient
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-pink-50 to-rose-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Navbar currentPage="Test Results" />
 
         <div className="flex-1 flex items-center  mt-16 justify-center p-4 sm:p-6 animate-fade-in-up">
-          <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden">
+          {/* Card Container: White with Glass effect */}
+          <div className="w-full max-w-md bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-3xl shadow-xl border border-white/50 dark:border-gray-800 overflow-hidden">
             {/* Header Section */}
             <div className="pt-4 pb-6 px-8 text-center">
               <div
@@ -961,7 +973,8 @@ const QuizApp: React.FC = () => {
                     playSend();
                     startTest(state.currentTest);
                   }}
-                  className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold h-12 rounded-xl transition-all transform active:scale-[0.98] shadow-md shadow-indigo-200 dark:shadow-none"
+                  // 2. Updated Primary Button: Rose/Pink Gradient
+                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-semibold h-12 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-pink-200/50 dark:shadow-none"
                 >
                   Start Next Test <Play className="w-4 h-4" />
                 </button>
@@ -977,7 +990,8 @@ const QuizApp: React.FC = () => {
                     playSend();
                     setGameState("home");
                   }}
-                  className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium h-10 rounded-xl transition-colors"
+                  // 3. Updated Secondary Button: Pink Hover
+                  className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-rose-50 dark:hover:bg-gray-700 hover:border-rose-200 font-medium h-10 rounded-xl transition-all"
                 >
                   <ChevronLeft className="w-4 h-4" /> Home
                 </button>
@@ -988,7 +1002,8 @@ const QuizApp: React.FC = () => {
                       playSend();
                       navigate("/results");
                     }}
-                    className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium h-10 rounded-xl transition-colors"
+                    // 3. Updated Secondary Button: Pink Hover
+                    className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-rose-50 dark:hover:bg-gray-700 hover:border-rose-200 font-medium h-10 rounded-xl transition-all"
                   >
                     <Trophy className="w-4 h-4" /> History
                   </button>
