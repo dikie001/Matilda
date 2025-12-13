@@ -7,6 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
+  History,
   Play,
   RotateCcw,
   Sparkles,
@@ -26,6 +27,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useSound from "../../hooks/useSound";
 import logo from "/images/logo.png";
+import HistoryPage from "./HistoryPage";
 
 type Options = {
   A: string;
@@ -62,7 +64,7 @@ interface QuizProgress {
   isActive: boolean;
 }
 
-type GameState = "home" | "quiz" | "results";
+type GameState = "home" | "quiz" | "results" | "history";
 
 interface QuizAppState {
   currentTest: number;
@@ -607,27 +609,41 @@ const QuizApp: React.FC = () => {
                 </div>
               </button>
             )}
-
-            {/* Secondary Actions - Enhanced with Scale and Icon Animation */}
+{/* Secondary Actions */}
             {state.testResults.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                
+                {/* 1. Analytics Button (Existing) */}
                 <button
                   onClick={() => {
                     playSend();
                     navigate("/results");
                   }}
-                  className="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
+                  className="group flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-semibold text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
                 >
-                  <Trophy className="w-5 h-5 text-amber-500 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
-                  View Analytics
+                  <Trophy className="w-4 h-4 text-amber-500 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
+                  Analytics
                 </button>
 
+                {/* 2. HISTORY BUTTON (NEW) */}
+                <button
+                  onClick={() => {
+                    playSend();
+                    setGameState("history"); // <--- This navigates to your new page
+                  }}
+                  className="group flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-semibold text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-rose-50 dark:hover:bg-gray-700 hover:border-rose-200 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
+                >
+                  <History className="w-4 h-4 text-pink-500 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                  View History
+                </button>
+
+                {/* 3. Reset Button (Existing) */}
                 <button
                   onClick={() => setOpenResetModal(true)}
-                  className="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold text-rose-600 dark:text-rose-400 bg-transparent border border-rose-200 dark:border-rose-900/50 hover:bg-rose-50 dark:hover:bg-rose-900/20 hover:border-rose-300 dark:hover:border-rose-800 transition-all duration-200"
+                  className="group flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-semibold text-sm text-rose-600 dark:text-rose-400 bg-transparent border border-rose-200 dark:border-rose-900/50 hover:bg-rose-50 dark:hover:bg-rose-900/20 hover:border-rose-300 dark:hover:border-rose-800 transition-all duration-200"
                 >
-                  <RotateCcw className="w-5 h-5 transition-transform duration-500 group-hover:-rotate-180" />
-                  Reset Progress
+                  <RotateCcw className="w-4 h-4 transition-transform duration-500 group-hover:-rotate-180" />
+                  Reset
                 </button>
               </div>
             )}
@@ -1016,7 +1032,17 @@ if (state.gameState === "results") {
       </div>
     );
   }
+  
+  // Show the histor page
 
+if (state.gameState === "history") {
+  return (
+    <HistoryPage 
+      testResults={state.testResults} 
+      onBack={() => setGameState("home")} 
+    />
+  );
+}
   // Fallback return
   return null;
 };
