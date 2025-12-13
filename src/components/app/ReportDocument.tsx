@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import React from "react";
 import {
   Document,
   Page,
@@ -15,18 +16,39 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-// --- THEME ---
+// --- THEME (FIXED) ---
 const theme = {
   primary: "#4F46E5", // Indigo 600
   secondary: "#64748B",
-  success: "#10B981",
-  successBg: "#ECFDF5",
-  warning: "#F59E0B",
-  warningBg: "#FFFBEB",
+  success: "#10B981", // Green
+  successBg: "#ECFDF5", // <--- ADDED BACK
+  warning: "#F59E0B", // Amber/Gold
+  warningBg: "#FFFBEB", // <--- ADDED BACK
+  danger: "#EF4444", // Red
+  blue: "#3B82F6", // Blue
   white: "#FFFFFF",
   bg: "#F8FAFC",
   border: "#E2E8F0",
   text: "#334155",
+};
+
+// --- CBC GRADE LOGIC ---
+const getCBCGrade = (score: number) => {
+  if (score >= 80)
+    return {
+      grade: "EE",
+      label: "Exceeding Expectations",
+      color: theme.warning,
+    }; // Gold
+  if (score >= 60)
+    return { grade: "ME", label: "Meeting Expectations", color: theme.success }; // Green
+  if (score >= 40)
+    return {
+      grade: "AE",
+      label: "Approaching Expectations",
+      color: theme.blue,
+    }; // Blue
+  return { grade: "BE", label: "Below Expectations", color: theme.danger }; // Red
 };
 
 const styles = StyleSheet.create({
@@ -40,52 +62,82 @@ const styles = StyleSheet.create({
 
   // --- HEADER ---
   headerContainer: {
-    height: 190,
-    marginBottom: 20,
+    height: 130,
+    marginBottom: 15,
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
   },
   headerContent: {
+    flexDirection: "row",
     alignItems: "center",
-    marginTop: 20,
+    justifyContent: "space-between",
+    width: "100%",
+    paddingHorizontal: 40,
+    marginTop: 10,
+  },
+  userInfoSection: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 15,
   },
   avatarContainer: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    marginBottom: 12,
-    borderWidth: 3,
-    borderColor: "rgba(255,255,255,0.4)",
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: "rgba(255,255,255,0.8)",
     overflow: "hidden",
     backgroundColor: theme.white,
-    position: "relative",
-    zIndex: 10,
-    justifyContent: "center",
-    alignItems: "center",
   },
   avatarImage: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
   },
+  userDetails: {
+    justifyContent: "center",
+  },
   headerName: {
     fontFamily: "Times-Roman",
-    fontSize: 34,
+    fontSize: 24,
     color: theme.white,
-    marginBottom: 4,
+    marginBottom: 2,
     textTransform: "capitalize",
     fontWeight: "bold",
   },
   headerAppTag: {
-    fontSize: 10,
+    fontSize: 9,
     color: "rgba(255,255,255,0.9)",
     textTransform: "uppercase",
-    letterSpacing: 2,
-    backgroundColor: "rgba(0,0,0,0.15)",
-    paddingVertical: 5,
-    paddingHorizontal: 15,
-    borderRadius: 20,
+    letterSpacing: 1,
+  },
+
+  // Right: The "Stamp"
+  stampContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: theme.white,
+    transform: "rotate(-5deg)",
+  },
+  stampGrade: {
+    fontSize: 28,
+    fontFamily: "Helvetica-Bold",
+    fontWeight: "bold",
+    color: theme.white,
+    textAlign: "center",
+  },
+  stampLabel: {
+    fontSize: 7,
+    color: theme.white,
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: -2,
   },
 
   // --- BODY ---
@@ -97,14 +149,13 @@ const styles = StyleSheet.create({
   statsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 30,
-    marginTop: 10,
+    marginBottom: 20,
   },
   statCard: {
-    width: "31%",
+    width: "48%",
     backgroundColor: theme.bg,
-    borderRadius: 12,
-    padding: 16,
+    borderRadius: 8,
+    padding: 12,
     borderWidth: 1,
     borderColor: theme.border,
   },
@@ -113,11 +164,10 @@ const styles = StyleSheet.create({
     color: theme.secondary,
     textTransform: "uppercase",
     fontWeight: "bold",
-    letterSpacing: 0.5,
-    marginBottom: 6,
+    marginBottom: 4,
   },
   statValue: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: "bold",
     color: "#0F172A",
   },
@@ -125,27 +175,28 @@ const styles = StyleSheet.create({
   // --- GRAPH ---
   graphContainer: {
     backgroundColor: theme.white,
-    borderRadius: 16,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: theme.border,
-    padding: 20,
-    marginBottom: 30,
-    height: 260,
+    padding: 10,
+    marginBottom: 20,
+    height: 200,
   },
   graphHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 20,
+    marginBottom: 10,
+    paddingHorizontal: 5,
   },
   graphTitle: {
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: "bold",
     color: "#0F172A",
   },
 
   // --- TABLE ---
   tableSection: {
-    borderRadius: 12,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: theme.border,
     overflow: "hidden",
@@ -155,43 +206,43 @@ const styles = StyleSheet.create({
     backgroundColor: theme.bg,
     borderBottomWidth: 1,
     borderBottomColor: theme.border,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
   },
   th: {
-    fontSize: 9,
+    fontSize: 8,
     fontWeight: "bold",
     color: theme.secondary,
     textTransform: "uppercase",
   },
   tableRow: {
     flexDirection: "row",
-    paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
     borderBottomWidth: 1,
     borderBottomColor: theme.border,
     alignItems: "center",
   },
   td: {
-    fontSize: 10,
+    fontSize: 9,
     color: "#0F172A",
   },
   badge: {
-    borderRadius: 12,
+    borderRadius: 8,
     paddingVertical: 2,
-    paddingHorizontal: 8,
+    paddingHorizontal: 6,
     alignItems: "center",
     justifyContent: "center",
   },
   badgeText: {
-    fontSize: 8,
+    fontSize: 7,
     fontWeight: "bold",
   },
 
   // --- FOOTER ---
   footer: {
     position: "absolute",
-    bottom: 30,
+    bottom: 20,
     left: 40,
     right: 40,
     flexDirection: "row",
@@ -257,28 +308,36 @@ export const ReportDocument = ({
   userName = "Matilda Awino",
   appName = "Brillia",
 }: ReportProps) => {
-  // 1. LIMIT TO LAST 15 TESTS
+  // 1. DATA
   const chartData = graphData.slice(-15);
+  // 2. CBC GRADE
+  const cbcInfo = getCBCGrade(stats.averageScore);
 
-  // 2. DIMENSIONS
-  const width = 420;
-  const height = 150;
-  const paddingLeft = 30;
+  // 3. GRAPH DIMS
+  const containerWidth = 460;
+  const svgHeight = 160;
+
+  const paddingLeft = 25;
+  const paddingRight = 10;
   const paddingBottom = 20;
+  const paddingTop = 15;
+
+  const graphWidth = containerWidth - paddingLeft - paddingRight;
+  const graphHeight = svgHeight - paddingBottom - paddingTop;
 
   const maxScore = 100;
 
   const points = chartData.map((d, i) => {
     const div = chartData.length > 1 ? chartData.length - 1 : 1;
-    const x = (i / div) * width + paddingLeft;
-    const y = height - (d.score / maxScore) * height;
+    const x = (i / div) * graphWidth + paddingLeft;
+    const y = paddingTop + graphHeight - (d.score / maxScore) * graphHeight;
     return [x, y];
   });
 
   const pathD = svgPath(points, bezierCommand);
-  const areaD = `${pathD} L ${
-    width + paddingLeft
-  },${height} L ${paddingLeft},${height} Z`;
+  const areaD = `${pathD} L ${graphWidth + paddingLeft},${
+    paddingTop + graphHeight
+  } L ${paddingLeft},${paddingTop + graphHeight} Z`;
 
   return (
     <Document>
@@ -286,7 +345,7 @@ export const ReportDocument = ({
         {/* --- HEADER --- */}
         <View style={styles.headerContainer}>
           <Svg
-            height="190"
+            height="130"
             width="600"
             style={{ position: "absolute", top: 0, left: 0 }}
           >
@@ -297,20 +356,32 @@ export const ReportDocument = ({
               </LinearGradient>
             </Defs>
             <Path
-              d="M0,0 L600,0 L600,140 Q300,210 0,140 Z"
+              d="M0,0 L600,0 L600,90 Q300,160 0,90 Z"
               fill="url(#headerGrad)"
             />
           </Svg>
 
           <View style={styles.headerContent}>
-            <View style={styles.avatarContainer}>
-              <Image src="/images/logo.png" style={styles.avatarImage} />
+            <View style={styles.userInfoSection}>
+              <View style={styles.avatarContainer}>
+                <Image src="/images/logo.png" style={styles.avatarImage} />
+              </View>
+              <View style={styles.userDetails}>
+                <Text style={styles.headerName}>{userName}</Text>
+                <Text style={styles.headerAppTag}>
+                  {appName} Performance Report
+                </Text>
+              </View>
             </View>
 
-            <Text style={styles.headerName}>{userName}</Text>
-
-            <View style={styles.headerAppTag}>
-              <Text>{appName} Performance Report</Text>
+            <View
+              style={[
+                styles.stampContainer,
+                { backgroundColor: cbcInfo.color },
+              ]}
+            >
+              <Text style={styles.stampGrade}>{cbcInfo.grade}</Text>
+              <Text style={styles.stampLabel}>{cbcInfo.label}</Text>
             </View>
           </View>
         </View>
@@ -322,7 +393,7 @@ export const ReportDocument = ({
             <View
               style={[
                 styles.statCard,
-                { borderLeftWidth: 4, borderLeftColor: theme.primary },
+                { borderLeftWidth: 3, borderLeftColor: theme.primary },
               ]}
             >
               <Text style={styles.statLabel}>Tests Taken</Text>
@@ -331,26 +402,11 @@ export const ReportDocument = ({
             <View
               style={[
                 styles.statCard,
-                { borderLeftWidth: 4, borderLeftColor: theme.warning },
+                { borderLeftWidth: 3, borderLeftColor: theme.warning },
               ]}
             >
               <Text style={styles.statLabel}>Average Score</Text>
               <Text style={styles.statValue}>{stats.averageScore}%</Text>
-            </View>
-            <View
-              style={[
-                styles.statCard,
-                { borderLeftWidth: 4, borderLeftColor: theme.success },
-              ]}
-            >
-              <Text style={styles.statLabel}>Rating</Text>
-              <Text style={{ ...styles.statValue, color: theme.success }}>
-                {stats.averageScore >= 80
-                  ? "Expert"
-                  : stats.averageScore >= 60
-                  ? "Pro"
-                  : "Rookie"}
-              </Text>
             </View>
           </View>
 
@@ -358,13 +414,11 @@ export const ReportDocument = ({
           <View style={styles.graphContainer} wrap={false}>
             <View style={styles.graphHeader}>
               <Text style={styles.graphTitle}>Recent Progress</Text>
-              <Text style={{ fontSize: 9, color: theme.secondary }}>
-                Last 15 Tests
-              </Text>
+              ort
             </View>
 
             {chartData.length > 1 ? (
-              <Svg height={height + paddingBottom + 10} width={width + 50}>
+              <Svg height={svgHeight} width="100%">
                 <Defs>
                   <LinearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
                     <Stop
@@ -380,47 +434,44 @@ export const ReportDocument = ({
                   </LinearGradient>
                 </Defs>
 
-                {/* --- Y-AXIS LABELS (FIXED) --- */}
-                {/* 100% */}
+                {/* Y-AXIS LABELS */}
                 <Text
                   x={0}
-                  y={10}
-                  style={{ fill: theme.secondary, fontSize: 9 }}
+                  y={paddingTop + 3}
+                  style={{ fill: theme.secondary, fontSize: 8 }}
                 >
                   100
                 </Text>
-                {/* 50% */}
                 <Text
                   x={5}
-                  y={height / 2}
-                  style={{ fill: theme.secondary, fontSize: 9 }}
+                  y={paddingTop + graphHeight / 2}
+                  style={{ fill: theme.secondary, fontSize: 8 }}
                 >
                   50
                 </Text>
-                {/* 0% */}
                 <Text
                   x={10}
-                  y={height}
-                  style={{ fill: theme.secondary, fontSize: 9 }}
+                  y={paddingTop + graphHeight}
+                  style={{ fill: theme.secondary, fontSize: 8 }}
                 >
                   0
                 </Text>
 
-                {/* --- GRID LINES --- */}
+                {/* GRID LINES */}
                 {[0, 0.5, 1].map((t, i) => (
                   <Line
                     key={i}
                     x1={paddingLeft}
-                    y1={height * t}
-                    x2={width + paddingLeft}
-                    y2={height * t}
+                    y1={paddingTop + graphHeight * t}
+                    x2={graphWidth + paddingLeft}
+                    y2={paddingTop + graphHeight * t}
                     stroke={theme.border}
-                    strokeDasharray="4 4"
+                    strokeDasharray="3 3"
                     strokeWidth={1}
                   />
                 ))}
 
-                {/* --- DATA PATHS --- */}
+                {/* DATA */}
                 <Path d={areaD} fill="url(#chartGrad)" />
                 <Path
                   d={pathD}
@@ -429,22 +480,22 @@ export const ReportDocument = ({
                   fill="none"
                 />
 
-                {/* --- X-AXIS LABELS (FIXED) --- */}
+                {/* X-AXIS LABELS */}
                 {points.map(([x, y], i) => (
                   <React.Fragment key={i}>
                     <Circle
                       cx={x}
                       cy={y}
-                      r={3}
+                      r={2.5}
                       fill={theme.white}
                       stroke={theme.primary}
-                      strokeWidth={2}
+                      strokeWidth={1.5}
                     />
                     <Text
                       x={x}
-                      y={height + 15}
+                      y={svgHeight - 5}
                       style={{
-                        fontSize: 8,
+                        fontSize: 7,
                         fill: theme.secondary,
                         textAnchor: "middle",
                       }}
@@ -463,14 +514,21 @@ export const ReportDocument = ({
                 }}
               >
                 <Text style={{ fontSize: 10, color: theme.secondary }}>
-                  Take more tests to see your curve.
+                  Not enough data.
                 </Text>
               </View>
             )}
           </View>
 
           {/* TABLE */}
-          <Text style={{ ...styles.graphTitle, marginBottom: 10 }}>
+          <Text
+            style={{
+              fontSize: 10,
+              fontWeight: "bold",
+              color: "#0F172A",
+              marginBottom: 8,
+            }}
+          >
             Detailed History
           </Text>
           <View style={styles.tableSection}>
@@ -482,7 +540,6 @@ export const ReportDocument = ({
               </Text>
             </View>
 
-            {/* Render ALL data in table */}
             {graphData.map((row, i) => {
               const isPass = row.score >= 70;
               const badgeBg = isPass ? theme.successBg : theme.warningBg;
@@ -511,7 +568,6 @@ export const ReportDocument = ({
                   >
                     {row.name}
                   </Text>
-
                   <View style={{ width: "25%", alignItems: "flex-end" }}>
                     <View style={[styles.badge, { backgroundColor: badgeBg }]}>
                       <Text style={[styles.badgeText, { color: badgeColor }]}>
@@ -539,6 +595,3 @@ export const ReportDocument = ({
     </Document>
   );
 };
-
-// Needed for Fragment usage
-import React from "react";
