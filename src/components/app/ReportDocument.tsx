@@ -16,16 +16,16 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-// --- THEME (FIXED) ---
+// --- THEME ---
 const theme = {
   primary: "#4F46E5", // Indigo 600
   secondary: "#64748B",
-  success: "#10B981", // Green
-  successBg: "#ECFDF5", // <--- ADDED BACK
-  warning: "#F59E0B", // Amber/Gold
-  warningBg: "#FFFBEB", // <--- ADDED BACK
-  danger: "#EF4444", // Red
-  blue: "#3B82F6", // Blue
+  success: "#10B981",
+  successBg: "#ECFDF5",
+  warning: "#F59E0B",
+  warningBg: "#FFFBEB",
+  danger: "#EF4444",
+  blue: "#3B82F6",
   white: "#FFFFFF",
   bg: "#F8FAFC",
   border: "#E2E8F0",
@@ -39,16 +39,16 @@ const getCBCGrade = (score: number) => {
       grade: "EE",
       label: "Exceeding Expectations",
       color: theme.warning,
-    }; // Gold
+    };
   if (score >= 60)
-    return { grade: "ME", label: "Meeting Expectations", color: theme.success }; // Green
+    return { grade: "ME", label: "Meeting Expectations", color: theme.success };
   if (score >= 40)
     return {
       grade: "AE",
       label: "Approaching Expectations",
       color: theme.blue,
-    }; // Blue
-  return { grade: "BE", label: "Below Expectations", color: theme.danger }; // Red
+    };
+  return { grade: "BE", label: "Below Expectations", color: theme.danger };
 };
 
 const styles = StyleSheet.create({
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.white,
     fontFamily: "Helvetica",
     color: theme.text,
-    paddingBottom: 40,
+    paddingBottom: 60, // Increased bottom padding to prevent content overlapping footer
   },
 
   // --- HEADER ---
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
 
-  // Right: The "Stamp"
+  // Stamp
   stampContainer: {
     alignItems: "center",
     justifyContent: "center",
@@ -239,21 +239,37 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  // --- FOOTER ---
+  // --- NEW FOOTER STYLES ---
   footer: {
     position: "absolute",
-    bottom: 20,
-    left: 40,
-    right: 40,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 50,
+    backgroundColor: theme.bg, // Light gray background for footer area
     borderTopWidth: 1,
     borderTopColor: theme.border,
-    paddingTop: 10,
+  },
+  // The colored strip at the bottom
+  brandStrip: {
+    height: 4,
+    width: "100%",
+    backgroundColor: theme.primary, // Solid Indigo strip
+  },
+  footerContent: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 40,
   },
   footerText: {
     fontSize: 8,
     color: theme.secondary,
+  },
+  footerBold: {
+    color: theme.primary,
+    fontWeight: "bold",
   },
 });
 
@@ -316,15 +332,12 @@ export const ReportDocument = ({
   // 3. GRAPH DIMS
   const containerWidth = 460;
   const svgHeight = 160;
-
   const paddingLeft = 25;
   const paddingRight = 10;
   const paddingBottom = 20;
   const paddingTop = 15;
-
   const graphWidth = containerWidth - paddingLeft - paddingRight;
   const graphHeight = svgHeight - paddingBottom - paddingTop;
-
   const maxScore = 100;
 
   const points = chartData.map((d, i) => {
@@ -338,6 +351,13 @@ export const ReportDocument = ({
   const areaD = `${pathD} L ${graphWidth + paddingLeft},${
     paddingTop + graphHeight
   } L ${paddingLeft},${paddingTop + graphHeight} Z`;
+
+  // CURRENT DATE
+  const today = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
   return (
     <Document>
@@ -414,7 +434,9 @@ export const ReportDocument = ({
           <View style={styles.graphContainer} wrap={false}>
             <View style={styles.graphHeader}>
               <Text style={styles.graphTitle}>Recent Progress</Text>
-              ort
+              <Text style={{ fontSize: 8, color: theme.secondary }}>
+                Last 15 Tests
+              </Text>
             </View>
 
             {chartData.length > 1 ? (
@@ -434,7 +456,7 @@ export const ReportDocument = ({
                   </LinearGradient>
                 </Defs>
 
-                {/* Y-AXIS LABELS */}
+                {/* AXIS & LINES */}
                 <Text
                   x={0}
                   y={paddingTop + 3}
@@ -457,7 +479,6 @@ export const ReportDocument = ({
                   0
                 </Text>
 
-                {/* GRID LINES */}
                 {[0, 0.5, 1].map((t, i) => (
                   <Line
                     key={i}
@@ -471,7 +492,6 @@ export const ReportDocument = ({
                   />
                 ))}
 
-                {/* DATA */}
                 <Path d={areaD} fill="url(#chartGrad)" />
                 <Path
                   d={pathD}
@@ -480,7 +500,6 @@ export const ReportDocument = ({
                   fill="none"
                 />
 
-                {/* X-AXIS LABELS */}
                 {points.map(([x, y], i) => (
                   <React.Fragment key={i}>
                     <Circle
@@ -544,7 +563,6 @@ export const ReportDocument = ({
               const isPass = row.score >= 70;
               const badgeBg = isPass ? theme.successBg : theme.warningBg;
               const badgeColor = isPass ? theme.success : theme.warning;
-
               return (
                 <View
                   key={i}
@@ -581,15 +599,27 @@ export const ReportDocument = ({
           </View>
         </View>
 
-        {/* FOOTER */}
+        {/* --- NEW FOOTER --- */}
         <View style={styles.footer} fixed>
-          <Text style={styles.footerText}>Generated via {appName}</Text>
-          <Text
-            style={styles.footerText}
-            render={({ pageNumber, totalPages }) =>
-              `${pageNumber} / ${totalPages}`
-            }
-          />
+          <View style={styles.brandStrip} />
+
+          <View style={styles.footerContent}>
+            {/* Left: Date */}
+            <Text style={styles.footerText}>Generated on {today}</Text>
+
+            {/* Center: User Name Focus */}
+            <Text style={styles.footerText}>
+              Report for <Text style={styles.footerBold}>{userName}</Text>
+            </Text>
+
+            {/* Right: Pagination */}
+            <Text
+              style={styles.footerText}
+              render={({ pageNumber, totalPages }) =>
+                `${pageNumber} / ${totalPages}`
+              }
+            />
+          </View>
         </View>
       </Page>
     </Document>
