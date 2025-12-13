@@ -189,7 +189,6 @@ const HistoryPage = ({ testResults, onBack }: HistoryPageProps) => {
              if (Array.isArray(historyItem.userChoices)) {
                  userAnswer = historyItem.userChoices[index] || "";
              } else {
-                 // @ts-ignore 
                  userAnswer = historyItem.userChoices[index] || "";
              }
           }

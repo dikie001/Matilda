@@ -162,15 +162,15 @@ export default function SettingsPage() {
           <div className="lg:col-span-4 space-y-6">
             <Card className="rounded-[2rem] border-0 shadow-xl shadow-slate-200/50 dark:shadow-black/40 overflow-hidden bg-white dark:bg-slate-900">
               {/* Artistic Header */}
-              <div className="h-32 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 relative">
+              <div className="h-28 -mt-6 bg-gradient-to-br from-rose-500 to-pink-500 relative">
                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
               </div>
               
               <CardContent className="px-6 pb-8 relative">
                 {/* Avatar */}
                 <div className="relative -mt-12 mb-4 flex justify-between items-end">
-                  <div className="h-24 w-24 rounded-3xl border-4 border-white dark:border-slate-900 bg-white shadow-sm overflow-hidden p-1">
-                     <img src="/images/icon.png" alt="User" className="w-full h-full object-cover rounded-2xl" />
+                  <div className="h-24 w-24 rounded-full border-4 border-white dark:border-slate-900 bg-white shadow-sm overflow-hidden p-1">
+                     <img src="/images/matilda.png" alt="User" className="w-full h-full object-cover rounded-2xl" />
                   </div>
                   <Button 
                     size="icon" 
