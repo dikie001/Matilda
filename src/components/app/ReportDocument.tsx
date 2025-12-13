@@ -17,15 +17,17 @@ import {
 } from "@react-pdf/renderer";
 
 // --- THEME ---
+// --- THEME ---
 const theme = {
   primary: "#4F46E5", // Indigo 600
   secondary: "#64748B",
-  success: "#10B981",
-  successBg: "#ECFDF5",
-  warning: "#F59E0B",
-  warningBg: "#FFFBEB",
-  danger: "#EF4444",
-  blue: "#3B82F6",
+  success: "#22C55E", // Green 500 (Pure Green)
+  successBg: "#DCFCE7",
+  warning: "#F59E0B", // Amber 500 (Orange/Yellow)
+  warningBg: "#FEF3C7",
+  danger: "#EF4444", // Red 500
+  dangerBg: "#FEE2E2",
+  blue: "#3B82F6",    // Blue 500
   white: "#FFFFFF",
   bg: "#F8FAFC",
   border: "#E2E8F0",
