@@ -484,7 +484,7 @@ const QuizApp: React.FC = () => {
   // Home Screen: Displays welcome, user stats, and action buttons for starting or viewing results
   if (state.gameState === "home") {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-pink-50/30 to-rose-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative transition-colors duration-300">
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
@@ -494,14 +494,14 @@ const QuizApp: React.FC = () => {
         <main className="flex-1 flex flex-col  justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100/50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 text-pink-700 dark:text-pink-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />
               <span> Assessment Dashboard</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
                 {user.name}
               </span>
             </h1>
@@ -517,11 +517,11 @@ const QuizApp: React.FC = () => {
             {[
               {
                 icon: (
-                  <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <BookOpen className="w-5 h-5 text-pink-600 dark:text-pink-400" />
                 ),
                 label: "Questions",
                 value: state.quizData.length,
-                sub: "Quizes available",
+                sub: "Quizzes available",
               },
               {
                 icon: (
@@ -559,9 +559,9 @@ const QuizApp: React.FC = () => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-5 border border-gray-200/50 dark:border-gray-700/50 shadow-sm flex flex-col items-center text-center justify-center group transition-all duration-300 hover:-translate-y-1  hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-200/50 dark:hover:border-indigo-500/30"
+                className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-5 border border-gray-200/50 dark:border-gray-700/50 shadow-sm flex flex-col items-center text-center justify-center group transition-all duration-300 hover:-translate-y-1  hover:shadow-xl hover:shadow-pink-500/10 hover:border-pink-200/50 dark:hover:border-pink-500/30"
               >
-                <div className="mb-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-700 transition-all duration-300 ring-1 ring-transparent group-hover:ring-indigo-100 dark:group-hover:ring-indigo-500/20">
+                <div className="mb-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-700 transition-all duration-300 ring-1 ring-transparent group-hover:ring-pink-100 dark:group-hover:ring-pink-500/20">
                   {stat.icon}
                 </div>
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
@@ -586,11 +586,11 @@ const QuizApp: React.FC = () => {
                   playSend();
                   startTest(state.currentTest);
                 }}
-                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 to-indigo-700 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-indigo-500/25"
+                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-pink-500 to-rose-500 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-pink-500/25"
               >
-                <div className="relative flex items-center justify-between rounded-[14px] bg-indigo-600/10 px-6 py-5 sm:px-8 sm:py-6 transition-colors group-hover:bg-indigo-600/0">
+                <div className="relative flex items-center justify-between rounded-[14px] bg-white/10 px-6 py-5 sm:px-8 sm:py-6 transition-colors group-hover:bg-white/20">
                   <div className="flex flex-col text-left">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-200">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-pink-100">
                       {state.testResults.length === 0
                         ? "Get Started"
                         : "Up Next"}
@@ -601,7 +601,7 @@ const QuizApp: React.FC = () => {
                         : `Continue Test ${state.currentTest + 1}`}
                     </span>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-indigo-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-pink-600">
                     <Play className="w-6 h-6 ml-1 fill-current" />
                   </div>
                 </div>
@@ -638,7 +638,6 @@ const QuizApp: React.FC = () => {
       </div>
     );
   }
-
   // Quiz Screen: Handles the active quiz session with questions, options, and feedback
   if (state.gameState === "quiz") {
     const currentQuestions = getCurrentTestQuestions();
