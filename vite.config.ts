@@ -10,8 +10,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
-
+      // 1. Prompt user for installation
       registerType: "prompt",
 
       injectRegister: "auto",
@@ -24,6 +23,8 @@ export default defineConfig({
       },
 
       workbox: {
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
+
         globPatterns: [
           "**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif,webp,mp3,wav,ogg,json}",
         ],

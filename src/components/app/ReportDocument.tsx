@@ -210,9 +210,7 @@ const styles = StyleSheet.create({
 const svgPath = (points: any[], command: any) => {
   return points.reduce(
     (acc, point, i, a) =>
-      i === 0
-        ? `M ${point[0]},${point[1]}`
-        : `${acc} ${command(point, i, a)}`,
+      i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${command(point, i, a)}`,
     ""
   );
 };
@@ -278,7 +276,9 @@ export const ReportDocument = ({
   });
 
   const pathD = svgPath(points, bezierCommand);
-  const areaD = `${pathD} L ${width + paddingLeft},${height} L ${paddingLeft},${height} Z`;
+  const areaD = `${pathD} L ${
+    width + paddingLeft
+  },${height} L ${paddingLeft},${height} Z`;
 
   return (
     <Document>
@@ -446,7 +446,7 @@ export const ReportDocument = ({
                       style={{
                         fontSize: 8,
                         fill: theme.secondary,
-                        textAnchor: "middle"
+                        textAnchor: "middle",
                       }}
                     >
                       {`T${i + 1}`}
@@ -498,10 +498,17 @@ export const ReportDocument = ({
                       : { backgroundColor: theme.bg },
                   ]}
                 >
-                  <Text style={[styles.td, { width: "25%", color: theme.secondary }]}>
+                  <Text
+                    style={[
+                      styles.td,
+                      { width: "25%", color: theme.secondary },
+                    ]}
+                  >
                     {row.fullDate}
                   </Text>
-                  <Text style={[styles.td, { width: "50%", fontWeight: "bold" }]}>
+                  <Text
+                    style={[styles.td, { width: "50%", fontWeight: "bold" }]}
+                  >
                     {row.name}
                   </Text>
 
@@ -534,4 +541,4 @@ export const ReportDocument = ({
 };
 
 // Needed for Fragment usage
-import React from 'react';
+import React from "react";
