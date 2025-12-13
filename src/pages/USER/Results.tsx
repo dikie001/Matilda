@@ -82,15 +82,38 @@ const Results = () => {
     });
 
     // 4. Format Graph Data (Test 1, Test 2...)
-    const formattedGraphData = results.map((result, index) => ({
-      name: `Test ${index + 1}`, // Auto-generates Test 1, Test 2, etc.
-      score: result.percentage,
-      date: result.date,
-      fullDate: result.date
-        ? new Date(result.date).toLocaleDateString()
-        : "N/A",
-    }));
+    const formattedGraphData = results.map((result, index) => {
+      let dateDisplay = "N/A";
 
+      if (result.date) {
+        // FIX: Mobile browsers hate dashes (2023-01-01).
+        // We replace dashes with slashes (2023/01/01) which works everywhere.
+        const safeDateString = result.date.toString().replace(/-/g, "/");
+        const dateObj = new Date(safeDateString);
+
+        // Check if date is valid
+        if (!isNaN(dateObj.getTime())) {
+          dateDisplay = dateObj.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
+        } else {
+          // Fallback: just show the raw string if parsing fails
+          dateDisplay = result.date.toString();
+        }
+      }
+
+      return {
+        name: `Test ${index + 1}`,
+        score: result.percentage,
+        date: result.date,
+        fullDate: dateDisplay, // This is what the PDF uses
+      };
+    });
+
+    setGraphData(formattedGraphData);
+    setLoading(false);
     setGraphData(formattedGraphData);
     setLoading(false);
   }, []);
@@ -117,7 +140,7 @@ const Results = () => {
               Overview of your tests and reading milestones.
             </p>
           </div>
-          
+
           {/* PDF DOWNLOAD BUTTON */}
           {isClient && graphData.length > 0 && (
             <PDFDownloadLink
@@ -125,14 +148,14 @@ const Results = () => {
               fileName="Matilda Awino's Report.pdf"
             >
               {({ loading: pdfLoading }) => (
-                <Button 
-                    className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
-                    disabled={pdfLoading}
+                <Button
+                  className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
+                  disabled={pdfLoading}
                 >
                   {pdfLoading ? (
-                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                   ) : (
-                     <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-4 h-4 mr-2" />
                   )}
                   {pdfLoading ? "Preparing..." : "Download Report"}
                 </Button>
