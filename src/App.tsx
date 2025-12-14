@@ -2,10 +2,10 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Toaster } from "sonner";
 import { lazy, Suspense, useEffect } from "react";
-import LoadingPage from "./pages/USER/LoadinPage";
+import LoadingPage from "./pages/MATILDA/LoadinPage";
 import About from "./pages/SUPPORT/About";
 import Help from "./pages/SUPPORT/Help";
-import Results from "./pages/USER/Results";
+import Results from "./pages/MATILDA/Results";
 import AdminDashboard from "./pages/ADMIN/AdminDashboard";
 import { trackDailyLogin } from "./lib/trackDailyLogin";
 import { USER_INFO } from "./constants";
@@ -18,17 +18,19 @@ import AdminReports from "./pages/ADMIN/Reports";
 import AdminNotifications from "./pages/ADMIN/Notifications";
 import PracticeCommunication from "./pages/DEV/PracticeCommunication";
 import { useUpdateListener } from "./hooks/useUpdateListener";
-import WordPower from "./pages/USER/WordPower";
+import WordPower from "./pages/MATILDA/WordPower";
 import PWAInstallModal from "./components/PWAInstall";
-const FactFrenzy = lazy(() => import("./pages/USER/FunFacts"));
-const BrainTeasers = lazy(() => import("./pages/USER/QuickChallenges"));
-const HomePage = lazy(() => import("./pages/USER/HomePage"));
-const MiniStories = lazy(() => import("./pages/USER/FlashStories"));
+import GavinQuickQuiz from "./pages/GAVIN/GavinQuickQuiz";
+import RyanneQuickQuiz from "./pages/RYANNE/RyanneQuickQuiz";
+const FactFrenzy = lazy(() => import("./pages/MATILDA/FunFacts"));
+const BrainTeasers = lazy(() => import("./pages/MATILDA/QuickChallenges"));
+const HomePage = lazy(() => import("./pages/MATILDA/HomePage"));
+const MiniStories = lazy(() => import("./pages/MATILDA/FlashStories"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const QuizQuest = lazy(() => import("./pages/USER/QuickQuiz"));
-const SettingsPage = lazy(() => import("./pages/USER/Settings"));
-const TongueTwisters = lazy(() => import("./pages/USER/ClearSpeech"));
-const WisdomNuggets = lazy(() => import("./pages/USER/LifeGems"));
+const QuizQuest = lazy(() => import("./pages/MATILDA/QuickQuiz"));
+const SettingsPage = lazy(() => import("./pages/MATILDA/Settings"));
+const TongueTwisters = lazy(() => import("./pages/MATILDA/ClearSpeech"));
+const WisdomNuggets = lazy(() => import("./pages/MATILDA/LifeGems"));
 const ContactDeveloper = lazy(() => import("./pages/SUPPORT/ContactDeveloper"));
 
 const App = () => {
@@ -76,6 +78,8 @@ const App = () => {
           <Route path="/admin/settings" element={<AdminSettings />} />
           <Route path="/admin/reports" element={<AdminReports />} />
           <Route path="/admin/notifications" element={<AdminNotifications />} />
+          <Route path="/gavin/quiz" element={<GavinQuickQuiz />} />
+          <Route path="/ryanne/quiz" element={<RyanneQuickQuiz />} />
         </Routes>
       </Suspense>
     </Router>

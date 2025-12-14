@@ -1,4 +1,4 @@
-import type { QuizType } from "@/pages/USER/QuickQuiz";
+import type { QuizType } from "@/pages/MATILDA/QuickQuiz";
 
 const quizzes: QuizType[] = [
   {

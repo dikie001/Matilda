@@ -1,5 +1,5 @@
 import { APP_URL } from "@/constants";
-import type { Teaser } from "@/pages/USER/QuickChallenges";
+import type { Teaser } from "@/pages/MATILDA/QuickChallenges";
 import type { Quote, Story, Twister, Fact } from "@/types";
 import { toast } from "sonner";
 

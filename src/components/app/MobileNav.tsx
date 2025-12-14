@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils";
 import type { UpdateStatus } from "@/modals/UpdateAppModal";
 import UpdateModal from "@/modals/UpdateAppModal";
 import {
+  Brain, // Added icon
   ChevronDown,
   FileText,
+  Gamepad2, // Added icon
   HelpCircle,
   House,
   Info,
@@ -19,7 +21,7 @@ import {
   Sparkle,
   X,
   Zap,
-  type LucideIcon
+  type LucideIcon,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -162,12 +164,12 @@ const NavHeader = ({
       </button>
 
       <div className="relative flex items-center gap-4 mt-2">
-            <img
-            onClick={handleLogoClick}
-            src="/images/logo.png"
-            alt="Logo"
-            className="relative w-16 h-16"
-            />
+        <img
+          onClick={handleLogoClick}
+          src="/images/logo.png"
+          alt="Logo"
+          className="relative w-16 h-16"
+        />
         <div>
           <h2 className="text-xl font-bold text-white tracking-tight">
             {user.name || "Brillia"}
@@ -200,12 +202,14 @@ const NavItem = ({
     )}
   >
     {isActive && (
-        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
     )}
     <item.icon
       className={cn(
         "w-5 h-5 flex-shrink-0 transition-colors",
-        isActive ? "text-white" : "text-indigo-500 group-hover:text-indigo-600 dark:text-indigo-400"
+        isActive
+          ? "text-white"
+          : "text-indigo-500 group-hover:text-indigo-600 dark:text-indigo-400"
       )}
     />
     <span className="relative">{item.label}</span>
@@ -242,7 +246,14 @@ const NavGroup = ({
         )}
       >
         <div className="flex items-center gap-2.5">
-          <div className={cn("p-1.5 rounded-lg", isGroupActive ? "bg-indigo-200/50 dark:bg-indigo-800" : "bg-indigo-50 dark:bg-slate-800")}>
+          <div
+            className={cn(
+              "p-1.5 rounded-lg",
+              isGroupActive
+                ? "bg-indigo-200/50 dark:bg-indigo-800"
+                : "bg-indigo-50 dark:bg-slate-800"
+            )}
+          >
             <Icon className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
           </div>
           <span className="text-sm">{title}</span>
@@ -349,6 +360,54 @@ export default function MobileNav({
               />
             ))}
           </div>
+
+          {/* ======================================================== */}
+          {/* ⚡ NEW CUSTOM USER BUTTONS (Ryanne & Gavin) ⚡         */}
+          {/* ======================================================== */}
+          <div className="grid gap-3 pt-2">
+            {/* Ryanne: Blue Theme */}
+            <button
+              onClick={() => handleNav("/ryanne-quiz")}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
+                location.pathname === "/ryanne-quiz"
+                  ? "bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-200"
+                  : "bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100 border-blue-100 dark:border-blue-900 hover:bg-blue-100 dark:hover:bg-blue-900/50"
+              )}
+            >
+              <Brain
+                className={cn(
+                  "w-5 h-5",
+                  location.pathname === "/ryanne-quiz"
+                    ? "text-white"
+                    : "text-blue-500"
+                )}
+              />
+              <span>Ryanne's Quiz</span>
+            </button>
+
+            {/* Gavin: Green Theme */}
+            <button
+              onClick={() => handleNav("/gavin-quiz")}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
+                location.pathname === "/gavin-quiz"
+                  ? "bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-200"
+                  : "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-100 border-emerald-100 dark:border-emerald-900 hover:bg-emerald-100 dark:hover:bg-emerald-900/50"
+              )}
+            >
+              <Gamepad2
+                className={cn(
+                  "w-5 h-5",
+                  location.pathname === "/gavin-quiz"
+                    ? "text-white"
+                    : "text-emerald-500"
+                )}
+              />
+              <span>Gavin's Quiz</span>
+            </button>
+          </div>
+          {/* ======================================================== */}
 
           <NavGroup
             title="Activities"

@@ -1,4 +1,4 @@
-import type { Teaser } from "@/pages/USER/QuickChallenges";
+import type { Teaser } from "@/pages/MATILDA/QuickChallenges";
 
 const brainTeasers: Teaser[] = [
   {
