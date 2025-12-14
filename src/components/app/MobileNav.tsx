@@ -4,10 +4,8 @@ import { cn } from "@/lib/utils";
 import type { UpdateStatus } from "@/modals/UpdateAppModal";
 import UpdateModal from "@/modals/UpdateAppModal";
 import {
-  Brain,
   ChevronDown,
   FileText,
-  Gamepad2,
   HelpCircle,
   House,
   Info,
@@ -19,11 +17,13 @@ import {
   Settings,
   Shield,
   Sparkle,
+  Truck,
   X,
   Zap,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+import { FaFootballBall } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // --- Types ---
@@ -362,7 +362,7 @@ export default function MobileNav({
           </div>
 
           <NavGroup
-            title="Activities"
+            title="Matilda Awino"
             icon={ListTodo}
             items={MENUS.ACTIVITIES}
             isOpen={sectionsOpen.activities}
@@ -385,7 +385,7 @@ export default function MobileNav({
                   : "bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100 border-blue-100 dark:border-blue-900 hover:bg-blue-100 dark:hover:bg-blue-900/50"
               )}
             >
-              <Brain
+              <FaFootballBall
                 className={cn(
                   "w-5 h-5",
                   location.pathname === "/ryanne/quiz"
@@ -393,7 +393,7 @@ export default function MobileNav({
                     : "text-blue-500"
                 )}
               />
-              <span>Ryanne's Quiz</span>
+              <span>Ryanne Ochieng</span>
             </button>
 
             {/* Gavin: Green Theme */}
@@ -406,7 +406,7 @@ export default function MobileNav({
                   : "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-100 border-emerald-100 dark:border-emerald-900 hover:bg-emerald-100 dark:hover:bg-emerald-900/50"
               )}
             >
-              <Gamepad2
+              <Truck
                 className={cn(
                   "w-5 h-5",
                   location.pathname === "/gavin/quiz"
@@ -414,7 +414,7 @@ export default function MobileNav({
                     : "text-emerald-500"
                 )}
               />
-              <span>Gavin's Quiz</span>
+              <span>Gavin Sowon</span>
             </button>
           </div>
           {/* ======================================================== */}
