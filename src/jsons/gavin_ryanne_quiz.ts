@@ -1,4 +1,6 @@
-const quizData = [
+import type { QuizType } from "@/pages/MATILDA/QuickQuiz";
+
+const quizData:QuizType[] = [
   {
     id: 1,
     subject: "Mathematics",
@@ -4242,7 +4244,7 @@ const quizData = [
     id: 519,
     subject: "Religious Education",
     question: "God created the world.",
-    options: { A: "True", B: "False" },
+    options: { A: "True", B: "False" ,C: "Maybe", D: "Not sure"},
     correctAnswer: "A",
     explanation: "True.",
   },

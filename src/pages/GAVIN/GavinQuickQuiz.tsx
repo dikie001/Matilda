@@ -7,7 +7,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-  History,
   Play,
   RotateCcw,
   Sparkles,
@@ -20,7 +19,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
-import quizData from "@/jsons/quizData";
+import quizData from "@/jsons/gavin_ryanne_quiz";
 import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -31,16 +30,16 @@ import logo from "/images/logo.png";
 // 🛠️ CONFIGURATION SECTION (EDIT HERE)
 // ==========================================
 
-// Change this ID to isolate data for different users (e.g., "USER_2", "MOM", "DAD")
-const USER_ID = "USER_2"; 
+// Unique ID for Gavin to separate his data
+const USER_ID = "GAVIN";
 
 // These keys generate automatically based on the USER_ID above
 const STORAGE_CONFIG = {
   TEST_RESULTS: `${USER_ID}_TEST_RESULTS`,
   QUIZ_PROGRESS: `${USER_ID}_QUIZ_PROGRESS`,
   CURRENT_TEST_INDEX: `${USER_ID}_CURRENT_TEST_INDEX`,
-  USER_INFO: `${USER_ID}_USER_INFO`, // Separate user info for this person
-  FIREBASE_BACKUP: `${USER_ID}_FIREBASE_BACKUP`
+  USER_INFO: `${USER_ID}_USER_INFO`,
+  FIREBASE_BACKUP: `${USER_ID}_FIREBASE_BACKUP`,
 };
 
 // ==========================================
@@ -82,7 +81,7 @@ interface QuizProgress {
   isActive: boolean;
 }
 
-type GameState = "home" | "quiz" | "results" | "history";
+type GameState = "home" | "quiz" | "results";
 
 interface QuizAppState {
   currentTest: number;
@@ -97,11 +96,7 @@ interface QuizAppState {
   quizData: QuizType[];
   error: string | null;
 }
-interface User {
-  name: string;
-  hobby: string;
-  subject: string;
-}
+
 
 const GavinQuickQuiz: React.FC = () => {
   const [state, setState] = useState<QuizAppState>({
@@ -116,11 +111,7 @@ const GavinQuickQuiz: React.FC = () => {
     quizData: [],
     error: null,
   });
-  const [user, setUser] = useState<User>({
-    name: "",
-    hobby: "",
-    subject: "",
-  });
+
   const navigate = useNavigate();
   const [openResetModal, setOpenResetModal] = useState(false);
   const { theme } = useTheme();
@@ -128,7 +119,7 @@ const GavinQuickQuiz: React.FC = () => {
   useEffect(() => {
     console.log(theme);
   }, []);
-  
+
   const quizResultsRef = useRef<TestResult | null>(null);
 
   const QUESTIONS_PER_TEST = 20;
@@ -174,19 +165,7 @@ const GavinQuickQuiz: React.FC = () => {
     initializeApp();
   }, []);
 
-  // Fetch User details from NEW storage key
-  useEffect(() => {
-    const details = localStorage.getItem(STORAGE_CONFIG.USER_INFO);
-    // Fallback to generic user info if specific one doesn't exist yet
-    const fallbackDetails = localStorage.getItem("user-info");
-    
-    const dataToUse = details || fallbackDetails;
-    const parsesData = dataToUse && JSON.parse(dataToUse);
-    
-    if (parsesData) {
-        setUser(parsesData);
-    }
-  }, []);
+
 
   // Save progress whenever quiz state changes
   useEffect(() => {
@@ -196,7 +175,7 @@ const GavinQuickQuiz: React.FC = () => {
         currentQuestion: state.currentQuestion,
         score: state.score,
         startTime: state.startTime,
-        selectedAnswers: [], 
+        selectedAnswers: [],
         isActive: true,
       };
       saveQuizProgress(progress);
@@ -224,16 +203,25 @@ const GavinQuickQuiz: React.FC = () => {
   // Save the results
   const saveResults = (results: TestResult[]): void => {
     try {
-      localStorage.setItem(STORAGE_CONFIG.TEST_RESULTS, JSON.stringify(results));
+      localStorage.setItem(
+        STORAGE_CONFIG.TEST_RESULTS,
+        JSON.stringify(results)
+      );
 
       const firebaseData = localStorage.getItem(STORAGE_CONFIG.FIREBASE_BACKUP);
       if (!firebaseData) {
-        localStorage.setItem(STORAGE_CONFIG.FIREBASE_BACKUP, JSON.stringify(results));
+        localStorage.setItem(
+          STORAGE_CONFIG.FIREBASE_BACKUP,
+          JSON.stringify(results)
+        );
       }
 
       const parsedData = firebaseData ? JSON.parse(firebaseData) : [];
       const updatedData = [...parsedData, quizResultsRef.current];
-      localStorage.setItem(STORAGE_CONFIG.FIREBASE_BACKUP, JSON.stringify(updatedData));
+      localStorage.setItem(
+        STORAGE_CONFIG.FIREBASE_BACKUP,
+        JSON.stringify(updatedData)
+      );
     } catch (error) {
       console.error("Error saving results:", error);
     }
@@ -388,7 +376,7 @@ const GavinQuickQuiz: React.FC = () => {
 
     saveResults(updatedResults);
     saveCurrentTestIndex(nextTestIndex);
-    clearQuizProgress(); 
+    clearQuizProgress();
   };
 
   // Get subjects for current test
@@ -439,13 +427,13 @@ const GavinQuickQuiz: React.FC = () => {
     return "B.E. Keep studying and you'll improve! 📚 ";
   };
 
-  // Loading screen (Blue Theme)
+  // Loading screen (Green Theme)
   if (state.loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-100 to-sky-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-teal-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-500 border-t-transparent mx-auto mb-4"></div>
-          <p className="text-blue-600 dark:text-blue-400 text-lg font-semibold">
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-emerald-500 border-t-transparent mx-auto mb-4"></div>
+          <p className="text-emerald-600 dark:text-emerald-400 text-lg font-semibold">
             Loading Quiz Data...
           </p>
         </div>
@@ -456,7 +444,7 @@ const GavinQuickQuiz: React.FC = () => {
   // Error screen
   if (state.error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-100 to-sky-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-teal-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
         <div className="text-center max-w-md">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
             <XCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
@@ -468,7 +456,7 @@ const GavinQuickQuiz: React.FC = () => {
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-gradient-to-r from-blue-700 to-blue-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg transition-all duration-300 hover:scale-105"
             >
               Retry Loading
             </button>
@@ -481,7 +469,7 @@ const GavinQuickQuiz: React.FC = () => {
   // No data available
   if (!state.quizData || state.quizData.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-100 to-sky-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-teal-200 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center p-4 transition-colors duration-300">
         <div className="text-center max-w-md">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
             <BookOpen className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
@@ -497,10 +485,10 @@ const GavinQuickQuiz: React.FC = () => {
     );
   }
 
-  // Home Screen (Blue Theme)
+  // Home Screen (Green Theme)
   if (state.gameState === "home") {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50/30 to-sky-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-emerald-50/30 to-green-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative transition-colors duration-300">
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
@@ -510,15 +498,15 @@ const GavinQuickQuiz: React.FC = () => {
         <main className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-300 text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />
               <span> Assessment Dashboard</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-                {user.name}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+                Gavin Sowon{" "}
               </span>
             </h1>
 
@@ -533,7 +521,7 @@ const GavinQuickQuiz: React.FC = () => {
             {[
               {
                 icon: (
-                  <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <BookOpen className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 ),
                 label: "Questions",
                 value: state.quizData.length,
@@ -541,7 +529,7 @@ const GavinQuickQuiz: React.FC = () => {
               },
               {
                 icon: (
-                  <Target className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <Target className="w-5 h-5 text-green-600 dark:text-green-400" />
                 ),
                 label: "Tests",
                 value: getTotalTests(),
@@ -557,7 +545,7 @@ const GavinQuickQuiz: React.FC = () => {
               },
               {
                 icon: (
-                  <TrendingUp className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <TrendingUp className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                 ),
                 label: "Success Rate",
                 value:
@@ -575,9 +563,9 @@ const GavinQuickQuiz: React.FC = () => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-5 border border-gray-200/50 dark:border-gray-700/50 shadow-sm flex flex-col items-center text-center justify-center group transition-all duration-300 hover:-translate-y-1  hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-200/50 dark:hover:border-blue-500/30"
+                className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-5 border border-gray-200/50 dark:border-gray-700/50 shadow-sm flex flex-col items-center text-center justify-center group transition-all duration-300 hover:-translate-y-1  hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-200/50 dark:hover:border-emerald-500/30"
               >
-                <div className="mb-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-700 transition-all duration-300 ring-1 ring-transparent group-hover:ring-blue-100 dark:group-hover:ring-blue-500/20">
+                <div className="mb-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-700 transition-all duration-300 ring-1 ring-transparent group-hover:ring-emerald-100 dark:group-hover:ring-emerald-500/20">
                   {stat.icon}
                 </div>
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
@@ -602,11 +590,11 @@ const GavinQuickQuiz: React.FC = () => {
                   playSend();
                   startTest(state.currentTest);
                 }}
-                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-blue-500/25"
+                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-600 to-teal-600 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-emerald-500/25"
               >
                 <div className="relative flex items-center justify-between rounded-[14px] bg-white/10 px-6 py-5 sm:px-8 sm:py-6 transition-colors group-hover:bg-white/20">
                   <div className="flex flex-col text-left">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-100">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-100">
                       {state.testResults.length === 0
                         ? "Get Started"
                         : "Up Next"}
@@ -617,7 +605,7 @@ const GavinQuickQuiz: React.FC = () => {
                         : `Continue Test ${state.currentTest + 1}`}
                     </span>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-blue-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-emerald-600">
                     <Play className="w-6 h-6 ml-1 fill-current" />
                   </div>
                 </div>
@@ -638,18 +626,6 @@ const GavinQuickQuiz: React.FC = () => {
                   Analytics
                 </button>
 
-                {/* 2. HISTORY BUTTON */}
-                <button
-                  onClick={() => {
-                    playSend();
-                    setGameState("history");
-                  }}
-                  className="group flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-semibold text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-blue-50 dark:hover:bg-gray-700 hover:border-blue-200 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
-                >
-                  <History className="w-4 h-4 text-blue-500 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-                  View History
-                </button>
-
                 {/* 3. Reset Button */}
                 <button
                   onClick={() => setOpenResetModal(true)}
@@ -668,14 +644,14 @@ const GavinQuickQuiz: React.FC = () => {
     );
   }
 
-  // Quiz Screen (Blue Theme)
+  // Quiz Screen (Green Theme)
   if (state.gameState === "quiz") {
     const currentQuestions = getCurrentTestQuestions();
     const currentQ = currentQuestions[state.currentQuestion];
 
     if (!currentQ) {
       return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-sky-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-green-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent flex items-center justify-center transition-colors duration-300">
           <Navbar currentPage="Quick Quiz" />
           <div className="text-center pt-16">
             <p className="text-gray-900 dark:text-white text-xl font-semibold mb-4">
@@ -686,7 +662,7 @@ const GavinQuickQuiz: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors font-semibold"
+              className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -697,7 +673,7 @@ const GavinQuickQuiz: React.FC = () => {
     }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-sky-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent p-4 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-green-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent p-4 transition-colors duration-300">
         <Navbar currentPage="Quick Quiz" />
         <div className="max-w-4xl mx-auto pt-16 md:pt-12 ">
           {/* Header */}
@@ -707,7 +683,7 @@ const GavinQuickQuiz: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors font-semibold"
+              className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -720,13 +696,13 @@ const GavinQuickQuiz: React.FC = () => {
                 </h2>
                 <img src={logo} className="h-10" alt="logo" />
               </div>
-              <p className="text-blue-600 dark:text-blue-400 font-medium">
+              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
                 {currentQ.subject}
               </p>
             </div>
 
             <div className="text-right">
-              <p className="text-sky-600 dark:text-sky-400 font-semibold">
+              <p className="text-teal-600 dark:text-teal-400 font-semibold">
                 Question {state.currentQuestion + 1}/{currentQuestions.length}
               </p>
               {state.startTime && (
@@ -743,7 +719,7 @@ const GavinQuickQuiz: React.FC = () => {
           {/* Progress Bar */}
           <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-8 overflow-hidden">
             <div
-              className="bg-blue-600 h-full transition-all duration-500 ease-out"
+              className="bg-emerald-600 h-full transition-all duration-500 ease-out"
               style={{
                 width: `${
                   ((state.currentQuestion + 1) / currentQuestions.length) * 100
@@ -753,7 +729,7 @@ const GavinQuickQuiz: React.FC = () => {
           </div>
 
           {/* Question Card */}
-          <div className="bg-gray-50/80 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl px-6 py-6 border border-blue-200 dark:border-blue-900/30 shadow-lg shadow-blue-200/20 dark:shadow-none transition-all duration-300">
+          <div className="bg-gray-50/80 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl px-6 py-6 border border-emerald-200 dark:border-emerald-900/30 shadow-lg shadow-emerald-200/20 dark:shadow-none transition-all duration-300">
             {/* Question */}
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white leading-relaxed mb-6">
               {currentQ.question}
@@ -773,8 +749,8 @@ const GavinQuickQuiz: React.FC = () => {
                 if (!state.showFeedback) {
                   base +=
                     state.selectedAnswer === key
-                      ? " bg-blue-600 border-blue-600 text-white shadow-md" 
-                      : " bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-300"; 
+                      ? " bg-emerald-600 border-emerald-600 text-white shadow-md"
+                      : " bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:border-emerald-300";
                 } else {
                   if (key === currentQ.correctAnswer) {
                     base +=
@@ -819,7 +795,7 @@ const GavinQuickQuiz: React.FC = () => {
             {state.showFeedback && (
               <button
                 onClick={handleNext}
-                className="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-blue-200/40 dark:shadow-none flex items-center justify-center gap-2"
+                className="w-full mt-4 bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-700 dark:to-teal-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-emerald-200/40 dark:shadow-none flex items-center justify-center gap-2"
               >
                 {state.currentQuestion < currentQuestions.length - 1
                   ? "Next Question"
@@ -832,8 +808,8 @@ const GavinQuickQuiz: React.FC = () => {
         {/* Feedback Modal */}
         {state.showFeedback && (
           <div className="fixed top-6 left-4  right-4 md:left-1/2 md:-translate-x-1/2 md:max-w-3xl z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
-            {/* Modal Border: Blue */}
-            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl p-5 rounded-2xl border border-blue-200 dark:border-blue-900 shadow-2xl shadow-blue-500/10 dark:shadow-black/50 ring-1 ring-black/5">
+            {/* Modal Border: Green/Emerald */}
+            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl p-5 rounded-2xl border border-emerald-200 dark:border-emerald-900 shadow-2xl shadow-emerald-500/10 dark:shadow-black/50 ring-1 ring-black/5">
               <div className="flex items-start gap-4">
                 {state.selectedAnswer === currentQ.correctAnswer ? (
                   <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-full flex-shrink-0">
@@ -879,7 +855,7 @@ const GavinQuickQuiz: React.FC = () => {
     );
   }
 
-  // Single Test Results Screen (Blue Theme)
+  // Single Test Results Screen (Green Theme)
   if (state.gameState === "results") {
     const latestResult = state.testResults[state.testResults.length - 1];
 
@@ -897,7 +873,7 @@ const GavinQuickQuiz: React.FC = () => {
     const accentColor = themeColor.split(" ")[0];
 
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-sky-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-emerald-50 to-green-100 dark:bg-gray-900 dark:from-transparent dark:via-transparent dark:to-transparent font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Navbar currentPage="Test Results" />
 
         <div className="flex-1 flex items-center  mt-16 justify-center p-4 sm:p-6 animate-fade-in-up">
@@ -990,7 +966,7 @@ const GavinQuickQuiz: React.FC = () => {
                     playSend();
                     startTest(state.currentTest);
                   }}
-                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold h-12 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-blue-200/50 dark:shadow-none"
+                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold h-12 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-emerald-200/50 dark:shadow-none"
                 >
                   Start Next Test <Play className="w-4 h-4" />
                 </button>
@@ -1006,7 +982,7 @@ const GavinQuickQuiz: React.FC = () => {
                     playSend();
                     setGameState("home");
                   }}
-                  className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-700 hover:border-blue-200 font-medium h-10 rounded-xl transition-all"
+                  className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-700 hover:border-emerald-200 font-medium h-10 rounded-xl transition-all"
                 >
                   <ChevronLeft className="w-4 h-4" /> Home
                 </button>
@@ -1017,7 +993,7 @@ const GavinQuickQuiz: React.FC = () => {
                       playSend();
                       navigate("/results");
                     }}
-                    className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-700 hover:border-blue-200 font-medium h-10 rounded-xl transition-all"
+                    className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-700 hover:border-emerald-200 font-medium h-10 rounded-xl transition-all"
                   >
                     <Trophy className="w-4 h-4" /> History
                   </button>
@@ -1030,7 +1006,6 @@ const GavinQuickQuiz: React.FC = () => {
       </div>
     );
   }
-
 
   // Fallback return
   return null;

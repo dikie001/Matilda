@@ -31,14 +31,14 @@ import logo from "/images/logo.png";
 // ==========================================
 
 // Change this ID to isolate data for different users (e.g., "USER_2", "MOM", "DAD")
-const USER_ID = "USER_2";
+const USER_ID = "RYANNE";
 
 // These keys generate automatically based on the USER_ID above
 const STORAGE_CONFIG = {
   TEST_RESULTS: `${USER_ID}_TEST_RESULTS`,
   QUIZ_PROGRESS: `${USER_ID}_QUIZ_PROGRESS`,
   CURRENT_TEST_INDEX: `${USER_ID}_CURRENT_TEST_INDEX`,
-  USER_INFO: `${USER_ID}_USER_INFO`, // Separate user info for this person
+  USER_INFO: `${USER_ID}_USER_INFO`, 
   FIREBASE_BACKUP: `${USER_ID}_FIREBASE_BACKUP`,
 };
 
