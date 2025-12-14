@@ -2,10 +2,11 @@
 "use client";
 
 import Navbar from "@/components/app/Navbar";
+import { ReportDocument } from "@/components/app/ReportDocument";
 import { Button } from "@/components/ui/button";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Download, FileCheck, Loader2, TrendingUp, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
-import { PDFDownloadLink } from "@react-pdf/renderer";
 import {
   Bar,
   BarChart,
@@ -17,13 +18,11 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { ReportDocument } from "./ReportDocument";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION
 // ==========================================
 
-// Must match the ID used in Gavin's Quiz App
 const USER_ID = "RYANNE";
 
 const STORAGE_CONFIG = {
@@ -45,12 +44,12 @@ interface UserStats {
   averageScore: number;
 }
 
-// --- THEME UTILS ---
+// --- THEME UTILS (BLUE THEME) ---
 const getColorForScore = (score: number) => {
-  if (score >= 90) return "#10b981"; // emerald-500 (Excellent)
-  if (score >= 70) return "#0d9488"; // teal-600 (Good)
-  if (score >= 50) return "#fbbf24"; // amber-400 (Average)
-  return "#ef4444"; // red-500 (Needs Improvement)
+  if (score >= 90) return "#2563EB"; // blue-600 (Excellent)
+  if (score >= 70) return "#4F46E5"; // indigo-600 (Good)
+  if (score >= 50) return "#F59E0B"; // amber-500 (Average)
+  return "#EF4444"; // red-500 (Needs Improvement)
 };
 
 const RyanneResults = () => {
@@ -65,7 +64,7 @@ const RyanneResults = () => {
 
   useEffect(() => {
     setIsClient(true);
-    // 1. Fetch Data from LocalStorage using GAVIN's keys
+    // 1. Fetch Data
     const rawResults = localStorage.getItem(STORAGE_CONFIG.TEST_RESULTS);
 
     // 2. Parse Data
@@ -87,16 +86,14 @@ const RyanneResults = () => {
       averageScore: avgScore,
     });
 
-    // 4. Format Graph Data (Test 1, Test 2...)
+    // 4. Format Graph Data
     const formattedGraphData = results.map((result, index) => {
       let dateDisplay = "N/A";
 
       if (result.date) {
-        // FIX: Mobile browsers hate dashes (2023-01-01).
         const safeDateString = result.date.toString().replace(/-/g, "/");
         const dateObj = new Date(safeDateString);
 
-        // Check if date is valid
         if (!isNaN(dateObj.getTime())) {
           dateDisplay = dateObj.toLocaleDateString("en-US", {
             year: "numeric",
@@ -112,7 +109,7 @@ const RyanneResults = () => {
         name: `Test ${index + 1}`,
         score: result.percentage,
         date: result.date,
-        fullDate: dateDisplay, // This is what the PDF uses
+        fullDate: dateDisplay,
       };
     });
 
@@ -123,7 +120,7 @@ const RyanneResults = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
-        <Loader2 className="w-8 h-8 animate-spin text-emerald-500" />
+        <Loader2 className="w-8 h-8 animate-spin text-blue-500" />
       </div>
     );
   }
@@ -135,8 +132,8 @@ const RyanneResults = () => {
         {/* Header */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500">
-              Gavin's Results
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500">
+              Ryanne's Results
             </h1>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Overview of tests and performance milestones.
@@ -146,12 +143,18 @@ const RyanneResults = () => {
           {/* PDF DOWNLOAD BUTTON */}
           {isClient && graphData.length > 0 && (
             <PDFDownloadLink
-              document={<ReportDocument stats={stats} graphData={graphData} />}
-              fileName="Gavin's Report.pdf"
+              document={
+                <ReportDocument
+                  stats={stats}
+                  graphData={graphData}
+                  userName="Ryanne Ochieng"
+                />
+              }
+              fileName="Ryanne's Report.pdf"
             >
               {({ loading: pdfLoading }) => (
                 <Button
-                  className="bg-emerald-600 cursor-pointer hover:bg-emerald-700 text-white shadow-lg shadow-emerald-200 dark:shadow-none transition-all border-none"
+                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white shadow-lg shadow-blue-200 dark:shadow-none transition-all border-none"
                   disabled={pdfLoading}
                 >
                   {pdfLoading ? (
@@ -172,22 +175,22 @@ const RyanneResults = () => {
             title="Tests Completed"
             value={stats.testsDone}
             icon={FileCheck}
-            color="emerald"
+            color="blue"
           />
           <StatCard
             title="Average Score"
             value={`${stats.averageScore}%`}
             icon={Trophy}
-            color="teal"
+            color="indigo"
           />
         </div>
 
         {/* --- MAIN GRAPH: MARKS PER TEST --- */}
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl shadow-emerald-100/50 dark:shadow-none border border-gray-100 dark:border-gray-800">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl shadow-blue-100/50 dark:shadow-none border border-gray-100 dark:border-gray-800">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
-                <TrendingUp className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                <TrendingUp className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                 Performance History
@@ -197,17 +200,16 @@ const RyanneResults = () => {
             {/* Legend for color coding */}
             <div className="hidden sm:flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-emerald-500" />{" "}
-                Excellent
+                <div className="w-2 h-2 rounded-full bg-blue-600" /> Excellent
               </div>
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-teal-600" /> Good
+                <div className="w-2 h-2 rounded-full bg-indigo-600" /> Good
               </div>
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-amber-400" /> Average
+                <div className="w-2 h-2 rounded-full bg-amber-500" /> Average
               </div>
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-red-400" /> Low
+                <div className="w-2 h-2 rounded-full bg-red-500" /> Low
               </div>
             </div>
           </div>
@@ -292,19 +294,19 @@ const RyanneResults = () => {
 
 const StatCard = ({ title, value, icon: Icon, color }: any) => {
   const styles: Record<string, any> = {
-    emerald: {
-      bg: "bg-gradient-to-br from-white to-emerald-50 dark:from-gray-900 dark:to-emerald-950/20",
-      border: "border-emerald-100 dark:border-emerald-900/40",
-      iconColor: "text-emerald-600 dark:text-emerald-400",
-      shadow: "shadow-emerald-100/40 dark:shadow-none",
-      ring: "ring-emerald-50 dark:ring-emerald-900/20",
+    blue: {
+      bg: "bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-950/20",
+      border: "border-blue-100 dark:border-blue-900/40",
+      iconColor: "text-blue-600 dark:text-blue-400",
+      shadow: "shadow-blue-100/40 dark:shadow-none",
+      ring: "ring-blue-50 dark:ring-blue-900/20",
     },
-    teal: {
-      bg: "bg-gradient-to-br from-white to-teal-50 dark:from-gray-900 dark:to-teal-950/20",
-      border: "border-teal-100 dark:border-teal-900/40",
-      iconColor: "text-teal-600 dark:text-teal-400",
-      shadow: "shadow-teal-100/40 dark:shadow-none",
-      ring: "ring-teal-50 dark:ring-teal-900/20",
+    indigo: {
+      bg: "bg-gradient-to-br from-white to-indigo-50 dark:from-gray-900 dark:to-indigo-950/20",
+      border: "border-indigo-100 dark:border-indigo-900/40",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
+      shadow: "shadow-indigo-100/40 dark:shadow-none",
+      ring: "ring-indigo-50 dark:ring-indigo-900/20",
     },
     amber: {
       bg: "bg-gradient-to-br from-white to-amber-50 dark:from-gray-900 dark:to-amber-950/20",
@@ -315,7 +317,7 @@ const StatCard = ({ title, value, icon: Icon, color }: any) => {
     },
   };
 
-  const s = styles[color] || styles.emerald;
+  const s = styles[color] || styles.blue;
 
   return (
     <div
@@ -339,6 +341,7 @@ const StatCard = ({ title, value, icon: Icon, color }: any) => {
     </div>
   );
 };
+
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     const score = payload[0].value;
@@ -353,9 +356,9 @@ const CustomTooltip = ({ active, payload, label }: any) => {
         <span
           className={`text-xs font-bold px-2 py-1 rounded-full ${
             score >= 90
-              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+              ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
               : score >= 70
-              ? "bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400"
+              ? "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400"
               : "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
           }`}
         >
