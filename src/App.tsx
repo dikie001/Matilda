@@ -22,6 +22,8 @@ import WordPower from "./pages/MATILDA/WordPower";
 import PWAInstallModal from "./components/PWAInstall";
 import GavinQuickQuiz from "./pages/GAVIN/GavinQuickQuiz";
 import RyanneQuickQuiz from "./pages/RYANNE/RyanneQuickQuiz";
+import RyanneResults from "./pages/RYANNE/RyanneResults";
+import GavinResults from "./pages/GAVIN/GavinResults";
 const FactFrenzy = lazy(() => import("./pages/MATILDA/FunFacts"));
 const BrainTeasers = lazy(() => import("./pages/MATILDA/QuickChallenges"));
 const HomePage = lazy(() => import("./pages/MATILDA/HomePage"));
@@ -78,8 +80,11 @@ const App = () => {
           <Route path="/admin/settings" element={<AdminSettings />} />
           <Route path="/admin/reports" element={<AdminReports />} />
           <Route path="/admin/notifications" element={<AdminNotifications />} />
+          {/* RYANNE AND GAVIN */}
           <Route path="/gavin/quiz" element={<GavinQuickQuiz />} />
           <Route path="/ryanne/quiz" element={<RyanneQuickQuiz />} />
+          <Route path="/ryanne/results" element={<RyanneResults />} />
+          <Route path="/gavin/results" element={<GavinResults />} />
         </Routes>
       </Suspense>
     </Router>

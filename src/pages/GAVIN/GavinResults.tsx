@@ -2,8 +2,11 @@
 "use client";
 
 import Navbar from "@/components/app/Navbar";
-import { FileCheck, Loader2, TrendingUp, Trophy, Download } from "lucide-react";
+import { ReportDocument } from "@/components/app/ReportDocument";
+import { Button } from "@/components/ui/button";
+import { Download, FileCheck, Loader2, TrendingUp, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import {
   Bar,
   BarChart,
@@ -15,20 +18,16 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import { ReportDocument } from "@/components/app/ReportDocument"; 
-import { Button } from "@/components/ui/button"; 
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION
 // ==========================================
 
 // Must match the ID used in Gavin's Quiz App
-const USER_ID = "GAVIN"; 
+const USER_ID = "GAVIN";
 
 const STORAGE_CONFIG = {
   TEST_RESULTS: `${USER_ID}_TEST_RESULTS`,
-  STORIES_READ: `${USER_ID}_STORIES_READ`, // Optional if you add stories later
 };
 
 // ==========================================
@@ -43,7 +42,6 @@ interface TestResult {
 
 interface UserStats {
   testsDone: number;
-  storiesRead: number;
   averageScore: number;
 }
 
@@ -59,7 +57,6 @@ const GavinResults = () => {
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState<UserStats>({
     testsDone: 0,
-    storiesRead: 0,
     averageScore: 0,
   });
   const [graphData, setGraphData] = useState<any[]>([]);
@@ -70,11 +67,9 @@ const GavinResults = () => {
     setIsClient(true);
     // 1. Fetch Data from LocalStorage using GAVIN's keys
     const rawResults = localStorage.getItem(STORAGE_CONFIG.TEST_RESULTS);
-    const rawStories = localStorage.getItem(STORAGE_CONFIG.STORIES_READ);
 
     // 2. Parse Data
     const results: TestResult[] = rawResults ? JSON.parse(rawResults) : [];
-    const storiesCount = rawStories ? JSON.parse(rawStories).length : 0;
 
     // 3. Calculate Stats
     const totalTests = results.length;
@@ -89,7 +84,6 @@ const GavinResults = () => {
 
     setStats({
       testsDone: totalTests,
-      storiesRead: storiesCount,
       averageScore: avgScore,
     });
 
@@ -178,7 +172,7 @@ const GavinResults = () => {
             title="Tests Completed"
             value={stats.testsDone}
             icon={FileCheck}
-            color="emerald" 
+            color="emerald"
           />
           <StatCard
             title="Average Score"
@@ -245,7 +239,7 @@ const GavinResults = () => {
                       tickLine={false}
                       tick={{ fill: "#6b7280", fontSize: 12 }}
                       dy={10}
-                      interval={0} 
+                      interval={0}
                     />
                     <YAxis
                       axisLine={false}
@@ -266,7 +260,7 @@ const GavinResults = () => {
                     <Bar
                       dataKey="score"
                       radius={[8, 8, 8, 8]}
-                      barSize={40} 
+                      barSize={40}
                       animationDuration={1500}
                     >
                       {graphData.map((entry: any, index: number) => (

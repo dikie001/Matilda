@@ -611,12 +611,12 @@ const RyanneQuickQuiz: React.FC = () => {
             )}
             {/* Secondary Actions */}
             {state.testResults.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {/* 1. Analytics Button */}
                 <button
                   onClick={() => {
                     playSend();
-                    navigate("/results");
+                    navigate("/ryanne/results");
                   }}
                   className="group flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-semibold text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
                 >
@@ -989,7 +989,7 @@ const RyanneQuickQuiz: React.FC = () => {
                   <button
                     onClick={() => {
                       playSend();
-                      navigate("/results");
+                      navigate("/ryanne/results");
                     }}
                     className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-700 hover:border-blue-200 font-medium h-10 rounded-xl transition-all"
                   >
