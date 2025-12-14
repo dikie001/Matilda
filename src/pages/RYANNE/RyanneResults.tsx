@@ -2,7 +2,6 @@
 "use client";
 
 import Navbar from "@/components/app/Navbar";
-import { ReportDocument } from "@/components/app/ReportDocument";
 import { Button } from "@/components/ui/button";
 import { Download, FileCheck, Loader2, TrendingUp, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -18,6 +17,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { ReportDocument } from "./ReportDocument";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION
