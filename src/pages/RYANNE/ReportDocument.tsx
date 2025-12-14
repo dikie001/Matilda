@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React from "react";
 import {
   Document,
   Page,
@@ -26,18 +26,29 @@ const theme = {
   warningBg: "#FEF3C7",
   danger: "#DC2626", // Red 600
   dangerBg: "#FEE2E2",
-  blue: "#4F46E5",    // Indigo 600 (Complimentary to Blue)
+  blue: "#4F46E5", // Indigo 600 (Complimentary to Blue)
   white: "#FFFFFF",
-  bg: "#EFF6FF",      // Very light blue background (Blue 50)
+  bg: "#EFF6FF", // Very light blue background (Blue 50)
   border: "#E2E8F0",
   text: "#0F172A",
 };
 
 // --- CBC GRADE LOGIC ---
 const getCBCGrade = (score: number) => {
-  if (score >= 80) return { grade: "EE", label: "Exceeding Expectations", color: theme.warning };
-  if (score >= 60) return { grade: "ME", label: "Meeting Expectations", color: theme.success };
-  if (score >= 40) return { grade: "AE", label: "Approaching Expectations", color: theme.blue };
+  if (score >= 80)
+    return {
+      grade: "EE",
+      label: "Exceeding Expectations",
+      color: theme.warning,
+    };
+  if (score >= 60)
+    return { grade: "ME", label: "Meeting Expectations", color: theme.success };
+  if (score >= 40)
+    return {
+      grade: "AE",
+      label: "Approaching Expectations",
+      color: theme.blue,
+    };
   return { grade: "BE", label: "Below Expectations", color: theme.danger };
 };
 
@@ -59,16 +70,16 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   headerContent: {
-    flexDirection: 'row',
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: 'space-between',
-    width: '100%',
+    justifyContent: "space-between",
+    width: "100%",
     paddingHorizontal: 40,
     marginTop: 10,
   },
   userInfoSection: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 15,
   },
   avatarContainer: {
@@ -79,8 +90,8 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.8)",
     overflow: "hidden",
     backgroundColor: theme.white,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   avatarImage: {
     width: "100%",
@@ -89,7 +100,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   userDetails: {
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   headerName: {
     fontFamily: "Times-Roman",
@@ -108,28 +119,28 @@ const styles = StyleSheet.create({
 
   // --- STAMP ---
   stampContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 4,
     paddingHorizontal: 10,
     borderRadius: 6,
     borderWidth: 2,
     borderColor: theme.white,
-    transform: 'rotate(-5deg)',
+    transform: "rotate(-5deg)",
   },
   stampGrade: {
     fontSize: 28,
     fontFamily: "Helvetica-Bold",
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: theme.white,
-    textAlign: 'center',
+    textAlign: "center",
   },
   stampLabel: {
     fontSize: 7,
     color: theme.white,
-    textTransform: 'uppercase',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    textAlign: "center",
     marginTop: -2,
   },
 
@@ -194,7 +205,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: theme.border,
     overflow: "hidden",
-    marginBottom: 20, 
+    marginBottom: 20,
   },
   tableHeader: {
     flexDirection: "row",
@@ -247,7 +258,7 @@ const styles = StyleSheet.create({
   },
   brandStrip: {
     height: 3,
-    width: '100%',
+    width: "100%",
     backgroundColor: theme.primary,
   },
   footerContent: {
@@ -264,17 +275,30 @@ const styles = StyleSheet.create({
   footerBold: {
     color: theme.primary,
     fontWeight: "bold",
-  }
+  },
 });
 
 // --- MATH HELPERS ---
-const svgPath = (points: any[], command: any) => points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${command(point, i, a)}`, "");
+const svgPath = (points: any[], command: any) =>
+  points.reduce(
+    (acc, point, i, a) =>
+      i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${command(point, i, a)}`,
+    ""
+  );
 const line = (pointA: any, pointB: any) => {
   const lengthX = pointB[0] - pointA[0];
   const lengthY = pointB[1] - pointA[1];
-  return { length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)), angle: Math.atan2(lengthY, lengthX) };
+  return {
+    length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+    angle: Math.atan2(lengthY, lengthX),
+  };
 };
-const controlPoint = (current: any, previous: any, next: any, reverse?: any) => {
+const controlPoint = (
+  current: any,
+  previous: any,
+  next: any,
+  reverse?: any
+) => {
   const p = previous || current;
   const n = next || current;
   const smoothing = 0.2;
@@ -304,7 +328,6 @@ export const ReportDocument = ({
   userName = "Ryanne Ochieng",
   appName = "Brillia",
 }: ReportProps) => {
-  
   const chartData = graphData.slice(-15);
   const cbcInfo = getCBCGrade(stats.averageScore);
   const reportId = `REF-${Math.floor(Math.random() * 1000000000)}`;
@@ -328,40 +351,59 @@ export const ReportDocument = ({
   });
 
   const pathD = svgPath(points, bezierCommand);
-  const areaD = `${pathD} L ${graphWidth + paddingLeft},${paddingTop + graphHeight} L ${paddingLeft},${paddingTop + graphHeight} Z`;
+  const areaD = `${pathD} L ${graphWidth + paddingLeft},${
+    paddingTop + graphHeight
+  } L ${paddingLeft},${paddingTop + graphHeight} Z`;
 
-  const today = new Date().toLocaleDateString("en-KE", { year: 'numeric', month: 'short', day: 'numeric' });
+  const today = new Date().toLocaleDateString("en-KE", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        
         {/* HEADER */}
         <View style={styles.headerContainer}>
-          <Svg height="130" width="600" style={{ position: "absolute", top: 0, left: 0 }}>
+          <Svg
+            height="130"
+            width="600"
+            style={{ position: "absolute", top: 0, left: 0 }}
+          >
             <Defs>
               {/* Gradient: Blue to Indigo */}
               <LinearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="1">
-                <Stop offset="0%" stopColor="#2563EB" /> 
-                <Stop offset="100%" stopColor="#4F46E5" /> 
+                <Stop offset="0%" stopColor="#2563EB" />
+                <Stop offset="100%" stopColor="#4F46E5" />
               </LinearGradient>
             </Defs>
-            <Path d="M0,0 L600,0 L600,90 Q300,160 0,90 Z" fill="url(#headerGrad)" />
+            <Path
+              d="M0,0 L600,0 L600,90 Q300,160 0,90 Z"
+              fill="url(#headerGrad)"
+            />
           </Svg>
 
           <View style={styles.headerContent}>
             <View style={styles.userInfoSection}>
-                <View style={styles.avatarContainer}>
-                   <Image src="/images/ryanne.png" style={styles.avatarImage} />
-                </View>
-                <View style={styles.userDetails}>
-                    <Text style={styles.headerName}>{userName}</Text>
-                    <Text style={styles.headerAppTag}>{appName} Comprehensive Report</Text>
-                </View>
+              <View style={styles.avatarContainer}>
+                <Image src="/images/ryanne.png" style={styles.avatarImage} />
+              </View>
+              <View style={styles.userDetails}>
+                <Text style={styles.headerName}>{userName}</Text>
+                <Text style={styles.headerAppTag}>
+                  {appName} Comprehensive Report
+                </Text>
+              </View>
             </View>
-            <View style={[styles.stampContainer, { backgroundColor: cbcInfo.color }]}>
-                  <Text style={styles.stampGrade}>{cbcInfo.grade}</Text>
-                  <Text style={styles.stampLabel}>{cbcInfo.label}</Text>
+            <View
+              style={[
+                styles.stampContainer,
+                { backgroundColor: cbcInfo.color },
+              ]}
+            >
+              <Text style={styles.stampGrade}>{cbcInfo.grade}</Text>
+              <Text style={styles.stampLabel}>{cbcInfo.label}</Text>
             </View>
           </View>
         </View>
@@ -370,11 +412,21 @@ export const ReportDocument = ({
         <View style={styles.body}>
           {/* STATS */}
           <View style={styles.statsContainer}>
-            <View style={[styles.statCard, { borderLeftWidth: 3, borderLeftColor: theme.primary }]}>
+            <View
+              style={[
+                styles.statCard,
+                { borderLeftWidth: 3, borderLeftColor: theme.primary },
+              ]}
+            >
               <Text style={styles.statLabel}>Tests Taken</Text>
               <Text style={styles.statValue}>{stats.testsDone}</Text>
             </View>
-            <View style={[styles.statCard, { borderLeftWidth: 3, borderLeftColor: theme.warning }]}>
+            <View
+              style={[
+                styles.statCard,
+                { borderLeftWidth: 3, borderLeftColor: theme.warning },
+              ]}
+            >
               <Text style={styles.statLabel}>Average Score</Text>
               <Text style={styles.statValue}>{stats.averageScore}%</Text>
             </View>
@@ -384,53 +436,166 @@ export const ReportDocument = ({
           <View style={styles.graphContainer} wrap={false}>
             <View style={styles.graphHeader}>
               <Text style={styles.graphTitle}>Progress Curve</Text>
-              <Text style={{ fontSize: 8, color: theme.secondary }}>Last 15 Tests</Text>
+              <Text style={{ fontSize: 8, color: theme.secondary }}>
+                Last 15 Tests
+              </Text>
             </View>
             {chartData.length > 1 ? (
               <Svg height={svgHeight} width="100%">
                 <Defs>
                   <LinearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                    <Stop offset="0%" stopColor={theme.primary} stopOpacity={0.2} />
-                    <Stop offset="100%" stopColor={theme.primary} stopOpacity={0} />
+                    <Stop
+                      offset="0%"
+                      stopColor={theme.primary}
+                      stopOpacity={0.2}
+                    />
+                    <Stop
+                      offset="100%"
+                      stopColor={theme.primary}
+                      stopOpacity={0}
+                    />
                   </LinearGradient>
                 </Defs>
-                <Text x={0} y={paddingTop + 3} style={{ fill: theme.secondary, fontSize: 8 }}>100</Text>
-                <Text x={5} y={paddingTop + graphHeight / 2} style={{ fill: theme.secondary, fontSize: 8 }}>50</Text>
-                <Text x={10} y={paddingTop + graphHeight} style={{ fill: theme.secondary, fontSize: 8 }}>0</Text>
+                <Text
+                  x={0}
+                  y={paddingTop + 3}
+                  style={{ fill: theme.secondary, fontSize: 8 }}
+                >
+                  100
+                </Text>
+                <Text
+                  x={5}
+                  y={paddingTop + graphHeight / 2}
+                  style={{ fill: theme.secondary, fontSize: 8 }}
+                >
+                  50
+                </Text>
+                <Text
+                  x={10}
+                  y={paddingTop + graphHeight}
+                  style={{ fill: theme.secondary, fontSize: 8 }}
+                >
+                  0
+                </Text>
                 {[0, 0.5, 1].map((t, i) => (
-                  <Line key={i} x1={paddingLeft} y1={paddingTop + graphHeight * t} x2={graphWidth + paddingLeft} y2={paddingTop + graphHeight * t} stroke={theme.border} strokeDasharray="3 3" strokeWidth={1} />
+                  <Line
+                    key={i}
+                    x1={paddingLeft}
+                    y1={paddingTop + graphHeight * t}
+                    x2={graphWidth + paddingLeft}
+                    y2={paddingTop + graphHeight * t}
+                    stroke={theme.border}
+                    strokeDasharray="3 3"
+                    strokeWidth={1}
+                  />
                 ))}
                 <Path d={areaD} fill="url(#chartGrad)" />
-                <Path d={pathD} stroke={theme.primary} strokeWidth={2} fill="none" />
+                <Path
+                  d={pathD}
+                  stroke={theme.primary}
+                  strokeWidth={2}
+                  fill="none"
+                />
                 {points.map(([x, y], i) => (
                   <React.Fragment key={i}>
-                    <Circle cx={x} cy={y} r={2.5} fill={theme.white} stroke={theme.primary} strokeWidth={1.5} />
-                    <Text x={x} y={svgHeight - 5} style={{ fontSize: 7, fill: theme.secondary, textAnchor: "middle" }}>{`T${i + 1}`}</Text>
+                    <Circle
+                      cx={x}
+                      cy={y}
+                      r={2.5}
+                      fill={theme.white}
+                      stroke={theme.primary}
+                      strokeWidth={1.5}
+                    />
+                    <Text
+                      x={x}
+                      y={svgHeight - 5}
+                      style={{
+                        fontSize: 7,
+                        fill: theme.secondary,
+                        textAnchor: "middle",
+                      }}
+                    >{`T${i + 1}`}</Text>
                   </React.Fragment>
                 ))}
               </Svg>
             ) : (
-              <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}><Text style={{ fontSize: 10, color: theme.secondary }}>No data.</Text></View>
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ fontSize: 10, color: theme.secondary }}>
+                  No data.
+                </Text>
+              </View>
             )}
           </View>
 
           {/* TABLE */}
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: "#0F172A", marginBottom: 6 }}>History</Text>
+          <Text
+            style={{
+              fontSize: 10,
+              fontWeight: "bold",
+              color: "#0F172A",
+              marginBottom: 6,
+            }}
+          >
+            History
+          </Text>
           <View style={styles.tableSection}>
             <View style={styles.tableHeader}>
               <Text style={[styles.th, { width: "25%" }]}>Date</Text>
               <Text style={[styles.th, { width: "50%" }]}>Test Name</Text>
-              <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>Score</Text>
+              <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>
+                Score
+              </Text>
             </View>
             {graphData.map((row, i) => {
               const isPass = row.score >= 70;
               return (
-                <View key={i} style={[styles.tableRow, i % 2 === 0 ? { backgroundColor: theme.white } : { backgroundColor: theme.bg }]}>
-                  <Text style={[styles.td, { width: "25%", color: theme.secondary }]}>{row.fullDate}</Text>
-                  <Text style={[styles.td, { width: "50%", fontWeight: "bold" }]}>{row.name}</Text>
+                <View
+                  key={i}
+                  style={[
+                    styles.tableRow,
+                    i % 2 === 0
+                      ? { backgroundColor: theme.white }
+                      : { backgroundColor: theme.bg },
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.td,
+                      { width: "25%", color: theme.secondary },
+                    ]}
+                  >
+                    {row.fullDate}
+                  </Text>
+                  <Text
+                    style={[styles.td, { width: "50%", fontWeight: "bold" }]}
+                  >
+                    {row.name}
+                  </Text>
                   <View style={{ width: "25%", alignItems: "flex-end" }}>
-                    <View style={[styles.badge, { backgroundColor: isPass ? theme.successBg : theme.warningBg }]}>
-                      <Text style={[styles.badgeText, { color: isPass ? theme.success : theme.warning }]}>{row.score}% {isPass ? "PASS" : "LOW"}</Text>
+                    <View
+                      style={[
+                        styles.badge,
+                        {
+                          backgroundColor: isPass
+                            ? theme.successBg
+                            : theme.warningBg,
+                        },
+                      ]}
+                    >
+                      <Text
+                        style={[
+                          styles.badgeText,
+                          { color: isPass ? theme.success : theme.warning },
+                        ]}
+                      >
+                        {row.score}% {isPass ? "PASS" : "LOW"}
+                      </Text>
                     </View>
                   </View>
                 </View>
@@ -444,11 +609,20 @@ export const ReportDocument = ({
           <View style={styles.brandStrip} />
           <View style={styles.footerContent}>
             {/* Serial ID + Date */}
-            <Text style={styles.footerText}>ID: {reportId} | {today}</Text>
+            <Text style={styles.footerText}>
+              ID: {reportId} | {today}
+            </Text>
             {/* User Name */}
-            <Text style={styles.footerText}>Prepared for <Text style={styles.footerBold}>{userName}</Text></Text>
+            <Text style={styles.footerText}>
+              Prepared for <Text style={styles.footerBold}>{userName}</Text>
+            </Text>
             {/* Pagination */}
-            <Text style={styles.footerText} render={({ pageNumber, totalPages }) => `${pageNumber}/${totalPages}`} />
+            <Text
+              style={styles.footerText}
+              render={({ pageNumber, totalPages }) =>
+                `${pageNumber}/${totalPages}`
+              }
+            />
           </View>
         </View>
       </Page>
