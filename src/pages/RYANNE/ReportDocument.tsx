@@ -83,9 +83,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   avatarImage: {
-    width: "80%",
-    height: "80%",
-    objectFit: "contain",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: 25,
   },
   userDetails: {
     justifyContent: 'center',
