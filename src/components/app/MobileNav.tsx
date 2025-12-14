@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import type { UpdateStatus } from "@/modals/UpdateAppModal";
 import UpdateModal from "@/modals/UpdateAppModal";
 import {
-  Brain, // Added icon
+  Brain,
   ChevronDown,
   FileText,
-  Gamepad2, // Added icon
+  Gamepad2,
   HelpCircle,
   House,
   Info,
@@ -361,16 +361,26 @@ export default function MobileNav({
             ))}
           </div>
 
+          <NavGroup
+            title="Activities"
+            icon={ListTodo}
+            items={MENUS.ACTIVITIES}
+            isOpen={sectionsOpen.activities}
+            onToggle={() => toggleSection("activities")}
+            onNavigate={handleNav}
+          />
+
           {/* ======================================================== */}
           {/* ⚡ NEW CUSTOM USER BUTTONS (Ryanne & Gavin) ⚡         */}
+          {/* Moved BELOW Activities as requested                    */}
           {/* ======================================================== */}
           <div className="grid gap-3 pt-2">
             {/* Ryanne: Blue Theme */}
             <button
-              onClick={() => handleNav("/ryanne-quiz")}
+              onClick={() => handleNav("/ryanne/quiz")}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
-                location.pathname === "/ryanne-quiz"
+                location.pathname === "/ryanne/quiz"
                   ? "bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-200"
                   : "bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100 border-blue-100 dark:border-blue-900 hover:bg-blue-100 dark:hover:bg-blue-900/50"
               )}
@@ -378,7 +388,7 @@ export default function MobileNav({
               <Brain
                 className={cn(
                   "w-5 h-5",
-                  location.pathname === "/ryanne-quiz"
+                  location.pathname === "/ryanne/quiz"
                     ? "text-white"
                     : "text-blue-500"
                 )}
@@ -388,10 +398,10 @@ export default function MobileNav({
 
             {/* Gavin: Green Theme */}
             <button
-              onClick={() => handleNav("/gavin-quiz")}
+              onClick={() => handleNav("/gavin/quiz")}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
-                location.pathname === "/gavin-quiz"
+                location.pathname === "/gavin/quiz"
                   ? "bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-200"
                   : "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-100 border-emerald-100 dark:border-emerald-900 hover:bg-emerald-100 dark:hover:bg-emerald-900/50"
               )}
@@ -399,7 +409,7 @@ export default function MobileNav({
               <Gamepad2
                 className={cn(
                   "w-5 h-5",
-                  location.pathname === "/gavin-quiz"
+                  location.pathname === "/gavin/quiz"
                     ? "text-white"
                     : "text-emerald-500"
                 )}
@@ -408,15 +418,6 @@ export default function MobileNav({
             </button>
           </div>
           {/* ======================================================== */}
-
-          <NavGroup
-            title="Activities"
-            icon={ListTodo}
-            items={MENUS.ACTIVITIES}
-            isOpen={sectionsOpen.activities}
-            onToggle={() => toggleSection("activities")}
-            onNavigate={handleNav}
-          />
 
           <NavGroup
             title="Support"

@@ -13,13 +13,13 @@ import {
   Target,
   TrendingUp,
   Trophy,
-  XCircle
+  XCircle,
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
-import quizData from "@/jsons/quizData";
+import quizData from "@/jsons/gavin_ryanne_quiz";
 import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -31,7 +31,7 @@ import logo from "/images/logo.png";
 // ==========================================
 
 // Change this ID to isolate data for different users (e.g., "USER_2", "MOM", "DAD")
-const USER_ID = "USER_2"; 
+const USER_ID = "USER_2";
 
 // These keys generate automatically based on the USER_ID above
 const STORAGE_CONFIG = {
@@ -39,7 +39,7 @@ const STORAGE_CONFIG = {
   QUIZ_PROGRESS: `${USER_ID}_QUIZ_PROGRESS`,
   CURRENT_TEST_INDEX: `${USER_ID}_CURRENT_TEST_INDEX`,
   USER_INFO: `${USER_ID}_USER_INFO`, // Separate user info for this person
-  FIREBASE_BACKUP: `${USER_ID}_FIREBASE_BACKUP`
+  FIREBASE_BACKUP: `${USER_ID}_FIREBASE_BACKUP`,
 };
 
 // ==========================================
@@ -58,7 +58,7 @@ export interface QuizType {
   question: string;
   subject: string;
   options: Options;
-  correctAnswer: keyof Options;
+  correctAnswer: keyof Options ;
   explanation: string;
 }
 
@@ -96,11 +96,7 @@ interface QuizAppState {
   quizData: QuizType[];
   error: string | null;
 }
-interface User {
-  name: string;
-  hobby: string;
-  subject: string;
-}
+
 
 const RyanneQuickQuiz: React.FC = () => {
   const [state, setState] = useState<QuizAppState>({
@@ -115,11 +111,7 @@ const RyanneQuickQuiz: React.FC = () => {
     quizData: [],
     error: null,
   });
-  const [user, setUser] = useState<User>({
-    name: "",
-    hobby: "",
-    subject: "",
-  });
+
   const navigate = useNavigate();
   const [openResetModal, setOpenResetModal] = useState(false);
   const { theme } = useTheme();
@@ -127,7 +119,7 @@ const RyanneQuickQuiz: React.FC = () => {
   useEffect(() => {
     console.log(theme);
   }, []);
-  
+
   const quizResultsRef = useRef<TestResult | null>(null);
 
   const QUESTIONS_PER_TEST = 20;
@@ -173,20 +165,6 @@ const RyanneQuickQuiz: React.FC = () => {
     initializeApp();
   }, []);
 
-  // Fetch User details from NEW storage key
-  useEffect(() => {
-    const details = localStorage.getItem(STORAGE_CONFIG.USER_INFO);
-    // Fallback to generic user info if specific one doesn't exist yet
-    const fallbackDetails = localStorage.getItem("user-info");
-    
-    const dataToUse = details || fallbackDetails;
-    const parsesData = dataToUse && JSON.parse(dataToUse);
-    
-    if (parsesData) {
-        setUser(parsesData);
-    }
-  }, []);
-
   // Save progress whenever quiz state changes
   useEffect(() => {
     if (state.gameState === "quiz" && !state.loading) {
@@ -195,7 +173,7 @@ const RyanneQuickQuiz: React.FC = () => {
         currentQuestion: state.currentQuestion,
         score: state.score,
         startTime: state.startTime,
-        selectedAnswers: [], 
+        selectedAnswers: [],
         isActive: true,
       };
       saveQuizProgress(progress);
@@ -223,16 +201,25 @@ const RyanneQuickQuiz: React.FC = () => {
   // Save the results
   const saveResults = (results: TestResult[]): void => {
     try {
-      localStorage.setItem(STORAGE_CONFIG.TEST_RESULTS, JSON.stringify(results));
+      localStorage.setItem(
+        STORAGE_CONFIG.TEST_RESULTS,
+        JSON.stringify(results)
+      );
 
       const firebaseData = localStorage.getItem(STORAGE_CONFIG.FIREBASE_BACKUP);
       if (!firebaseData) {
-        localStorage.setItem(STORAGE_CONFIG.FIREBASE_BACKUP, JSON.stringify(results));
+        localStorage.setItem(
+          STORAGE_CONFIG.FIREBASE_BACKUP,
+          JSON.stringify(results)
+        );
       }
 
       const parsedData = firebaseData ? JSON.parse(firebaseData) : [];
       const updatedData = [...parsedData, quizResultsRef.current];
-      localStorage.setItem(STORAGE_CONFIG.FIREBASE_BACKUP, JSON.stringify(updatedData));
+      localStorage.setItem(
+        STORAGE_CONFIG.FIREBASE_BACKUP,
+        JSON.stringify(updatedData)
+      );
     } catch (error) {
       console.error("Error saving results:", error);
     }
@@ -387,7 +374,7 @@ const RyanneQuickQuiz: React.FC = () => {
 
     saveResults(updatedResults);
     saveCurrentTestIndex(nextTestIndex);
-    clearQuizProgress(); 
+    clearQuizProgress();
   };
 
   // Get subjects for current test
@@ -517,7 +504,7 @@ const RyanneQuickQuiz: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-                {user.name}
+                Ryanne Ochieng{" "}
               </span>
             </h1>
 
@@ -636,8 +623,6 @@ const RyanneQuickQuiz: React.FC = () => {
                   <Trophy className="w-4 h-4 text-amber-500 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
                   Analytics
                 </button>
-
-              
 
                 {/* 3. Reset Button */}
                 <button
@@ -762,8 +747,8 @@ const RyanneQuickQuiz: React.FC = () => {
                 if (!state.showFeedback) {
                   base +=
                     state.selectedAnswer === key
-                      ? " bg-blue-600 border-blue-600 text-white shadow-md" 
-                      : " bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-300"; 
+                      ? " bg-blue-600 border-blue-600 text-white shadow-md"
+                      : " bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-300";
                 } else {
                   if (key === currentQ.correctAnswer) {
                     base +=
@@ -1019,7 +1004,6 @@ const RyanneQuickQuiz: React.FC = () => {
       </div>
     );
   }
-
 
   // Fallback return
   return null;
