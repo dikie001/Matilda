@@ -25,6 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useSound from "../../hooks/useSound";
 import logo from "/images/logo.png";
+import { BackButton } from "@/components/app/Backbutton";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION (EDIT HERE)
@@ -497,6 +498,7 @@ const GavinQuickQuiz: React.FC = () => {
 
         <main className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
+          <BackButton/>
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />
