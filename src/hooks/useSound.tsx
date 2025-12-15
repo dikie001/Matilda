@@ -10,7 +10,7 @@ const useSound = () => {
       success: { src: success, volume: 1 },
       error: { src: error, volume: 1 },
       finish: { src: finish, volume: 1 },
-      send: { src: send, volume: 1 },
+      send: { src: send, volume: 0.5 },
 
     }),
     []
