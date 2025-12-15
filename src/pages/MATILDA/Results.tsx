@@ -174,7 +174,7 @@ const Results = () => {
           className="sm:max-w-3xl border-none shadow-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl p-8"
           onInteractOutside={(e) => e.preventDefault()}
         >
-          <DialogHeader className="mb-8">
+          <DialogHeader className="mb-6 ">
             <DialogTitle className="text-center">
               <span className="block text-3xl font-extrabold text-gray-900 dark:text-gray-100 mb-2 tracking-tight">
                 Welcome Back
