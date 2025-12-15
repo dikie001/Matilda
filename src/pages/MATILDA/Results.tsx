@@ -35,6 +35,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
+import LoaderPage from "../ADMIN/Loader";
 
 // --- TYPES ---
 interface TestResult {
@@ -159,11 +160,7 @@ const Results = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
-        <Loader2 className="w-10 h-10 animate-spin text-indigo-600" />
-      </div>
-    );
+    return <LoaderPage />;
   }
 
   return (
@@ -304,39 +301,37 @@ const Results = () => {
           </div>
         </div>
 
-           <div className="flex w-full md:hidden justify-end items-center mb-4  flex-row gap-3">
-            <Button
-              variant="outline"
-              onClick={() => setShowSelectionDialog(true)}
-              className="bg-white hover:bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700"
-            >
-              <Users className="w-4 h-4 mr-2" />
-              Switch Profile
-            </Button>
+        <div className="flex w-full md:hidden justify-end items-center mb-4  flex-row gap-3">
+          <Button
+            variant="outline"
+            onClick={() => setShowSelectionDialog(true)}
+            className="bg-white hover:bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700"
+          >
+            <Users className="w-4 h-4 mr-2" />
+            Switch Profile
+          </Button>
 
-            {isClient && graphData.length > 0 && (
-              <PDFDownloadLink
-                document={
-                  <ReportDocument stats={stats} graphData={graphData} />
-                }
-                fileName="Matilda_Awino_Report.pdf"
-              >
-                {({ loading: pdfLoading }) => (
-                  <Button
-                    className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200/50 dark:shadow-none transition-all"
-                    disabled={pdfLoading}
-                  >
-                    {pdfLoading ? (
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    ) : (
-                      <Download className="w-4 h-4 mr-2" />
-                    )}
-                    {pdfLoading ? "Generating..." : "Download Report"}
-                  </Button>
-                )}
-              </PDFDownloadLink>
-            )}
-          </div>
+          {isClient && graphData.length > 0 && (
+            <PDFDownloadLink
+              document={<ReportDocument stats={stats} graphData={graphData} />}
+              fileName="Matilda_Awino_Report.pdf"
+            >
+              {({ loading: pdfLoading }) => (
+                <Button
+                  className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200/50 dark:shadow-none transition-all"
+                  disabled={pdfLoading}
+                >
+                  {pdfLoading ? (
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                    <Download className="w-4 h-4 mr-2" />
+                  )}
+                  {pdfLoading ? "Generating..." : "Download Report"}
+                </Button>
+              )}
+            </PDFDownloadLink>
+          )}
+        </div>
 
         {/* --- STATS ROW --- */}
         <div className="grid  grid-cols-2 gap-4 md:gap-6 mb-8">
