@@ -256,7 +256,7 @@ const Results = () => {
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="mb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div className="mb-12 flex flex-row lg:items-end justify-between gap-6">
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
               Learning Report
@@ -305,7 +305,7 @@ const Results = () => {
         </div>
 
         {/* --- STATS ROW --- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+        <div className="grid  grid-cols-2 gap-4 md:gap-6 mb-8">
           <StatCard
             title="Tests Completed"
             value={stats.testsDone}
@@ -321,7 +321,7 @@ const Results = () => {
         </div>
 
         {/* --- MAIN GRAPH --- */}
-        <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-3xl p-2 md:p-4 shadow-sm border border-gray-100 dark:border-gray-700">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
