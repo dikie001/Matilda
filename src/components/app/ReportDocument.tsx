@@ -91,11 +91,15 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.8)",
     overflow: "hidden",
     backgroundColor: theme.white,
+    alignItems: "center",
+    justifyContent: "center",
   },
+  // --- UPDATED: Ensures image fills the circle perfectly ---
   avatarImage: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
+    borderRadius: 25,
   },
   userDetails: {
     justifyContent: "center",
