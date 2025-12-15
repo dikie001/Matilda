@@ -4,7 +4,13 @@
 import Navbar from "@/components/app/Navbar";
 import { Button } from "@/components/ui/button";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { Download, FileCheck, Loader2, TrendingUp, Trophy } from "lucide-react";
+import {
+  Download,
+  FileCheck,
+  Loader2,
+  TrendingUp,
+  Trophy
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   Bar,
@@ -18,6 +24,7 @@ import {
   YAxis,
 } from "recharts";
 import { ReportDocument } from "./ReportDocument";
+import { BackButton } from "@/components/app/Backbutton";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION
@@ -130,6 +137,7 @@ const RyanneResults = () => {
       <Navbar />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
+     <BackButton/>
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500">

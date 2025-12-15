@@ -1,19 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import { BackButton } from "@/components/app/Backbutton";
 import Navbar from "@/components/app/Navbar";
-import { STORIES_READ, TEST_RESULTS } from "@/constants";
+import { ReportDocument } from "@/components/app/ReportDocument";
+import { Button } from "@/components/ui/button";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { STORIES_READ, TEST_RESULTS } from "@/constants";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import {
+  ChevronRight,
+  Download,
   FileCheck,
   Loader2,
+  Sparkles,
   TrendingUp,
   Trophy,
-  Download,
-  ChevronRight,
-  Sparkles,
-  Users,
+  Users
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Bar,
   BarChart,
@@ -25,16 +36,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import { ReportDocument } from "@/components/app/ReportDocument";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { useNavigate } from "react-router-dom";
 import LoaderPage from "../ADMIN/Loader";
 
 // --- TYPES ---
@@ -165,6 +166,7 @@ const Results = () => {
 
   return (
     <div className="min-h-screen bg-gray-50/50 dark:bg-gray-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+      <BackButton />
       {/* --- SELECTION DIALOG --- */}
       <Dialog open={showSelectionDialog} onOpenChange={setShowSelectionDialog}>
         <DialogContent

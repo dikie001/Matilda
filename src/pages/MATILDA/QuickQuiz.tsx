@@ -28,6 +28,7 @@ import { toast } from "sonner";
 import useSound from "../../hooks/useSound";
 import logo from "/images/logo.png";
 import HistoryPage from "./HistoryPage";
+import { BackButton } from "@/components/app/Backbutton";
 
 type Options = {
   A: string;
@@ -495,6 +496,8 @@ const QuizApp: React.FC = () => {
 
         <main className="flex-1 flex flex-col  justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
+                  <BackButton/>
+
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 text-pink-700 dark:text-pink-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />

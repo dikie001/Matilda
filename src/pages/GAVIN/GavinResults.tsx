@@ -18,6 +18,7 @@ import {
   YAxis,
 } from "recharts";
 import { ReportDocument } from "./ReportDocument";
+import { BackButton } from "@/components/app/Backbutton";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION
@@ -132,6 +133,7 @@ const GavinResults = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <Navbar />
       <div className="max-w-7xl mx-auto">
+        <BackButton/>
         {/* Header */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
