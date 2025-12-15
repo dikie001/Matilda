@@ -169,7 +169,7 @@ const Results = () => {
   return (
     <div className="min-h-screen bg-gray-50/50 dark:bg-gray-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       {/* --- SELECTION DIALOG --- */}
-      <Dialog  open={showSelectionDialog} onOpenChange={setShowSelectionDialog}>
+      <Dialog open={showSelectionDialog} onOpenChange={setShowSelectionDialog}>
         <DialogContent
           className="sm:max-w-3xl border-none shadow-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl p-8"
           onInteractOutside={(e) => e.preventDefault()}
