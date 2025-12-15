@@ -256,10 +256,10 @@ const Results = () => {
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="mb-12 flex flex-row lg:items-end justify-between gap-6">
+        <div className="mb-4 md:mb-12 flex flex-row lg:items-end justify-between gap-6">
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-              Learning Report
+              Matilda's Report
             </h1>
             <p className="text-lg text-gray-500 dark:text-gray-400">
               Overview for{" "}
@@ -269,7 +269,7 @@ const Results = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex max-md:hidden flex-row gap-3">
             <Button
               variant="outline"
               onClick={() => setShowSelectionDialog(true)}
@@ -303,6 +303,40 @@ const Results = () => {
             )}
           </div>
         </div>
+
+           <div className="flex w-full md:hidden justify-end items-center mb-4  flex-row gap-3">
+            <Button
+              variant="outline"
+              onClick={() => setShowSelectionDialog(true)}
+              className="bg-white hover:bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700"
+            >
+              <Users className="w-4 h-4 mr-2" />
+              Switch Profile
+            </Button>
+
+            {isClient && graphData.length > 0 && (
+              <PDFDownloadLink
+                document={
+                  <ReportDocument stats={stats} graphData={graphData} />
+                }
+                fileName="Matilda_Awino_Report.pdf"
+              >
+                {({ loading: pdfLoading }) => (
+                  <Button
+                    className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200/50 dark:shadow-none transition-all"
+                    disabled={pdfLoading}
+                  >
+                    {pdfLoading ? (
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    ) : (
+                      <Download className="w-4 h-4 mr-2" />
+                    )}
+                    {pdfLoading ? "Generating..." : "Download Report"}
+                  </Button>
+                )}
+              </PDFDownloadLink>
+            )}
+          </div>
 
         {/* --- STATS ROW --- */}
         <div className="grid  grid-cols-2 gap-4 md:gap-6 mb-8">
