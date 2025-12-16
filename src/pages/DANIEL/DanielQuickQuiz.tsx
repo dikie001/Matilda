@@ -421,11 +421,11 @@ const DanielQuickQuiz: React.FC = () => {
 
   // Get performance message
   const getPerformanceMessage = (percentage: number): string => {
-    if (percentage >= 90) return "E.E. Outstanding! You're a quiz master! 🌟";
-    if (percentage >= 80) return "M.E. Excellent work! Keep it up! 🎉";
-    if (percentage >= 70) return "M.E. Great job! You're doing well! 👏";
-    if (percentage >= 60) return "A.E. Good effort! Keep practicing! 💪";
-    return "B.E. Keep studying and you'll improve! 📚 ";
+    if (percentage >= 90) return "E.E. Outstandin! 🌟";
+    if (percentage >= 80) return "M.E. Excellent work! 🎉";
+    if (percentage >= 70) return "M.E. Great job! ! 👏";
+    if (percentage >= 60) return "A.E. Good effort!! 💪";
+    return "B.E. Keep studying and you'll improve!  ";
   };
 
   // Loading screen (Green Theme)
