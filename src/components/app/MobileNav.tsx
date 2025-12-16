@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import type { UpdateStatus } from "@/modals/UpdateAppModal";
 import UpdateModal from "@/modals/UpdateAppModal";
 import {
+  Bike,
   ChevronDown,
   FileText,
   HelpCircle,
@@ -20,7 +21,7 @@ import {
   Truck,
   X,
   Zap,
-  type LucideIcon
+  type LucideIcon,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { FaFootballBall } from "react-icons/fa";
@@ -375,7 +376,28 @@ export default function MobileNav({
           {/* Moved BELOW Activities as requested                    */}
           {/* ======================================================== */}
           <div className="grid gap-3 pt-2">
-            {/* Ryanne: Blue Theme */}
+            {/* Gavin: Green Theme */}
+            <button
+              onClick={() => handleNav("/gavin/quiz")}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
+                location.pathname === "/gavin/quiz"
+                  ? "bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-200"
+                  : "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-100 border-emerald-100 dark:border-emerald-900 hover:bg-emerald-100 dark:hover:bg-emerald-900/50"
+              )}
+            >
+              <Truck
+                className={cn(
+                  "w-5 h-5",
+                  location.pathname === "/gavin/quiz"
+                    ? "text-white"
+                    : "text-emerald-500"
+                )}
+              />
+              <span>Gavin Sowon</span>
+            </button>
+
+            {/* Ryanne : Blue theme */}
             <button
               onClick={() => handleNav("/ryanne/quiz")}
               className={cn(
@@ -396,25 +418,25 @@ export default function MobileNav({
               <span>Ryanne Ochieng</span>
             </button>
 
-            {/* Gavin: Green Theme */}
+            {/* Daniel: orange Theme */}
             <button
-              onClick={() => handleNav("/gavin/quiz")}
+              onClick={() => handleNav("/daniel/quiz")}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
-                location.pathname === "/gavin/quiz"
-                  ? "bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-200"
-                  : "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-100 border-emerald-100 dark:border-emerald-900 hover:bg-emerald-100 dark:hover:bg-emerald-900/50"
+                location.pathname === "/daniel/quiz"
+                  ? "bg-orange-600 text-white border-orange-600 shadow-md shadow-blue-200"
+                  : "bg-orange-50 dark:bg-orange-950/30 text-orange-900 dark:text-blue-100 border-orange-100 dark:border-orange-900 hover:bg-blue-100 dark:hover:bg-orange-900/50"
               )}
             >
-              <Truck
+              <Bike
                 className={cn(
                   "w-5 h-5",
-                  location.pathname === "/gavin/quiz"
+                  location.pathname === "/daniel/quiz"
                     ? "text-white"
-                    : "text-emerald-500"
+                    : "text-orange-500"
                 )}
               />
-              <span>Gavin Sowon</span>
+              <span>Daniel Ochieng</span>
             </button>
           </div>
           {/* ======================================================== */}
