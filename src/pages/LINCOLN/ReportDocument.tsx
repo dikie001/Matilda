@@ -16,9 +16,9 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-// --- THEME (LINCOLN'S EMERALD THEME) ---
+// --- THEME (PURPLE THEME) ---
 const theme = {
-  primary: "#059669", // Emerald 600
+  primary: "#7C3AED", // Violet 600
   secondary: "#64748B",
   success: "#16A34A", // Green 600
   successBg: "#DCFCE7",
@@ -26,11 +26,11 @@ const theme = {
   warningBg: "#FEF3C7",
   danger: "#DC2626", // Red 600
   dangerBg: "#FEE2E2",
-  blue: "#0891B2", // Cyan 600 (Complimentary to Emerald)
+  blue: "#2563EB", // Blue 600
   white: "#FFFFFF",
-  bg: "#F0FDF4", // Very light green background
-  border: "#E2E8F0",
-  text: "#0F172A",
+  bg: "#F5F3FF", // Violet 50
+  border: "#DDD6FE", // Violet 200
+  text: "#1E1B4B", // Very dark purple/indigo text
 };
 
 // --- CBC GRADE LOGIC ---
@@ -39,7 +39,7 @@ const getCBCGrade = (score: number) => {
     return {
       grade: "EE",
       label: "Exceeding Expectations",
-      color: theme.warning,
+      color: "#6D28D9", // Deeper Purple
     };
   if (score >= 75)
     return { grade: "ME", label: "Meeting Expectations", color: theme.success };
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // --- UPDATED: Ensures image fills the circle perfectly ---
   avatarImage: {
     width: "100%",
     height: "100%",
@@ -162,8 +161,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     borderWidth: 1,
-    borderColor: theme.primary, // Using primary border for emphasis
-    borderOpacity: 0.2,
+    borderColor: theme.border,
   },
   statLabel: {
     fontSize: 8,
@@ -175,7 +173,7 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 18,
     fontWeight: "bold",
-    color: theme.primary, // Colored text
+    color: theme.primary,
   },
 
   // --- GRAPH ---
@@ -197,7 +195,7 @@ const styles = StyleSheet.create({
   graphTitle: {
     fontSize: 10,
     fontWeight: "bold",
-    color: "#0F172A",
+    color: theme.text,
   },
 
   // --- TABLE ---
@@ -219,7 +217,7 @@ const styles = StyleSheet.create({
   th: {
     fontSize: 8,
     fontWeight: "bold",
-    color: theme.primary, // Green headers
+    color: theme.primary,
     textTransform: "uppercase",
   },
   tableRow: {
@@ -232,7 +230,7 @@ const styles = StyleSheet.create({
   },
   td: {
     fontSize: 9,
-    color: "#0F172A",
+    color: theme.text,
   },
   badge: {
     borderRadius: 8,
@@ -294,12 +292,7 @@ const line = (pointA: any, pointB: any) => {
     angle: Math.atan2(lengthY, lengthX),
   };
 };
-const controlPoint = (
-  current: any,
-  previous: any,
-  next: any,
-  reverse?: any
-) => {
+const controlPoint = (current: any, previous: any, next: any, reverse?: any) => {
   const p = previous || current;
   const n = next || current;
   const smoothing = 0.2;
@@ -333,7 +326,6 @@ export const ReportDocument = ({
   const cbcInfo = getCBCGrade(stats.averageScore);
   const reportId = `REF-${Math.floor(Math.random() * 1000000000)}`;
 
-  // Graph Dimensions
   const containerWidth = 460;
   const svgHeight = 140;
   const paddingLeft = 25;
@@ -373,10 +365,9 @@ export const ReportDocument = ({
             style={{ position: "absolute", top: 0, left: 0 }}
           >
             <Defs>
-              {/* Gradient: Emerald to Teal */}
               <LinearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="1">
-                <Stop offset="0%" stopColor="#10b981" />
-                <Stop offset="100%" stopColor="#0d9488" />
+                <Stop offset="0%" stopColor="#8B5CF6" />
+                <Stop offset="100%" stopColor="#6D28D9" />
               </LinearGradient>
             </Defs>
             <Path
@@ -411,7 +402,6 @@ export const ReportDocument = ({
 
         {/* BODY */}
         <View style={styles.body}>
-          {/* STATS */}
           <View style={styles.statsContainer}>
             <View
               style={[
@@ -457,27 +447,9 @@ export const ReportDocument = ({
                     />
                   </LinearGradient>
                 </Defs>
-                <Text
-                  x={0}
-                  y={paddingTop + 3}
-                  style={{ fill: theme.secondary, fontSize: 8 }}
-                >
-                  100
-                </Text>
-                <Text
-                  x={5}
-                  y={paddingTop + graphHeight / 2}
-                  style={{ fill: theme.secondary, fontSize: 8 }}
-                >
-                  50
-                </Text>
-                <Text
-                  x={10}
-                  y={paddingTop + graphHeight}
-                  style={{ fill: theme.secondary, fontSize: 8 }}
-                >
-                  0
-                </Text>
+                <Text x={0} y={paddingTop + 3} style={{ fill: theme.secondary, fontSize: 8 }}>100</Text>
+                <Text x={5} y={paddingTop + graphHeight / 2} style={{ fill: theme.secondary, fontSize: 8 }}>50</Text>
+                <Text x={10} y={paddingTop + graphHeight} style={{ fill: theme.secondary, fontSize: 8 }}>0</Text>
                 {[0, 0.5, 1].map((t, i) => (
                   <Line
                     key={i}
@@ -520,38 +492,18 @@ export const ReportDocument = ({
                 ))}
               </Svg>
             ) : (
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text style={{ fontSize: 10, color: theme.secondary }}>
-                  No data.
-                </Text>
+              <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 10, color: theme.secondary }}>No data.</Text>
               </View>
             )}
           </View>
 
-          {/* TABLE */}
-          <Text
-            style={{
-              fontSize: 10,
-              fontWeight: "bold",
-              color: "#0F172A",
-              marginBottom: 6,
-            }}
-          >
-            History
-          </Text>
+          <Text style={{ fontSize: 10, fontWeight: "bold", color: theme.text, marginBottom: 6 }}>History</Text>
           <View style={styles.tableSection}>
             <View style={styles.tableHeader}>
               <Text style={[styles.th, { width: "25%" }]}>Date</Text>
               <Text style={[styles.th, { width: "50%" }]}>Test Name</Text>
-              <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>
-                Score
-              </Text>
+              <Text style={[styles.th, { width: "25%", textAlign: "right" }]}>Score</Text>
             </View>
             {graphData.map((row, i) => {
               const isPass = row.score >= 70;
@@ -560,41 +512,19 @@ export const ReportDocument = ({
                   key={i}
                   style={[
                     styles.tableRow,
-                    i % 2 === 0
-                      ? { backgroundColor: theme.white }
-                      : { backgroundColor: theme.bg },
+                    i % 2 === 0 ? { backgroundColor: theme.white } : { backgroundColor: theme.bg },
                   ]}
                 >
-                  <Text
-                    style={[
-                      styles.td,
-                      { width: "25%", color: theme.secondary },
-                    ]}
-                  >
-                    {row.fullDate}
-                  </Text>
-                  <Text
-                    style={[styles.td, { width: "50%", fontWeight: "bold" }]}
-                  >
-                    {row.name}
-                  </Text>
+                  <Text style={[styles.td, { width: "25%", color: theme.secondary }]}>{row.fullDate}</Text>
+                  <Text style={[styles.td, { width: "50%", fontWeight: "bold" }]}>{row.name}</Text>
                   <View style={{ width: "25%", alignItems: "flex-end" }}>
                     <View
                       style={[
                         styles.badge,
-                        {
-                          backgroundColor: isPass
-                            ? theme.successBg
-                            : theme.warningBg,
-                        },
+                        { backgroundColor: isPass ? theme.successBg : theme.warningBg },
                       ]}
                     >
-                      <Text
-                        style={[
-                          styles.badgeText,
-                          { color: isPass ? theme.success : theme.warning },
-                        ]}
-                      >
+                      <Text style={[styles.badgeText, { color: isPass ? theme.success : theme.warning }]}>
                         {row.score}% {isPass ? "PASS" : "LOW"}
                       </Text>
                     </View>
@@ -605,25 +535,12 @@ export const ReportDocument = ({
           </View>
         </View>
 
-        {/* FOOTER */}
         <View style={styles.footer} fixed>
           <View style={styles.brandStrip} />
           <View style={styles.footerContent}>
-            {/* Serial ID + Date */}
-            <Text style={styles.footerText}>
-              ID: {reportId} | {today}
-            </Text>
-            {/* User Name */}
-            <Text style={styles.footerText}>
-              Prepared for <Text style={styles.footerBold}>{userName}</Text>
-            </Text>
-            {/* Pagination */}
-            <Text
-              style={styles.footerText}
-              render={({ pageNumber, totalPages }) =>
-                `${pageNumber}/${totalPages}`
-              }
-            />
+            <Text style={styles.footerText}>ID: {reportId} | {today}</Text>
+            <Text style={styles.footerText}>Prepared for <Text style={styles.footerBold}>{userName}</Text></Text>
+            <Text style={styles.footerText} render={({ pageNumber, totalPages }) => `${pageNumber}/${totalPages}`} />
           </View>
         </View>
       </Page>

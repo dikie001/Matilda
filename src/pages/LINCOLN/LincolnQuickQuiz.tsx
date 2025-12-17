@@ -483,7 +483,7 @@ const LincolnQuickQuiz: React.FC = () => {
     );
   }
 
-  // Home Screen (Green Theme)
+  // Home Screen (Purple Theme)
   if (state.gameState === "home") {
     return (
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-emerald-50/30 to-green-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative transition-colors duration-300">
@@ -504,7 +504,7 @@ const LincolnQuickQuiz: React.FC = () => {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-700">
                 Abraham Lincoln{" "}
               </span>
             </h1>
@@ -589,7 +589,7 @@ const LincolnQuickQuiz: React.FC = () => {
                   playSend();
                   startTest(state.currentTest);
                 }}
-                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-600 to-teal-600 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-emerald-500/25"
+                className="group relative w-full cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 to-purple-700 p-1 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-purple-600/25"
               >
                 <div className="relative flex items-center justify-between rounded-[14px] bg-white/10 px-6 py-5 sm:px-8 sm:py-6 transition-colors group-hover:bg-white/20">
                   <div className="flex flex-col text-left">
@@ -604,7 +604,7 @@ const LincolnQuickQuiz: React.FC = () => {
                         : `Continue Test ${state.currentTest + 1}`}
                     </span>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-emerald-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white text-white group-hover:text-purple-600">
                     <Play className="w-6 h-6 ml-1 fill-current" />
                   </div>
                 </div>
@@ -661,7 +661,7 @@ const LincolnQuickQuiz: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors font-semibold"
+              className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -682,7 +682,7 @@ const LincolnQuickQuiz: React.FC = () => {
                 playSend();
                 setGameState("home");
               }}
-              className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors font-semibold"
+              className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors font-semibold"
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
               Home
@@ -695,13 +695,13 @@ const LincolnQuickQuiz: React.FC = () => {
                 </h2>
                 <img src={logo} className="h-10" alt="logo" />
               </div>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-purple-600 dark:text-purple-400 font-medium">
                 {currentQ.subject}
               </p>
             </div>
 
             <div className="text-right">
-              <p className="text-teal-600 dark:text-teal-400 font-semibold">
+              <p className="text-purple-600 dark:text-purple-400 font-semibold">
                 Question {state.currentQuestion + 1}/{currentQuestions.length}
               </p>
               {state.startTime && (
@@ -718,7 +718,7 @@ const LincolnQuickQuiz: React.FC = () => {
           {/* Progress Bar */}
           <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-8 overflow-hidden">
             <div
-              className="bg-emerald-600 h-full transition-all duration-500 ease-out"
+              className="bg-purple-600 h-full transition-all duration-500 ease-out"
               style={{
                 width: `${
                   ((state.currentQuestion + 1) / currentQuestions.length) * 100
@@ -794,7 +794,7 @@ const LincolnQuickQuiz: React.FC = () => {
             {state.showFeedback && (
               <button
                 onClick={handleNext}
-                className="w-full mt-4 bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-700 dark:to-teal-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-emerald-200/40 dark:shadow-none flex items-center justify-center gap-2"
+                className="w-full mt-4 bg-gradient-to-r from-purple-600 to-purple-700 dark:from-purple-700 dark:to-purple-800 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-emerald-200/40 dark:shadow-none flex items-center justify-center gap-2"
               >
                 {state.currentQuestion < currentQuestions.length - 1
                   ? "Next Question"
