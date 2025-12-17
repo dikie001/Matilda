@@ -35,7 +35,6 @@ export default function ResetModal({ open, setOpen, user }: MainProps) {
         localStorage.removeItem(`${user}_TEST_RESULTS`);
         localStorage.removeItem(`${user}_QUIZ_PROGRESS`);
         localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
-        alert(`${user}_TEST_RESULTS`);
 
         toast.success(`progress reset for ${user} complete. Reloading...`);
 
