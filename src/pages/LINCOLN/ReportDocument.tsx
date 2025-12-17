@@ -326,7 +326,7 @@ interface ReportProps {
 export const ReportDocument = ({
   stats,
   graphData,
-  userName = "Gavin Sowon",
+  userName = "Abraham Lincoln",
   appName = "Brillia",
 }: ReportProps) => {
   const chartData = graphData.slice(-15);
