@@ -81,10 +81,10 @@ export default function ResetModal({ open, setOpen, user }: MainProps) {
             </div>
             <div>
               <h2 className="text-lg font-bold text-white leading-tight">
-                Danger Zone
+                Danger Zone {user.charAt(0).toUpperCase() + user.slice(1).toLocaleLowerCase()}!
               </h2>
               <p className="text-red-100 text-xs font-medium opacity-90">
-                Delete all progress
+                You are about to delete all your progress.
               </p>
             </div>
           </div>
