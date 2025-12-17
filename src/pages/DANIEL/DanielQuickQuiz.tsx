@@ -98,7 +98,6 @@ interface QuizAppState {
   error: string | null;
 }
 
-
 const DanielQuickQuiz: React.FC = () => {
   const [state, setState] = useState<QuizAppState>({
     currentTest: 0,
@@ -165,8 +164,6 @@ const DanielQuickQuiz: React.FC = () => {
 
     initializeApp();
   }, []);
-
-
 
   // Save progress whenever quiz state changes
   useEffect(() => {
@@ -493,12 +490,16 @@ const DanielQuickQuiz: React.FC = () => {
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
-          <ResetModal open={openResetModal} setOpen={setOpenResetModal} />
+          <ResetModal
+            open={openResetModal}
+            setOpen={setOpenResetModal}
+            user="DANIEL"
+          />
         )}
 
         <main className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
-          <BackButton/>
+          <BackButton />
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />
@@ -508,7 +509,7 @@ const DanielQuickQuiz: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">
-               Daniel Ochieng{" "}
+                Daniel Ochieng{" "}
               </span>
             </h1>
 
@@ -612,7 +613,7 @@ const DanielQuickQuiz: React.FC = () => {
                   </div>
                 </div>
               </button>
-            )} 
+            )}
             {/* Secondary Actions */}
             {state.testResults.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -701,7 +702,7 @@ const DanielQuickQuiz: React.FC = () => {
               <p className="text-orange-600 dark:text-orange-400 font-medium">
                 {currentQ.subject}
               </p>
-            </div> 
+            </div>
 
             <div className="text-right">
               <p className="text-orange-600 dark:text-orange-400 font-semibold">

@@ -6,10 +6,10 @@ import { toast, Toaster } from "sonner";
 type MainProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  user:string
+  user: string;
 };
 
-export default function ResetModal({ open, setOpen , user}: MainProps) {
+export default function ResetModal({ open, setOpen, user }: MainProps) {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [shake, setShake] = useState(false);
@@ -23,22 +23,23 @@ export default function ResetModal({ open, setOpen , user}: MainProps) {
       triggerShake();
       return toast.error("Password is required.");
     }
-    
+
     if (password !== ADMIN_PASSWORD) {
       triggerShake();
-      return toast.error("Incorrect administrator password.");
+      return toast.error("You have entered an incorrect password!");
     }
 
     try {
       setLoading(true);
       setTimeout(() => {
-        localStorage.removeItem(`${user}_TEST_RESULTS`);
-        localStorage.removeItem(`${user}_QUIZ_PROGRESS`);
-        localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
-        
+        // localStorage.removeItem(`${user}_TEST_RESULTS`);
+        // localStorage.removeItem(`${user}_QUIZ_PROGRESS`);
+        // localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
+        alert(`${user}_TEST_RESULTS`);
+
         toast.success("progress reset complete. Reloading...");
-        
-        setTimeout(() => window.location.reload(), 1000);
+
+        // setTimeout(() => window.location.reload(), 1000);
       }, 1500);
     } catch (err) {
       console.error(err);
@@ -55,17 +56,23 @@ export default function ResetModal({ open, setOpen , user}: MainProps) {
   if (!open) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-950/60 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={() => !loading && setOpen(false)}
     >
       <Toaster richColors position="top-center" theme="light" />
-      
-      <div 
+
+      <div
         onClick={(e) => e.stopPropagation()}
         // Changed max-w-md to max-w-sm for a tighter feel
-        className={`w-full max-w-[400px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-red-100 dark:border-red-900/30 transform transition-transform duration-200 ${shake ? "translate-x-2 border-red-500" : ""}`}
-        style={shake ? { animation: "shake 0.5s cubic-bezier(.36,.07,.19,.97) both" } : {}}
+        className={`w-full max-w-[400px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-red-100 dark:border-red-900/30 transform transition-transform duration-200 ${
+          shake ? "translate-x-2 border-red-500" : ""
+        }`}
+        style={
+          shake
+            ? { animation: "shake 0.5s cubic-bezier(.36,.07,.19,.97) both" }
+            : {}
+        }
       >
         {/* Compact Header - Horizontal Layout instead of Stacked */}
         <div className="relative bg-gradient-to-r from-red-600 to-rose-700 dark:from-red-900 dark:to-rose-950 px-6 py-4 flex items-center justify-between">
@@ -74,12 +81,16 @@ export default function ResetModal({ open, setOpen , user}: MainProps) {
               <AlertTriangle className="h-5 w-5 text-white" strokeWidth={2.5} />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white leading-tight">Danger Zone</h2>
-              <p className="text-red-100 text-xs font-medium opacity-90">Delete all progress</p>
+              <h2 className="text-lg font-bold text-white leading-tight">
+                Danger Zone
+              </h2>
+              <p className="text-red-100 text-xs font-medium opacity-90">
+                Delete all progress
+              </p>
             </div>
           </div>
-          
-          <button 
+
+          <button
             onClick={() => setOpen(false)}
             className="p-1.5 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
           >
@@ -91,10 +102,11 @@ export default function ResetModal({ open, setOpen , user}: MainProps) {
         <div className="p-5 space-y-5">
           {/* Warning Box - Simplified */}
           <div className="bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 rounded-lg p-3 flex gap-3">
-             <Trash2 className="h-5 w-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
-             <p className="text-xs sm:text-sm text-red-800 dark:text-red-200 leading-relaxed">
-               This action <strong>cannot be undone</strong>. All test results and history will be permanently wiped.
-             </p>
+            <Trash2 className="h-5 w-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
+            <p className="text-xs sm:text-sm text-red-800 dark:text-red-200 leading-relaxed">
+              This action <strong>cannot be undone</strong>. All test results
+              and history will be permanently wiped.
+            </p>
           </div>
 
           <div className="space-y-2">
@@ -137,7 +149,7 @@ export default function ResetModal({ open, setOpen , user}: MainProps) {
           </div>
         </div>
       </div>
-      
+
       {/* Inline style for the shake animation if 'animate-shake' isn't in your tailwind config */}
       <style>{`
         @keyframes shake {
