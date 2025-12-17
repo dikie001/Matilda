@@ -490,7 +490,7 @@ const LincolnQuickQuiz: React.FC = () => {
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
-          <ResetModal open={openResetModal} setOpen={setOpenResetModal} />
+          <ResetModal open={openResetModal} setOpen={setOpenResetModal} user="LINCOLN" />
         )}
 
         <main className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">

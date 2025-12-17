@@ -1,14 +1,15 @@
-import { ADMIN_PASSWORD, STORAGE_KEYS } from "@/constants";
-import { Loader2, AlertTriangle, Trash2, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ADMIN_PASSWORD } from "@/constants";
+import { AlertTriangle, Loader2, Trash2, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
 
 type MainProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  user:string
 };
 
-export default function ResetModal({ open, setOpen }: MainProps) {
+export default function ResetModal({ open, setOpen , user}: MainProps) {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [shake, setShake] = useState(false);
@@ -31,11 +32,11 @@ export default function ResetModal({ open, setOpen }: MainProps) {
     try {
       setLoading(true);
       setTimeout(() => {
-        localStorage.removeItem(STORAGE_KEYS.TEST_RESULTS);
-        localStorage.removeItem(STORAGE_KEYS.QUIZ_PROGRESS);
-        localStorage.removeItem(STORAGE_KEYS.CURRENT_TEST_INDEX);
+        localStorage.removeItem(`${user}_TEST_RESULTS`);
+        localStorage.removeItem(`${user}_QUIZ_PROGRESS`);
+        localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
         
-        toast.success("System reset complete. Reloading...");
+        toast.success("progress reset complete. Reloading...");
         
         setTimeout(() => window.location.reload(), 1000);
       }, 1500);
