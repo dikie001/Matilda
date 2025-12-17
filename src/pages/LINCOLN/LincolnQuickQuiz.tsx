@@ -17,22 +17,22 @@ import {
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
+import { BackButton } from "@/components/app/Backbutton";
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
-import quizData from "@/jsons/gavin_ryanne_quiz";
+import quizData from "@/jsons/lincoln_ryanne_quiz";
 import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useSound from "../../hooks/useSound";
 import logo from "/images/logo.png";
-import { BackButton } from "@/components/app/Backbutton";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION (EDIT HERE)
 // ==========================================
 
-// Unique ID for Gavin to separate his data
-const USER_ID = "GAVIN";
+// Unique ID for Lincoln to separate his data
+const USER_ID = "LINCOLN";
 
 // These keys generate automatically based on the USER_ID above
 const STORAGE_CONFIG = {
@@ -99,7 +99,7 @@ interface QuizAppState {
 }
 
 
-const GavinQuickQuiz: React.FC = () => {
+const LincolnQuickQuiz: React.FC = () => {
   const [state, setState] = useState<QuizAppState>({
     currentTest: 0,
     currentQuestion: 0,
@@ -421,11 +421,11 @@ const GavinQuickQuiz: React.FC = () => {
 
   // Get performance message
   const getPerformanceMessage = (percentage: number): string => {
-    if (percentage >= 90) return "E.E. Outstanding! You're a quiz master! 🌟";
-    if (percentage >= 80) return "M.E. Excellent work! Keep it up! 🎉";
-    if (percentage >= 70) return "M.E. Great job! You're doing well! 👏";
-    if (percentage >= 60) return "A.E. Good effort! Keep practicing! 💪";
-    return "B.E. Keep studying and you'll improve! 📚 ";
+    if (percentage >= 90) return "E.E. Outstanding! 🌟";
+    if (percentage >= 80) return "M.E. Excellent! 🎉";
+    if (percentage >= 70) return "M.E. Great job! 👏";
+    if (percentage >= 60) return "A.E. Great Effort! 💪";
+    return "B.E. Keep studying and you'll improve!  ";
   };
 
   // Loading screen (Green Theme)
@@ -620,7 +620,7 @@ const GavinQuickQuiz: React.FC = () => {
                 <button
                   onClick={() => {
                     playSend();
-                    navigate("/gavin/results");
+                    navigate("/lincoln/results");
                   }}
                   className="group flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-semibold text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-[1.02] hover:shadow-md transition-all duration-200"
                 >
@@ -993,7 +993,7 @@ const GavinQuickQuiz: React.FC = () => {
                   <button
                     onClick={() => {
                       playSend();
-                      navigate("/gavin/results");
+                      navigate("/lincoln/results");
                     }}
                     className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-700 hover:border-emerald-200 font-medium h-10 rounded-xl transition-all"
                   >

@@ -18,6 +18,7 @@ import {
   Settings,
   Shield,
   Sparkle,
+  Trees,
   Truck,
   X,
   Zap,
@@ -439,25 +440,25 @@ export default function MobileNav({
               <span>Daniel Ochieng</span>
             </button>
 
-                 {/* Daniel: purple Theme */}
+            {/* Daniel: purple Theme */}
             <button
-              onClick={() => handleNav("/daniel/quiz")}
+              onClick={() => handleNav("/lincoln/quiz")}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
                 location.pathname === "/daniel/quiz"
                   ? "bg-purple-600 text-white border-purple-600 shadow-md shadow-purple-200"
-                  : "bg-purple-50 dark:bg-orange-950/30 text-purple-900 dark:text-purple-100 border-purple-100 dark:border-purple-900 hover:bg-purple-100 dark:hover:bg-purple-900/50"
+                  : "bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100 border-purple-100 dark:border-purple-900 hover:bg-purple-100 dark:hover:bg-purple-900/50"
               )}
             >
-              <Bike
+              <Trees
                 className={cn(
                   "w-5 h-5",
-                  location.pathname === "/daniel/quiz"
+                  location.pathname === "/lincoln/quiz"
                     ? "text-white"
-                    : "text-orange-500"
+                    : "text-purple-500"
                 )}
               />
-              <span>Daniel Ochieng</span>
+              <span>Abraham Lincoln</span>
             </button>
           </div>
           {/* ======================================================== */}
