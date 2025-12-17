@@ -32,14 +32,14 @@ export default function ResetModal({ open, setOpen, user }: MainProps) {
     try {
       setLoading(true);
       setTimeout(() => {
-        // localStorage.removeItem(`${user}_TEST_RESULTS`);
-        // localStorage.removeItem(`${user}_QUIZ_PROGRESS`);
-        // localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
+        localStorage.removeItem(`${user}_TEST_RESULTS`);
+        localStorage.removeItem(`${user}_QUIZ_PROGRESS`);
+        localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
         alert(`${user}_TEST_RESULTS`);
 
         toast.success("progress reset complete. Reloading...");
 
-        // setTimeout(() => window.location.reload(), 1000);
+        setTimeout(() => window.location.reload(), 1000);
       }, 1500);
     } catch (err) {
       console.error(err);
