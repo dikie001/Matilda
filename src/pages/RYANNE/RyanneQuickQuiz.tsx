@@ -19,7 +19,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
-import quizData from "@/jsons/gavin_ryanne_quiz";
+import {quizData} from "@/jsons/lincoln";
 import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
