@@ -24,8 +24,8 @@ import { BackButton } from "@/components/app/Backbutton";
 // 🛠️ CONFIGURATION SECTION
 // ==========================================
 
-// Must match the ID used in Gavin's Quiz App
-const USER_ID = "GAVIN";
+// Must match the ID used in Lincoln's Quiz App
+const USER_ID = "LINCOLN";
 
 const STORAGE_CONFIG = {
   TEST_RESULTS: `${USER_ID}_TEST_RESULTS`,
@@ -54,7 +54,7 @@ const getColorForScore = (score: number) => {
   return "#ef4444"; // red-500 (Needs Improvement)
 };
 
-const GavinResults = () => {
+const LincolnResults = () => {
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState<UserStats>({
     testsDone: 0,
@@ -138,7 +138,7 @@ const GavinResults = () => {
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500">
-              Gavin's Results
+              Lincoln's Results
             </h1>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Overview of tests and performance milestones.
@@ -149,7 +149,7 @@ const GavinResults = () => {
           {isClient && graphData.length > 0 && (
             <PDFDownloadLink
               document={<ReportDocument stats={stats} graphData={graphData} />}
-              fileName="Gavin's Report.pdf"
+              fileName="Lincoln's Report.pdf"
             >
               {({ loading: pdfLoading }) => (
                 <Button
@@ -373,4 +373,4 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export default GavinResults;
+export default LincolnResults;

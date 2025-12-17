@@ -16,7 +16,7 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-// --- THEME (GAVIN'S EMERALD THEME) ---
+// --- THEME (LINCOLN'S EMERALD THEME) ---
 const theme = {
   primary: "#059669", // Emerald 600
   secondary: "#64748B",
