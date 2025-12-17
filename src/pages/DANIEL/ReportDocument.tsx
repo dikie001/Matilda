@@ -16,21 +16,21 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-// --- THEME (DANEIL'S EMERALD THEME) ---
+// --- THEME (ORANGE THEME) ---
 const theme = {
-  primary: "#059669", // Emerald 600
+  primary: "#EA580C", // Orange 600
   secondary: "#64748B",
   success: "#16A34A", // Green 600
   successBg: "#DCFCE7",
-  warning: "#D97706", // Amber 600
+  warning: "#F59E0B", // Amber 500
   warningBg: "#FEF3C7",
   danger: "#DC2626", // Red 600
   dangerBg: "#FEE2E2",
-  blue: "#0891B2", // Cyan 600 (Complimentary to Emerald)
+  blue: "#0284C7", // Sky 600
   white: "#FFFFFF",
-  bg: "#F0FDF4", // Very light green background
-  border: "#E2E8F0",
-  text: "#0F172A",
+  bg: "#FFF7ED", // Very light orange background (Orange 50)
+  border: "#FED7AA", // Orange 200
+  text: "#1F2937",
 };
 
 // --- CBC GRADE LOGIC ---
@@ -39,15 +39,15 @@ const getCBCGrade = (score: number) => {
     return {
       grade: "EE",
       label: "Exceeding Expectations",
-      color: theme.warning,
+      color: "#C2410C", // Deeper Orange
     };
   if (score >= 60)
-    return { grade: "ME", label: "Meeting Expectations", color: theme.success };
+    return { grade: "ME", label: "Meeting Expectations", color: theme.primary };
   if (score >= 40)
     return {
       grade: "AE",
       label: "Approaching Expectations",
-      color: theme.blue,
+      color: theme.warning,
     };
   return { grade: "BE", label: "Below Expectations", color: theme.danger };
 };
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // --- UPDATED: Ensures image fills the circle perfectly ---
   avatarImage: {
     width: "100%",
     height: "100%",
@@ -162,8 +161,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     borderWidth: 1,
-    borderColor: theme.primary, // Using primary border for emphasis
-    borderOpacity: 0.2,
+    borderColor: theme.border,
   },
   statLabel: {
     fontSize: 8,
@@ -175,7 +173,7 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 18,
     fontWeight: "bold",
-    color: theme.primary, // Colored text
+    color: theme.primary,
   },
 
   // --- GRAPH ---
@@ -197,7 +195,7 @@ const styles = StyleSheet.create({
   graphTitle: {
     fontSize: 10,
     fontWeight: "bold",
-    color: "#0F172A",
+    color: theme.text,
   },
 
   // --- TABLE ---
@@ -219,7 +217,7 @@ const styles = StyleSheet.create({
   th: {
     fontSize: 8,
     fontWeight: "bold",
-    color: theme.primary, // Green headers
+    color: theme.primary,
     textTransform: "uppercase",
   },
   tableRow: {
@@ -232,7 +230,7 @@ const styles = StyleSheet.create({
   },
   td: {
     fontSize: 9,
-    color: "#0F172A",
+    color: theme.text,
   },
   badge: {
     borderRadius: 8,
@@ -286,6 +284,7 @@ const svgPath = (points: any[], command: any) =>
       i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${command(point, i, a)}`,
     ""
   );
+
 const line = (pointA: any, pointB: any) => {
   const lengthX = pointB[0] - pointA[0];
   const lengthY = pointB[1] - pointA[1];
@@ -294,6 +293,7 @@ const line = (pointA: any, pointB: any) => {
     angle: Math.atan2(lengthY, lengthX),
   };
 };
+
 const controlPoint = (
   current: any,
   previous: any,
@@ -310,6 +310,7 @@ const controlPoint = (
   const y = current[1] + Math.sin(angle) * length;
   return [x, y];
 };
+
 const bezierCommand = (point: any, i: any, a: any) => {
   const [cpsX, cpsY] = controlPoint(a[i - 1], a[i - 2], point);
   const [cpeX, cpeY] = controlPoint(point, a[i - 1], a[i + 1], true);
@@ -333,7 +334,6 @@ export const ReportDocument = ({
   const cbcInfo = getCBCGrade(stats.averageScore);
   const reportId = `REF-${Math.floor(Math.random() * 1000000000)}`;
 
-  // Graph Dimensions
   const containerWidth = 460;
   const svgHeight = 140;
   const paddingLeft = 25;
@@ -373,10 +373,9 @@ export const ReportDocument = ({
             style={{ position: "absolute", top: 0, left: 0 }}
           >
             <Defs>
-              {/* Gradient: Emerald to Teal */}
               <LinearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="1">
-                <Stop offset="0%" stopColor="#10b981" />
-                <Stop offset="100%" stopColor="#0d9488" />
+                <Stop offset="0%" stopColor="#f97316" />
+                <Stop offset="100%" stopColor="#ea580c" />
               </LinearGradient>
             </Defs>
             <Path
@@ -411,7 +410,6 @@ export const ReportDocument = ({
 
         {/* BODY */}
         <View style={styles.body}>
-          {/* STATS */}
           <View style={styles.statsContainer}>
             <View
               style={[
@@ -539,7 +537,7 @@ export const ReportDocument = ({
             style={{
               fontSize: 10,
               fontWeight: "bold",
-              color: "#0F172A",
+              color: theme.text,
               marginBottom: 6,
             }}
           >
@@ -592,14 +590,14 @@ export const ReportDocument = ({
                       <Text
                         style={[
                           styles.badgeText,
-                          { color: isPass ? theme.success : theme.warning },
+                          { color: isPass ? theme.success : theme.primary },
                         ]}
                       >
                         {row.score}% {isPass ? "PASS" : "LOW"}
                       </Text>
                     </View>
                   </View>
-                </View>
+                </View> 
               );
             })}
           </View>
@@ -609,15 +607,12 @@ export const ReportDocument = ({
         <View style={styles.footer} fixed>
           <View style={styles.brandStrip} />
           <View style={styles.footerContent}>
-            {/* Serial ID + Date */}
             <Text style={styles.footerText}>
               ID: {reportId} | {today}
             </Text>
-            {/* User Name */}
             <Text style={styles.footerText}>
               Prepared for <Text style={styles.footerBold}>{userName}</Text>
             </Text>
-            {/* Pagination */}
             <Text
               style={styles.footerText}
               render={({ pageNumber, totalPages }) =>
