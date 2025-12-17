@@ -137,7 +137,7 @@ const LincolnResults = () => {
         {/* Header */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600">
               Lincoln's Results
             </h1>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
@@ -153,7 +153,7 @@ const LincolnResults = () => {
             >
               {({ loading: pdfLoading }) => (
                 <Button
-                  className="bg-emerald-600 cursor-pointer hover:bg-emerald-700 text-white shadow-lg shadow-emerald-200 dark:shadow-none transition-all border-none"
+                  className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-white shadow-lg shadow-purple-200 dark:shadow-none transition-all border-none"
                   disabled={pdfLoading}
                 >
                   {pdfLoading ? (
