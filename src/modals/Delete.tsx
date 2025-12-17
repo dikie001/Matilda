@@ -37,7 +37,7 @@ export default function ResetModal({ open, setOpen, user }: MainProps) {
         localStorage.removeItem(`${user}_CURRENT_TEST_INDEX`);
         alert(`${user}_TEST_RESULTS`);
 
-        toast.success("progress reset complete. Reloading...");
+        toast.success(`progress reset for ${user} complete. Reloading...`);
 
         setTimeout(() => window.location.reload(), 1000);
       }, 1500);
@@ -120,7 +120,7 @@ export default function ResetModal({ open, setOpen, user }: MainProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && resetAllData()}
-              placeholder="Enter admin password..."
+              placeholder={`Enter your password ${user.toLocaleLowerCase()}`}
               className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-red-500 focus:bg-white dark:focus:bg-gray-950 focus:ring-4 focus:ring-red-500/10 outline-none transition-all font-medium text-gray-900 dark:text-gray-100 text-sm"
             />
           </div>
