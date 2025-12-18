@@ -5,6 +5,7 @@ import type { UpdateStatus } from "@/modals/UpdateAppModal";
 import UpdateModal from "@/modals/UpdateAppModal";
 import {
   Bike,
+  Book,
   ChevronDown,
   FileText,
   HelpCircle,
@@ -440,7 +441,7 @@ export default function MobileNav({
               <span>Daniel Ochieng</span>
             </button>
 
-            {/* Daniel: purple Theme */}
+            {/* Lincoln: purple Theme */}
             <button
               onClick={() => handleNav("/lincoln/quiz")}
               className={cn(
@@ -459,6 +460,27 @@ export default function MobileNav({
                 )}
               />
               <span>Abraham Lincoln</span>
+            </button>
+
+            {/* Reading practice */}
+            <button
+              onClick={() => handleNav("/reading")}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
+                location.pathname === "/reading"
+                  ? "bg-orange-600 text-white border-orange-600 shadow-md shadow-orange-200"
+                  : "bg-orange-50 dark:bg-orange-950/30 text-orange-900 dark:text-orange-100 border-orange-100 dark:border-orange-900 hover:bg-orange-100 dark:hover:bg-orange-900/50"
+              )}
+            >
+              <Book
+                className={cn(
+                  "w-5 h-5",
+                  location.pathname === "/reading"
+                    ? "text-white"
+                    : "text-orange-500"
+                )}
+              />
+              <span>Reading</span>
             </button>
           </div>
           {/* ======================================================== */}
