@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-    BookOpen,
-    ChevronLeft,
-    ChevronRight,
-    FileText,
-    Sparkles,
-    Star,
-    Trophy
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  FileText,
+  Sparkles,
+  Star,
+  Trophy,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -360,13 +360,48 @@ const LESSON_DATA: Record<LevelKey, Lesson[]> = {
       paragraph:
         "In the middle of the park is a secret garden. The flowers there can talk and tell funny stories. If you listen very closely, you can hear the roses laughing at the bees. It is the most beautiful place in the whole world.",
     },
+    {
+      word: "The Friendly Cloud",
+      paragraph:
+        "High in the sky floats a soft white cloud. It slowly changes its shape into a bunny and then a ship. Children below point and laugh with joy. The cloud smiles as it drifts across the blue sky.",
+    },
+    {
+      word: "Nighttime Stars",
+      paragraph:
+        "When the sun goes to sleep, the stars come out to play. They twinkle and shine like tiny lights in the dark sky. The moon watches over them quietly. Night feels calm and peaceful.",
+    },
+    {
+      word: "The Brave Little Bird",
+      paragraph:
+        "A small bird sits on a tall tree branch. She is scared but wants to fly. She takes a deep breath and jumps. Soon she is flying high and feeling very proud.",
+    },
+    {
+      word: "Rainy Day Fun",
+      paragraph:
+        "Raindrops tap softly on the window. Puddles form on the ground outside. I put on my boots and jump splash splash splash. Rainy days can be fun too.",
+    },
+    {
+      word: "The Lost Teddy",
+      paragraph:
+        "A little teddy bear falls under the bed. He feels lonely in the dark. Soon a small hand reaches down and picks him up. Teddy is happy to be home again.",
+    },
+    {
+      word: "The Busy Ant",
+      paragraph:
+        "An ant carries a crumb bigger than its head. It walks slowly but never gives up. Other ants cheer and help along the way. Together they reach their home.",
+    },
+    {
+      word: "The Happy Playground",
+      paragraph:
+        "Children laugh as they run across the playground. Swings fly high and slides go fast. The air is full of joy and noise. Everyone goes home smiling.",
+    },
   ],
 };
 
 const Reading = () => {
   const [level, setLevel] = useState<LevelKey>("Beginner");
   const [index, setIndex] = useState(0);
-//   const [isSpeaking, setIsSpeaking] = useState<string | null>(null);
+  //   const [isSpeaking, setIsSpeaking] = useState<string | null>(null);
   const [activeWord, setActiveWord] = useState<string | null>(null);
 
   const lessons = LESSON_DATA[level];
@@ -380,7 +415,7 @@ const Reading = () => {
     utterance.pitch = 1.1;
     // utterance.onstart = () => setIsSpeaking(text);
     utterance.onend = () => {
-    //   setIsSpeaking(null);
+      //   setIsSpeaking(null);
       setActiveWord(null);
     };
     window.speechSynthesis.speak(utterance);
