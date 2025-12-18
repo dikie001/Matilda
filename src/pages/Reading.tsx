@@ -1,17 +1,17 @@
-import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  BookOpen,
-  ChevronLeft,
-  ChevronRight,
-  Volume2,
-  Star,
-  Trophy,
-  Sparkles,
-  ArrowLeft,
+    ArrowLeft,
+    BookOpen,
+    ChevronLeft,
+    ChevronRight,
+    Sparkles,
+    Star,
+    Trophy,
+    Volume2,
 } from "lucide-react";
+import { useState } from "react";
 
 type LevelKey = "Beginner" | "Junior" | "Super Reader";
 
