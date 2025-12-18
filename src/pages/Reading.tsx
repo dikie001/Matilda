@@ -233,8 +233,37 @@ const LESSON_DATA: Record<LevelKey, Lesson[]> = {
   { "word": "Silver", "sentence": "The moon looks like silver." },
   { "word": "Ticket", "sentence": "Hold your ticket for the movie." },
   { "word": "Useful", "sentence": "A map is useful for travel." },
-  { "word": "Village", "sentence": "They live in a small village." }
-],
+  { "word": "Village", "sentence": "They live in a small village." },
+
+  { "word": "Apple", "sentence": "I eat an apple every day." },
+  { "word": "Balloon", "sentence": "The red balloon floats up." },
+  { "word": "Butterfly", "sentence": "The butterfly has pretty wings." },
+  { "word": "Chair", "sentence": "Sit on the chair quietly." },
+  { "word": "Doctor", "sentence": "The doctor helps sick people." },
+  { "word": "Elephant", "sentence": "The elephant is very big." },
+  { "word": "Family", "sentence": "I love my family." },
+  { "word": "Grass", "sentence": "The grass is soft and green." },
+  { "word": "House", "sentence": "My house has a blue door." },
+  { "word": "Ice", "sentence": "Ice is very cold." },
+  { "word": "Juice", "sentence": "I drink orange juice." },
+  { "word": "Kitten", "sentence": "The kitten is small and cute." },
+  { "word": "Lamp", "sentence": "Turn on the lamp at night." },
+  { "word": "Milk", "sentence": "Milk makes bones strong." },
+  { "word": "Nest", "sentence": "The bird sleeps in a nest." },
+  { "word": "Ocean", "sentence": "Fish live in the ocean." },
+  { "word": "Paper", "sentence": "Fold the paper in half." },
+  { "word": "Queen", "sentence": "The queen wears a crown." },
+  { "word": "Rain", "sentence": "Rain falls from dark clouds." },
+  { "word": "Star", "sentence": "A star shines at night." },
+  { "word": "Table", "sentence": "Put the book on the table." },
+  { "word": "Umbrella", "sentence": "Use an umbrella in the rain." },
+  { "word": "Van", "sentence": "We ride in a school van." },
+  { "word": "Water", "sentence": "Drink water to stay healthy." },
+  { "word": "Box", "sentence": "The toy is in the box." },
+  { "word": "Yogurt", "sentence": "I eat yogurt for breakfast." },
+  { "word": "Zoo", "sentence": "We saw lions at the zoo." }
+]
+,
 "Super Reader": [
   { word: "Adventure", sentence: "Let's go on a forest adventure." },
   { word: "Mountain", sentence: "The snowy mountain is very tall." },
@@ -327,7 +356,7 @@ const Reading = () => {
   const lessons = LESSON_DATA[level];
   const current = lessons[index];
 
-  const speak = (text: string, rate = 0.8) => {
+  const speak = (text: string, rate = 0.5) => {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
