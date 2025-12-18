@@ -28,6 +28,7 @@ import DanielQuickQuiz from "./pages/DANIEL/DanielQuickQuiz";
 import DanielResults from "./pages/DANIEL/DanielResults";
 import LincolnQuickQuiz from "./pages/LINCOLN/LincolnQuickQuiz";
 import LincolnResults from "./pages/LINCOLN/LincolnResults";
+import Reading from "./pages/Reading";
 const FactFrenzy = lazy(() => import("./pages/MATILDA/FunFacts"));
 const BrainTeasers = lazy(() => import("./pages/MATILDA/QuickChallenges"));
 const HomePage = lazy(() => import("./pages/MATILDA/HomePage"));
@@ -95,6 +96,7 @@ const App = () => {
           {/* LINCOLN */}
           <Route path="/lincoln/quiz" element={<LincolnQuickQuiz />} />
           <Route path="/lincoln/results" element={<LincolnResults />} />
+          <Route path="/reading" element={<Reading />} />
         </Routes>
       </Suspense>
     </Router>
