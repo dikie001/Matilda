@@ -1,14 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from 'framer-motion';
-import { BookOpen, ChevronLeft, ChevronRight, Music, Sparkles, Star, Volume2 } from 'lucide-react';
+import {
+    BookOpen,
+    ChevronLeft,
+    ChevronRight,
+    Rocket,
+    Sparkles,
+    Star,
+    Volume2
+} from 'lucide-react';
 import { useState } from 'react';
 
-// --- Data: 50 Carefully Curated Lessons ---
-type LevelKey = 'Beginner' | 'Junior' | 'Super';
-interface Lesson { word: string; sentence: string; emoji: string; }
+/**
+ * dikie, here is the full-featured, comprehensive learning page.
+ * Strictly using React, TypeScript, Tailwind, and Shadcn.
+ * 50 Curated entries across three distinct levels.
+ * UI designed for Grade 1-4: Clean, orange-themed, and intuitive.
+ */
 
-const LESSONS: Record<LevelKey, Lesson[]> = {
+type LevelKey = 'Beginner' | 'Intermediate' | 'Advanced';
+
+interface Lesson {
+  word: string;
+  sentence: string;
+  emoji: string;
+}
+
+const LESSON_DATA: Record<LevelKey, Lesson[]> = {
   Beginner: [
     { word: "Cat", sentence: "The cat is on the mat.", emoji: "🐱" },
     { word: "Sun", sentence: "The sun is big and hot.", emoji: "☀️" },
@@ -28,7 +47,7 @@ const LESSONS: Record<LevelKey, Lesson[]> = {
     { word: "Milk", sentence: "Milk is good for you.", emoji: "🥛" },
     { word: "Bee", sentence: "The bee makes honey.", emoji: "🐝" },
   ],
-  Junior: [
+  Intermediate: [
     { word: "Garden", sentence: "We plant seeds in the garden.", emoji: "🌻" },
     { word: "School", sentence: "I learn many things at school.", emoji: "🏫" },
     { word: "Rocket", sentence: "The rocket flies to the stars.", emoji: "🚀" },
@@ -47,7 +66,7 @@ const LESSONS: Record<LevelKey, Lesson[]> = {
     { word: "Cheese", sentence: "The little mouse loves cheese.", emoji: "🧀" },
     { word: "Bridge", sentence: "The cars drive over the bridge.", emoji: "🌉" },
   ],
-  Super: [
+  Advanced: [
     { word: "Adventure", sentence: "Let's go on a forest adventure.", emoji: "🗺️" },
     { word: "Mountain", sentence: "The snowy mountain is very tall.", emoji: "🏔️" },
     { word: "Universe", sentence: "The universe is full of mysteries.", emoji: "🌌" },
@@ -70,169 +89,194 @@ const LESSONS: Record<LevelKey, Lesson[]> = {
 const Reading = () => {
   const [level, setLevel] = useState<LevelKey>('Beginner');
   const [index, setIndex] = useState(0);
-  const [speaking, setSpeaking] = useState<string | null>(null);
+  const [isSpeaking, setIsSpeaking] = useState<string | null>(null);
 
-  const currentLevelLessons = LESSONS[level];
-  const current = currentLevelLessons[index];
+  const lessons = LESSON_DATA[level];
+  const current = lessons[index];
 
-  const speak = (text: string) => {
+  const handleSpeech = (text: string) => {
+    if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.1;
-    utterance.onstart = () => setSpeaking(text);
-    utterance.onend = () => setSpeaking(null);
+    utterance.onstart = () => setIsSpeaking(text);
+    utterance.onend = () => setIsSpeaking(null);
     window.speechSynthesis.speak(utterance);
   };
 
-  const next = () => index < currentLevelLessons.length - 1 && setIndex(index + 1);
-  const prev = () => index > 0 && setIndex(index - 1);
+  const nextLesson = () => {
+    if (index < lessons.length - 1) setIndex(index + 1);
+  };
+
+  const prevLesson = () => {
+    if (index > 0) setIndex(index - 1);
+  };
 
   return (
-    <div className="h-screen w-full bg-[#FFF9F2] overflow-hidden flex font-sans text-orange-950">
+    <div className="h-screen w-full bg-[#FFFBF7] flex overflow-hidden font-sans">
       
-      {/* Sidebar: Navigation & Levels */}
-      <aside className="w-72 bg-white border-r-4 border-orange-100 flex flex-col p-6 space-y-8 shadow-[10px_0_30px_rgba(255,165,0,0.05)]">
-        <div className="flex items-center gap-3 py-2">
-          <div className="bg-orange-500 p-2 rounded-2xl animate-pulse">
-            <BookOpen className="text-white w-6 h-6" />
-          </div>
-          <h1 className="text-xl font-black tracking-tight">Reading Buddy</h1>
+      {/* ASIDE: NAVIGATION */}
+      <aside className="w-80 bg-white border-r-4 border-orange-100 flex flex-col p-6 z-20 shadow-lg">
+        <div className="flex items-center gap-3 mb-10 p-4 bg-orange-50 rounded-3xl border-2 border-orange-100">
+          <BookOpen className="text-orange-600 w-8 h-8" />
+          <h1 className="text-2xl font-black text-orange-950 italic tracking-tighter">ReaderGo!</h1>
         </div>
 
-        <nav className="flex-1 space-y-4">
-          <p className="text-xs font-black uppercase tracking-widest text-orange-300 px-2">Choose your level</p>
-          {(Object.keys(LESSONS) as LevelKey[]).map((l) => (
-            <Button
+        <div className="flex-1 space-y-4">
+          <p className="text-[11px] font-black uppercase text-orange-300 tracking-widest px-2">Levels</p>
+          {(Object.keys(LESSON_DATA) as LevelKey[]).map((l) => (
+            <button
               key={l}
               onClick={() => { setLevel(l); setIndex(0); }}
-              className={`w-full justify-start rounded-2xl py-8 text-lg font-bold border-2 transition-all ${
+              className={`w-full text-left p-5 rounded-[2rem] border-4 transition-all active:scale-95 ${
                 level === l 
-                ? "bg-orange-500 text-white border-orange-600 shadow-lg shadow-orange-200" 
-                : "bg-white text-orange-600 border-orange-100 hover:bg-orange-50"
+                ? "bg-orange-500 text-white border-orange-600 shadow-xl shadow-orange-100 scale-[1.02]" 
+                : "bg-white text-orange-600 border-orange-50 hover:border-orange-200"
               }`}
             >
-              {l === 'Beginner' && "🌟 "}
-              {l === 'Junior' && "🚀 "}
-              {l === 'Super' && "👑 "}
-              {l}
-            </Button>
+              <div className="text-lg font-black">{l}</div>
+              <div className={`text-xs font-bold opacity-80`}>{LESSON_DATA[l].length} Exercises</div>
+            </button>
           ))}
-        </nav>
+        </div>
 
-        <div className="bg-orange-50 p-4 rounded-3xl border-2 border-orange-100 flex items-center gap-3">
-          <div className="bg-yellow-400 p-2 rounded-full">
-            <Star className="w-5 h-5 text-white fill-white" />
-          </div>
-          <p className="text-sm font-bold text-orange-800">Hi dikie, keep going!</p>
+        <div className="mt-auto p-6 bg-orange-50 rounded-[2.5rem] border-2 border-orange-100 relative overflow-hidden group">
+          <Sparkles className="absolute -right-2 -top-2 text-orange-200 w-12 h-12 rotate-12 group-hover:animate-spin" />
+          <p className="text-sm font-black text-orange-900 leading-tight relative z-10">
+            Keep practicing, dikie!<br/>You're doing great.
+          </p>
         </div>
       </aside>
 
-      {/* Main Stage */}
-      <main className="flex-1 flex flex-col p-8 relative">
+      {/* MAIN CONTENT */}
+      <main className="flex-1 flex flex-col p-8 relative overflow-hidden">
         
-        {/* Progress Pill */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-white px-6 py-2 rounded-full shadow-sm border-2 border-orange-50 flex items-center gap-4">
-            <div className="h-2 w-48 bg-orange-100 rounded-full overflow-hidden">
-              <motion.div 
-                className="h-full bg-orange-500" 
-                animate={{ width: `${((index + 1) / currentLevelLessons.length) * 100}%` }}
-              />
-            </div>
-            <span className="text-sm font-black text-orange-400">{index + 1} / {currentLevelLessons.length}</span>
+        {/* Progress Bar Header */}
+        <div className="w-full max-w-4xl mx-auto flex items-center gap-6 mb-8">
+          <div className="flex-1 h-4 bg-orange-100 rounded-full overflow-hidden border-2 border-orange-50">
+            <motion.div 
+              className="h-full bg-orange-500"
+              initial={{ width: 0 }}
+              animate={{ width: `${((index + 1) / lessons.length) * 100}%` }}
+              transition={{ type: "spring", stiffness: 50 }}
+            />
           </div>
+          <span className="font-black text-orange-500 text-lg">
+            {index + 1} / {lessons.length}
+          </span>
         </div>
 
-        {/* Word Display Area */}
-        <div className="flex-1 flex items-center justify-center">
+        {/* The Interaction Stage */}
+        <div className="flex-1 flex items-center justify-center min-h-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={`${level}-${index}`}
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 1.1, opacity: 0, y: -20 }}
-              className="w-full max-w-3xl"
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 1.05, y: -10 }}
+              className="w-full max-w-5xl h-full flex flex-col"
             >
-              <Card className="rounded-[4rem] border-0 shadow-[0_40px_80px_-20px_rgba(255,165,0,0.15)] bg-white overflow-hidden">
-                <CardContent className="p-12 md:p-16 flex flex-col items-center text-center space-y-12">
+              <Card className="flex-1 rounded-[4rem] border-0 shadow-2xl bg-white overflow-hidden flex flex-col">
+                <CardContent className="flex-1 flex flex-col items-center justify-center p-12 space-y-8">
                   
-                  {/* Big Emoji */}
+                  {/* Emoji Section */}
                   <motion.div 
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ repeat: Infinity, duration: 3 }}
-                    className="text-9xl md:text-[12rem] cursor-default select-none filter drop-shadow-2xl"
+                    initial={{ rotate: -10 }}
+                    animate={{ rotate: 10 }}
+                    transition={{ repeat: Infinity, duration: 2.5, repeatType: "reverse" }}
+                    className="text-[10rem] md:text-[14rem] select-none filter drop-shadow-xl"
                   >
                     {current.emoji}
                   </motion.div>
 
-                  {/* Word with Sound */}
-                  <div className="space-y-4">
-                    <div 
-                      onClick={() => speak(current.word)}
-                      className="group cursor-pointer flex items-center gap-6 justify-center"
+                  {/* Word Section */}
+                  <div className="flex flex-col items-center gap-4">
+                    <button 
+                      onClick={() => handleSpeech(current.word)}
+                      className={`group flex items-center gap-6 px-12 py-6 rounded-[3rem] transition-all active:scale-95 border-b-8
+                        ${isSpeaking === current.word 
+                          ? 'bg-orange-500 border-orange-700 text-white' 
+                          : 'bg-white border-orange-100 hover:border-orange-200 text-gray-800'}`}
                     >
-                      <h2 className="text-7xl md:text-9xl font-black tracking-tight text-gray-800 group-hover:text-orange-500 transition-colors">
+                      <h2 className="text-8xl md:text-9xl font-black tracking-tighter">
                         {current.word}
                       </h2>
-                      <div className={`p-4 rounded-full bg-orange-100 group-hover:bg-orange-500 transition-all ${speaking === current.word ? 'scale-125 bg-orange-500 shadow-xl' : ''}`}>
-                        <Volume2 className={`w-8 h-8 ${speaking === current.word ? 'text-white' : 'text-orange-500'}`} />
+                      <div className={`p-4 rounded-full transition-all ${isSpeaking === current.word ? 'bg-white text-orange-500' : 'bg-orange-50 text-orange-500'}`}>
+                        <Volume2 className="w-10 h-10" />
                       </div>
-                    </div>
+                    </button>
+                    <p className="text-orange-300 font-black uppercase text-xs tracking-widest">Click word to listen</p>
                   </div>
 
-                  {/* Sentence Box */}
-                  <div 
-                    onClick={() => speak(current.sentence)}
-                    className={`w-full p-10 rounded-[3rem] border-4 border-dashed transition-all cursor-pointer group
-                      ${speaking === current.sentence 
-                        ? 'bg-orange-500 border-orange-600 shadow-xl' 
-                        : 'bg-orange-50 border-orange-200 hover:border-orange-400'}`}
-                  >
-                    <p className={`text-2xl md:text-4xl font-bold leading-relaxed transition-colors
-                      ${speaking === current.sentence ? 'text-white' : 'text-orange-800'}`}>
-                      "{current.sentence}"
-                    </p>
-                    <div className="mt-4 flex justify-center items-center gap-2">
-                      <Music className={`w-5 h-5 ${speaking === current.sentence ? 'text-white animate-spin' : 'text-orange-300'}`} />
-                      <span className={`text-xs font-black uppercase tracking-tighter ${speaking === current.sentence ? 'text-orange-100' : 'text-orange-300'}`}>
-                        Click to hear the sentence
-                      </span>
-                    </div>
+                  {/* Sentence Section */}
+                  <div className="w-full max-w-3xl">
+                    <button 
+                      onClick={() => handleSpeech(current.sentence)}
+                      className={`w-full p-10 rounded-[3.5rem] border-4 border-dashed transition-all group relative
+                        ${isSpeaking === current.sentence 
+                          ? 'bg-orange-600 border-orange-400 shadow-2xl scale-[1.02]' 
+                          : 'bg-orange-50 border-orange-200 hover:bg-white hover:border-orange-400 shadow-inner'}`}
+                    >
+                      <div className="absolute -top-4 left-10 bg-orange-500 text-white px-6 py-1 rounded-full text-xs font-black uppercase shadow-lg">
+                        Sentence Practice
+                      </div>
+                      
+                      <div className="flex flex-col items-center gap-4">
+                        <p className={`text-4xl md:text-5xl font-bold leading-tight transition-colors
+                          ${isSpeaking === current.sentence ? 'text-white' : 'text-orange-950'}`}>
+                          "{current.sentence}"
+                        </p>
+                        <div className={`flex items-center gap-2 opacity-60 ${isSpeaking === current.sentence ? 'text-white' : 'text-orange-400'}`}>
+                          <Volume2 className="w-5 h-5" />
+                          <span className="text-xs font-bold uppercase tracking-tighter">Click to play audio</span>
+                        </div>
+                      </div>
+                    </button>
                   </div>
+
                 </CardContent>
               </Card>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Footer Navigation */}
-        <div className="flex justify-between items-center h-32 px-12">
+        {/* Navigation Controls */}
+        <footer className="h-32 flex justify-between items-center max-w-4xl mx-auto w-full">
           <Button
-            onClick={prev}
+            onClick={prevLesson}
             disabled={index === 0}
-            className="h-20 w-20 rounded-full bg-white text-orange-400 shadow-lg hover:shadow-xl border-2 border-orange-100 disabled:opacity-30 disabled:shadow-none"
+            className="h-20 w-20 rounded-full bg-white text-orange-400 shadow-lg border-2 border-orange-50 disabled:opacity-20 hover:text-orange-600 hover:scale-110 transition-all"
           >
-            <ChevronLeft className="w-10 h-10" />
+            <ChevronLeft className="w-12 h-12" />
           </Button>
 
-          <div className="flex gap-4 items-center">
-            <div className="p-4 bg-orange-100 rounded-full animate-bounce">
-              <Sparkles className="w-8 h-8 text-orange-500" />
-            </div>
-            <p className="text-xl font-black text-orange-900">Great Job!</p>
+          <div className="flex items-center gap-8 bg-white px-10 py-5 rounded-full border-2 border-orange-50 shadow-sm">
+             <div className="flex items-center gap-2">
+                <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+                <span className="font-black text-orange-950 text-lg">Great reading!</span>
+             </div>
+             <div className="w-px h-6 bg-orange-100" />
+             <div className="flex items-center gap-2">
+                <Rocket className="w-6 h-6 text-orange-500" />
+                <span className="font-bold text-orange-400">Keep it up</span>
+             </div>
           </div>
 
           <Button
-            onClick={next}
-            disabled={index === currentLevelLessons.length - 1}
-            className="h-24 w-24 rounded-full bg-orange-500 text-white shadow-[0_10px_0_0_rgba(194,65,12,1)] active:shadow-none active:translate-y-2 transition-all hover:bg-orange-600"
+            onClick={nextLesson}
+            disabled={index === lessons.length - 1}
+            className="h-24 w-24 rounded-full bg-orange-500 text-white shadow-[0_12px_0_0_#c2410c] hover:bg-orange-600 hover:shadow-[0_8px_0_0_#c2410c] active:translate-y-2 active:shadow-none transition-all flex items-center justify-center group"
           >
-            <ChevronRight className="w-12 h-12" />
+            <ChevronRight className="w-16 h-16 group-hover:scale-110 transition-transform" />
           </Button>
-        </div>
+        </footer>
 
       </main>
+
+      {/* Decorative Background Elements */}
+      <div className="fixed -bottom-20 -left-20 w-64 h-64 bg-orange-100/30 rounded-full blur-3xl -z-10" />
+      <div className="fixed -top-20 -right-20 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl -z-10" />
     </div>
   );
 };
