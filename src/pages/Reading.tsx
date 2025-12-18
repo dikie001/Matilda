@@ -10,6 +10,7 @@ import {
   Star,
   Trophy,
   Sparkles,
+  ArrowLeft,
 } from "lucide-react";
 
 type LevelKey = "Beginner" | "Junior" | "Super Reader";
@@ -74,7 +75,6 @@ const Reading = () => {
     const words = sentence.split(" ");
     speak(sentence, 0.75);
 
-    // Sync visual highlight with audio
     words.forEach((word, i) => {
       setTimeout(() => {
         setActiveWord(word.replace(/[.,]/g, ""));
@@ -87,19 +87,24 @@ const Reading = () => {
 
   return (
     <div className="flex h-screen w-full bg-[#F8FAFC] font-sans text-slate-900">
-      {/* SIDEBAR - Fixed Width */}
+      {/* SIDEBAR */}
       <aside className="hidden md:flex w-72 flex-col bg-white border-r-4 border-slate-100 p-6 shadow-sm">
-        <div className="mb-10 flex items-center gap-3 rounded-2xl bg-indigo-50 p-4">
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="mb-10 flex items-center gap-3 rounded-2xl bg-indigo-50 p-4"
+        >
           <BookOpen className="h-6 w-6 text-indigo-600" />
           <span className="font-black uppercase tracking-tight text-indigo-900">
             Reader
           </span>
-        </div>
+        </motion.div>
 
         <nav className="flex-1 space-y-3">
           {(Object.keys(LESSON_DATA) as LevelKey[]).map((l) => (
-            <button
+            <motion.button
               key={l}
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => {
                 setLevel(l);
                 setIndex(0);
@@ -114,27 +119,46 @@ const Reading = () => {
                 Level
               </div>
               <div className="font-bold text-lg">{l}</div>
-            </button>
+            </motion.button>
           ))}
         </nav>
 
-        <div className="rounded-3xl bg-amber-50 p-5 border-b-4 border-amber-100">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="rounded-3xl bg-amber-50 p-5 border-b-4 border-amber-100"
+        >
           <Trophy className="mb-2 h-6 w-6 text-amber-500" />
           <p className="text-sm font-bold text-amber-900 leading-tight">
             Great job dikie!
           </p>
-        </div>
+        </motion.div>
       </aside>
 
-      {/* MAIN CONTENT - Dynamic Height Adjustment */}
-      <main className="flex flex-1 flex-col overflow-hidden">
-        {/* Progress Header - Fixed Height */}
-        <header className="flex h-20 items-center justify-between px-8">
+      {/* MAIN CONTENT */}
+      <main className="flex flex-1 flex-col overflow-hidden relative">
+        {/* TOP NAVIGATION / BACK BUTTON */}
+        <div className="absolute top-4 left-8 z-10">
+          <motion.div whileHover={{ x: -5 }} whileTap={{ scale: 0.9 }}>
+            <Button
+              variant="ghost"
+              className="flex items-center gap-2 font-bold text-slate-500 hover:text-indigo-600 transition-colors"
+              onClick={() => window.history.back()}
+            >
+              <ArrowLeft className="h-5 w-5" />
+              Back
+            </Button>
+          </motion.div>
+        </div>
+
+        {/* Progress Header */}
+        <header className="flex h-24 items-end justify-between px-8 pb-4">
           <div className="h-4 flex-1 max-w-md bg-slate-200 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-green-500"
               initial={{ width: 0 }}
               animate={{ width: `${((index + 1) / lessons.length) * 100}%` }}
+              transition={{ type: "spring", stiffness: 50 }}
             />
           </div>
           <div className="ml-4 font-black text-slate-400">
@@ -142,42 +166,51 @@ const Reading = () => {
           </div>
         </header>
 
-        {/* LEARNING AREA - Grows to fill available space */}
+        {/* LEARNING AREA */}
         <section className="flex flex-1 items-center justify-center p-4 md:p-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={`${level}-${index}`}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 1.05, y: -20 }}
+              initial={{ opacity: 0, scale: 0.9, rotateX: -10 }}
+              animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+              exit={{ opacity: 0, scale: 1.1, rotateX: 10 }}
+              transition={{ duration: 0.4, type: "spring" }}
               className="flex h-full w-full max-w-5xl items-center justify-center"
             >
-              <Card className="flex h-full w-full flex-col items-center justify-center rounded-[3rem] border-0 bg-white p-8 shadow-xl md:p-12 border-b-[12px] border-slate-100">
+              <Card className="flex h-full w-full flex-col items-center justify-center rounded-[3rem] border-0 bg-white p-8 shadow-2xl md:p-12 border-b-[12px] border-slate-100">
                 <CardContent className="flex w-full flex-col items-center justify-center space-y-8 md:space-y-12">
                   {/* WORD FOCUS */}
                   <motion.button
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => speak(current.word)}
-                    className="group flex flex-col items-center"
+                    className="group flex flex-col items-center cursor-pointer"
                   >
                     <h2
-                      className={`text-[clamp(5rem,15vh,10rem)] font-black leading-none tracking-tighter transition-colors ${
+                      className={`text-[clamp(5rem,15vh,10rem)] font-black leading-none tracking-tighter transition-colors duration-300 ${
                         isSpeaking === current.word
-                          ? "text-indigo-600"
+                          ? "text-indigo-600 scale-110"
                           : "text-slate-900"
                       }`}
                     >
                       {current.word}
                     </h2>
-                    <div className="mt-2 flex items-center gap-2 font-black uppercase text-indigo-400 text-xs tracking-widest">
+                    <motion.div
+                      animate={
+                        isSpeaking === current.word ? { y: [0, -5, 0] } : {}
+                      }
+                      transition={{ repeat: Infinity, duration: 0.6 }}
+                      className="mt-2 flex items-center gap-2 font-black uppercase text-indigo-400 text-xs tracking-widest"
+                    >
                       <Volume2 className="h-4 w-4" /> Listen
-                    </div>
+                    </motion.div>
                   </motion.button>
 
                   {/* SENTENCE BOX */}
-                  <div
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
                     onClick={() => speakSentence(current.sentence)}
-                    className="cursor-pointer rounded-[2.5rem] bg-indigo-50/50 p-6 md:p-10 border-4 border-dashed border-indigo-100 hover:border-indigo-300 transition-colors w-full"
+                    className="cursor-pointer rounded-[2.5rem] bg-indigo-50/50 p-6 md:p-10 border-4 border-dashed border-indigo-100 hover:border-indigo-300 hover:bg-indigo-50 transition-all w-full"
                   >
                     <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
                       {current.sentence.split(" ").map((word, i) => (
@@ -186,61 +219,76 @@ const Reading = () => {
                           animate={{
                             scale:
                               activeWord === word.replace(/[.,]/g, "")
-                                ? 1.2
+                                ? 1.25
                                 : 1,
                             color:
                               activeWord === word.replace(/[.,]/g, "")
                                 ? "#4f46e5"
                                 : "#1e293b",
                           }}
-                          className="text-[clamp(1.5rem,5vh,3.5rem)] font-extrabold"
+                          className="text-[clamp(1.5rem,5vh,3.5rem)] font-extrabold inline-block"
                         >
                           {word}
                         </motion.span>
                       ))}
                     </div>
-                    <div className="mt-4 flex items-center justify-center gap-2 text-indigo-400 opacity-60">
-                      <Sparkles className="h-4 w-4" />
+                    <div className="mt-4 flex items-center justify-center gap-2 text-indigo-400">
+                      <Sparkles className="h-4 w-4 animate-spin-slow" />
                       <span className="text-[10px] font-black uppercase tracking-widest">
                         Tap to read full sentence
                       </span>
                     </div>
-                  </div>
+                  </motion.div>
                 </CardContent>
               </Card>
             </motion.div>
           </AnimatePresence>
         </section>
 
-        {/* NAVIGATION BAR - Fixed Height */}
+        {/* NAVIGATION BAR */}
         <footer className="flex h-32 items-center justify-between px-8 md:px-20 bg-white/50 backdrop-blur-sm">
-          <Button
-            variant="ghost"
-            onClick={prevLesson}
-            disabled={index === 0}
-            className="h-16 w-16 rounded-full border-2 border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-20"
-          >
-            <ChevronLeft className="h-8 w-8 text-slate-600" />
-          </Button>
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Button
+              variant="ghost"
+              onClick={prevLesson}
+              disabled={index === 0}
+              className="h-16 w-16 rounded-full border-2 border-slate-200 bg-white hover:bg-slate-50 hover:border-indigo-200 disabled:opacity-20 transition-all shadow-sm"
+            >
+              <ChevronLeft className="h-8 w-8 text-slate-600" />
+            </Button>
+          </motion.div>
 
           <div className="flex items-center gap-2 md:gap-4">
-            <Star className="h-6 w-6 fill-amber-400 text-amber-400 animate-pulse" />
+            <motion.div
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              <Star className="h-6 w-6 fill-amber-400 text-amber-400" />
+            </motion.div>
             <span className="hidden sm:block font-black text-slate-400 uppercase text-xs tracking-widest">
               Keep going dikie
             </span>
-            <Star className="h-6 w-6 fill-amber-400 text-amber-400 animate-pulse" />
+            <motion.div
+              animate={{ rotate: [0, -15, 15, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              <Star className="h-6 w-6 fill-amber-400 text-amber-400" />
+            </motion.div>
           </div>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Button
               onClick={nextLesson}
               disabled={index === lessons.length - 1}
-              className="h-20 px-8 md:px-12 rounded-[2rem] bg-green-500 text-white shadow-[0_8px_0_0_#15803d] hover:bg-green-600 active:translate-y-1 active:shadow-none transition-all flex items-center gap-4"
+              className="h-20 px-8 md:px-12 rounded-[2rem] bg-green-500 text-white shadow-[0_8px_0_0_#15803d] hover:bg-green-600 active:shadow-none transition-all flex items-center gap-4 group"
             >
               <span className="text-xl font-black uppercase tracking-tight">
                 Next
               </span>
-              <ChevronRight className="h-8 w-8" />
+              <ChevronRight className="h-8 w-8 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
         </footer>
