@@ -6,9 +6,12 @@ import {
   ChevronLeft,
   ChevronRight,
   FileText,
+  Menu,
   Sparkles,
   Star,
   Trophy,
+  Volume2,
+  X,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -401,8 +404,8 @@ const LESSON_DATA: Record<LevelKey, Lesson[]> = {
 const Reading = () => {
   const [level, setLevel] = useState<LevelKey>("Beginner");
   const [index, setIndex] = useState(0);
-  //   const [isSpeaking, setIsSpeaking] = useState<string | null>(null);
   const [activeWord, setActiveWord] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const lessons = LESSON_DATA[level];
   const current = lessons[index];
@@ -413,11 +416,7 @@ const Reading = () => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = rate;
     utterance.pitch = 1.1;
-    // utterance.onstart = () => setIsSpeaking(text);
-    utterance.onend = () => {
-      //   setIsSpeaking(null);
-      setActiveWord(null);
-    };
+    utterance.onend = () => setActiveWord(null);
     window.speechSynthesis.speak(utterance);
   };
 
@@ -434,65 +433,119 @@ const Reading = () => {
   const nextLesson = () => index < lessons.length - 1 && setIndex(index + 1);
   const prevLesson = () => index > 0 && setIndex(index - 1);
 
-  return (
-    <div className="flex h-screen w-full bg-[#F8FAFC] font-sans text-slate-900 overflow-hidden">
-      {/* SIDEBAR */}
-      <aside className="hidden md:flex w-72 flex-col bg-white border-r-4 border-slate-100 p-6 shadow-sm overflow-y-auto">
-        <div className="mb-10 flex items-center gap-3 rounded-2xl bg-indigo-50 p-4">
+  const SidebarContent = () => (
+    <div className="flex flex-col h-full bg-white md:bg-transparent">
+      <div className="mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-3 rounded-2xl bg-indigo-50 p-4 w-full">
           <BookOpen className="h-6 w-6 text-indigo-600" />
           <span className="font-black uppercase tracking-tight text-indigo-900">
             Reader
           </span>
         </div>
+        <button
+          onClick={() => setIsSidebarOpen(false)}
+          className="md:hidden p-2 text-slate-400"
+        >
+          <X className="h-6 w-6" />
+        </button>
+      </div>
 
-        <nav className="flex-1 space-y-3">
-          {(Object.keys(LESSON_DATA) as LevelKey[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => {
-                setLevel(l);
-                setIndex(0);
-              }}
-              className={`w-full rounded-2xl p-4 text-left transition-all border-b-4 active:translate-y-1 ${
-                level === l
-                  ? "bg-indigo-600 text-white border-indigo-800 shadow-lg"
-                  : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100"
-              }`}
-            >
-              <div className="text-[10px] font-black uppercase opacity-60">
-                Level
-              </div>
-              <div className="font-bold text-lg flex items-center gap-2">
-                {l === "Story Time" && <FileText className="h-4 w-4" />}
-                {l}
-              </div>
-            </button>
-          ))}
-        </nav>
+      <nav className="flex-1 space-y-3">
+        {(Object.keys(LESSON_DATA) as LevelKey[]).map((l) => (
+          <button
+            key={l}
+            onClick={() => {
+              setLevel(l);
+              setIndex(0);
+              setIsSidebarOpen(false);
+            }}
+            className={`w-full rounded-2xl p-4 text-left transition-all border-b-4 active:translate-y-1 ${
+              level === l
+                ? "bg-indigo-600 text-white border-indigo-800 shadow-lg"
+                : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100"
+            }`}
+          >
+            <div className="text-[10px] font-black uppercase opacity-60">
+              Level
+            </div>
+            <div className="font-bold text-lg flex items-center gap-2">
+              {l === "Story Time" && <FileText className="h-4 w-4" />}
+              {l}
+            </div>
+          </button>
+        ))}
+      </nav>
 
-        <div className="rounded-3xl bg-amber-50 p-5 border-b-4 border-amber-100 mt-6">
-          <Trophy className="mb-2 h-6 w-6 text-amber-500" />
-          <p className="text-sm font-bold text-amber-900 leading-tight">
-            Great job kiddo!!
-          </p>
-        </div>
+      <div className="rounded-3xl bg-amber-50 p-5 border-b-4 border-amber-100 mt-6">
+        <Trophy className="mb-2 h-6 w-6 text-amber-500" />
+        <p className="text-sm font-bold text-amber-900 leading-tight">
+          Great job dikie!!
+        </p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="flex h-screen w-full bg-[#F8FAFC] font-sans text-slate-900 overflow-hidden relative">
+      {/* DESKTOP SIDEBAR */}
+      <aside className="hidden md:flex w-72 flex-col bg-white border-r-4 border-slate-100 p-6 shadow-sm overflow-y-auto">
+        <SidebarContent />
       </aside>
 
-      {/* MAIN CONTENT */}
-      <main className="flex flex-1 flex-col relative h-full">
-        {/* Back Button */}
-        <div className="absolute top-4 left-8 z-10">
-          <Button
-            variant="ghost"
-            className="flex items-center gap-2 font-bold rounded-2xl text-slate-500 hover:text-blue-600/20 transition-colors"
-            onClick={() => window.history.back()}
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </Button>
-        </div>
+      {/* CUSTOM MOBILE SIDEBAR OVERLAY */}
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsSidebarOpen(false)}
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 md:hidden"
+            />
+            <motion.aside
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 left-0 w-[80%] max-w-sm bg-white p-6 z-50 md:hidden shadow-2xl"
+            >
+              <SidebarContent />
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
 
-        {/* Progress Header */}
-        <header className="flex h-20 items-end justify-between px-8 mt-2 pb-2">
+      {/* MAIN CONTENT */}
+      <main className="flex flex-1 flex-col h-full overflow-hidden">
+        {/* NEW UNIFIED HEADER */}
+        <header className="flex items-center justify-between p-4 md:px-8 border-b md:border-b-0 bg-white md:bg-transparent">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden rounded-xl bg-slate-100"
+              onClick={() => setIsSidebarOpen(true)}
+            >
+              <Menu className="h-6 w-6 text-slate-600" />
+            </Button>
+            <Button
+              variant="ghost"
+              className="flex items-center gap-2 font-bold rounded-xl text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-all"
+              onClick={() => window.history.back()}
+            >
+              <ChevronLeft className="h-5 w-5" />
+              <span className="hidden sm:inline">Back</span>
+            </Button>
+          </div>
+
+          <div className="font-black text-indigo-400 uppercase text-xs tracking-widest bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100">
+            Level: {level}
+          </div>
+        </header>
+
+        {/* PROGRESS AREA */}
+        <div className="px-6 md:px-8 pt-4 pb-2 flex items-center justify-between">
           <div className="h-3 flex-1 max-w-md bg-slate-200 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-green-500"
@@ -501,48 +554,51 @@ const Reading = () => {
               transition={{ type: "spring", stiffness: 50 }}
             />
           </div>
-          <div className="ml-4 font-black text-slate-400">
+          <div className="ml-4 font-black text-slate-400 text-sm md:text-base">
             {index + 1} <span className="opacity-30">/</span> {lessons.length}
           </div>
-        </header>
+        </div>
 
         {/* LEARNING AREA */}
         <section className="flex-1 flex items-center justify-center p-4 md:px-12 md:pb-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={`${level}-${index}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
               className="h-full w-full max-w-4xl"
             >
-              <Card className="h-full w-full flex flex-col rounded-[2.5rem] border-0 bg-white shadow-2xl border-b-[10px] border-slate-100 overflow-hidden">
-                <CardContent className="flex-1 flex flex-col items-center justify-center py-4 px-2 md:p-4 space-y-4">
+              <Card className="h-full w-full flex flex-col rounded-[2.5rem] border-0 bg-white shadow-xl border-b-[8px] border-slate-100 overflow-hidden">
+                <CardContent className="flex-1 flex flex-col items-center justify-center p-6 md:p-10 space-y-6">
                   {/* TITLE */}
                   <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => speak(current.word)}
-                    className="flex flex-col items-center group"
+                    className="flex flex-col items-center"
                   >
                     <h2
-                      className={`text-center mb-2 -mt-2 font-black tracking-tighter transition-colors ${
+                      className={`text-center font-black tracking-tighter transition-colors ${
                         level === "Story Time"
-                          ? "text-4xl md:text-5xl text-indigo-600"
+                          ? "text-3xl md:text-6xl text-indigo-600"
                           : "text-6xl md:text-8xl text-slate-900"
                       }`}
                     >
                       {current.word}
                     </h2>
+                    <div className="mt-2 flex items-center gap-1 font-black uppercase text-indigo-300 text-[10px] tracking-widest">
+                      <Volume2 className="h-4 w-4" /> Tap to hear
+                    </div>
                   </motion.button>
 
-                  {/* CONTENT (Sentence OR Paragraph) */}
-                  <div className="w-full">
+                  {/* CONTENT */}
+                  <div className="w-full max-h-[50vh] overflow-y-auto px-2">
                     {current.paragraph ? (
                       <motion.div
                         onClick={() =>
-                          speakWithHighlight(current.paragraph!, 0.6)
+                          speakWithHighlight(current.paragraph!, 0.65)
                         }
-                        className="cursor-pointer rounded-3xl bg-amber-50/50 p-6 md:p-8 border-4 border-dashed border-amber-100 hover:bg-amber-50 transition-all"
+                        className="cursor-pointer rounded-3xl bg-amber-50/40 p-6 md:p-8 border-4 border-dashed border-amber-100 hover:bg-amber-50/60 transition-all"
                       >
                         <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 leading-relaxed">
                           {current.paragraph.split(" ").map((word, i) => (
@@ -555,7 +611,7 @@ const Reading = () => {
                                     : "#475569",
                                 scale:
                                   activeWord === word.replace(/[.,!?;]/g, "")
-                                    ? 1.1
+                                    ? 1.15
                                     : 1,
                               }}
                               className="text-lg md:text-2xl font-bold transition-all"
@@ -567,14 +623,14 @@ const Reading = () => {
                         <div className="mt-4 flex items-center justify-center gap-2 text-amber-500">
                           <FileText className="h-4 w-4" />
                           <span className="text-[10px] font-black uppercase tracking-widest">
-                            Read Story
+                            Tap to read story
                           </span>
                         </div>
                       </motion.div>
                     ) : (
                       <motion.div
                         onClick={() => speakWithHighlight(current.sentence!)}
-                        className="cursor-pointer rounded-[2rem] bg-indigo-50/50 p-8 border-4 border-dashed border-indigo-100 hover:bg-indigo-50 transition-all text-center"
+                        className="cursor-pointer rounded-[2.5rem] bg-indigo-50/50 p-8 border-4 border-dashed border-indigo-100 hover:bg-indigo-50 transition-all text-center"
                       >
                         <div className="flex flex-wrap justify-center gap-x-3 gap-y-2">
                           {current.sentence?.split(" ").map((word, i) => (
@@ -583,14 +639,14 @@ const Reading = () => {
                               animate={{
                                 scale:
                                   activeWord === word.replace(/[.,]/g, "")
-                                    ? 1.2
+                                    ? 1.25
                                     : 1,
                                 color:
                                   activeWord === word.replace(/[.,]/g, "")
                                     ? "#4f46e5"
                                     : "#1e293b",
                               }}
-                              className="text-3xl md:text-5xl font-extrabold"
+                              className="text-2xl md:text-5xl font-extrabold"
                             >
                               {word}
                             </motion.span>
@@ -599,7 +655,7 @@ const Reading = () => {
                         <div className="mt-4 flex items-center justify-center gap-2 text-indigo-400">
                           <Sparkles className="h-4 w-4" />
                           <span className="text-[10px] font-black uppercase tracking-widest">
-                            Tap to read
+                            Tap to Read Sentence
                           </span>
                         </div>
                       </motion.div>
@@ -612,12 +668,12 @@ const Reading = () => {
         </section>
 
         {/* NAVIGATION BAR */}
-        <footer className="h-28 flex items-center justify-between px-8 md:px-20 bg-white/50 backdrop-blur-sm">
+        <footer className="h-24 md:h-28 flex items-center justify-between px-6 md:px-20 bg-white/80 md:bg-white/50 backdrop-blur-md border-t md:border-t-0">
           <Button
             variant="ghost"
             onClick={prevLesson}
             disabled={index === 0}
-            className="h-14 w-14 rounded-full border-2 border-slate-200 bg-white disabled:opacity-20 shadow-sm"
+            className="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-slate-200 bg-white disabled:opacity-20 shadow-sm"
           >
             <ChevronLeft className="h-6 w-6 text-slate-600" />
           </Button>
@@ -625,7 +681,7 @@ const Reading = () => {
           <div className="flex items-center gap-4">
             <Star className="h-5 w-5 fill-amber-400 text-amber-400 animate-pulse" />
             <span className="hidden sm:block font-black text-slate-400 uppercase text-[10px] tracking-widest">
-              Keep going kiddo!
+              Keep going dikie!
             </span>
             <Star className="h-5 w-5 fill-amber-400 text-amber-400 animate-pulse" />
           </div>
@@ -633,7 +689,7 @@ const Reading = () => {
           <Button
             onClick={nextLesson}
             disabled={index === lessons.length - 1}
-            className="h-16 px-10 rounded-2xl bg-green-500 text-white shadow-[0_6px_0_0_#15803d] hover:bg-green-600 active:translate-y-1 active:shadow-none transition-all flex items-center gap-3"
+            className="h-14 md:h-16 px-6 md:px-10 rounded-2xl bg-green-500 text-white shadow-[0_4px_0_0_#15803d] md:shadow-[0_6px_0_0_#15803d] hover:bg-green-600 active:translate-y-1 active:shadow-none transition-all flex items-center gap-3"
           >
             <span className="text-lg font-black uppercase tracking-tight">
               Next
