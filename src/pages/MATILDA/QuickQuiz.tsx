@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
+import { BackButton } from "@/components/app/Backbutton";
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
 import { FIREBASE_TEST_RESULTS, STORAGE_KEYS } from "@/constants";
@@ -26,9 +27,7 @@ import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useSound from "../../hooks/useSound";
-import logo from "/images/logo.png";
 import HistoryPage from "./HistoryPage";
-import { BackButton } from "@/components/app/Backbutton";
 
 type Options = {
   A: string;

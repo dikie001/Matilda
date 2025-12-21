@@ -25,7 +25,6 @@ import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useSound from "../../hooks/useSound";
-import logo from "/images/logo.png";
 
 // ==========================================
 // 🛠️ CONFIGURATION SECTION (EDIT HERE)

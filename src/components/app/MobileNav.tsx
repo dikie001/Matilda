@@ -12,7 +12,6 @@ import {
   House,
   Info,
   InfoIcon,
-  Laptop,
   Laptop2,
   Lightbulb,
   ListTodo,
@@ -23,13 +22,11 @@ import {
   Shield,
   Sparkle,
   Trees,
-  Truck,
   X,
   Zap,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import { FaFootballBall } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // --- Types ---
