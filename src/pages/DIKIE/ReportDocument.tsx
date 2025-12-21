@@ -325,7 +325,7 @@ interface ReportProps {
 export const ReportDocument = ({
   stats,
   graphData,
-  userName = "Ryanne Ochieng",
+  userName = "Dickens Omondi",
   appName = "Brillia",
 }: ReportProps) => {
   const chartData = graphData.slice(-15);
@@ -387,7 +387,7 @@ export const ReportDocument = ({
           <View style={styles.headerContent}>
             <View style={styles.userInfoSection}>
               <View style={styles.avatarContainer}>
-                <Image src="/images/ryanne.png" style={styles.avatarImage} />
+                <Image src="/images/logo.png" style={styles.avatarImage} />
               </View>
               <View style={styles.userDetails}>
                 <Text style={styles.headerName}>{userName}</Text>

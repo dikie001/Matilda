@@ -122,7 +122,7 @@ const DanielQuickQuiz: React.FC = () => {
 
   const quizResultsRef = useRef<TestResult | null>(null);
 
-  const QUESTIONS_PER_TEST = 20;
+  const QUESTIONS_PER_TEST = 50;
 
   const { playError, playSuccess, playFinish, playSend } = useSound();
 
@@ -232,12 +232,12 @@ const DanielQuickQuiz: React.FC = () => {
       return saved
         ? JSON.parse(saved)
         : {
-            currentTest: 0,
-            currentQuestion: 0,
-            score: 0,
-            selectedAnswers: [],
-            isActive: false,
-          };
+          currentTest: 0,
+          currentQuestion: 0,
+          score: 0,
+          selectedAnswers: [],
+          isActive: false,
+        };
     } catch (error) {
       console.error("Error loading saved progress:", error);
       return {
@@ -554,11 +554,11 @@ const DanielQuickQuiz: React.FC = () => {
                 value:
                   state.testResults.length > 0
                     ? Math.round(
-                        state.testResults.reduce(
-                          (acc, r) => acc + r.percentage,
-                          0
-                        ) / state.testResults.length
-                      )
+                      state.testResults.reduce(
+                        (acc, r) => acc + r.percentage,
+                        0
+                      ) / state.testResults.length
+                    )
                     : 0,
                 sub: "Average Score",
                 isPercent: true,
@@ -697,7 +697,8 @@ const DanielQuickQuiz: React.FC = () => {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                   Test {state.currentTest + 1}
                 </h2>
-                <img src={logo} className="h-10" alt="logo" />
+                <sup className="text-orange-400 font-semibold">Daniel</sup>
+
               </div>
               <p className="text-orange-600 dark:text-orange-400 font-medium">
                 {currentQ.subject}
@@ -724,9 +725,8 @@ const DanielQuickQuiz: React.FC = () => {
             <div
               className="bg-orange-600 h-full transition-all duration-500 ease-out"
               style={{
-                width: `${
-                  ((state.currentQuestion + 1) / currentQuestions.length) * 100
-                }%`,
+                width: `${((state.currentQuestion + 1) / currentQuestions.length) * 100
+                  }%`,
               }}
             ></div>
           </div>
@@ -826,11 +826,10 @@ const DanielQuickQuiz: React.FC = () => {
 
                 <div className="flex-1">
                   <h4
-                    className={`font-bold text-lg mb-1 ${
-                      state.selectedAnswer === currentQ.correctAnswer
-                        ? "text-green-700 dark:text-green-400"
-                        : "text-red-600 dark:text-red-400"
-                    }`}
+                    className={`font-bold text-lg mb-1 ${state.selectedAnswer === currentQ.correctAnswer
+                      ? "text-green-700 dark:text-green-400"
+                      : "text-red-600 dark:text-red-400"
+                      }`}
                   >
                     {state.selectedAnswer === currentQ.correctAnswer
                       ? "Correct!"
@@ -868,10 +867,10 @@ const DanielQuickQuiz: React.FC = () => {
       latestResult.percentage >= 90
         ? "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200"
         : latestResult.percentage >= 70
-        ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
-        : latestResult.percentage >= 50
-        ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
-        : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
+          ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
+          : latestResult.percentage >= 50
+            ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
+            : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
 
     const accentColor = themeColor.split(" ")[0];
 

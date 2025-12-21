@@ -19,7 +19,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
-import {quizData} from "@/jsons/lincoln";
+import { quizData } from "@/jsons/lincoln";
 import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -123,7 +123,7 @@ const GavinQuickQuiz: React.FC = () => {
 
   const quizResultsRef = useRef<TestResult | null>(null);
 
-  const QUESTIONS_PER_TEST = 20;
+  const QUESTIONS_PER_TEST = 50;
 
   const { playError, playSuccess, playFinish, playSend } = useSound();
 
@@ -235,12 +235,12 @@ const GavinQuickQuiz: React.FC = () => {
       return saved
         ? JSON.parse(saved)
         : {
-            currentTest: 0,
-            currentQuestion: 0,
-            score: 0,
-            selectedAnswers: [],
-            isActive: false,
-          };
+          currentTest: 0,
+          currentQuestion: 0,
+          score: 0,
+          selectedAnswers: [],
+          isActive: false,
+        };
     } catch (error) {
       console.error("Error loading saved progress:", error);
       return {
@@ -493,12 +493,12 @@ const GavinQuickQuiz: React.FC = () => {
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
-          <ResetModal open={openResetModal} setOpen={setOpenResetModal} user="GAVIN"/>
+          <ResetModal open={openResetModal} setOpen={setOpenResetModal} user="GAVIN" />
         )}
 
         <main className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
-          <BackButton/>
+          <BackButton />
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-sm font-medium">
               <Sparkles className="w-3.5 h-3.5" />
@@ -508,7 +508,7 @@ const GavinQuickQuiz: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
-                Gavin Sowon{" "}
+                Ann Judith{" "}
               </span>
             </h1>
 
@@ -553,11 +553,11 @@ const GavinQuickQuiz: React.FC = () => {
                 value:
                   state.testResults.length > 0
                     ? Math.round(
-                        state.testResults.reduce(
-                          (acc, r) => acc + r.percentage,
-                          0
-                        ) / state.testResults.length
-                      )
+                      state.testResults.reduce(
+                        (acc, r) => acc + r.percentage,
+                        0
+                      ) / state.testResults.length
+                    )
                     : 0,
                 sub: "Average Score",
                 isPercent: true,
@@ -612,7 +612,7 @@ const GavinQuickQuiz: React.FC = () => {
                   </div>
                 </div>
               </button>
-            )} 
+            )}
             {/* Secondary Actions */}
             {state.testResults.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -696,7 +696,7 @@ const GavinQuickQuiz: React.FC = () => {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                   Test {state.currentTest + 1}
                 </h2>
-                <img src={logo} className="h-10" alt="logo" />
+                <sup className="text-green-400 font-semibold">Ann</sup>
               </div>
               <p className="text-emerald-600 dark:text-emerald-400 font-medium">
                 {currentQ.subject}
@@ -723,9 +723,8 @@ const GavinQuickQuiz: React.FC = () => {
             <div
               className="bg-emerald-600 h-full transition-all duration-500 ease-out"
               style={{
-                width: `${
-                  ((state.currentQuestion + 1) / currentQuestions.length) * 100
-                }%`,
+                width: `${((state.currentQuestion + 1) / currentQuestions.length) * 100
+                  }%`,
               }}
             ></div>
           </div>
@@ -825,11 +824,10 @@ const GavinQuickQuiz: React.FC = () => {
 
                 <div className="flex-1">
                   <h4
-                    className={`font-bold text-lg mb-1 ${
-                      state.selectedAnswer === currentQ.correctAnswer
-                        ? "text-green-700 dark:text-green-400"
-                        : "text-red-600 dark:text-red-400"
-                    }`}
+                    className={`font-bold text-lg mb-1 ${state.selectedAnswer === currentQ.correctAnswer
+                      ? "text-green-700 dark:text-green-400"
+                      : "text-red-600 dark:text-red-400"
+                      }`}
                   >
                     {state.selectedAnswer === currentQ.correctAnswer
                       ? "Correct!"
@@ -867,10 +865,10 @@ const GavinQuickQuiz: React.FC = () => {
       latestResult.percentage >= 90
         ? "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200"
         : latestResult.percentage >= 70
-        ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
-        : latestResult.percentage >= 50
-        ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
-        : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
+          ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
+          : latestResult.percentage >= 50
+            ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
+            : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
 
     const accentColor = themeColor.split(" ")[0];
 

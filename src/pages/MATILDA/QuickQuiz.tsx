@@ -112,7 +112,7 @@ const QuizApp: React.FC = () => {
   }, []);
   const quizResultsRef = useRef<TestResult | null>(null);
 
-  const QUESTIONS_PER_TEST = 20;
+  const QUESTIONS_PER_TEST = 50;
 
   const { playError, playSuccess, playFinish, playSend } = useSound();
 
@@ -224,12 +224,12 @@ const QuizApp: React.FC = () => {
       return saved
         ? JSON.parse(saved)
         : {
-            currentTest: 0,
-            currentQuestion: 0,
-            score: 0,
-            selectedAnswers: [],
-            isActive: false,
-          };
+          currentTest: 0,
+          currentQuestion: 0,
+          score: 0,
+          selectedAnswers: [],
+          isActive: false,
+        };
     } catch (error) {
       console.error("Error loading saved progress:", error);
       return {
@@ -491,12 +491,12 @@ const QuizApp: React.FC = () => {
         <Navbar currentPage="Quick Quiz" />
 
         {openResetModal && (
-          <ResetModal open={openResetModal} setOpen={setOpenResetModal} user="MATILDA"/>
+          <ResetModal open={openResetModal} setOpen={setOpenResetModal} user="MATILDA" />
         )}
 
         <main className="flex-1 flex flex-col  justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-10">
           {/* Header Section */}
-                  <BackButton/>
+          <BackButton />
 
           <div className="text-center mb-10 sm:mb-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 text-pink-700 dark:text-pink-300 text-sm font-medium">
@@ -552,11 +552,11 @@ const QuizApp: React.FC = () => {
                 value:
                   state.testResults.length > 0
                     ? Math.round(
-                        state.testResults.reduce(
-                          (acc, r) => acc + r.percentage,
-                          0
-                        ) / state.testResults.length
-                      )
+                      state.testResults.reduce(
+                        (acc, r) => acc + r.percentage,
+                        0
+                      ) / state.testResults.length
+                    )
                     : 0,
                 sub: "Average Score",
                 isPercent: true,
@@ -612,10 +612,10 @@ const QuizApp: React.FC = () => {
                 </div>
               </button>
             )}
-{/* Secondary Actions */}
+            {/* Secondary Actions */}
             {state.testResults.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                
+
                 {/* 1. Analytics Button (Existing) */}
                 <button
                   onClick={() => {
@@ -709,9 +709,9 @@ const QuizApp: React.FC = () => {
             <div className="text-center">
               <div className="flex items-center gap-2">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  Test {state.currentTest + 1}
+                  Test {state.currentTest + 1} 
                 </h2>
-                <img src={logo} className="h-10" alt="logo" />
+                <sup className="text-rose-400 font-semibold">{user.name.split(" ")[0]}</sup>
               </div>
               {/* Subject Text: Rose instead of Indigo */}
               <p className="text-rose-600 dark:text-rose-400 font-medium">
@@ -741,9 +741,8 @@ const QuizApp: React.FC = () => {
               // Progress Fill: Rose 500
               className="bg-rose-500 h-full transition-all duration-500 ease-out"
               style={{
-                width: `${
-                  ((state.currentQuestion + 1) / currentQuestions.length) * 100
-                }%`,
+                width: `${((state.currentQuestion + 1) / currentQuestions.length) * 100
+                  }%`,
               }}
             ></div>
           </div>
@@ -845,11 +844,10 @@ const QuizApp: React.FC = () => {
 
                 <div className="flex-1">
                   <h4
-                    className={`font-bold text-lg mb-1 ${
-                      state.selectedAnswer === currentQ.correctAnswer
+                    className={`font-bold text-lg mb-1 ${state.selectedAnswer === currentQ.correctAnswer
                         ? "text-green-700 dark:text-green-400"
                         : "text-red-600 dark:text-red-400"
-                    }`}
+                      }`}
                   >
                     {state.selectedAnswer === currentQ.correctAnswer
                       ? "Correct!"
@@ -878,7 +876,7 @@ const QuizApp: React.FC = () => {
   }
 
   // Single Test Results Screen: Displays the outcome of the just completed test
-if (state.gameState === "results") {
+  if (state.gameState === "results") {
     const latestResult = state.testResults[state.testResults.length - 1];
 
     // Logic for styling based on score
@@ -889,10 +887,10 @@ if (state.gameState === "results") {
       latestResult.percentage >= 90
         ? "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200"
         : latestResult.percentage >= 70
-        ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
-        : latestResult.percentage >= 50
-        ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
-        : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
+          ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200"
+          : latestResult.percentage >= 50
+            ? "text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200"
+            : "text-red-600 bg-red-50 dark:bg-red-900/20 border-red-200";
 
     const accentColor = themeColor.split(" ")[0]; // Extract text color for icons
 
@@ -1035,17 +1033,17 @@ if (state.gameState === "results") {
       </div>
     );
   }
-  
+
   // Show the histor page
 
-if (state.gameState === "history") {
-  return (
-    <HistoryPage 
-      testResults={state.testResults} 
-      onBack={() => setGameState("home")} 
-    />
-  );
-}
+  if (state.gameState === "history") {
+    return (
+      <HistoryPage
+        testResults={state.testResults}
+        onBack={() => setGameState("home")}
+      />
+    );
+  }
   // Fallback return
   return null;
 };

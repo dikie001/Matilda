@@ -141,7 +141,7 @@ const RyanneResults = () => {
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500">
-              Ryanne's Results
+              Dikie's Results
             </h1>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Overview of tests and performance milestones.
@@ -155,10 +155,10 @@ const RyanneResults = () => {
                 <ReportDocument
                   stats={stats}
                   graphData={graphData}
-                  userName="Ryanne Ochieng"
+                  userName="Dickens Omondi"
                 />
               }
-              fileName="Ryanne's Report.pdf"
+              fileName="Dicken's Report.pdf"
             >
               {({ loading: pdfLoading }) => (
                 <Button
