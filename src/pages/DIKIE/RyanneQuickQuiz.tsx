@@ -20,7 +20,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { BackButton } from "@/components/app/Backbutton";
 import Footer from "@/components/app/Footer";
 import Navbar from "@/components/app/Navbar";
-import { quizData } from "@/jsons/lincoln";
+import { quizData } from "@/jsons/dikie";
 import ResetModal from "@/modals/Delete";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";

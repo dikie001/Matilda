@@ -11,7 +11,6 @@ import {
   HelpCircle,
   House,
   Info,
-  InfoIcon,
   Laptop2,
   Lightbulb,
   ListTodo,
@@ -21,6 +20,7 @@ import {
   Settings,
   Shield,
   Sparkle,
+  Train,
   Trees,
   X,
   Zap,
@@ -388,7 +388,7 @@ export default function MobileNav({
                   : "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-100 border-emerald-100 dark:border-emerald-900 hover:bg-emerald-100 dark:hover:bg-emerald-900/50"
               )}
             >
-              <Laptop2
+              <Train
                 className={cn(
                   "w-5 h-5",
                   location.pathname === "/gavin/quiz"
@@ -409,7 +409,7 @@ export default function MobileNav({
                   : "bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100 border-blue-100 dark:border-blue-900 hover:bg-blue-100 dark:hover:bg-blue-900/50"
               )}
             >
-              <InfoIcon
+              <Laptop2
                 className={cn(
                   "w-5 h-5",
                   location.pathname === "/ryanne/quiz"
@@ -417,7 +417,7 @@ export default function MobileNav({
                     : "text-blue-500"
                 )}
               />
-              <span>Pending user!</span>
+              <span>Dikie001</span>
             </button>
 
             {/* Daniel: orange Theme */}
