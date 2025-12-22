@@ -16,7 +16,6 @@ import {
   Notebook,
   Sparkles,
   Trees,
-  TrendingUp,
   Trophy,
   Zap
 } from "lucide-react";
@@ -149,7 +148,6 @@ const HomePage: React.FC = () => {
     setCompleted({ stories: completedStories, quiz: completedQuizes });
   }, []);
 
-  const totalProgress = completed.stories + completed.quiz;
 
   return (
     <div className="min-h-screen text-gray-900 dark:text-white bg-gradient-to-br from-rose-50 via-fuchsia-50/30 to-purple-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex flex-col relative overflow-hidden transition-colors duration-500">
@@ -160,12 +158,7 @@ const HomePage: React.FC = () => {
       <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         {/* Header Section */}
         <div className="text-center mb-6 md:mb-10 space-y-2 md:space-y-4 animate-in fade-in duration-700">
-          {totalProgress > 0 && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-3xl shadow-md text-sm font-semibold mb-4">
-              <TrendingUp className="w-4 h-4" />
-              <span>{totalProgress} Activities Completed!</span>
-            </div>
-          )}
+       
           <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-pink-600 via-fuchsia-600 to-purple-600 bg-clip-text text-transparent">
             Learn. Grow. Excel.
           </h1>
