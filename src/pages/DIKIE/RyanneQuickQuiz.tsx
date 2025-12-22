@@ -122,7 +122,7 @@ const RyanneQuickQuiz: React.FC = () => {
 
   const quizResultsRef = useRef<TestResult | null>(null);
 
-  const QUESTIONS_PER_TEST = 50;
+  const QUESTIONS_PER_TEST = 20;
 
   const { playError, playSuccess, playFinish, playSend } = useSound();
 
