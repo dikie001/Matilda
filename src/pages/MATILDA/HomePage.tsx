@@ -17,6 +17,7 @@ import {
   Sparkles,
   Trees,
   Trophy,
+  Truck,
   Zap
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
@@ -50,7 +51,7 @@ const HomePage: React.FC = () => {
     },
     {
       name: "Ann Judith",
-      icon: <Notebook />,
+      icon: <Truck />,
       color: "from-emerald-500 to-green-600",
       bgGradient:
         "from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20",
