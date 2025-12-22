@@ -1,6 +1,6 @@
 import type { QuizType } from "@/pages/LINCOLN/LincolnQuickQuiz";
 
-export const quizData: QuizType = [
+export const quizData: QuizType[] = [
     {
         id: 1,
         subject: "Vocabulary",
