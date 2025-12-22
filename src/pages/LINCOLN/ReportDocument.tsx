@@ -39,8 +39,9 @@ const getCBCGrade = (score: number) => {
     return {
       grade: "EE",
       label: "Exceeding Expectations",
-      color: "#73fc03ff", 
+      color: "#F59E0B",
     };
+
   if (score >= 72)
     return { grade: "ME", label: "Meeting Expectations", color: theme.primary };
   if (score >= 52)
