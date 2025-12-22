@@ -1,6 +1,6 @@
 import type { QuizType } from "@/pages/ANN/GavinQuickQuiz"
 
- const quizData:QuizType[]= [
+const quizData: QuizType[] = [
   {
     "id": 1,
     "subject": "Mathematics",
@@ -3200,6 +3200,1606 @@ import type { QuizType } from "@/pages/ANN/GavinQuickQuiz"
     "options": { "A": "Weak", "B": "Fit", "C": "Sick", "D": "Sad" },
     "correctAnswer": "B",
     "explanation": "Health benefit."
+  },
+  {
+    "id": 401,
+    "subject": "Mathematics",
+    "question": "Which digit is in the tenths place in 45.67?",
+    "options": { "A": "4", "B": "5", "C": "6", "D": "7" },
+    "correctAnswer": "C",
+    "explanation": "In 45.67, 6 is immediately after the decimal point."
+  },
+  {
+    "id": 402,
+    "subject": "Mathematics",
+    "question": "Work out: 3/4 - 1/2",
+    "options": { "A": "1/2", "B": "1/4", "C": "2/2", "D": "1/8" },
+    "correctAnswer": "B",
+    "explanation": "Convert 1/2 to 2/4. Then 3/4 - 2/4 = 1/4."
+  },
+  {
+    "id": 403,
+    "subject": "English",
+    "question": "Which word is a synonym of 'Wealthy'?",
+    "options": { "A": "Poor", "B": "Rich", "C": "Weak", "D": "Sick" },
+    "correctAnswer": "B",
+    "explanation": "Wealthy means having a lot of money (Rich)."
+  },
+  {
+    "id": 404,
+    "subject": "Kiswahili",
+    "question": "Kisawe cha 'Osha' ni ________.",
+    "options": { "A": "Piga", "B": "Safisha", "C": "Chafua", "D": "Anika" },
+    "correctAnswer": "B",
+    "explanation": "Osha na safisha zina maana sawa (Clean/Wash)."
+  },
+  {
+    "id": 405,
+    "subject": "Science and Technology",
+    "question": "Which part of the computer is used for typing?",
+    "options": { "A": "Mouse", "B": "Monitor", "C": "Keyboard", "D": "Printer" },
+    "correctAnswer": "C",
+    "explanation": "The keyboard has keys for typing input."
+  },
+  {
+    "id": 406,
+    "subject": "Social Studies",
+    "question": "The main airport in Kenya is called ________.",
+    "options": { "A": "Moi International", "B": "Kisumu Airport", "C": "JKIA", "D": "Wilson Airport" },
+    "correctAnswer": "C",
+    "explanation": "Jomo Kenyatta International Airport is the main hub."
+  },
+  {
+    "id": 407,
+    "subject": "Agriculture",
+    "question": "Which tool is used for carrying manure?",
+    "options": { "A": "Wheelbarrow", "B": "Jembe", "C": "Panga", "D": "Rake" },
+    "correctAnswer": "A",
+    "explanation": "A wheelbarrow carries heavy loads like manure."
+  },
+  {
+    "id": 408,
+    "subject": "CRE",
+    "question": "The story of creation is found in the book of ________.",
+    "options": { "A": "Exodus", "B": "Genesis", "C": "Leviticus", "D": "Numbers" },
+    "correctAnswer": "B",
+    "explanation": "Genesis chapters 1 and 2 details creation."
+  },
+  {
+    "id": 409,
+    "subject": "Homescience",
+    "question": "We use a ________ to trim fingernails.",
+    "options": { "A": "Knife", "B": "Razor blade", "C": "Nail cutter", "D": "Scissors" },
+    "correctAnswer": "C",
+    "explanation": "Nail cutters are designed safely for nails."
+  },
+  {
+    "id": 410,
+    "subject": "PE",
+    "question": "Which of these is a track event?",
+    "options": { "A": "Shot put", "B": "High jump", "C": "100m race", "D": "Javelin" },
+    "correctAnswer": "C",
+    "explanation": "Running events happen on the track."
+  },
+  {
+    "id": 411,
+    "subject": "Mathematics",
+    "question": "Convert 5000m to kilometers.",
+    "options": { "A": "50km", "B": "5km", "C": "0.5km", "D": "500km" },
+    "correctAnswer": "B",
+    "explanation": "1000m = 1km. 5000/1000 = 5km."
+  },
+  {
+    "id": 412,
+    "subject": "Mathematics",
+    "question": "What is the product of 9 and 6?",
+    "options": { "A": "54", "B": "15", "C": "45", "D": "63" },
+    "correctAnswer": "A",
+    "explanation": "9 multiplied by 6 is 54."
+  },
+  {
+    "id": 413,
+    "subject": "English",
+    "question": "The plural of 'Knife' is ________.",
+    "options": { "A": "Knifes", "B": "Knives", "C": "Knive", "D": "Nifes" },
+    "correctAnswer": "B",
+    "explanation": "Words ending in 'fe' change to 'ves'."
+  },
+  {
+    "id": 414,
+    "subject": "Kiswahili",
+    "question": "Jaza pengo: ________ anakimbia.",
+    "options": { "A": "Gari", "B": "Mtoto", "C": "Miti", "D": "Mawe" },
+    "correctAnswer": "B",
+    "explanation": "Mtoto (Living thing) runs."
+  },
+  {
+    "id": 415,
+    "subject": "Science and Technology",
+    "question": "Which animal lives in water?",
+    "options": { "A": "Lion", "B": "Fish", "C": "Eagle", "D": "Goat" },
+    "correctAnswer": "B",
+    "explanation": "Fish are aquatic animals."
+  },
+  {
+    "id": 416,
+    "subject": "Social Studies",
+    "question": "Citizens of Kenya must be ________ years and above to vote.",
+    "options": { "A": "16", "B": "18", "C": "21", "D": "35" },
+    "correctAnswer": "B",
+    "explanation": "Voting age is 18."
+  },
+  {
+    "id": 417,
+    "subject": "Agriculture",
+    "question": "Which soil is best for modeling?",
+    "options": { "A": "Sand", "B": "Loam", "C": "Clay", "D": "Silt" },
+    "correctAnswer": "C",
+    "explanation": "Clay is sticky and holds shape well."
+  },
+  {
+    "id": 418,
+    "subject": "CRE",
+    "question": "Who was the father of Solomon?",
+    "options": { "A": "Saul", "B": "David", "C": "Samuel", "D": "Jesse" },
+    "correctAnswer": "B",
+    "explanation": "David was Solomon's father."
+  },
+  {
+    "id": 419,
+    "subject": "Homescience",
+    "question": "Legumes are a source of ________.",
+    "options": { "A": "Vitamins", "B": "Proteins", "C": "Fats", "D": "Water" },
+    "correctAnswer": "B",
+    "explanation": "Beans and peas provide proteins."
+  },
+  {
+    "id": 420,
+    "subject": "PE",
+    "question": "In volleyball, a team can touch the ball ________ times before returning it.",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "Maximum of 3 touches."
+  },
+  {
+    "id": 421,
+    "subject": "Mathematics",
+    "question": "Find the area of a square with side 6cm.",
+    "options": { "A": "24 cm2", "B": "36 cm2", "C": "12 cm2", "D": "30 cm2" },
+    "correctAnswer": "B",
+    "explanation": "Area = side x side (6 x 6 = 36)."
+  },
+  {
+    "id": 422,
+    "subject": "Mathematics",
+    "question": "What is the Roman Numeral for 5?",
+    "options": { "A": "I", "B": "V", "C": "X", "D": "L" },
+    "correctAnswer": "B",
+    "explanation": "V represents 5."
+  },
+  {
+    "id": 423,
+    "subject": "English",
+    "question": "Choose the correct preposition: The cat jumped ________ the table.",
+    "options": { "A": "In", "B": "Over", "C": "Through", "D": "With" },
+    "correctAnswer": "B",
+    "explanation": "Over indicates movement across the top."
+  },
+  {
+    "id": 424,
+    "subject": "Kiswahili",
+    "question": "Tegua kitendawili: 'Popo mbili zavuka mto'.",
+    "options": { "A": "Miguu", "B": "Macho", "C": "Masikio", "D": "Mikono" },
+    "correctAnswer": "B",
+    "explanation": "Macho (two eyes) looking across."
+  },
+  {
+    "id": 425,
+    "subject": "Science and Technology",
+    "question": "Which planet is closest to the sun?",
+    "options": { "A": "Venus", "B": "Mercury", "C": "Earth", "D": "Mars" },
+    "correctAnswer": "B",
+    "explanation": "Mercury is the first planet."
+  },
+  {
+    "id": 426,
+    "subject": "Social Studies",
+    "question": "Which color represents vegetation on the flag?",
+    "options": { "A": "Black", "B": "Red", "C": "Green", "D": "White" },
+    "correctAnswer": "C",
+    "explanation": "Green stands for land and agriculture."
+  },
+  {
+    "id": 427,
+    "subject": "Agriculture",
+    "question": "Watering cans are used for ________.",
+    "options": { "A": "Irrigation", "B": "Weeding", "C": "Harvesting", "D": "Pruning" },
+    "correctAnswer": "A",
+    "explanation": "Manual irrigation of nursery beds."
+  },
+  {
+    "id": 428,
+    "subject": "CRE",
+    "question": "The first miracle of Jesus was turning water into ________.",
+    "options": { "A": "Milk", "B": "Wine", "C": "Tea", "D": "Juice" },
+    "correctAnswer": "B",
+    "explanation": "Performed at Cana."
+  },
+  {
+    "id": 429,
+    "subject": "Homescience",
+    "question": "We should wash fruits to remove ________.",
+    "options": { "A": "Taste", "B": "Dirt and chemicals", "C": "Color", "D": "Seeds" },
+    "correctAnswer": "B",
+    "explanation": "Safety and hygiene."
+  },
+  {
+    "id": 430,
+    "subject": "PE",
+    "question": "The 'Start' command for sprints is ________.",
+    "options": { "A": "Go", "B": "On your marks, Get Set, Go", "C": "Run", "D": "Ready, Set" },
+    "correctAnswer": "B",
+    "explanation": "Standard crouch start sequence."
+  },
+  {
+    "id": 431,
+    "subject": "Mathematics",
+    "question": "Add: 245 + 155",
+    "options": { "A": "300", "B": "400", "C": "390", "D": "410" },
+    "correctAnswer": "B",
+    "explanation": "245 + 155 = 400."
+  },
+  {
+    "id": 432,
+    "subject": "Mathematics",
+    "question": "How many degrees in a right angle?",
+    "options": { "A": "45", "B": "90", "C": "180", "D": "360" },
+    "correctAnswer": "B",
+    "explanation": "Definition of right angle."
+  },
+  {
+    "id": 433,
+    "subject": "English",
+    "question": "The opposite of 'Sharp' is ________.",
+    "options": { "A": "Pointy", "B": "Blunt", "C": "Hard", "D": "Soft" },
+    "correctAnswer": "B",
+    "explanation": "Blunt means not sharp."
+  },
+  {
+    "id": 434,
+    "subject": "Kiswahili",
+    "question": "Wingi wa 'Mtu' ni ________.",
+    "options": { "A": "Watu", "B": "Mitu", "C": "Kitu", "D": "Matu" },
+    "correctAnswer": "A",
+    "explanation": "M-WA ngeli (Mtu-Watu)."
+  },
+  {
+    "id": 435,
+    "subject": "Science and Technology",
+    "question": "Roots help to ________ the plant.",
+    "options": { "A": "Feed", "B": "Anchor", "C": "Move", "D": "Color" },
+    "correctAnswer": "B",
+    "explanation": "Roots hold the plant firmly in soil."
+  },
+  {
+    "id": 436,
+    "subject": "Social Studies",
+    "question": "The currency of Uganda is the ________.",
+    "options": { "A": "Shilling", "B": "Dollar", "C": "Pound", "D": "Euro" },
+    "correctAnswer": "A",
+    "explanation": "Uganda Shilling (UGX)."
+  },
+  {
+    "id": 437,
+    "subject": "Agriculture",
+    "question": "A chicken house is called a ________.",
+    "options": { "A": "Kennel", "B": "Coop", "C": "Hutch", "D": "Sty" },
+    "correctAnswer": "B",
+    "explanation": "Standard term for poultry housing."
+  },
+  {
+    "id": 438,
+    "subject": "CRE",
+    "question": "Jesus had ________ disciples.",
+    "options": { "A": "10", "B": "12", "C": "7", "D": "3" },
+    "correctAnswer": "B",
+    "explanation": "The twelve apostles."
+  },
+  {
+    "id": 439,
+    "subject": "Homescience",
+    "question": "Which of these is a personal item?",
+    "options": { "A": "Plate", "B": "Handkerchief", "C": "Chair", "D": "Table" },
+    "correctAnswer": "B",
+    "explanation": "Not shared for hygiene reasons."
+  },
+  {
+    "id": 440,
+    "subject": "PE",
+    "question": "Football players wear ________ on their feet.",
+    "options": { "A": "Sandals", "B": "Boots", "C": "Slippers", "D": "Heels" },
+    "correctAnswer": "B",
+    "explanation": "Studded boots for grip."
+  },
+  {
+    "id": 441,
+    "subject": "Mathematics",
+    "question": "What is 1000 - 1?",
+    "options": { "A": "900", "B": "999", "C": "990", "D": "1001" },
+    "correctAnswer": "B",
+    "explanation": "One less than a thousand."
+  },
+  {
+    "id": 442,
+    "subject": "Mathematics",
+    "question": "Divide 64 by 8.",
+    "options": { "A": "6", "B": "8", "C": "7", "D": "9" },
+    "correctAnswer": "B",
+    "explanation": "8 x 8 = 64."
+  },
+  {
+    "id": 443,
+    "subject": "English",
+    "question": "A person who flies a plane is a ________.",
+    "options": { "A": "Driver", "B": "Pilot", "C": "Captain", "D": "Rider" },
+    "correctAnswer": "B",
+    "explanation": "Pilot operates aircraft."
+  },
+  {
+    "id": 444,
+    "subject": "Kiswahili",
+    "question": "Mtoto wa simba anaitwa ________.",
+    "options": { "A": "Kinyemere", "B": "Shibli", "C": "Ndama", "D": "Kilebu" },
+    "correctAnswer": "B",
+    "explanation": "Shibli ni mtoto wa simba."
+  },
+  {
+    "id": 445,
+    "subject": "Science and Technology",
+    "question": "The sun gives us light and ________.",
+    "options": { "A": "Rain", "B": "Heat", "C": "Wind", "D": "Cold" },
+    "correctAnswer": "B",
+    "explanation": "Solar energy provides heat."
+  },
+  {
+    "id": 446,
+    "subject": "Social Studies",
+    "question": "We sing the National Anthem while ________.",
+    "options": { "A": "Sitting", "B": "Standing", "C": "Walking", "D": "Running" },
+    "correctAnswer": "B",
+    "explanation": "Standing at attention is a sign of respect."
+  },
+  {
+    "id": 447,
+    "subject": "Agriculture",
+    "question": "Removing excess branches is called ________.",
+    "options": { "A": "Pruning", "B": "Thinning", "C": "Weeding", "D": "Digging" },
+    "correctAnswer": "A",
+    "explanation": "Pruning shapes the tree."
+  },
+  {
+    "id": 448,
+    "subject": "CRE",
+    "question": "The Bible has two parts: Old and ________ Testament.",
+    "options": { "A": "Future", "B": "New", "C": "Past", "D": "Modern" },
+    "correctAnswer": "B",
+    "explanation": "New Testament follows the Old."
+  },
+  {
+    "id": 449,
+    "subject": "Homescience",
+    "question": "We sleep in the ________.",
+    "options": { "A": "Kitchen", "B": "Bedroom", "C": "Bathroom", "D": "Store" },
+    "correctAnswer": "B",
+    "explanation": "Room for resting."
+  },
+  {
+    "id": 450,
+    "subject": "PE",
+    "question": "Which game is played on a court?",
+    "options": { "A": "Football", "B": "Basketball", "C": "Swimming", "D": "Golf" },
+    "correctAnswer": "B",
+    "explanation": "Basketball uses a hard court."
+  },
+  {
+    "id": 451,
+    "subject": "Mathematics",
+    "question": "Identify the obtuse angle.",
+    "options": { "A": "30 degrees", "B": "90 degrees", "C": "120 degrees", "D": "180 degrees" },
+    "correctAnswer": "C",
+    "explanation": "Between 90 and 180 degrees."
+  },
+  {
+    "id": 452,
+    "subject": "Mathematics",
+    "question": "What is 10% of 100?",
+    "options": { "A": "1", "B": "10", "C": "100", "D": "50" },
+    "correctAnswer": "B",
+    "explanation": "10/100 x 100 = 10."
+  },
+  {
+    "id": 453,
+    "subject": "English",
+    "question": "The past tense of 'Drink' is ________.",
+    "options": { "A": "Drank", "B": "Drunk", "C": "Drinked", "D": "Drinking" },
+    "correctAnswer": "A",
+    "explanation": "Drink -> Drank -> Drunk."
+  },
+  {
+    "id": 454,
+    "subject": "Kiswahili",
+    "question": "Neno 'Mwalimu' liko katika ngeli ya ________.",
+    "options": { "A": "KI-VI", "B": "M-WA", "C": "LI-YA", "D": "U-I" },
+    "correctAnswer": "B",
+    "explanation": "Mwalimu-Walimu (M-WA)."
+  },
+  {
+    "id": 455,
+    "subject": "Science and Technology",
+    "question": "Which of these conducts electricity?",
+    "options": { "A": "Rubber", "B": "Copper wire", "C": "Plastic", "D": "Wood" },
+    "correctAnswer": "B",
+    "explanation": "Metals like copper are conductors."
+  },
+  {
+    "id": 456,
+    "subject": "Social Studies",
+    "question": "The head of a school is the ________.",
+    "options": { "A": "Prefect", "B": "Headteacher", "C": "Cook", "D": "Parent" },
+    "correctAnswer": "B",
+    "explanation": "School administrator."
+  },
+  {
+    "id": 457,
+    "subject": "Agriculture",
+    "question": "Maize is a ________ crop.",
+    "options": { "A": "Cereal", "B": "Legume", "C": "Fruit", "D": "Tuber" },
+    "correctAnswer": "A",
+    "explanation": "Grain crop."
+  },
+  {
+    "id": 458,
+    "subject": "CRE",
+    "question": "The Good Samaritan helped a ________ man.",
+    "options": { "A": "Rich", "B": "Injured", "C": "Happy", "D": "Sleeping" },
+    "correctAnswer": "B",
+    "explanation": "Man beaten by robbers."
+  },
+  {
+    "id": 459,
+    "subject": "Homescience",
+    "question": "Ironing makes clothes look ________.",
+    "options": { "A": "Old", "B": "Neat", "C": "Dirty", "D": "Wet" },
+    "correctAnswer": "B",
+    "explanation": "Removes wrinkles."
+  },
+  {
+    "id": 460,
+    "subject": "PE",
+    "question": "A relay race uses a ________.",
+    "options": { "A": "Ball", "B": "Baton", "C": "Racket", "D": "Net" },
+    "correctAnswer": "B",
+    "explanation": "Passed between runners."
+  },
+  {
+    "id": 461,
+    "subject": "Mathematics",
+    "question": "Subtract: 5.5 - 2.5",
+    "options": { "A": "3.0", "B": "2.0", "C": "4.0", "D": "3.5" },
+    "correctAnswer": "A",
+    "explanation": "5.5 minus 2.5 is 3."
+  },
+  {
+    "id": 462,
+    "subject": "Mathematics",
+    "question": "How many meters in 1km?",
+    "options": { "A": "100", "B": "1000", "C": "10", "D": "500" },
+    "correctAnswer": "B",
+    "explanation": "Kilo means thousand."
+  },
+  {
+    "id": 463,
+    "subject": "English",
+    "question": "A place where books are kept is a ________.",
+    "options": { "A": "Kitchen", "B": "Library", "C": "Field", "D": "Shop" },
+    "correctAnswer": "B",
+    "explanation": "Library stores books."
+  },
+  {
+    "id": 464,
+    "subject": "Kiswahili",
+    "question": "Chagua kivumishi: Kijana ________.",
+    "options": { "A": "kimbia", "B": "mrefu", "C": "lala", "D": "kula" },
+    "correctAnswer": "B",
+    "explanation": "Mrefu describes Kijana."
+  },
+  {
+    "id": 465,
+    "subject": "Science and Technology",
+    "question": "Humans breathe in ________.",
+    "options": { "A": "Carbon dioxide", "B": "Oxygen", "C": "Dust", "D": "Smoke" },
+    "correctAnswer": "B",
+    "explanation": "Essential gas for life."
+  },
+  {
+    "id": 466,
+    "subject": "Social Studies",
+    "question": "Kenya is in which continent?",
+    "options": { "A": "Asia", "B": "Africa", "C": "Europe", "D": "America" },
+    "correctAnswer": "B",
+    "explanation": "East Africa."
+  },
+  {
+    "id": 467,
+    "subject": "Agriculture",
+    "question": "We use a slasher to ________.",
+    "options": { "A": "Dig", "B": "Cut tall grass", "C": "Plant", "D": "Water" },
+    "correctAnswer": "B",
+    "explanation": "Clearing vegetation."
+  },
+  {
+    "id": 468,
+    "subject": "CRE",
+    "question": "Who built the ark?",
+    "options": { "A": "Moses", "B": "Noah", "C": "Adam", "D": "David" },
+    "correctAnswer": "B",
+    "explanation": "To survive the flood."
+  },
+  {
+    "id": 469,
+    "subject": "Homescience",
+    "question": "We use a towel to ________.",
+    "options": { "A": "Clean shoes", "B": "Dry the body", "C": "Wash dishes", "D": "Cover food" },
+    "correctAnswer": "B",
+    "explanation": "Absorbs water after bath."
+  },
+  {
+    "id": 470,
+    "subject": "PE",
+    "question": "A standard football team has ________ players.",
+    "options": { "A": "7", "B": "11", "C": "10", "D": "15" },
+    "correctAnswer": "B",
+    "explanation": "11 players per side."
+  },
+  {
+    "id": 471,
+    "subject": "Mathematics",
+    "question": "Multiply 12 by 5.",
+    "options": { "A": "50", "B": "60", "C": "55", "D": "70" },
+    "correctAnswer": "B",
+    "explanation": "12 x 5 = 60."
+  },
+  {
+    "id": 472,
+    "subject": "Mathematics",
+    "question": "Name a 3-sided shape.",
+    "options": { "A": "Square", "B": "Triangle", "C": "Circle", "D": "Oval" },
+    "correctAnswer": "B",
+    "explanation": "Tri = three."
+  },
+  {
+    "id": 473,
+    "subject": "English",
+    "question": "The baby is ________.",
+    "options": { "A": "Crying", "B": "Cry", "C": "Cried", "D": "Cries" },
+    "correctAnswer": "A",
+    "explanation": "Present continuous tense."
+  },
+  {
+    "id": 474,
+    "subject": "Kiswahili",
+    "question": "Kinyume cha 'Cheka' ni ________.",
+    "options": { "A": "Lia", "B": "Tabasamu", "C": "Imba", "D": "Sema" },
+    "correctAnswer": "A",
+    "explanation": "Laugh vs Cry."
+  },
+  {
+    "id": 475,
+    "subject": "Science and Technology",
+    "question": "Which organ pumps blood?",
+    "options": { "A": "Lung", "B": "Heart", "C": "Stomach", "D": "Brain" },
+    "correctAnswer": "B",
+    "explanation": "Circulatory system center."
+  },
+  {
+    "id": 476,
+    "subject": "Social Studies",
+    "question": "The National Language of Kenya is ________.",
+    "options": { "A": "English", "B": "Kiswahili", "C": "French", "D": "German" },
+    "correctAnswer": "B",
+    "explanation": "Kiswahili is the national language."
+  },
+  {
+    "id": 477,
+    "subject": "Agriculture",
+    "question": "Cows give us ________ and meat.",
+    "options": { "A": "Eggs", "B": "Milk", "C": "Wool", "D": "Honey" },
+    "correctAnswer": "B",
+    "explanation": "Dairy product."
+  },
+  {
+    "id": 478,
+    "subject": "CRE",
+    "question": "Christmas is celebrated in ________.",
+    "options": { "A": "April", "B": "December", "C": "January", "D": "August" },
+    "correctAnswer": "B",
+    "explanation": "December 25th."
+  },
+  {
+    "id": 479,
+    "subject": "Homescience",
+    "question": "Using a dirty handkerchief spreads ________.",
+    "options": { "A": "Health", "B": "Germs", "C": "Wealth", "D": "Joy" },
+    "correctAnswer": "B",
+    "explanation": "Hygiene risk."
+  },
+  {
+    "id": 480,
+    "subject": "PE",
+    "question": "Warm up exercises prevent ________.",
+    "options": { "A": "Injuries", "B": "Winning", "C": "Sweating", "D": "Running" },
+    "correctAnswer": "A",
+    "explanation": "Prepares muscles."
+  },
+  {
+    "id": 481,
+    "subject": "Mathematics",
+    "question": "20 divided by 4.",
+    "options": { "A": "4", "B": "5", "C": "6", "D": "10" },
+    "correctAnswer": "B",
+    "explanation": "4 x 5 = 20."
+  },
+  {
+    "id": 482,
+    "subject": "Mathematics",
+    "question": "Which is an even number?",
+    "options": { "A": "3", "B": "4", "C": "5", "D": "7" },
+    "correctAnswer": "B",
+    "explanation": "Divisible by 2."
+  },
+  {
+    "id": 483,
+    "subject": "English",
+    "question": "Comparative of 'Big'.",
+    "options": { "A": "Biggest", "B": "Bigger", "C": "More big", "D": "Big" },
+    "correctAnswer": "B",
+    "explanation": "Big, Bigger, Biggest."
+  },
+  {
+    "id": 484,
+    "subject": "Kiswahili",
+    "question": "Wingi wa 'Jicho'.",
+    "options": { "A": "Majicho", "B": "Macho", "C": "Vijicho", "D": "Jicho" },
+    "correctAnswer": "B",
+    "explanation": "LI-YA (Jicho-Macho)."
+  },
+  {
+    "id": 485,
+    "subject": "Science and Technology",
+    "question": "Green plants make their own ________.",
+    "options": { "A": "Water", "B": "Food", "C": "Soil", "D": "Air" },
+    "correctAnswer": "B",
+    "explanation": "Photosynthesis."
+  },
+  {
+    "id": 486,
+    "subject": "Social Studies",
+    "question": "Lake Victoria is a source of ________.",
+    "options": { "A": "Salt", "B": "Fish", "C": "Gold", "D": "Oil" },
+    "correctAnswer": "B",
+    "explanation": "Fishing industry."
+  },
+  {
+    "id": 487,
+    "subject": "Agriculture",
+    "question": "A young sheep is a ________.",
+    "options": { "A": "Kid", "B": "Lamb", "C": "Calf", "D": "Chick" },
+    "correctAnswer": "B",
+    "explanation": "Lamb."
+  },
+  {
+    "id": 488,
+    "subject": "CRE",
+    "question": "David used a ________ to kill Goliath.",
+    "options": { "A": "Gun", "B": "Sling", "C": "Spear", "D": "Knife" },
+    "correctAnswer": "B",
+    "explanation": "Sling and stone."
+  },
+  {
+    "id": 489,
+    "subject": "Homescience",
+    "question": "We brush teeth after ________.",
+    "options": { "A": "Sleeping", "B": "Meals", "C": "Playing", "D": "Walking" },
+    "correctAnswer": "B",
+    "explanation": "Dental hygiene."
+  },
+  {
+    "id": 490,
+    "subject": "PE",
+    "question": "The leader of a team is the ________.",
+    "options": { "A": "Coach", "B": "Captain", "C": "Ref", "D": "Fan" },
+    "correctAnswer": "B",
+    "explanation": "Player leader."
+  },
+  {
+    "id": 491,
+    "subject": "Mathematics",
+    "question": "Value of 3 in 300.",
+    "options": { "A": "Tens", "B": "Hundreds", "C": "Ones", "D": "Thousands" },
+    "correctAnswer": "B",
+    "explanation": "Place value."
+  },
+  {
+    "id": 492,
+    "subject": "Mathematics",
+    "question": "1/2 + 1/2 = ?",
+    "options": { "A": "1/4", "B": "1", "C": "2", "D": "0" },
+    "correctAnswer": "B",
+    "explanation": "One whole."
+  },
+  {
+    "id": 493,
+    "subject": "English",
+    "question": "He drove ________.",
+    "options": { "A": "Slow", "B": "Slowly", "C": "Slower", "D": "Slowed" },
+    "correctAnswer": "B",
+    "explanation": "Adverb."
+  },
+  {
+    "id": 494,
+    "subject": "Kiswahili",
+    "question": "Babu ni baba wa ________.",
+    "options": { "A": "Kaka", "B": "Baba", "C": "Dada", "D": "Mama" },
+    "correctAnswer": "B",
+    "explanation": "Grandfather."
+  },
+  {
+    "id": 495,
+    "subject": "Science and Technology",
+    "question": "A car needs ________ to move.",
+    "options": { "A": "Water", "B": "Fuel", "C": "Milk", "D": "Tea" },
+    "correctAnswer": "B",
+    "explanation": "Energy source."
+  },
+  {
+    "id": 496,
+    "subject": "Social Studies",
+    "question": "Madaraka Day is on ________.",
+    "options": { "A": "1st June", "B": "20th Oct", "C": "12th Dec", "D": "1st May" },
+    "correctAnswer": "A",
+    "explanation": "Self-governance day."
+  },
+  {
+    "id": 497,
+    "subject": "Agriculture",
+    "question": "Tea is a ________ crop.",
+    "options": { "A": "Food", "B": "Cash", "C": "Weed", "D": "Root" },
+    "correctAnswer": "B",
+    "explanation": "Export crop."
+  },
+  {
+    "id": 498,
+    "subject": "CRE",
+    "question": "The mother of Jesus.",
+    "options": { "A": "Elizabeth", "B": "Mary", "C": "Sarah", "D": "Ruth" },
+    "correctAnswer": "B",
+    "explanation": "Virgin Mary."
+  },
+  {
+    "id": 499,
+    "subject": "Homescience",
+    "question": "Shoes protect our ________.",
+    "options": { "A": "Hands", "B": "Feet", "C": "Eyes", "D": "Ears" },
+    "correctAnswer": "B",
+    "explanation": "Footwear."
+  },
+  {
+    "id": 500,
+    "subject": "PE",
+    "question": "We use a racket for ________.",
+    "options": { "A": "Football", "B": "Tennis", "C": "Rugby", "D": "Swimming" },
+    "correctAnswer": "B",
+    "explanation": "Tennis equipment."
+  },
+  {
+    "id": 501,
+    "subject": "Mathematics",
+    "question": "Calculate: 100 x 0.",
+    "options": { "A": "100", "B": "0", "C": "10", "D": "1" },
+    "correctAnswer": "B",
+    "explanation": "Any number times zero is zero."
+  },
+  {
+    "id": 502,
+    "subject": "Mathematics",
+    "question": "What is the perimeter of a triangle with sides 3cm, 4cm, 5cm?",
+    "options": { "A": "10cm", "B": "12cm", "C": "15cm", "D": "20cm" },
+    "correctAnswer": "B",
+    "explanation": "3 + 4 + 5 = 12."
+  },
+  {
+    "id": 503,
+    "subject": "English",
+    "question": "Choose the noun: 'He runs fast.'",
+    "options": { "A": "He", "B": "Runs", "C": "Fast", "D": "None" },
+    "correctAnswer": "A",
+    "explanation": "He is a pronoun (functioning as noun subject)."
+  },
+  {
+    "id": 504,
+    "subject": "Kiswahili",
+    "question": "Chombo cha usafiri majini.",
+    "options": { "A": "Gari", "B": "Meli", "C": "Ndege", "D": "Baiskeli" },
+    "correctAnswer": "B",
+    "explanation": "Ship/Boat."
+  },
+  {
+    "id": 505,
+    "subject": "Science and Technology",
+    "question": "Which animal lays eggs?",
+    "options": { "A": "Cow", "B": "Hen", "C": "Cat", "D": "Dog" },
+    "correctAnswer": "B",
+    "explanation": "Poultry."
+  },
+  {
+    "id": 506,
+    "subject": "Social Studies",
+    "question": "The equator divides the earth into ________.",
+    "options": { "A": "North and South", "B": "East and West", "C": "Up and Down", "D": "Big and Small" },
+    "correctAnswer": "A",
+    "explanation": "Hemispheres."
+  },
+  {
+    "id": 507,
+    "subject": "Agriculture",
+    "question": "Farmers plant seeds in the ________.",
+    "options": { "A": "Air", "B": "Soil", "C": "Water", "D": "Fire" },
+    "correctAnswer": "B",
+    "explanation": "Growth medium."
+  },
+  {
+    "id": 508,
+    "subject": "CRE",
+    "question": "Zacchaeus was a ________.",
+    "options": { "A": "Fisherman", "B": "Tax collector", "C": "Shepherd", "D": "Carpenter" },
+    "correctAnswer": "B",
+    "explanation": "Short man in sycamore tree."
+  },
+  {
+    "id": 509,
+    "subject": "Homescience",
+    "question": "A balanced diet prevents ________.",
+    "options": { "A": "Health", "B": "Diseases", "C": "Growth", "D": "Sleep" },
+    "correctAnswer": "B",
+    "explanation": "Nutritional diseases."
+  },
+  {
+    "id": 510,
+    "subject": "PE",
+    "question": "Penalty kick is used in ________.",
+    "options": { "A": "Swimming", "B": "Football", "C": "Tennis", "D": "Golf" },
+    "correctAnswer": "B",
+    "explanation": "Soccer foul penalty."
+  },
+  {
+    "id": 511,
+    "subject": "Mathematics",
+    "question": "What is 8 plus 7?",
+    "options": { "A": "14", "B": "15", "C": "16", "D": "13" },
+    "correctAnswer": "B",
+    "explanation": "Addition."
+  },
+  {
+    "id": 512,
+    "subject": "Mathematics",
+    "question": "Shape of an egg.",
+    "options": { "A": "Circle", "B": "Oval", "C": "Square", "D": "Triangle" },
+    "correctAnswer": "B",
+    "explanation": "Oval shape."
+  },
+  {
+    "id": 513,
+    "subject": "English",
+    "question": "Past tense of 'Go'.",
+    "options": { "A": "Gone", "B": "Went", "C": "Going", "D": "Goed" },
+    "correctAnswer": "B",
+    "explanation": "Irregular verb."
+  },
+  {
+    "id": 514,
+    "subject": "Kiswahili",
+    "question": "Mtu anayetibu.",
+    "options": { "A": "Mwalimu", "B": "Daktari", "C": "Mpishi", "D": "Dereva" },
+    "correctAnswer": "B",
+    "explanation": "Doctor."
+  },
+  {
+    "id": 515,
+    "subject": "Science and Technology",
+    "question": "We hear with ________.",
+    "options": { "A": "Eyes", "B": "Ears", "C": "Nose", "D": "Skin" },
+    "correctAnswer": "B",
+    "explanation": "Sense of hearing."
+  },
+  {
+    "id": 516,
+    "subject": "Social Studies",
+    "question": "Our continent is ________.",
+    "options": { "A": "Asia", "B": "Africa", "C": "Europe", "D": "America" },
+    "correctAnswer": "B",
+    "explanation": "Location."
+  },
+  {
+    "id": 517,
+    "subject": "Agriculture",
+    "question": "Goats eat ________.",
+    "options": { "A": "Meat", "B": "Leaves/Grass", "C": "Stones", "D": "Sand" },
+    "correctAnswer": "B",
+    "explanation": "Herbivore."
+  },
+  {
+    "id": 518,
+    "subject": "CRE",
+    "question": "Jesus was born in ________.",
+    "options": { "A": "Nairobi", "B": "Bethlehem", "C": "Rome", "D": "Egypt" },
+    "correctAnswer": "B",
+    "explanation": "Nativity."
+  },
+  {
+    "id": 519,
+    "subject": "Homescience",
+    "question": "Bathing requires ________.",
+    "options": { "A": "Oil", "B": "Water and Soap", "C": "Mud", "D": "Sand" },
+    "correctAnswer": "B",
+    "explanation": "Cleaning agents."
+  },
+  {
+    "id": 520,
+    "subject": "PE",
+    "question": "Winning team gets a ________.",
+    "options": { "A": "Card", "B": "Trophy", "C": "Whistle", "D": "Ball" },
+    "correctAnswer": "B",
+    "explanation": "Prize."
+  },
+  {
+    "id": 521,
+    "subject": "Mathematics",
+    "question": "30 - 10 = ?",
+    "options": { "A": "10", "B": "20", "C": "40", "D": "15" },
+    "correctAnswer": "B",
+    "explanation": "Subtraction."
+  },
+  {
+    "id": 522,
+    "subject": "Mathematics",
+    "question": "Sides of a square.",
+    "options": { "A": "3", "B": "4", "C": "5", "D": "6" },
+    "correctAnswer": "B",
+    "explanation": "Four equal sides."
+  },
+  {
+    "id": 523,
+    "subject": "English",
+    "question": "Plural of 'Man'.",
+    "options": { "A": "Mans", "B": "Men", "C": "Mens", "D": "Manes" },
+    "correctAnswer": "B",
+    "explanation": "Irregular plural."
+  },
+  {
+    "id": 524,
+    "subject": "Kiswahili",
+    "question": "Hodi hodi! Jibu ni ________.",
+    "options": { "A": "Asante", "B": "Karibu", "C": "Kwaheri", "D": "Jambo" },
+    "correctAnswer": "B",
+    "explanation": "Welcome."
+  },
+  {
+    "id": 525,
+    "subject": "Science and Technology",
+    "question": "Ice is ________ water.",
+    "options": { "A": "Hot", "B": "Frozen", "C": "Gas", "D": "Dirty" },
+    "correctAnswer": "B",
+    "explanation": "Solid state."
+  },
+  {
+    "id": 526,
+    "subject": "Social Studies",
+    "question": "Police station is for ________.",
+    "options": { "A": "Fun", "B": "Security", "C": "Eating", "D": "Shopping" },
+    "correctAnswer": "B",
+    "explanation": "Law enforcement."
+  },
+  {
+    "id": 527,
+    "subject": "Agriculture",
+    "question": "Weeding is removing ________.",
+    "options": { "A": "Crops", "B": "Bad plants", "C": "Soil", "D": "Water" },
+    "correctAnswer": "B",
+    "explanation": "Weeds."
+  },
+  {
+    "id": 528,
+    "subject": "CRE",
+    "question": "We pray in ________.",
+    "options": { "A": "Church", "B": "Market", "C": "River", "D": "Road" },
+    "correctAnswer": "A",
+    "explanation": "Place of worship."
+  },
+  {
+    "id": 529,
+    "subject": "Homescience",
+    "question": "Comb is for ________.",
+    "options": { "A": "Teeth", "B": "Hair", "C": "Nails", "D": "Shoes" },
+    "correctAnswer": "B",
+    "explanation": "Grooming."
+  },
+  {
+    "id": 530,
+    "subject": "PE",
+    "question": "Running fast is ________.",
+    "options": { "A": "Jogging", "B": "Sprinting", "C": "Walking", "D": "Sleeping" },
+    "correctAnswer": "B",
+    "explanation": "Speed running."
+  },
+  {
+    "id": 531,
+    "subject": "Mathematics",
+    "question": "5 x 5 = ?",
+    "options": { "A": "10", "B": "25", "C": "20", "D": "15" },
+    "correctAnswer": "B",
+    "explanation": "Multiplication."
+  },
+  {
+    "id": 532,
+    "subject": "Mathematics",
+    "question": "10 / 2 = ?",
+    "options": { "A": "2", "B": "5", "C": "10", "D": "20" },
+    "correctAnswer": "B",
+    "explanation": "Division."
+  },
+  {
+    "id": 533,
+    "subject": "English",
+    "question": "Opposite of 'Happy'.",
+    "options": { "A": "Sad", "B": "Glad", "C": "Good", "D": "Fine" },
+    "correctAnswer": "A",
+    "explanation": "Antonym."
+  },
+  {
+    "id": 534,
+    "subject": "Kiswahili",
+    "question": "Baba wa mama.",
+    "options": { "A": "Mjomba", "B": "Babu", "C": "Kaka", "D": "Dada" },
+    "correctAnswer": "B",
+    "explanation": "Grandfather."
+  },
+  {
+    "id": 535,
+    "subject": "Science and Technology",
+    "question": "Water boils at ________.",
+    "options": { "A": "0 deg", "B": "100 deg", "C": "50 deg", "D": "10 deg" },
+    "correctAnswer": "B",
+    "explanation": "Boiling point."
+  },
+  {
+    "id": 536,
+    "subject": "Social Studies",
+    "question": "Kenya flag has ________ colors.",
+    "options": { "A": "2", "B": "4", "C": "3", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "Black, Red, Green, White."
+  },
+  {
+    "id": 537,
+    "subject": "Agriculture",
+    "question": "Rain is water from ________.",
+    "options": { "A": "Ground", "B": "Sky", "C": "Tap", "D": "Sea" },
+    "correctAnswer": "B",
+    "explanation": "Precipitation."
+  },
+  {
+    "id": 538,
+    "subject": "CRE",
+    "question": "Holy book.",
+    "options": { "A": "Bible", "B": "Storybook", "C": "News", "D": "Map" },
+    "correctAnswer": "A",
+    "explanation": "Christian text."
+  },
+  {
+    "id": 539,
+    "subject": "Homescience",
+    "question": "Kitchen is for ________.",
+    "options": { "A": "Sleeping", "B": "Cooking", "C": "Bathing", "D": "Playing" },
+    "correctAnswer": "B",
+    "explanation": "Food preparation."
+  },
+  {
+    "id": 540,
+    "subject": "PE",
+    "question": "Ball used in rugby.",
+    "options": { "A": "Round", "B": "Oval", "C": "Square", "D": "Flat" },
+    "correctAnswer": "B",
+    "explanation": "Egg shaped."
+  },
+  {
+    "id": 541,
+    "subject": "Mathematics",
+    "question": "100 + 100",
+    "options": { "A": "100", "B": "200", "C": "300", "D": "400" },
+    "correctAnswer": "B",
+    "explanation": "Addition."
+  },
+  {
+    "id": 542,
+    "subject": "Mathematics",
+    "question": "Half of 4",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "B",
+    "explanation": "Division."
+  },
+  {
+    "id": 543,
+    "subject": "English",
+    "question": "Sun is ________.",
+    "options": { "A": "Cold", "B": "Hot", "C": "Dark", "D": "Wet" },
+    "correctAnswer": "B",
+    "explanation": "Description."
+  },
+  {
+    "id": 544,
+    "subject": "Kiswahili",
+    "question": "Jina la nchi yetu.",
+    "options": { "A": "Uganda", "B": "Kenya", "C": "Tanzania", "D": "Somalia" },
+    "correctAnswer": "B",
+    "explanation": "Country name."
+  },
+  {
+    "id": 545,
+    "subject": "Science and Technology",
+    "question": "Fish live in ________.",
+    "options": { "A": "Air", "B": "Water", "C": "Soil", "D": "Fire" },
+    "correctAnswer": "B",
+    "explanation": "Habitat."
+  },
+  {
+    "id": 546,
+    "subject": "Social Studies",
+    "question": "President is leader of ________.",
+    "options": { "A": "School", "B": "Country", "C": "Home", "D": "Class" },
+    "correctAnswer": "B",
+    "explanation": "National leader."
+  },
+  {
+    "id": 547,
+    "subject": "Agriculture",
+    "question": "We eat ________.",
+    "options": { "A": "Stones", "B": "Food", "C": "Wood", "D": "Grass" },
+    "correctAnswer": "B",
+    "explanation": "Nutrition."
+  },
+  {
+    "id": 548,
+    "subject": "CRE",
+    "question": "God created ________.",
+    "options": { "A": "Cars", "B": "World", "C": "Phones", "D": "Houses" },
+    "correctAnswer": "B",
+    "explanation": "Creation."
+  },
+  {
+    "id": 549,
+    "subject": "Homescience",
+    "question": "Broom sweeps ________.",
+    "options": { "A": "Air", "B": "Floor", "C": "Water", "D": "Table" },
+    "correctAnswer": "B",
+    "explanation": "Cleaning."
+  },
+  {
+    "id": 550,
+    "subject": "PE",
+    "question": "We kick ________.",
+    "options": { "A": "Ball", "B": "Stone", "C": "Wall", "D": "Car" },
+    "correctAnswer": "A",
+    "explanation": "Sport action."
+  },
+  {
+    "id": 551,
+    "subject": "Mathematics",
+    "question": "0 + 5",
+    "options": { "A": "0", "B": "5", "C": "10", "D": "50" },
+    "correctAnswer": "B",
+    "explanation": "Identity property."
+  },
+  {
+    "id": 552,
+    "subject": "Mathematics",
+    "question": "Triangle has ________ sides.",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "Shape."
+  },
+  {
+    "id": 553,
+    "subject": "English",
+    "question": "Cat says ________.",
+    "options": { "A": "Woof", "B": "Meow", "C": "Moo", "D": "Baa" },
+    "correctAnswer": "B",
+    "explanation": "Sound."
+  },
+  {
+    "id": 554,
+    "subject": "Kiswahili",
+    "question": "Maji ya ________.",
+    "options": { "A": "Kula", "B": "Kunywa", "C": "Kushona", "D": "Kulima" },
+    "correctAnswer": "B",
+    "explanation": "Drinking."
+  },
+  {
+    "id": 555,
+    "subject": "Science and Technology",
+    "question": "Cows have ________ legs.",
+    "options": { "A": "2", "B": "4", "C": "6", "D": "8" },
+    "correctAnswer": "B",
+    "explanation": "Quadruped."
+  },
+  {
+    "id": 556,
+    "subject": "Social Studies",
+    "question": "Teacher teaches in ________.",
+    "options": { "A": "Hospital", "B": "School", "C": "Farm", "D": "Shop" },
+    "correctAnswer": "B",
+    "explanation": "Workplace."
+  },
+  {
+    "id": 557,
+    "subject": "Agriculture",
+    "question": "Hens give ________.",
+    "options": { "A": "Milk", "B": "Eggs", "C": "Honey", "D": "Wool" },
+    "correctAnswer": "B",
+    "explanation": "Poultry product."
+  },
+  {
+    "id": 558,
+    "subject": "CRE",
+    "question": "Adam and ________.",
+    "options": { "A": "Mary", "B": "Eve", "C": "Ruth", "D": "Sarah" },
+    "correctAnswer": "B",
+    "explanation": "First couple."
+  },
+  {
+    "id": 559,
+    "subject": "Homescience",
+    "question": "Knife cuts ________.",
+    "options": { "A": "Water", "B": "Food", "C": "Air", "D": "Stone" },
+    "correctAnswer": "B",
+    "explanation": "Tool usage."
+  },
+  {
+    "id": 560,
+    "subject": "PE",
+    "question": "Netball has ________ players.",
+    "options": { "A": "5", "B": "7", "C": "11", "D": "10" },
+    "correctAnswer": "B",
+    "explanation": "Team size."
+  },
+  {
+    "id": 561,
+    "subject": "Mathematics",
+    "question": "2 x 2",
+    "options": { "A": "2", "B": "4", "C": "6", "D": "8" },
+    "correctAnswer": "B",
+    "explanation": "Multiplication."
+  },
+  {
+    "id": 562,
+    "subject": "Mathematics",
+    "question": "Number 1",
+    "options": { "A": "One", "B": "Two", "C": "Three", "D": "Four" },
+    "correctAnswer": "A",
+    "explanation": "Word form."
+  },
+  {
+    "id": 563,
+    "subject": "English",
+    "question": "Boy is ________.",
+    "options": { "A": "She", "B": "He", "C": "It", "D": "They" },
+    "correctAnswer": "B",
+    "explanation": "Pronoun."
+  },
+  {
+    "id": 564,
+    "subject": "Kiswahili",
+    "question": "Mama anapika ________.",
+    "options": { "A": "Maji", "B": "Chakula", "C": "Hewa", "D": "Miti" },
+    "correctAnswer": "B",
+    "explanation": "Cooking food."
+  },
+  {
+    "id": 565,
+    "subject": "Science and Technology",
+    "question": "Birds fly in ________.",
+    "options": { "A": "Water", "B": "Air", "C": "Ground", "D": "Fire" },
+    "correctAnswer": "B",
+    "explanation": "Flight."
+  },
+  {
+    "id": 566,
+    "subject": "Social Studies",
+    "question": "Flag has ________ colors.",
+    "options": { "A": "1", "B": "4", "C": "10", "D": "2" },
+    "correctAnswer": "B",
+    "explanation": "National symbol."
+  },
+  {
+    "id": 567,
+    "subject": "Agriculture",
+    "question": "Dig with ________.",
+    "options": { "A": "Spoon", "B": "Jembe", "C": "Knife", "D": "Pen" },
+    "correctAnswer": "B",
+    "explanation": "Tool."
+  },
+  {
+    "id": 568,
+    "subject": "CRE",
+    "question": "Jesus died on ________.",
+    "options": { "A": "Bed", "B": "Cross", "C": "Chair", "D": "Table" },
+    "correctAnswer": "B",
+    "explanation": "Crucifixion."
+  },
+  {
+    "id": 569,
+    "subject": "Homescience",
+    "question": "Wash hands with ________.",
+    "options": { "A": "Mud", "B": "Soap", "C": "Oil", "D": "Sand" },
+    "correctAnswer": "B",
+    "explanation": "Hygiene."
+  },
+  {
+    "id": 570,
+    "subject": "PE",
+    "question": "Run on ________.",
+    "options": { "A": "Roof", "B": "Track", "C": "Water", "D": "Bed" },
+    "correctAnswer": "B",
+    "explanation": "Athletics."
+  },
+  {
+    "id": 571,
+    "subject": "Mathematics",
+    "question": "10 - 5",
+    "options": { "A": "2", "B": "5", "C": "10", "D": "15" },
+    "correctAnswer": "B",
+    "explanation": "Subtraction."
+  },
+  {
+    "id": 572,
+    "subject": "Mathematics",
+    "question": "Circle is ________.",
+    "options": { "A": "Square", "B": "Round", "C": "Pointy", "D": "Flat" },
+    "correctAnswer": "B",
+    "explanation": "Shape."
+  },
+  {
+    "id": 573,
+    "subject": "English",
+    "question": "Opposite of Up.",
+    "options": { "A": "Left", "B": "Down", "C": "Right", "D": "High" },
+    "correctAnswer": "B",
+    "explanation": "Direction."
+  },
+  {
+    "id": 574,
+    "subject": "Kiswahili",
+    "question": "Kula ________.",
+    "options": { "A": "Maji", "B": "Chakula", "C": "Hewa", "D": "Miti" },
+    "correctAnswer": "B",
+    "explanation": "Eat food."
+  },
+  {
+    "id": 575,
+    "subject": "Science and Technology",
+    "question": "Eyes are for ________.",
+    "options": { "A": "Hearing", "B": "Seeing", "C": "Smelling", "D": "Tasting" },
+    "correctAnswer": "B",
+    "explanation": "Sight."
+  },
+  {
+    "id": 576,
+    "subject": "Social Studies",
+    "question": "School is for ________.",
+    "options": { "A": "Learning", "B": "Sleeping", "C": "Fighting", "D": "Dancing" },
+    "correctAnswer": "A",
+    "explanation": "Education."
+  },
+  {
+    "id": 577,
+    "subject": "Agriculture",
+    "question": "Plants grow in ________.",
+    "options": { "A": "Sky", "B": "Soil", "C": "Box", "D": "Pocket" },
+    "correctAnswer": "B",
+    "explanation": "Nature."
+  },
+  {
+    "id": 578,
+    "subject": "CRE",
+    "question": "Pray to ________.",
+    "options": { "A": "Man", "B": "God", "C": "Tree", "D": "Sun" },
+    "correctAnswer": "B",
+    "explanation": "Faith."
+  },
+  {
+    "id": 579,
+    "subject": "Homescience",
+    "question": "Sleep in ________.",
+    "options": { "A": "Kitchen", "B": "Bedroom", "C": "Class", "D": "Bus" },
+    "correctAnswer": "B",
+    "explanation": "Rest."
+  },
+  {
+    "id": 580,
+    "subject": "PE",
+    "question": "Kick ________.",
+    "options": { "A": "Ball", "B": "Friend", "C": "Wall", "D": "Dog" },
+    "correctAnswer": "A",
+    "explanation": "Game."
+  },
+  {
+    "id": 581,
+    "subject": "Mathematics",
+    "question": "1 + 2",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "Sum."
+  },
+  {
+    "id": 582,
+    "subject": "Mathematics",
+    "question": "Square has ________ corners.",
+    "options": { "A": "2", "B": "4", "C": "3", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "Geometry."
+  },
+  {
+    "id": 583,
+    "subject": "English",
+    "question": "Girl is ________.",
+    "options": { "A": "He", "B": "She", "C": "It", "D": "They" },
+    "correctAnswer": "B",
+    "explanation": "Pronoun."
+  },
+  {
+    "id": 584,
+    "subject": "Kiswahili",
+    "question": "Lala ________.",
+    "options": { "A": "Mchana", "B": "Usiku", "C": "Asubuhi", "D": "Jioni" },
+    "correctAnswer": "B",
+    "explanation": "Sleep at night."
+  },
+  {
+    "id": 585,
+    "subject": "Science and Technology",
+    "question": "Nose is for ________.",
+    "options": { "A": "Seeing", "B": "Smelling", "C": "Eating", "D": "Walking" },
+    "correctAnswer": "B",
+    "explanation": "Scent."
+  },
+  {
+    "id": 586,
+    "subject": "Social Studies",
+    "question": "Family lives in ________.",
+    "options": { "A": "School", "B": "House", "C": "Car", "D": "Shop" },
+    "correctAnswer": "B",
+    "explanation": "Home."
+  },
+  {
+    "id": 587,
+    "subject": "Agriculture",
+    "question": "Water crops.",
+    "options": { "A": "Irrigation", "B": "Digging", "C": "Cutting", "D": "Eating" },
+    "correctAnswer": "A",
+    "explanation": "Farming."
+  },
+  {
+    "id": 588,
+    "subject": "CRE",
+    "question": "Love your ________.",
+    "options": { "A": "Enemy", "B": "Neighbor", "C": "Money", "D": "Car" },
+    "correctAnswer": "B",
+    "explanation": "Commandment."
+  },
+  {
+    "id": 589,
+    "subject": "Homescience",
+    "question": "Cook food.",
+    "options": { "A": "Raw", "B": "Boil", "C": "Dirty", "D": "Cold" },
+    "correctAnswer": "B",
+    "explanation": "Cooking method."
+  },
+  {
+    "id": 590,
+    "subject": "PE",
+    "question": "Play game.",
+    "options": { "A": "Work", "B": "Fun", "C": "Sad", "D": "Sleep" },
+    "correctAnswer": "B",
+    "explanation": "Activity."
+  },
+  {
+    "id": 591,
+    "subject": "Mathematics",
+    "question": "2 + 2",
+    "options": { "A": "2", "B": "4", "C": "6", "D": "8" },
+    "correctAnswer": "B",
+    "explanation": "Sum."
+  },
+  {
+    "id": 592,
+    "subject": "Mathematics",
+    "question": "5 - 1",
+    "options": { "A": "3", "B": "4", "C": "5", "D": "6" },
+    "correctAnswer": "B",
+    "explanation": "Subtract."
+  },
+  {
+    "id": 593,
+    "subject": "English",
+    "question": "Big ________.",
+    "options": { "A": "Small", "B": "Large", "C": "Tiny", "D": "Little" },
+    "correctAnswer": "B",
+    "explanation": "Synonym."
+  },
+  {
+    "id": 594,
+    "subject": "Kiswahili",
+    "question": "Kimbia ________.",
+    "options": { "A": "Pole", "B": "Haraka", "C": "Lala", "D": "Kula" },
+    "correctAnswer": "B",
+    "explanation": "Run fast."
+  },
+  {
+    "id": 595,
+    "subject": "Science and Technology",
+    "question": "Fire is ________.",
+    "options": { "A": "Cold", "B": "Hot", "C": "Wet", "D": "Soft" },
+    "correctAnswer": "B",
+    "explanation": "Heat."
+  },
+  {
+    "id": 596,
+    "subject": "Social Studies",
+    "question": "City ________.",
+    "options": { "A": "Village", "B": "Town", "C": "Farm", "D": "Bush" },
+    "correctAnswer": "B",
+    "explanation": "Urban."
+  },
+  {
+    "id": 597,
+    "subject": "Agriculture",
+    "question": "Cow eats ________.",
+    "options": { "A": "Meat", "B": "Grass", "C": "Milk", "D": "Egg" },
+    "correctAnswer": "B",
+    "explanation": "Food."
+  },
+  {
+    "id": 598,
+    "subject": "CRE",
+    "question": "God is ________.",
+    "options": { "A": "Bad", "B": "Good", "C": "Small", "D": "Weak" },
+    "correctAnswer": "B",
+    "explanation": "Attribute."
+  },
+  {
+    "id": 599,
+    "subject": "Homescience",
+    "question": "Clean clothes.",
+    "options": { "A": "Wash", "B": "Dirty", "C": "Tear", "D": "Burn" },
+    "correctAnswer": "A",
+    "explanation": "Laundry."
+  },
+  {
+    "id": 600,
+    "subject": "PE",
+    "question": "Jump ________.",
+    "options": { "A": "Low", "B": "High", "C": "Sit", "D": "Sleep" },
+    "correctAnswer": "B",
+    "explanation": "Action."
   }
 ]
 
