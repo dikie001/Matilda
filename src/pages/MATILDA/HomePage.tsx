@@ -4,17 +4,20 @@ import { TEST_RESULTS } from "@/constants";
 import useSound from "@/hooks/useSound";
 import LearnerModal from "@/modals/Welcome";
 import {
-  ArrowRight,
   Bike,
+  Book,
   BookOpen,
+  Car,
+  Cat,
   ChevronDown,
   ChevronUp,
-  CircleHelp,
   FileText,
   GraduationCap,
   Laptop2,
   Lightbulb,
   Mic,
+  Notebook,
+  School,
   Sparkles,
   Train,
   Trees,
@@ -40,57 +43,52 @@ const HomePage: React.FC = () => {
   const [completed, setCompleted] = useState<Complete>({ stories: 0, quiz: 0 });
   const [showMore, setShowMore] = useState(false);
 
-  // 1. Primary Activities (Quiz + Personal Cards)
+  // 1. Primary Activities (Clean, Icon-Focused)
   const mainSections = [
     {
       name: "Matilda Awino",
       icon: <GraduationCap />,
-      description: "Quizes for matilda",
       color: "from-pink-500 to-rose-600",
       bgGradient:
-        "from-pink-50 to-rose-50 dark:from-pink-950/40 dark:to-rose-950/40",
+        "from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20",
       to: "quick-quiz",
       isQuiz: true,
     },
     {
       name: "Ann Judith",
-      icon: <Train />,
-      description: "",
+      icon: <Notebook />,
       color: "from-emerald-500 to-green-600",
       bgGradient:
-        "from-emerald-50 to-green-50 dark:from-emerald-950/40 dark:to-green-950/40",
+        "from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20",
       to: "/gavin/quiz",
     },
     {
       name: "Dikie001",
       icon: <Laptop2 />,
-      description: "Blue Theme Activities",
       color: "from-blue-500 to-cyan-600",
       bgGradient:
-        "from-blue-50 to-cyan-50 dark:from-blue-950/40 dark:to-cyan-950/40",
+        "from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20",
       to: "/ryanne/quiz",
     },
     {
       name: "Daniel Otieno",
       icon: <Bike />,
-      description: "Orange Theme Activities",
       color: "from-orange-500 to-amber-600",
       bgGradient:
-        "from-orange-50 to-amber-50 dark:from-orange-950/40 dark:to-amber-950/40",
+        "from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20",
       to: "/daniel/quiz",
     },
     {
       name: "Abraham Lincoln",
       icon: <Trees />,
-      description: "Purple Theme Activities",
       color: "from-purple-500 to-fuchsia-600",
       bgGradient:
-        "from-purple-50 to-fuchsia-50 dark:from-purple-950/40 dark:to-fuchsia-950/40",
+        "from-purple-50 to-fuchsia-50 dark:from-purple-900/20 dark:to-fuchsia-900/20",
       to: "/lincoln/quiz",
     },
   ];
 
-  // 2. Other Sections (Hidden by default)
+  // 2. Other Sections
   const otherSections = [
     {
       name: "Quick Challenges",
@@ -181,57 +179,46 @@ const HomePage: React.FC = () => {
           </p>
         </div>
 
-        {/* --- MAIN GRID (Quiz + Personal Cards) --- */}
-        <div className="grid grid-cols-2  lg:grid-cols-3 gap-4 mb-8">
+        {/* --- MAIN GRID (Polished, Description-Free) --- */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {mainSections.map((section, index) => (
             <button
               key={section.name}
               onClick={() => HandleCategoryClick(section.to)}
-              className="group cursor-pointer relative p-5 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 overflow-hidden flex items-center gap-4 text-left backdrop-blur-sm"
+              className="group cursor-pointer relative p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700/50 overflow-hidden flex flex-col items-center justify-center text-center backdrop-blur-md"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: "slideUp 0.6s ease-out forwards",
                 opacity: 0,
               }}
             >
-              {/* Colored Top Border (Always visible) */}
+              {/* Subtle Background Wash (Always visible) */}
               <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${section.color}`}
+                className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-40 group-hover:opacity-60 transition-opacity duration-500`}
               />
 
-              {/* Background gradient (Always visible) */}
+              {/* Icon Circle */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-100`}
-              />
-
-              {/* Icon Container */}
-              <div className="relative p-3 rounded-xl bg-white/60 dark:bg-black/20 shadow-sm shrink-0 backdrop-blur-sm">
+                className={`relative mb-4 p-4 rounded-full bg-gradient-to-br ${section.color} text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}
+              >
                 {React.cloneElement(section.icon, {
-                  className:
-                    "w-6 h-6 text-gray-700 dark:text-gray-200 group-hover:scale-110 transition-transform duration-300",
+                  className: "w-7 h-7 md:w-8 md:h-8",
                 })}
               </div>
 
-              {/* Text Content */}
-              <div className="relative flex-1">
-                <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 transition-colors">
-                    {section.name}
-                  </h3>
-                  {/* Badge for Quiz if completed */}
-                  {section.isQuiz && completed.quiz > 0 && (
-                    <span className="text-[10px] font-bold text-pink-600 bg-pink-100 dark:bg-pink-900/30 px-2 py-0.5 rounded-full">
-                      {completed.quiz}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-gray-600 dark:text-gray-300 line-clamp-1 font-medium">
-                  {section.description}
-                </p>
+              {/* Name */}
+              <div className="relative z-10">
+                <h3 className="font-bold text-base md:text-lg text-gray-800 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                  {section.name}
+                </h3>
               </div>
 
-              {/* Arrow Icon appearing on hover */}
-              <ArrowRight className="absolute right-4 w-4 h-4 text-gray-400 dark:text-gray-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+              {/* Quiz Badge (Top Right) */}
+              {section.isQuiz && completed.quiz > 0 && (
+                <div className="absolute top-3 right-3 flex items-center justify-center w-6 h-6 bg-white dark:bg-gray-700 rounded-full shadow-sm text-[10px] font-bold text-pink-600">
+                  {completed.quiz}
+                </div>
+              )}
             </button>
           ))}
         </div>
