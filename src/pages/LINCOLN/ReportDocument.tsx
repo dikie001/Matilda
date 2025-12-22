@@ -399,7 +399,7 @@ export const ReportDocument = ({
           <View style={styles.headerContent}>
             <View style={styles.userInfoSection}>
               <View style={styles.avatarContainer}>
-                <Image src="/images/logo.png" style={styles.avatarImage} />
+                <Image src="/images/lincoln.png" style={styles.avatarImage} />
               </View>
               <View style={styles.userDetails}>
                 <Text style={styles.headerName}>{userName}</Text>
