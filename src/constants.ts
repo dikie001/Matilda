@@ -25,7 +25,7 @@ export const TONGUETWISTERS_CURRENTPAGE = "tongue-twisters-currentPage";
 export const APP_URL = "https://brillia-six.vercel.app";
 
 // Version number
-export const APP_VERSION = "1.2.9";
+export const APP_VERSION = "2.3.0";
 
 // Last Updated
 export const LAST_UPDATED = "";
