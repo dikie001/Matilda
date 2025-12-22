@@ -5,10 +5,7 @@ import useSound from "@/hooks/useSound";
 import LearnerModal from "@/modals/Welcome";
 import {
   Bike,
-  Book,
   BookOpen,
-  Car,
-  Cat,
   ChevronDown,
   ChevronUp,
   FileText,
@@ -17,13 +14,11 @@ import {
   Lightbulb,
   Mic,
   Notebook,
-  School,
   Sparkles,
-  Train,
   Trees,
   TrendingUp,
   Trophy,
-  Zap,
+  Zap
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -246,7 +241,7 @@ const HomePage: React.FC = () => {
         {/* --- OTHER CARDS (Hidden Grid) --- */}
         {showMore && (
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-in slide-in-from-top-4 fade-in duration-500">
-            {otherSections.map((section, index) => {
+            {otherSections.map((section) => {
               const hasCompleted = section.name === "Flash Stories";
               const completionCount = completed.stories;
 
