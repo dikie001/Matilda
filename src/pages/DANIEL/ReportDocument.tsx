@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-    // ---  ABOUT SECTION ---
+  // ---  ABOUT SECTION ---
   aboutSection: {
     backgroundColor: theme.bg,
     borderRadius: 8,
@@ -349,7 +349,7 @@ interface ReportProps {
 export const ReportDocument = ({
   stats,
   graphData,
-  userName = "Daniel Ochieng",
+  userName = "Daniel Otieno",
   appName = "Brillia",
 }: ReportProps) => {
   const chartData = graphData.slice(-15);

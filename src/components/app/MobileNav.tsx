@@ -438,7 +438,7 @@ export default function MobileNav({
                     : "text-orange-500"
                 )}
               />
-              <span>Daniel Ochieng</span>
+              <span>Daniel Otieno</span>
             </button>
 
             {/* Lincoln: purple Theme */}

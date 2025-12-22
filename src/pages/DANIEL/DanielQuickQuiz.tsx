@@ -508,7 +508,7 @@ const DanielQuickQuiz: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Welcome back,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">
-                Daniel Ochieng{" "}
+                Daniel Otieno{" "}
               </span>
             </h1>
 
