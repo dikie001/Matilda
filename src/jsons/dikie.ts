@@ -2601,2604 +2601,2604 @@ export const quizData: QuizType[] = [
         "correctAnswer": "B",
         "explanation": "Languages change; the ability to break down complex problems remains."
     },
-  {
-    "id": 201,
-    "subject": "System Design",
-    "question": "What is the 'Thundering Herd' problem?",
-    "options": {
-      "A": "Too many users signing up at once.",
-      "B": "When a large number of processes/users waiting for an event are awoken at once, causing a sudden spike in resource usage (CPU/Network) that crashes the system.",
-      "C": "A database migration error.",
-      "D": "Loud server fans."
-    },
-    "correctAnswer": "B",
-    "explanation": "Common in caching. When a cache expires, thousands of requests hit the database simultaneously before the cache is repopulated."
-  },
-  {
-    "id": 202,
-    "subject": "Soft Skills",
-    "question": "You are explaining 'Technical Debt' to a CFO. What is the most effective financial analogy?",
-    "options": {
-      "A": "It's like a messy room.",
-      "B": "It's like taking out a loan. You get the capital (speed) now, but you pay interest (slower development) on it until the principal is repaid (refactoring).",
-      "C": "It's bad code.",
-      "D": "It's an operational expense."
-    },
-    "correctAnswer": "B",
-    "explanation": "CFOs understand interest and principal. It frames the refactoring work as 'paying down debt' to stop losing money on interest."
-  },
-  {
-    "id": 203,
-    "subject": "Database",
-    "question": "What is ACID compliance?",
-    "options": {
-      "A": "A chemical test.",
-      "B": "Atomicity, Consistency, Isolation, Durability - properties that guarantee database transactions are processed reliably.",
-      "C": "Automatic Cloud Integration Data.",
-      "D": "A NoSQL feature."
-    },
-    "correctAnswer": "B",
-    "explanation": "Essential for financial systems where partial updates (e.g., money deducted but not credited) are unacceptable."
-  },
-  {
-    "id": 204,
-    "subject": "Architecture",
-    "question": "What is the 'Backends for Frontends' (BFF) pattern?",
-    "options": {
-      "A": "Making friends with backend devs.",
-      "B": "Creating separate backend services for specific frontend interfaces (e.g., one API for Mobile, one for Web) to optimize data delivery.",
-      "C": "A single monolithic API.",
-      "D": "Direct database access."
-    },
-    "correctAnswer": "B",
-    "explanation": "Prevents over-fetching on mobile devices by tailoring the API response specifically to the mobile UI needs."
-  },
-  {
-    "id": 205,
-    "subject": "React",
-    "question": "Why is mutating state directly in React (e.g., `this.state.count = 5`) bad?",
-    "options": {
-      "A": "It throws an error.",
-      "B": "It does not trigger a re-render because React compares references. You must use `setState` or hooks to notify React of the update.",
-      "C": "It is slow.",
-      "D": "It deletes the state."
-    },
-    "correctAnswer": "B",
-    "explanation": "React relies on immutability/setters to detect changes and schedule updates."
-  },
-  {
-    "id": 206,
-    "subject": "Security",
-    "question": "What is 'Salt' in password hashing?",
-    "options": {
-      "A": "Flavoring for code.",
-      "B": "Random data added to the password before hashing to ensure that identical passwords result in different hashes, defeating Rainbow Table attacks.",
-      "C": "Encryption key.",
-      "D": "Pepper."
-    },
-    "correctAnswer": "B",
-    "explanation": "Without salt, two users with the password 'password123' would have the same hash, making them easy to crack in bulk."
-  },
-  {
-    "id": 207,
-    "subject": "Networking",
-    "question": "What is the difference between IPv4 and IPv6?",
-    "options": {
-      "A": "IPv6 is just faster.",
-      "B": "IPv4 uses 32-bit addresses (ran out of space); IPv6 uses 128-bit addresses (virtually infinite space).",
-      "C": "IPv4 is for wifi.",
-      "D": "IPv6 is for mobile only."
-    },
-    "correctAnswer": "B",
-    "explanation": "The internet ran out of IPv4 addresses. IPv6 solves the address exhaustion problem."
-  },
-  {
-    "id": 208,
-    "subject": "DevOps",
-    "question": "What is 'Canary Deployment'?",
-    "options": {
-      "A": "Releasing to a coal mine.",
-      "B": "Rolling out a new feature to a small subset of users (e.g., 5%) to test stability before rolling it out to everyone.",
-      "C": "Deploying at night.",
-      "D": "Using birds."
-    },
-    "correctAnswer": "B",
-    "explanation": "Limits the 'blast radius' of a bad deploy. If the 5% crash, you rollback without affecting the other 95%."
-  },
-  {
-    "id": 209,
-    "subject": "Communication",
-    "question": "A junior dev asks for help, but you are swamped. What is the best response?",
-    "options": {
-      "A": "Ignore them.",
-      "B": "Help them immediately and miss your deadline.",
-      "C": "'I am heads-down on a critical task right now. Can you write down your specific question and what you've tried, and we can look at it at 4 PM?'",
-      "D": "Ask someone else."
-    },
-    "correctAnswer": "C",
-    "explanation": "Sets boundaries while still being supportive. Asking them to write it down often helps them solve it themselves (Rubber Ducking)."
-  },
-  {
-    "id": 210,
-    "subject": "Git",
-    "question": "What is `git bisect`?",
-    "options": {
-      "A": "Cutting a repo in half.",
-      "B": "A binary search tool used to find the specific commit that introduced a bug.",
-      "C": "Merging two branches.",
-      "D": "Deleting history."
-    },
-    "correctAnswer": "B",
-    "explanation": "The fastest way to debug regressions in a large codebase. 'It worked here, broken here, git finds the middle'."
-  },
-  {
-    "id": 211,
-    "subject": "Algorithms",
-    "question": "Why is Quicksort preferred over Bubblesort?",
-    "options": {
-      "A": "Bubblesort is O(n^2) average; Quicksort is O(n log n) average.",
-      "B": "Bubblesort is too hard to write.",
-      "C": "Quicksort uses less memory.",
-      "D": "Bubblesort pops."
-    },
-    "correctAnswer": "A",
-    "explanation": "Efficiency classes matter. O(n^2) is unusable for large datasets."
-  },
-  {
-    "id": 212,
-    "subject": "API",
-    "question": "What is the difference between Authentication (AuthN) and Authorization (AuthZ)?",
-    "options": {
-      "A": "AuthN is who you are; AuthZ is what you are allowed to do.",
-      "B": "AuthN is passwords; AuthZ is usernames.",
-      "C": "AuthN is secure; AuthZ is public.",
-      "D": "They are the same."
-    },
-    "correctAnswer": "A",
-    "explanation": "Identity (AuthN) vs Permissions (AuthZ). You can be Authenticated (logged in) but not Authorized (admin access)."
-  },
-  {
-    "id": 213,
-    "subject": "Cloud",
-    "question": "What is 'Vendor Lock-in'?",
-    "options": {
-      "A": "Security door.",
-      "B": "Building your system so deeply using proprietary tools of one cloud provider (e.g., AWS DynamoDB) that migrating to another (Azure/GCP) becomes prohibitively expensive.",
-      "C": "Signing a contract.",
-      "D": "Buying software."
-    },
-    "correctAnswer": "B",
-    "explanation": "A strategic risk to consider when choosing managed services vs open standards (like Postgres/Docker)."
-  },
-  {
-    "id": 214,
-    "subject": "Testing",
-    "question": "What is 'Fuzz Testing'?",
-    "options": {
-      "A": "Testing with fuzzy logic.",
-      "B": "Inputting massive amounts of random data ('fuzz') to the system to attempt to make it crash.",
-      "C": "UI testing.",
-      "D": "Unit testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Great for finding edge cases and security vulnerabilities that humans wouldn't think to test."
-  },
-  {
-    "id": 215,
-    "subject": "JavaScript",
-    "question": "What is a Closure?",
-    "options": {
-      "A": "The end of a function.",
-      "B": "The combination of a function bundled together with references to its surrounding state (lexical environment).",
-      "C": "A database connection.",
-      "D": "Closing a tag."
-    },
-    "correctAnswer": "B",
-    "explanation": "This allows a function to access variables from an outer function that has already returned."
-  },
-  {
-    "id": 216,
-    "subject": "Leadership",
-    "question": "What is the 'Bus Factor'?",
-    "options": {
-      "A": "Transportation cost.",
-      "B": "The number of team members that can be hit by a bus (or quit) before the project stalls due to lack of knowledge.",
-      "C": "Server load.",
-      "D": "API latency."
-    },
-    "correctAnswer": "B",
-    "explanation": "A risk metric. If only one person knows how the billing code works, your Bus Factor is 1 (Dangerous)."
-  },
-  {
-    "id": 217,
-    "subject": "Distributed Systems",
-    "question": "What is a 'Race Condition'?",
-    "options": {
-      "A": "Code running too fast.",
-      "B": "When a system's behavior depends on the sequence or timing of other uncontrollable events (e.g., two threads trying to update the same variable).",
-      "C": "A contest.",
-      "D": "Network lag."
-    },
-    "correctAnswer": "B",
-    "explanation": "Hard to debug because they are timing-dependent and often don't happen locally."
-  },
-  {
-    "id": 218,
-    "subject": "Productivity",
-    "question": "What is 'Yak Shaving'?",
-    "options": {
-      "A": "Grooming animals.",
-      "B": "A series of small tasks that must be performed before the project you actually want to do can be started.",
-      "C": "Coding fast.",
-      "D": "Cleaning code."
-    },
-    "correctAnswer": "B",
-    "explanation": "I want to deploy -> I need to update packages -> I need to update Node -> I need to update my OS -> Now I'm shaving a yak."
-  },
-  {
-    "id": 219,
-    "subject": "HTTP",
-    "question": "What is the purpose of the `OPTIONS` method in HTTP?",
-    "options": {
-      "A": "To choose a file.",
-      "B": "Used by browsers for CORS pre-flight requests to check which methods are allowed by the server.",
-      "C": "To configure the server.",
-      "D": "To delete data."
-    },
-    "correctAnswer": "B",
-    "explanation": "The browser asks 'Can I send a POST request here?' before actually sending the POST request."
-  },
-  {
-    "id": 220,
-    "subject": "Design Patterns",
-    "question": "What is the 'Factory Pattern'?",
-    "options": {
-      "A": "Making code in a factory.",
-      "B": "A creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.",
-      "C": "A singleton.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Decouples the instantiation logic from the usage logic."
-  },
-  {
-    "id": 221,
-    "subject": "SQL",
-    "question": "What is the difference between `DELETE` and `TRUNCATE`?",
-    "options": {
-      "A": "DELETE removes rows one by one and logs them (can be rolled back); TRUNCATE drops the table data instantly (faster, harder to rollback).",
-      "B": "They are the same.",
-      "C": "TRUNCATE is slower.",
-      "D": "DELETE drops the table structure."
-    },
-    "correctAnswer": "A",
-    "explanation": "Use TRUNCATE to wipe a table clean fast. Use DELETE for specific rows."
-  },
-  {
-    "id": 222,
-    "subject": "Mobile",
-    "question": "What is 'Deep Linking'?",
-    "options": {
-      "A": "Linking to the dark web.",
-      "B": "Using a URI (e.g., `twitter://`) that opens a specific page inside a mobile app instead of a website.",
-      "C": "SEO optimization.",
-      "D": "Linking databases."
-    },
-    "correctAnswer": "B",
-    "explanation": "Essential for UX transparency between web and app."
-  },
-  {
-    "id": 223,
-    "subject": "Communication",
-    "question": "You disagree with a code review comment. How do you respond?",
-    "options": {
-      "A": "Do what they say anyway.",
-      "B": "Explain your reasoning with evidence (links/docs) and ask: 'Do you think this approach outweighs the benefits?'",
-      "C": "Ignore it.",
-      "D": "Tell them they are wrong."
-    },
-    "correctAnswer": "B",
-    "explanation": "Turn the disagreement into a discussion about trade-offs."
-  },
-  {
-    "id": 224,
-    "subject": "Security",
-    "question": "What is 'Dependency Hell'?",
-    "options": {
-      "A": "Being lonely.",
-      "B": "When software relies on specific versions of other software packages, creating conflicts (Package A needs Lib v1, Package B needs Lib v2).",
-      "C": "A virus.",
-      "D": "A database lock."
-    },
-    "correctAnswer": "B",
-    "explanation": "Solved by Containerization (Docker) and better package managers."
-  },
-  {
-    "id": 225,
-    "subject": "Frontend",
-    "question": "What is 'Debouncing'?",
-    "options": {
-      "A": "Bouncing a ball.",
-      "B": "Limiting the rate at which a function fires. The function will only execute after a specified time has passed since the last call.",
-      "C": "Removing bugs.",
-      "D": "Cleaning CSS."
-    },
-    "correctAnswer": "B",
-    "explanation": "Crucial for search bars. Wait for the user to *stop* typing before hitting the API."
-  },
-  {
-    "id": 226,
-    "subject": "Architecture",
-    "question": "What is 'Dependency Injection'?",
-    "options": {
-      "A": "A security flaw.",
-      "B": "A technique where an object receives other objects that it depends on (dependencies) passed in, rather than creating them itself.",
-      "C": "Installing NPM packages.",
-      "D": "A database query."
-    },
-    "correctAnswer": "B",
-    "explanation": "Makes code testable. You can inject a 'Fake Database' for testing instead of the 'Real Database'."
-  },
-  {
-    "id": 227,
-    "subject": "DevOps",
-    "question": "What is 'Orchestration' (Kubernetes)?",
-    "options": {
-      "A": "Writing music.",
-      "B": "Automating the deployment, scaling, and management of containerized applications.",
-      "C": "Running a script.",
-      "D": "Testing code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Docker runs the container; Kubernetes decides *where* it runs and *how many* run."
-  },
-  {
-    "id": 228,
-    "subject": "Career",
-    "question": "What is the 'T-Shaped' Developer model?",
-    "options": {
-      "A": "A developer who likes tea.",
-      "B": "Deep knowledge in one area (Vertical bar) and broad knowledge across many areas (Horizontal bar).",
-      "C": "A developer who stands straight.",
-      "D": "Knowing only one thing."
-    },
-    "correctAnswer": "B",
-    "explanation": "The ideal modern engineer profile. Specialist in one thing, generalist in the rest."
-  },
-  {
-    "id": 229,
-    "subject": "Web",
-    "question": "What is WebSocket used for?",
-    "options": {
-      "A": "Standard web browsing.",
-      "B": "Full-duplex communication channels over a single TCP connection (Real-time chat, live feeds).",
-      "C": "Securing sockets.",
-      "D": "Database storage."
-    },
-    "correctAnswer": "B",
-    "explanation": "HTTP is request-response. WebSockets are persistent open channels for two-way data."
-  },
-  {
-    "id": 230,
-    "subject": "Python",
-    "question": "What is `__init__`?",
-    "options": {
-      "A": "A system command.",
-      "B": "The constructor method in Python classes, run when a new object is instantiated.",
-      "C": "A variable.",
-      "D": "An error."
-    },
-    "correctAnswer": "B",
-    "explanation": "Initializes the object's state."
-  },
-  {
-    "id": 231,
-    "subject": "Data",
-    "question": "What is ETL?",
-    "options": {
-      "A": "Extract, Transform, Load.",
-      "B": "Estimate Time Left.",
-      "C": "Error Tracking Log.",
-      "D": "Encrypted Text Layer."
-    },
-    "correctAnswer": "A",
-    "explanation": "The standard process for data pipelines and warehousing."
-  },
-  {
-    "id": 232,
-    "subject": "Performance",
-    "question": "What is 'Tree Shaking'?",
-    "options": {
-      "A": "Shaking the monitor.",
-      "B": "A build step that removes unused code from the final bundle to reduce file size.",
-      "C": "Optimizing images.",
-      "D": "Organizing folders."
-    },
-    "correctAnswer": "B",
-    "explanation": "You import a huge library but only use one function; Tree Shaking removes the rest."
-  },
-  {
-    "id": 233,
-    "subject": "Negotiation",
-    "question": "Product wants a fixed deadline for a complex research task. How do you respond?",
-    "options": {
-      "A": "Give a fake date.",
-      "B": "Say 'It's done when it's done.'",
-      "C": "Propose a 'Time-boxed Spike': 'Let's spend 2 days investigating. At the end, I will tell you if it's possible and give a better estimate.'",
-      "D": "Say 2 weeks."
-    },
-    "correctAnswer": "C",
-    "explanation": "A Spike buys knowledge. You cannot estimate the unknown."
-  },
-  {
-    "id": 234,
-    "subject": "Linux",
-    "question": "What is `sudo`?",
-    "options": {
-      "A": "SuperUser DO - executes a command with administrative (root) privileges.",
-      "B": "A pseudocode generator.",
-      "C": "System Update.",
-      "D": "Sustainable Development."
-    },
-    "correctAnswer": "A",
-    "explanation": "With great power comes great responsibility."
-  },
-  {
-    "id": 235,
-    "subject": "Quality Assurance",
-    "question": "What is 'Smoke Testing'?",
-    "options": {
-      "A": "Looking for fire.",
-      "B": "Preliminary testing to reveal simple failures severe enough to reject a release (e.g., 'Does the app even turn on?').",
-      "C": "Performance testing.",
-      "D": "Testing in the cloud."
-    },
-    "correctAnswer": "B",
-    "explanation": "If the smoke test fails, don't bother with the deep tests."
-  },
-  {
-    "id": 236,
-    "subject": "Agile",
-    "question": "What is 'Velocity' in Scrum?",
-    "options": {
-      "A": "Speed of code.",
-      "B": "The amount of work (story points) a team completes during a sprint.",
-      "C": "Running fast.",
-      "D": "A physics term."
-    },
-    "correctAnswer": "B",
-    "explanation": "Used for planning capacity, not for judging individual performance."
-  },
-  {
-    "id": 237,
-    "subject": "Security",
-    "question": "What is 'Zero Trust' architecture?",
-    "options": {
-      "A": "Trusting no one.",
-      "B": "A security model that requires all users/devices to be authenticated and authorized, regardless of whether they are inside or outside the organization's network.",
-      "C": "No passwords.",
-      "D": "VPN only."
-    },
-    "correctAnswer": "B",
-    "explanation": "Old model: 'Trust inside the firewall.' Zero Trust: 'Verify explicitly everywhere.'"
-  },
-  {
-    "id": 238,
-    "subject": "CSS",
-    "question": "What is `rem` vs `em` units?",
-    "options": {
-      "A": "rem is relative to the root (html) font-size; em is relative to the parent element's font-size.",
-      "B": "They are the same.",
-      "C": "em is for margins.",
-      "D": "rem is deprecated."
-    },
-    "correctAnswer": "A",
-    "explanation": "`rem` is preferred for consistency. `em` compounds (parent * child) which can get messy."
-  },
-  {
-    "id": 239,
-    "subject": "Git",
-    "question": "What is `git blame`?",
-    "options": {
-      "A": "Insulting coworkers.",
-      "B": "Shows what revision and author last modified each line of a file.",
-      "C": "Deleting history.",
-      "D": "Reporting bugs."
-    },
-    "correctAnswer": "B",
-    "explanation": "Useful for finding context: 'Why was this line changed 3 years ago?'"
-  },
-  {
-    "id": 240,
-    "subject": "Architecture",
-    "question": "What is 'Caching'?",
-    "options": {
-      "A": "Hiding money.",
-      "B": "Storing data in a temporary storage area so it can be retrieved faster than hitting the original source (DB/API).",
-      "C": "Deleting data.",
-      "D": "Encrypting data."
-    },
-    "correctAnswer": "B",
-    "explanation": "The fastest query is the one you don't make."
-  },
-  {
-    "id": 241,
-    "subject": "Coding",
-    "question": "What is 'Refactoring'?",
-    "options": {
-      "A": "Changing functionality.",
-      "B": "Restructuring existing computer code without changing its external behavior.",
-      "C": "Adding features.",
-      "D": "Fixing bugs."
-    },
-    "correctAnswer": "B",
-    "explanation": "Cleaning up the kitchen without cooking a new meal."
-  },
-  {
-    "id": 242,
-    "subject": "Leadership",
-    "question": "What is Psychological Safety?",
-    "options": {
-      "A": "Wearing a helmet.",
-      "B": "A belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes.",
-      "C": "Being happy.",
-      "D": "A safety drill."
-    },
-    "correctAnswer": "B",
-    "explanation": "The #1 predictor of high-performing teams (Google Project Aristotle)."
-  },
-  {
-    "id": 243,
-    "subject": "Web",
-    "question": "What is a 'Cookie'?",
-    "options": {
-      "A": "A snack.",
-      "B": "Small data stored on the user's computer by the web browser while browsing a website.",
-      "C": "A virus.",
-      "D": "A server."
-    },
-    "correctAnswer": "B",
-    "explanation": "Used for session management, personalization, and tracking."
-  },
-  {
-    "id": 244,
-    "subject": "Networking",
-    "question": "What is DHCP?",
-    "options": {
-      "A": "Dynamic Host Configuration Protocol - automatically assigns IP addresses to devices on a network.",
-      "B": "Data Host Control.",
-      "C": "Domain Host.",
-      "D": "A router."
-    },
-    "correctAnswer": "A",
-    "explanation": "Without it, you'd have to manually type an IP for every device you connect to wifi."
-  },
-  {
-    "id": 245,
-    "subject": "Security",
-    "question": "What is Public Key Infrastructure (PKI)?",
-    "options": {
-      "A": "A key store.",
-      "B": "The set of roles, policies, and hardware needed to create, manage, distribute, use, store, and revoke digital certificates.",
-      "C": "A database.",
-      "D": "A password manager."
-    },
-    "correctAnswer": "B",
-    "explanation": "The backbone of SSL/TLS and HTTPS."
-  },
-  {
-    "id": 246,
-    "subject": "Mobile",
-    "question": "What is 'Sandbox' in app development?",
-    "options": {
-      "A": "A playground.",
-      "B": "A security mechanism for separating running programs, preventing them from reading each other's data.",
-      "C": "A testing tool.",
-      "D": "A beach."
-    },
-    "correctAnswer": "B",
-    "explanation": "Why an iOS app can't steal your banking app's data."
-  },
-  {
-    "id": 247,
-    "subject": "Testing",
-    "question": "What is A/B Testing?",
-    "options": {
-      "A": "Testing alphabet.",
-      "B": "Comparing two versions of a webpage/app against each other to determine which one performs better.",
-      "C": "Unit testing.",
-      "D": "Beta testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Data-driven decision making for UI/UX."
-  },
-  {
-    "id": 248,
-    "subject": "Interview",
-    "question": "What is the difference between TCP and IP?",
-    "options": {
-      "A": "IP defines *where* data goes (address); TCP defines *how* data gets there reliably (delivery).",
-      "B": "They are the same.",
-      "C": "IP is for email.",
-      "D": "TCP is a website."
-    },
-    "correctAnswer": "A",
-    "explanation": "Together they form the internet protocol suite (TCP/IP)."
-  },
-  {
-    "id": 249,
-    "subject": "Cloud",
-    "question": "What is 'Latency'?",
-    "options": {
-      "A": "Speed.",
-      "B": "The time delay between the cause and the effect of some physical change in the system being observed.",
-      "C": "Bandwidth.",
-      "D": "Error rate."
-    },
-    "correctAnswer": "B",
-    "explanation": "Low latency = snappy feel."
-  },
-  {
-    "id": 250,
-    "subject": "Data Structures",
-    "question": "What is a Binary Tree?",
-    "options": {
-      "A": "A tree with two leaves.",
-      "B": "A tree data structure in which each node has at most two children (left and right).",
-      "C": "A database.",
-      "D": "A sorting algorithm."
-    },
-    "correctAnswer": "B",
-    "explanation": "Basis for Binary Search Trees (BST)."
-  },
-  {
-    "id": 251,
-    "subject": "Communication",
-    "question": "You are leading a meeting and it's going off-topic. What do you do?",
-    "options": {
-      "A": "Let it ride.",
-      "B": "End the meeting.",
-      "C": "'This is an interesting discussion, but let's take it offline so we can get through the agenda items for today.'",
-      "D": "Shout 'Focus!'."
-    },
-    "correctAnswer": "C",
-    "explanation": "Respect the time of the other attendees."
-  },
-  {
-    "id": 252,
-    "subject": "DevOps",
-    "question": "What is GitOps?",
-    "options": {
-      "A": "Using Git.",
-      "B": "Using Git repositories as the single source of truth for infrastructure definitions (IaC) and application code.",
-      "C": "GitHub actions.",
-      "D": "Coding."
-    },
-    "correctAnswer": "B",
-    "explanation": "If you want to change the server, you make a PR, not a manual change."
-  },
-  {
-    "id": 253,
-    "subject": "SQL",
-    "question": "What is Normalization?",
-    "options": {
-      "A": "Making things normal.",
-      "B": "Organizing data in a database to reduce redundancy and improve data integrity.",
-      "C": "Deleting data.",
-      "D": "Backing up."
-    },
-    "correctAnswer": "B",
-    "explanation": "Don't store the user's address in 5 different tables."
-  },
-  {
-    "id": 254,
-    "subject": "Frontend",
-    "question": "What is 'Hydration' in SSR?",
-    "options": {
-      "A": "Drinking water.",
-      "B": "The process of attaching event listeners to the static HTML served by the server to make it interactive on the client.",
-      "C": "Loading CSS.",
-      "D": "Refreshing the page."
-    },
-    "correctAnswer": "B",
-    "explanation": "Server sends HTML (fast paint); Client adds JS (interaction)."
-  },
-  {
-    "id": 255,
-    "subject": "Career",
-    "question": "What is the 'Bus Factor'?",
-    "options": {
-      "A": "Transportation.",
-      "B": "The minimum number of team members that have to suddenly disappear from a project before the project stalls due to lack of knowledgeable personnel.",
-      "C": "A coding style.",
-      "D": "A metric for speed."
-    },
-    "correctAnswer": "B",
-    "explanation": "A risk management metric. You want a high bus factor."
-  },
-  {
-    "id": 256,
-    "subject": "Architecture",
-    "question": "What is a 'Reverse Proxy'?",
-    "options": {
-      "A": "A hacker tool.",
-      "B": "A server that sits in front of web servers and forwards client requests to those web servers (e.g., Nginx).",
-      "C": "A database.",
-      "D": "A firewall."
-    },
-    "correctAnswer": "B",
-    "explanation": "Handles SSL termination, Load Balancing, and Caching."
-  },
-  {
-    "id": 257,
-    "subject": "JavaScript",
-    "question": "What is `undefined` vs `null`?",
-    "options": {
-      "A": "Same thing.",
-      "B": "`undefined` means a variable has been declared but not defined. `null` is an assignment value representing no value.",
-      "C": "`null` is an error.",
-      "D": "`undefined` is an object."
-    },
-    "correctAnswer": "B",
-    "explanation": "System-level missing value vs User-level empty value."
-  },
-  {
-    "id": 258,
-    "subject": "Soft Skills",
-    "question": "How do you give constructive feedback?",
-    "options": {
-      "A": "Be blunt.",
-      "B": "Be vague.",
-      "C": "Be specific, actionable, and timely. Focus on the work, not the person.",
-      "D": "Wait for the annual review."
-    },
-    "correctAnswer": "C",
-    "explanation": "SBI Model: Situation, Behavior, Impact."
-  },
-  {
-    "id": 259,
-    "subject": "Security",
-    "question": "What is 'Encryption at Rest'?",
-    "options": {
-      "A": "Sleeping security.",
-      "B": "Encrypting data when it is stored on disk (database/files) so if the hard drive is stolen, the data is unreadable.",
-      "C": "HTTPS.",
-      "D": "Password hashing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Protects against physical theft of servers."
-  },
-  {
-    "id": 260,
-    "subject": "Performance",
-    "question": "What is 'Code Splitting'?",
-    "options": {
-      "A": "Breaking monitors.",
-      "B": "Splitting code into various bundles which can then be loaded on demand or in parallel.",
-      "C": "Refactoring.",
-      "D": "Deleting code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Don't send the Admin Dashboard code to the Homepage user."
-  },
-  {
-    "id": 261,
-    "subject": "Git",
-    "question": "What is `HEAD` in git?",
-    "options": {
-      "A": "The leader.",
-      "B": "A reference to the current commit you are viewing/working on.",
-      "C": "The main branch.",
-      "D": "The server."
-    },
-    "correctAnswer": "B",
-    "explanation": "Detached HEAD means you are looking at a commit, not a branch tip."
-  },
-  {
-    "id": 262,
-    "subject": "Web",
-    "question": "What is a PWA (Progressive Web App)?",
-    "options": {
-      "A": "A slow website.",
-      "B": "A website that looks and behaves like a mobile app (offline mode, push notifications, installable).",
-      "C": "A native app.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Bridging the gap between Web and Native."
-  },
-  {
-    "id": 263,
-    "subject": "Backend",
-    "question": "What is 'Pagination'?",
-    "options": {
-      "A": "Writing books.",
-      "B": "Dividing a large dataset into smaller chunks (pages) to serve to the client.",
-      "C": "Database indexing.",
-      "D": "Sorting."
-    },
-    "correctAnswer": "B",
-    "explanation": "Don't return 1 million rows in one API call. Return 50."
-  },
-  {
-    "id": 264,
-    "subject": "Architecture",
-    "question": "What is 'Keep It Simple, Stupid' (KISS)?",
-    "options": {
-      "A": "Being rude.",
-      "B": "A design principle stating that systems work best if they are kept simple rather than made complex.",
-      "C": "Writing bad code.",
-      "D": "Using old tech."
-    },
-    "correctAnswer": "B",
-    "explanation": "Complexity is the enemy of reliability."
-  },
-  {
-    "id": 265,
-    "subject": "Testing",
-    "question": "What is 'Black Box Testing'?",
-    "options": {
-      "A": "Testing flight recorders.",
-      "B": "Testing without knowing the internal structure/code. Focusing on inputs and outputs.",
-      "C": "Unit testing.",
-      "D": "White box testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Testing as a user would."
-  },
-  {
-    "id": 266,
-    "subject": "Security",
-    "question": "What is OAUTH?",
-    "options": {
-      "A": "An author.",
-      "B": "An open standard for access delegation (e.g., Log in with Google).",
-      "C": "A password.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Allows you to grant a website access to your information on another website without giving them your password."
-  },
-  {
-    "id": 267,
-    "subject": "Career",
-    "question": "What is 'Burnout'?",
-    "options": {
-      "A": "Working hard.",
-      "B": "A state of emotional, physical, and mental exhaustion caused by excessive and prolonged stress.",
-      "C": "A fire.",
-      "D": "Being tired."
-    },
-    "correctAnswer": "B",
-    "explanation": "A career killer. Requires recovery time."
-  },
-  {
-    "id": 268,
-    "subject": "System Design",
-    "question": "What is 'Throughput'?",
-    "options": {
-      "A": "Latency.",
-      "B": "The number of requests a system can handle per second (RPS).",
-      "C": "Bandwidth.",
-      "D": "Error rate."
-    },
-    "correctAnswer": "B",
-    "explanation": "How wide is the pipe?"
-  },
-  {
-    "id": 269,
-    "subject": "Communication",
-    "question": "How do you explain 'API' to a non-technical person?",
-    "options": {
-      "A": "It's a coding interface.",
-      "B": "It's like a waiter in a restaurant. You (the user) give the waiter your order, the waiter takes it to the kitchen (system), and brings you back the food.",
-      "C": "It's HTTP.",
-      "D": "It's a database."
-    },
-    "correctAnswer": "B",
-    "explanation": "The Waiter Analogy is standard."
-  },
-  {
-    "id": 270,
-    "subject": "Mobile",
-    "question": "What is 'Push Notification'?",
-    "options": {
-      "A": "Email.",
-      "B": "A message sent from a server to a client application (even when the app is closed).",
-      "C": "A text message.",
-      "D": "A database update."
-    },
-    "correctAnswer": "B",
-    "explanation": "Re-engagement tool."
-  },
-  {
-    "id": 271,
-    "subject": "Linux",
-    "question": "What is `cron`?",
-    "options": {
-      "A": "A monster.",
-      "B": "A time-based job scheduler in Unix-like operating systems.",
-      "C": "A clock.",
-      "D": "A virus."
-    },
-    "correctAnswer": "B",
-    "explanation": "Running scripts automatically at specific times."
-  },
-  {
-    "id": 272,
-    "subject": "DevOps",
-    "question": "What is a 'Build Pipeline'?",
-    "options": {
-      "A": "Construction work.",
-      "B": "Automated set of processes that compile, test, and deploy code.",
-      "C": "A gas pipe.",
-      "D": "Writing code."
-    },
-    "correctAnswer": "B",
-    "explanation": "The assembly line for software."
-  },
-  {
-    "id": 273,
-    "subject": "Code Quality",
-    "question": "What is 'Linting'?",
-    "options": {
-      "A": "Cleaning clothes.",
-      "B": "Running a program that analyzes code for potential errors and stylistic issues.",
-      "C": "Compiling.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Catching typos and style violations before they hit the repo."
-  },
-  {
-    "id": 274,
-    "subject": "Network",
-    "question": "What is a 'Firewall'?",
-    "options": {
-      "A": "A wall on fire.",
-      "B": "A network security system that monitors and controls incoming and outgoing network traffic.",
-      "C": "Antivirus.",
-      "D": "A password."
-    },
-    "correctAnswer": "B",
-    "explanation": "The bouncer of the network."
-  },
-  {
-    "id": 275,
-    "subject": "Web",
-    "question": "What is 'Responsive Design'?",
-    "options": {
-      "A": "Fast website.",
-      "B": "Web design that adapts to different screen sizes and devices.",
-      "C": "Good colors.",
-      "D": "Native app."
-    },
-    "correctAnswer": "B",
-    "explanation": "One code base, many devices."
-  },
-  {
-    "id": 276,
-    "subject": "SQL",
-    "question": "What is a 'Foreign Key'?",
-    "options": {
-      "A": "A key from another country.",
-      "B": "A field in a table that links to the Primary Key of another table.",
-      "C": "A password.",
-      "D": "A index."
-    },
-    "correctAnswer": "B",
-    "explanation": "Creates the relationship in Relational Databases."
-  },
-  {
-    "id": 277,
-    "subject": "Agile",
-    "question": "What is 'Backlog Grooming'?",
-    "options": {
-      "A": "Cleaning the office.",
-      "B": "Reviewing and prioritizing items in the backlog to ensure they are ready for future sprints.",
-      "C": "Deleting tasks.",
-      "D": "A meeting."
-    },
-    "correctAnswer": "B",
-    "explanation": "Preparation work."
-  },
-  {
-    "id": 278,
-    "subject": "Leadership",
-    "question": "What is 'Imposter Syndrome'?",
-    "options": {
-      "A": "Being a fake.",
-      "B": "Feeling like you aren't as competent as others perceive you to be.",
-      "C": "Lying.",
-      "D": "Being new."
-    },
-    "correctAnswer": "B",
-    "explanation": "Very common in tech."
-  },
-  {
-    "id": 279,
-    "subject": "Cloud",
-    "question": "What is SaaS?",
-    "options": {
-      "A": "Software as a Service.",
-      "B": "System as a Server.",
-      "C": "Storage as a System.",
-      "D": "Safe and Secure."
-    },
-    "correctAnswer": "A",
-    "explanation": "Licensing software via subscription (e.g., Slack, Gmail)."
-  },
-  {
-    "id": 280,
-    "subject": "Coding",
-    "question": "What is Recursion?",
-    "options": {
-      "A": "A loop.",
-      "B": "A function calling itself.",
-      "C": "A bug.",
-      "D": "A crash."
-    },
-    "correctAnswer": "B",
-    "explanation": "Useful for traversing trees/graphs. Must have a base case to avoid stack overflow."
-  },
-  {
-    "id": 281,
-    "subject": "Security",
-    "question": "What is HTTPS?",
-    "options": {
-      "A": "Hyper Text Transfer Protocol Secure.",
-      "B": "Faster HTTP.",
-      "C": "Slow HTTP.",
-      "D": "A website."
-    },
-    "correctAnswer": "A",
-    "explanation": "Encrypted communication."
-  },
-  {
-    "id": 282,
-    "subject": "Performance",
-    "question": "What is 'Optimization'?",
-    "options": {
-      "A": "Writing code.",
-      "B": "Making a system as effective or functional as possible (faster, smaller).",
-      "C": "Deleting features.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Improving efficiency."
-  },
-  {
-    "id": 283,
-    "subject": "API",
-    "question": "What is SOAP?",
-    "options": {
-      "A": "Cleaning agent.",
-      "B": "Simple Object Access Protocol - an older, XML-based messaging protocol.",
-      "C": "A database.",
-      "D": "A REST replacement."
-    },
-    "correctAnswer": "B",
-    "explanation": "Heavyweight compared to REST/JSON. Still used in enterprise."
-  },
-  {
-    "id": 284,
-    "subject": "Architecture",
-    "question": "What is 'Scalability'?",
-    "options": {
-      "A": "Weighing code.",
-      "B": "The ability of a system to handle increased load.",
-      "C": "Writing good code.",
-      "D": "Security."
-    },
-    "correctAnswer": "B",
-    "explanation": "Growth potential."
-  },
-  {
-    "id": 285,
-    "subject": "Python",
-    "question": "What is a 'Tuple'?",
-    "options": {
-      "A": "A list.",
-      "B": "An immutable (unchangeable) ordered list of elements.",
-      "C": "A dictionary.",
-      "D": "A loop."
-    },
-    "correctAnswer": "B",
-    "explanation": "Like a list, but you can't change it."
-  },
-  {
-    "id": 286,
-    "subject": "Testing",
-    "question": "What is 'UAT'?",
-    "options": {
-      "A": "Unit Automated Test.",
-      "B": "User Acceptance Testing - final testing by the end user/client.",
-      "C": "Under A Tree.",
-      "D": "Integration testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "The final sign-off."
-  },
-  {
-    "id": 287,
-    "subject": "Git",
-    "question": "What is `git pull`?",
-    "options": {
-      "A": "Deleting code.",
-      "B": "Fetching changes from a remote repository and merging them into the current branch.",
-      "C": "Uploading code.",
-      "D": "Saving code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Get the latest code."
-  },
-  {
-    "id": 288,
-    "subject": "Soft Skills",
-    "question": "What is 'Active Listening'?",
-    "options": {
-      "A": "Hearing sound.",
-      "B": "Fully concentrating, understanding, responding, and remembering what is being said.",
-      "C": "Waiting to speak.",
-      "D": "Ignoring."
-    },
-    "correctAnswer": "B",
-    "explanation": "Crucial for requirement gathering."
-  },
-  {
-    "id": 289,
-    "subject": "Web",
-    "question": "What is a URL?",
-    "options": {
-      "A": "Uniform Resource Locator.",
-      "B": "User Real Link.",
-      "C": "Universal Request Line.",
-      "D": "A website."
-    },
-    "correctAnswer": "A",
-    "explanation": "The address of a resource."
-  },
-  {
-    "id": 290,
-    "subject": "Database",
-    "question": "What is a Query?",
-    "options": {
-      "A": "A question.",
-      "B": "A request for data or information from a database table.",
-      "C": "A server.",
-      "D": "A file."
-    },
-    "correctAnswer": "B",
-    "explanation": "Asking the database."
-  },
-  {
-    "id": 291,
-    "subject": "Architecture",
-    "question": "What is 'High Availability'?",
-    "options": {
-      "A": "Always online.",
-      "B": "Systems designed to be durable and likely to operate continuously without failure for a long time.",
-      "C": "Fast internet.",
-      "D": "Big servers."
-    },
-    "correctAnswer": "B",
-    "explanation": "Minimizing downtime."
-  },
-  {
-    "id": 292,
-    "subject": "Security",
-    "question": "What is a 'DDOS' attack?",
-    "options": {
-      "A": "Distributed Denial of Service.",
-      "B": "Deleting Data On Server.",
-      "C": "Direct Denial.",
-      "D": "A virus."
-    },
-    "correctAnswer": "A",
-    "explanation": "Overwhelming a server with traffic."
-  },
-  {
-    "id": 293,
-    "subject": "Mobile",
-    "question": "What is iOS?",
-    "options": {
-      "A": "Internet OS.",
-      "B": "Apple's mobile operating system.",
-      "C": "Android.",
-      "D": "A phone."
-    },
-    "correctAnswer": "B",
-    "explanation": "Runs on iPhone/iPad."
-  },
-  {
-    "id": 294,
-    "subject": "DevOps",
-    "question": "What is 'Version Control'?",
-    "options": {
-      "A": "Controlling people.",
-      "B": "Systems responsible for managing changes to computer programs/documents (e.g., Git).",
-      "C": "Backups.",
-      "D": "Writing code."
-    },
-    "correctAnswer": "B",
-    "explanation": "The time machine for code."
-  },
-  {
-    "id": 295,
-    "subject": "Frontend",
-    "question": "What is 'Bootstrap'?",
-    "options": {
-      "A": "Shoes.",
-      "B": "A popular CSS framework for developing responsive, mobile-first websites.",
-      "C": "A backend tool.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Rapid UI development."
-  },
-  {
-    "id": 296,
-    "subject": "Career",
-    "question": "What is a 'Stack'?",
-    "options": {
-      "A": "Pancakes.",
-      "B": "The combination of technologies used to build an application (e.g., MERN).",
-      "C": "A pile of papers.",
-      "D": "A server."
-    },
-    "correctAnswer": "B",
-    "explanation": "Full Stack = Frontend + Backend + DB."
-  },
-  {
-    "id": 297,
-    "subject": "Networking",
-    "question": "What is LAN?",
-    "options": {
-      "A": "Local Area Network.",
-      "B": "Large Area Network.",
-      "C": "Long Area Net.",
-      "D": "Wifi."
-    },
-    "correctAnswer": "A",
-    "explanation": "Network in a small area (home/office)."
-  },
-  {
-    "id": 298,
-    "subject": "Coding",
-    "question": "What is 'Compilation'?",
-    "options": {
-      "A": "Writing code.",
-      "B": "Transforming source code into machine code.",
-      "C": "Running code.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Turning human readable text into machine instructions."
-  },
-  {
-    "id": 299,
-    "subject": "Data",
-    "question": "What is Big Data?",
-    "options": {
-      "A": "Large files.",
-      "B": "Data sets that are too large or complex to be dealt with by traditional data-processing software.",
-      "C": "A database.",
-      "D": "Cloud."
-    },
-    "correctAnswer": "B",
-    "explanation": "Volume, Velocity, Variety."
-  },
-  {
-    "id": 300,
-    "subject": "Communication",
-    "question": "Why is 'Documentation' important?",
-    "options": {
-      "A": "It isn't.",
-      "B": "It ensures knowledge transfer, maintainability, and onboarding efficiency.",
-      "C": "To look busy.",
-      "D": "For legal reasons."
-    },
-    "correctAnswer": "B",
-    "explanation": "Code tells you how; Docs tell you why."
-  },
-  {
-    "id": 301,
-    "subject": "Kubernetes",
-    "question": "What is a 'Pod' in Kubernetes?",
-    "options": {
-      "A": "A small whale.",
-      "B": "The smallest deployable unit in K8s, representing a single instance of a running process (one or more containers).",
-      "C": "A server.",
-      "D": "A storage unit."
-    },
-    "correctAnswer": "B",
-    "explanation": "Containers live inside Pods. K8s scales Pods, not containers directly."
-  },
-  {
-    "id": 302,
-    "subject": "GraphQL",
-    "question": "What is the 'N+1 Problem' in GraphQL?",
-    "options": {
-      "A": "A math error.",
-      "B": "A performance issue where fetching a list of items (1 query) triggers a separate database query for each item's related data (N queries).",
-      "C": "Too many users.",
-      "D": "A schema error."
-    },
-    "correctAnswer": "B",
-    "explanation": "Solved by using 'DataLoaders' to batch requests."
-  },
-  {
-    "id": 303,
-    "subject": "Next.js",
-    "question": "What is Static Site Generation (SSG)?",
-    "options": {
-      "A": "Websites that don't move.",
-      "B": "Pre-rendering pages at build time. The HTML is generated once and reused for each request.",
-      "C": "Server Side Rendering.",
-      "D": "Client Side Rendering."
-    },
-    "correctAnswer": "B",
-    "explanation": "Fastest performance because the server just serves a file, no computation per request."
-  },
-  {
-    "id": 304,
-    "subject": "Distributed Systems",
-    "question": "What is 'Distributed Tracing'?",
-    "options": {
-      "A": "Drawing lines.",
-      "B": "A method used to track and profile application requests as they flow through distributed microservices.",
-      "C": "Logging.",
-      "D": "Debugging locally."
-    },
-    "correctAnswer": "B",
-    "explanation": "Essential for debugging 'Why was this request slow?' when it hit 10 different services."
-  },
-  {
-    "id": 305,
-    "subject": "Security",
-    "question": "What is 'JWT' (JSON Web Token)?",
-    "options": {
-      "A": "JavaScript Web Text.",
-      "B": "A compact, URL-safe means of representing claims to be transferred between two parties.",
-      "C": "A password.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Stateless auth. The server doesn't need to store the session; it just verifies the signature."
-  },
-  {
-    "id": 306,
-    "subject": "React",
-    "question": "What is a 'Higher-Order Component' (HOC)?",
-    "options": {
-      "A": "A tall component.",
-      "B": "A function that takes a component and returns a new component (for reusing logic).",
-      "C": "A parent component.",
-      "D": "A state manager."
-    },
-    "correctAnswer": "B",
-    "explanation": "A pattern for reusing component logic (e.g., `withAuth(ProfilePage)`)."
-  },
-  {
-    "id": 307,
-    "subject": "Database",
-    "question": "What is 'Replication'?",
-    "options": {
-      "A": "Copying data from one database server to another to ensure redundancy and high availability.",
-      "B": "Backups.",
-      "C": "Deleting data.",
-      "D": "Sharding."
-    },
-    "correctAnswer": "A",
-    "explanation": "If the primary DB fails, the replica takes over."
-  },
-  {
-    "id": 308,
-    "subject": "Leadership",
-    "question": "What is 'Delegation'?",
-    "options": {
-      "A": "Being lazy.",
-      "B": "Entrusting a task or responsibility to another person (usually a junior) to help them grow.",
-      "C": "Ordering food.",
-      "D": "Ignoring work."
-    },
-    "correctAnswer": "B",
-    "explanation": "Crucial for scaling yourself as a leader."
-  },
-  {
-    "id": 309,
-    "subject": "API",
-    "question": "What is gRPC?",
-    "options": {
-      "A": "Google RPC.",
-      "B": "A high-performance RPC framework that uses Protocol Buffers (binary) instead of JSON.",
-      "C": "A REST API.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Faster and lighter than REST, often used for internal microservice communication."
-  },
-  {
-    "id": 310,
-    "subject": "Architecture",
-    "question": "What is 'Event-Driven Architecture'?",
-    "options": {
-      "A": "Planning events.",
-      "B": "An architecture where services communicate by emitting and reacting to events (messages) rather than direct requests.",
-      "C": "A monolithic app.",
-      "D": "A calendar app."
-    },
-    "correctAnswer": "B",
-    "explanation": "Decouples services. Service A says 'UserSignedUp', Service B hears it and sends email."
-  },
-  {
-    "id": 311,
-    "subject": "Testing",
-    "question": "What is 'Chaos Engineering'?",
-    "options": {
-      "A": "Creating bugs.",
-      "B": "The discipline of experimenting on a system (e.g., turning off servers randomly) to build confidence in its capability to withstand turbulent conditions.",
-      "C": "Poor management.",
-      "D": "Writing bad code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Netflix 'Chaos Monkey'. Break it on purpose to ensure it auto-heals."
-  },
-  {
-    "id": 312,
-    "subject": "Career",
-    "question": "What is 'Mentorship'?",
-    "options": {
-      "A": "Teaching.",
-      "B": "A professional relationship in which a more experienced person guides a less experienced one.",
-      "C": "Bossing around.",
-      "D": "Friendship."
-    },
-    "correctAnswer": "B",
-    "explanation": "The fastest way to grow your career."
-  },
-  {
-    "id": 313,
-    "subject": "Web",
-    "question": "What is WebAssembly (Wasm)?",
-    "options": {
-      "A": "A new framework.",
-      "B": "A binary instruction format that allows code written in languages like C++/Rust to run in the browser at near-native speed.",
-      "C": "JavaScript.",
-      "D": "HTML5."
-    },
-    "correctAnswer": "B",
-    "explanation": "Bringing high-performance computing (games, video editing) to the web."
-  },
-  {
-    "id": 314,
-    "subject": "Security",
-    "question": "What is 'Encryption in Transit'?",
-    "options": {
-      "A": "Encrypting cars.",
-      "B": "Encrypting data while it is moving between two points (e.g., Browser to Server) using TLS/SSL.",
-      "C": "Database encryption.",
-      "D": "VPN."
-    },
-    "correctAnswer": "B",
-    "explanation": "Prevents interception (MitM attacks)."
-  },
-  {
-    "id": 315,
-    "subject": "DevOps",
-    "question": "What is 'Observability'?",
-    "options": {
-      "A": "Looking at screens.",
-      "B": "The ability to understand the internal state of a system based on its external outputs (Logs, Metrics, Traces).",
-      "C": "Monitoring.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Monitoring tells you the system is down; Observability tells you *why*."
-  },
-  {
-    "id": 316,
-    "subject": "Python",
-    "question": "What is a 'Virtual Environment'?",
-    "options": {
-      "A": "VR.",
-      "B": "An isolated environment for Python projects so dependencies don't conflict with system-wide packages.",
-      "C": "A virtual machine.",
-      "D": "A docker container."
-    },
-    "correctAnswer": "B",
-    "explanation": "Always use `venv` or `conda` to keep projects clean."
-  },
-  {
-    "id": 317,
-    "subject": "Data",
-    "question": "What is Redis?",
-    "options": {
-      "A": "A color.",
-      "B": "An in-memory data structure store, used as a database, cache, and message broker.",
-      "C": "A relational database.",
-      "D": "A frontend tool."
-    },
-    "correctAnswer": "B",
-    "explanation": "Extremely fast because it runs in RAM."
-  },
-  {
-    "id": 318,
-    "subject": "Networking",
-    "question": "What is a VPN?",
-    "options": {
-      "A": "Virtual Private Network.",
-      "B": "Very Private Net.",
-      "C": "Visual Protocol Node.",
-      "D": "Virus Protection."
-    },
-    "correctAnswer": "A",
-    "explanation": "Creates a secure tunnel over a public network."
-  },
-  {
-    "id": 319,
-    "subject": "Mobile",
-    "question": "What is 'Flutter'?",
-    "options": {
-      "A": "A bird.",
-      "B": "Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
-      "C": "A database.",
-      "D": "A testing tool."
-    },
-    "correctAnswer": "B",
-    "explanation": "Competitor to React Native, uses Dart language."
-  },
-  {
-    "id": 320,
-    "subject": "Soft Skills",
-    "question": "What is 'Stakeholder Management'?",
-    "options": {
-      "A": "Managing servers.",
-      "B": "The process of maintaining good relationships with the people who have the most impact on your work (Boss, PM, Client).",
-      "C": "Coding.",
-      "D": "Eating steak."
-    },
-    "correctAnswer": "B",
-    "explanation": "Engineering is easy; people are hard."
-  },
-  {
-    "id": 321,
-    "subject": "Git",
-    "question": "What is a 'Fork'?",
-    "options": {
-      "A": "Cutlery.",
-      "B": "A copy of a repository that you manage. Allows you to experiment without affecting the original project.",
-      "C": "A branch.",
-      "D": "A commit."
-    },
-    "correctAnswer": "B",
-    "explanation": "Standard for Open Source contributions."
-  },
-  {
-    "id": 322,
-    "subject": "Frontend",
-    "question": "What is 'Tailwind CSS'?",
-    "options": {
-      "A": "A wind.",
-      "B": "A utility-first CSS framework that allows you to build designs directly in your markup.",
-      "C": "A JavaScript library.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Rapid styling without writing custom CSS files."
-  },
-  {
-    "id": 323,
-    "subject": "Cloud",
-    "question": "What is 'Lambda' (AWS)?",
-    "options": {
-      "A": "A greek letter.",
-      "B": "A serverless compute service that runs your code in response to events and automatically manages resources.",
-      "C": "A database.",
-      "D": "A virtual machine."
-    },
-    "correctAnswer": "B",
-    "explanation": "No servers to manage. Pay per millisecond."
-  },
-  {
-    "id": 324,
-    "subject": "JavaScript",
-    "question": "What is 'Async/Await'?",
-    "options": {
-      "A": "Waiting for code.",
-      "B": "Syntactic sugar built on top of Promises that makes asynchronous code look and behave like synchronous code.",
-      "C": "A slow function.",
-      "D": "An error."
-    },
-    "correctAnswer": "B",
-    "explanation": "Makes reading async code much easier."
-  },
-  {
-    "id": 325,
-    "subject": "Architecture",
-    "question": "What is 'Domain Driven Design' (DDD)?",
-    "options": {
-      "A": "Buying domains.",
-      "B": "An approach to software development that centers the design on the core domain and domain logic.",
-      "C": "Designing UIs.",
-      "D": "Database design."
-    },
-    "correctAnswer": "B",
-    "explanation": "Aligning the code structure with the business reality."
-  },
-  {
-    "id": 326,
-    "subject": "Security",
-    "question": "What is 'Penetration Testing'?",
-    "options": {
-      "A": "Testing pens.",
-      "B": "A simulated cyberattack against your computer system to check for exploitable vulnerabilities.",
-      "C": "Unit testing.",
-      "D": "Code review."
-    },
-    "correctAnswer": "B",
-    "explanation": "Ethical hacking."
-  },
-  {
-    "id": 327,
-    "subject": "Performance",
-    "question": "What is 'Server Side Rendering' (SSR)?",
-    "options": {
-      "A": "Rendering on the client.",
-      "B": "Generating the full HTML for a page on the server in response to a navigation request.",
-      "C": "A database.",
-      "D": "Caching."
-    },
-    "correctAnswer": "B",
-    "explanation": "Better for SEO and initial load speed than Client Side Rendering."
-  },
-  {
-    "id": 328,
-    "subject": "Data Structures",
-    "question": "What is a Graph?",
-    "options": {
-      "A": "A chart.",
-      "B": "A non-linear data structure consisting of nodes (vertices) and edges.",
-      "C": "A table.",
-      "D": "A list."
-    },
-    "correctAnswer": "B",
-    "explanation": "Social networks are Graphs (People = Nodes, Friendships = Edges)."
-  },
-  {
-    "id": 329,
-    "subject": "Communication",
-    "question": "What is 'Managing Up'?",
-    "options": {
-      "A": "Being bossy.",
-      "B": "Proactively communicating with your manager to make their job easier (and yours better).",
-      "C": "Getting promoted.",
-      "D": "Quitting."
-    },
-    "correctAnswer": "B",
-    "explanation": "Don't wait to be managed. Manage the relationship."
-  },
-  {
-    "id": 330,
-    "subject": "DevOps",
-    "question": "What is 'Terraform'?",
-    "options": {
-      "A": "A video game.",
-      "B": "An infrastructure-as-code tool for building, changing, and versioning infrastructure safely and efficiently.",
-      "C": "A database.",
-      "D": "A cloud provider."
-    },
-    "correctAnswer": "B",
-    "explanation": "Define your AWS/Azure/GCP resources in code."
-  },
-  {
-    "id": 331,
-    "subject": "SQL",
-    "question": "What is an 'Outer Join'?",
-    "options": {
-      "A": "Joining outside.",
-      "B": "Returns all records when there is a match in either left or right table record.",
-      "C": "Inner join.",
-      "D": "Deleting data."
-    },
-    "correctAnswer": "B",
-    "explanation": "Includes unmatched rows."
-  },
-  {
-    "id": 332,
-    "subject": "Career",
-    "question": "What is 'Networking' (Social)?",
-    "options": {
-      "A": "Connecting cables.",
-      "B": "Building professional relationships to exchange information and develop contacts.",
-      "C": "Using LinkedIn.",
-      "D": "Internet."
-    },
-    "correctAnswer": "B",
-    "explanation": "Who you know matters as much as what you know."
-  },
-  {
-    "id": 333,
-    "subject": "Mobile",
-    "question": "What is 'Swift'?",
-    "options": {
-      "A": "Fast.",
-      "B": "A powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS.",
-      "C": "A bird.",
-      "D": "Android language."
-    },
-    "correctAnswer": "B",
-    "explanation": "Replaced Objective-C."
-  },
-  {
-    "id": 334,
-    "subject": "System Design",
-    "question": "What is a 'Message Queue' (RabbitMQ/Kafka)?",
-    "options": {
-      "A": "A chat room.",
-      "B": "A form of asynchronous service-to-service communication used in serverless and microservices architectures.",
-      "C": "A database.",
-      "D": "A load balancer."
-    },
-    "correctAnswer": "B",
-    "explanation": "Decouples producers from consumers. Buffer traffic spikes."
-  },
-  {
-    "id": 335,
-    "subject": "React",
-    "question": "What is 'Redux'?",
-    "options": {
-      "A": "A reducer.",
-      "B": "A predictable state container for JavaScript apps (Global State Management).",
-      "C": "A database.",
-      "D": "A backend."
-    },
-    "correctAnswer": "B",
-    "explanation": "Centralizes application state."
-  },
-  {
-    "id": 336,
-    "subject": "Security",
-    "question": "What is 'Hashing' vs 'Encryption'?",
-    "options": {
-      "A": "Same thing.",
-      "B": "Encryption is two-way (can decrypt); Hashing is one-way (cannot retrieve original data).",
-      "C": "Hashing is reversible.",
-      "D": "Encryption is for passwords."
-    },
-    "correctAnswer": "B",
-    "explanation": "Passwords should be hashed. Messages should be encrypted."
-  },
-  {
-    "id": 337,
-    "subject": "Web",
-    "question": "What is 'Localhost'?",
-    "options": {
-      "A": "The internet.",
-      "B": "The default name describing the local computer address (loopback address 127.0.0.1).",
-      "C": "A server.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "There's no place like 127.0.0.1."
-  },
-  {
-    "id": 338,
-    "subject": "Testing",
-    "question": "What is 'Mocking'?",
-    "options": {
-      "A": "Making fun.",
-      "B": "Creating objects that simulate the behavior of real objects for testing purposes.",
-      "C": "Running production code.",
-      "D": "Deploying."
-    },
-    "correctAnswer": "B",
-    "explanation": "Don't hit the real credit card API in your tests."
-  },
-  {
-    "id": 339,
-    "subject": "Productivity",
-    "question": "What is 'Deep Work'?",
-    "options": {
-      "A": "Working underground.",
-      "B": "Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit.",
-      "C": "Working at night.",
-      "D": "Easy work."
-    },
-    "correctAnswer": "B",
-    "explanation": "Where real coding happens."
-  },
-  {
-    "id": 340,
-    "subject": "Git",
-    "question": "What is `git branch`?",
-    "options": {
-      "A": "A tree.",
-      "B": "A command to list, create, or delete branches.",
-      "C": "A commit.",
-      "D": "A repository."
-    },
-    "correctAnswer": "B",
-    "explanation": "Branches allow parallel development."
-  },
-  {
-    "id": 341,
-    "subject": "DevOps",
-    "question": "What is 'SRE'?",
-    "options": {
-      "A": "Super Real Engineer.",
-      "B": "Site Reliability Engineering.",
-      "C": "System Reset Error.",
-      "D": "Server Reboot Engine."
-    },
-    "correctAnswer": "B",
-    "explanation": "Applying software engineering principles to operations/infrastructure problems."
-  },
-  {
-    "id": 342,
-    "subject": "Architecture",
-    "question": "What is 'Middleware'?",
-    "options": {
-      "A": "Software that lies between an operating system and the applications running on it (or between request and response in web frameworks).",
-      "B": "Hardware.",
-      "C": "A database.",
-      "D": "A frontend."
-    },
-    "correctAnswer": "A",
-    "explanation": "The 'glue' of software."
-  },
-  {
-    "id": 343,
-    "subject": "Cloud",
-    "question": "What is 'Elasticity'?",
-    "options": {
-      "A": "Rubber bands.",
-      "B": "The degree to which a system is able to adapt to workload changes by provisioning and de-provisioning resources in an autonomic manner.",
-      "C": "Cost.",
-      "D": "Speed."
-    },
-    "correctAnswer": "B",
-    "explanation": "Scale up when busy, scale down when quiet."
-  },
-  {
-    "id": 344,
-    "subject": "JavaScript",
-    "question": "What is `NaN`?",
-    "options": {
-      "A": "Bread.",
-      "B": "Not-a-Number (a property of the global object).",
-      "C": "A number.",
-      "D": "Null."
-    },
-    "correctAnswer": "B",
-    "explanation": "Result of invalid math operations (e.g., 5 * 'apple')."
-  },
-  {
-    "id": 345,
-    "subject": "Data",
-    "question": "What is 'Data Warehouse'?",
-    "options": {
-      "A": "A building.",
-      "B": "A large store of data accumulated from a wide range of sources within a company and used to guide management decisions.",
-      "C": "A database.",
-      "D": "A backup."
-    },
-    "correctAnswer": "B",
-    "explanation": "Optimized for analysis (OLAP), not transactions (OLTP)."
-  },
-  {
-    "id": 346,
-    "subject": "Security",
-    "question": "What is 'Phishing'?",
-    "options": {
-      "A": "Fishing.",
-      "B": "The fraudulent practice of sending emails purporting to be from reputable companies to induce individuals to reveal personal information.",
-      "C": "Hacking.",
-      "D": "Coding."
-    },
-    "correctAnswer": "B",
-    "explanation": "Social engineering attack."
-  },
-  {
-    "id": 347,
-    "subject": "Networking",
-    "question": "What is 'Bandwidth'?",
-    "options": {
-      "A": "Width of a band.",
-      "B": "The maximum rate of data transfer across a given path.",
-      "C": "Speed.",
-      "D": "Latency."
-    },
-    "correctAnswer": "B",
-    "explanation": "Capacity, not speed."
-  },
-  {
-    "id": 348,
-    "subject": "Communication",
-    "question": "How do you handle a mistake?",
-    "options": {
-      "A": "Hide it.",
-      "B": "Admit it quickly, fix it, and learn from it.",
-      "C": "Blame others.",
-      "D": "Quit."
-    },
-    "correctAnswer": "B",
-    "explanation": "Ownership is a senior trait."
-  },
-  {
-    "id": 349,
-    "subject": "Mobile",
-    "question": "What is 'Android'?",
-    "options": {
-      "A": "A robot.",
-      "B": "A mobile operating system based on a modified version of the Linux kernel.",
-      "C": "iOS.",
-      "D": "A phone."
-    },
-    "correctAnswer": "B",
-    "explanation": "Open source OS by Google."
-  },
-  {
-    "id": 350,
-    "subject": "API",
-    "question": "What is 'Status Code 200'?",
-    "options": {
-      "A": "Error.",
-      "B": "OK (Success).",
-      "C": "Not Found.",
-      "D": "Server Error."
-    },
-    "correctAnswer": "B",
-    "explanation": "Everything is fine."
-  },
-  {
-    "id": 351,
-    "subject": "Linux",
-    "question": "What is `ls`?",
-    "options": {
-      "A": "Loss.",
-      "B": "List directory contents.",
-      "C": "Less.",
-      "D": "Last."
-    },
-    "correctAnswer": "B",
-    "explanation": "The most used command."
-  },
-  {
-    "id": 352,
-    "subject": "Design Patterns",
-    "question": "What is 'MVC'?",
-    "options": {
-      "A": "Model View Controller.",
-      "B": "Make View Code.",
-      "C": "Move Value Check.",
-      "D": "A database."
-    },
-    "correctAnswer": "A",
-    "explanation": "Separation of concerns."
-  },
-  {
-    "id": 353,
-    "subject": "Testing",
-    "question": "What is 'Unit Testing'?",
-    "options": {
-      "A": "Testing the whole app.",
-      "B": "Testing individual units or components of a software.",
-      "C": "Manual testing.",
-      "D": "Integration testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Smallest scope of testing."
-  },
-  {
-    "id": 354,
-    "subject": "Web",
-    "question": "What is 'CSS'?",
-    "options": {
-      "A": "Cascading Style Sheets.",
-      "B": "Computer Style Sheets.",
-      "C": "Creative Style System.",
-      "D": "Coding Style Sheets."
-    },
-    "correctAnswer": "A",
-    "explanation": "Makes the web look good."
-  },
-  {
-    "id": 355,
-    "subject": "Database",
-    "question": "What is 'CRUD'?",
-    "options": {
-      "A": "Bad code.",
-      "B": "Create, Read, Update, Delete.",
-      "C": "Create, Run, Update, Do.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "The 4 basic functions of persistent storage."
-  },
-  {
-    "id": 356,
-    "subject": "Career",
-    "question": "What is a 'Full Stack Developer'?",
-    "options": {
-      "A": "A developer who eats a lot.",
-      "B": "Someone who can work on both the front-end (client) and back-end (server) portions of an application.",
-      "C": "A designer.",
-      "D": "A manager."
-    },
-    "correctAnswer": "B",
-    "explanation": "Jack of all trades."
-  },
-  {
-    "id": 357,
-    "subject": "Security",
-    "question": "What is 'SSL'?",
-    "options": {
-      "A": "Secure Sockets Layer.",
-      "B": "Super Safe Link.",
-      "C": "System Secure Level.",
-      "D": "A lock."
-    },
-    "correctAnswer": "A",
-    "explanation": "The predecessor to TLS."
-  },
-  {
-    "id": 358,
-    "subject": "Git",
-    "question": "What is `git push`?",
-    "options": {
-      "A": "Pushing buttons.",
-      "B": "Uploading local repository content to a remote repository.",
-      "C": "Downloading code.",
-      "D": "Deleting code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Sharing your work."
-  },
-  {
-    "id": 359,
-    "subject": "DevOps",
-    "question": "What is 'Continuous Integration'?",
-    "options": {
-      "A": "Working all the time.",
-      "B": "The practice of merging all developers' working copies to a shared mainline several times a day.",
-      "C": "Deploying.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Detects integration errors early."
-  },
-  {
-    "id": 360,
-    "subject": "Agile",
-    "question": "What is 'Kanban'?",
-    "options": {
-      "A": "A city.",
-      "B": "A visual method for managing work (Boards, Lists, Cards).",
-      "C": "A coding language.",
-      "D": "A meeting."
-    },
-    "correctAnswer": "B",
-    "explanation": "Focuses on flow and limiting Work In Progress (WIP)."
-  },
-  {
-    "id": 361,
-    "subject": "Performance",
-    "question": "What is 'Lazy Loading'?",
-    "options": {
-      "A": "Being lazy.",
-      "B": "Loading resources only when they are required.",
-      "C": "Loading everything at once.",
-      "D": "A slow server."
-    },
-    "correctAnswer": "B",
-    "explanation": "Improves initial load time."
-  },
-  {
-    "id": 362,
-    "subject": "Networking",
-    "question": "What is 'DNS'?",
-    "options": {
-      "A": "Do Not Sleep.",
-      "B": "Domain Name System - translates domain names to IP addresses.",
-      "C": "Data Network System.",
-      "D": "A server."
-    },
-    "correctAnswer": "B",
-    "explanation": "The phonebook of the internet."
-  },
-  {
-    "id": 363,
-    "subject": "Soft Skills",
-    "question": "What is 'Emotional Intelligence' (EQ)?",
-    "options": {
-      "A": "Being smart.",
-      "B": "The ability to understand, use, and manage your own emotions in positive ways.",
-      "C": "Crying.",
-      "D": "Being angry."
-    },
-    "correctAnswer": "B",
-    "explanation": "Critical for leadership and teamwork."
-  },
-  {
-    "id": 364,
-    "subject": "Architecture",
-    "question": "What is 'Monolithic Architecture'?",
-    "options": {
-      "A": "A statue.",
-      "B": "A unified model for the design of a software program (all in one).",
-      "C": "Microservices.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Simple to deploy, hard to scale."
-  },
-  {
-    "id": 365,
-    "subject": "JavaScript",
-    "question": "What is `npm`?",
-    "options": {
-      "A": "Node Package Manager.",
-      "B": "No Problem Man.",
-      "C": "New Package Mode.",
-      "D": "A database."
-    },
-    "correctAnswer": "A",
-    "explanation": "Manages dependencies."
-  },
-  {
-    "id": 366,
-    "subject": "SQL",
-    "question": "What is a 'Table'?",
-    "options": {
-      "A": "Furniture.",
-      "B": "A collection of related data held in a structured format within a database.",
-      "C": "A list.",
-      "D": "A file."
-    },
-    "correctAnswer": "B",
-    "explanation": "Columns and Rows."
-  },
-  {
-    "id": 367,
-    "subject": "Testing",
-    "question": "What is 'Integration Testing'?",
-    "options": {
-      "A": "Testing math.",
-      "B": "Testing where individual units are combined and tested as a group.",
-      "C": "Unit testing.",
-      "D": "Manual testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Ensures modules work together."
-  },
-  {
-    "id": 368,
-    "subject": "Security",
-    "question": "What is 'Encryption'?",
-    "options": {
-      "A": "Hiding.",
-      "B": "The process of converting information or data into a code, especially to prevent unauthorized access.",
-      "C": "Deleting.",
-      "D": "Locking."
-    },
-    "correctAnswer": "B",
-    "explanation": "Confidentiality."
-  },
-  {
-    "id": 369,
-    "subject": "Frontend",
-    "question": "What is 'DOM'?",
-    "options": {
-      "A": "Document Object Model.",
-      "B": "Data On Monitor.",
-      "C": "Disk Operating Mode.",
-      "D": "A person."
-    },
-    "correctAnswer": "A",
-    "explanation": "The interface between JS and HTML."
-  },
-  {
-    "id": 370,
-    "subject": "Cloud",
-    "question": "What is 'IaaS'?",
-    "options": {
-      "A": "Internet as a Service.",
-      "B": "Infrastructure as a Service (e.g., EC2).",
-      "C": "Info as a Service.",
-      "D": "Apple."
-    },
-    "correctAnswer": "B",
-    "explanation": "Rent raw servers."
-  },
-  {
-    "id": 371,
-    "subject": "Mobile",
-    "question": "What is 'Kotlin'?",
-    "options": {
-      "A": "A ketchup brand.",
-      "B": "A programming language used for Android development.",
-      "C": "A database.",
-      "D": "An iOS tool."
-    },
-    "correctAnswer": "B",
-    "explanation": "Replaced Java for Android."
-  },
-  {
-    "id": 372,
-    "subject": "Career",
-    "question": "What is 'LinkedIn'?",
-    "options": {
-      "A": "A game.",
-      "B": "A professional networking site.",
-      "C": "A dating site.",
-      "D": "A coding tool."
-    },
-    "correctAnswer": "B",
-    "explanation": "Where recruiters live."
-  },
-  {
-    "id": 373,
-    "subject": "Git",
-    "question": "What is `git status`?",
-    "options": {
-      "A": "Checking Facebook.",
-      "B": "Displays the state of the working directory and the staging area.",
-      "C": "Deleting files.",
-      "D": "Saving code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Check before you commit."
-  },
-  {
-    "id": 374,
-    "subject": "Data Structures",
-    "question": "What is a 'Queue'?",
-    "options": {
-      "A": "A line.",
-      "B": "A First-In-First-Out (FIFO) data structure.",
-      "C": "A stack.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Like a line at a store."
-  },
-  {
-    "id": 375,
-    "subject": "DevOps",
-    "question": "What is 'Docker'?",
-    "options": {
-      "A": "Pants.",
-      "B": "A platform for developing, shipping, and running applications in containers.",
-      "C": "A boat.",
-      "D": "A server."
-    },
-    "correctAnswer": "B",
-    "explanation": "Standard for containers."
-  },
-  {
-    "id": 376,
-    "subject": "Communication",
-    "question": "What is 'Over-communication'?",
-    "options": {
-      "A": "Talking too much.",
-      "B": "Communicating more than necessary to ensure clarity, especially in remote teams.",
-      "C": "Spam.",
-      "D": "Bad."
-    },
-    "correctAnswer": "B",
-    "explanation": "Better to say it twice than have it misunderstood."
-  },
-  {
-    "id": 377,
-    "subject": "Web",
-    "question": "What is 'HTTP'?",
-    "options": {
-      "A": "Hypertext Transfer Protocol.",
-      "B": "High Tech Transfer Program.",
-      "C": "HTML.",
-      "D": "A website."
-    },
-    "correctAnswer": "A",
-    "explanation": "The protocol of the web."
-  },
-  {
-    "id": 378,
-    "subject": "System Design",
-    "question": "What is 'Load Balancing'?",
-    "options": {
-      "A": "Weighing scales.",
-      "B": "Distributing network traffic across multiple servers.",
-      "C": "Coding.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Prevents overload."
-  },
-  {
-    "id": 379,
-    "subject": "Python",
-    "question": "What is `print()`?",
-    "options": {
-      "A": "A printer.",
-      "B": "A function that outputs text to the console.",
-      "C": "A variable.",
-      "D": "An error."
-    },
-    "correctAnswer": "B",
-    "explanation": "Basic output."
-  },
-  {
-    "id": 380,
-    "subject": "Security",
-    "question": "What is 'Vulnerability'?",
-    "options": {
-      "A": "Being sad.",
-      "B": "A weakness which can be exploited by a cyber attack.",
-      "C": "Strong code.",
-      "D": "A firewall."
-    },
-    "correctAnswer": "B",
-    "explanation": "A hole in the armor."
-  },
-  {
-    "id": 381,
-    "subject": "Agile",
-    "question": "What is a 'Stand-up'?",
-    "options": {
-      "A": "Comedy.",
-      "B": "A daily short meeting to discuss progress and blockers.",
-      "C": "Standing up.",
-      "D": "A presentation."
-    },
-    "correctAnswer": "B",
-    "explanation": "Daily synchronization."
-  },
-  {
-    "id": 382,
-    "subject": "Linux",
-    "question": "What is `cd`?",
-    "options": {
-      "A": "A disk.",
-      "B": "Change Directory.",
-      "C": "Create Directory.",
-      "D": "Copy Data."
-    },
-    "correctAnswer": "B",
-    "explanation": "Navigation."
-  },
-  {
-    "id": 383,
-    "subject": "Frontend",
-    "question": "What is 'UX'?",
-    "options": {
-      "A": "User Experience.",
-      "B": "User Xylophone.",
-      "C": "Under Xray.",
-      "D": "Code."
-    },
-    "correctAnswer": "A",
-    "explanation": "How it feels."
-  },
-  {
-    "id": 384,
-    "subject": "Career",
-    "question": "What is a 'Portfolio'?",
-    "options": {
-      "A": "A bag.",
-      "B": "A collection of work samples to show potential employers.",
-      "C": "A resume.",
-      "D": "A stock market."
-    },
-    "correctAnswer": "B",
-    "explanation": "Proof of skills."
-  },
-  {
-    "id": 385,
-    "subject": "API",
-    "question": "What is 'JSON'?",
-    "options": {
-      "A": "A person.",
-      "B": "JavaScript Object Notation.",
-      "C": "Java Source.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Data format."
-  },
-  {
-    "id": 386,
-    "subject": "Architecture",
-    "question": "What is 'Microservices'?",
-    "options": {
-      "A": "Small computers.",
-      "B": "An architectural style that structures an application as a collection of services.",
-      "C": "One big app.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Complex but scalable."
-  },
-  {
-    "id": 387,
-    "subject": "Git",
-    "question": "What is `git init`?",
-    "options": {
-      "A": "Initializing a new Git repository.",
-      "B": "Starting computer.",
-      "C": "Deleting repo.",
-      "D": "Uploading."
-    },
-    "correctAnswer": "A",
-    "explanation": "Start here."
-  },
-  {
-    "id": 388,
-    "subject": "Testing",
-    "question": "What is a 'Bug Report'?",
-    "options": {
-      "A": "An insect list.",
-      "B": "A document describing a software defect.",
-      "C": "A fix.",
-      "D": "Code."
-    },
-    "correctAnswer": "B",
-    "explanation": "Communication of defects."
-  },
-  {
-    "id": 389,
-    "subject": "Soft Skills",
-    "question": "What is 'Time Management'?",
-    "options": {
-      "A": "Wearing a watch.",
-      "B": "The process of organizing and planning how to divide your time between specific activities.",
-      "C": "Working fast.",
-      "D": "Being late."
-    },
-    "correctAnswer": "B",
-    "explanation": "Essential for productivity."
-  },
-  {
-    "id": 390,
-    "subject": "Data",
-    "question": "What is 'Backup'?",
-    "options": {
-      "A": "Going back.",
-      "B": "A copy of data taken and stored elsewhere so that it may be used to restore the original after a data loss event.",
-      "C": "Deleting.",
-      "D": "Coding."
-    },
-    "correctAnswer": "B",
-    "explanation": "Insurance for data."
-  },
-  {
-    "id": 391,
-    "subject": "Web",
-    "question": "What is 'IP'?",
-    "options": {
-      "A": "Intellectual Property.",
-      "B": "Internet Protocol.",
-      "C": "Internal Port.",
-      "D": "Address."
-    },
-    "correctAnswer": "B",
-    "explanation": "The rules of the internet."
-  },
-  {
-    "id": 392,
-    "subject": "Security",
-    "question": "What is 'Malware'?",
-    "options": {
-      "A": "Bad wear.",
-      "B": "Malicious Software.",
-      "C": "A hardware.",
-      "D": "A User."
-    },
-    "correctAnswer": "B",
-    "explanation": "Viruses, worms, trojans."
-  },
-  {
-    "id": 393,
-    "subject": "DevOps",
-    "question": "What is 'Monitoring'?",
-    "options": {
-      "A": "Watching TV.",
-      "B": "The process of collecting, analyzing, and using information to track applications and infrastructure.",
-      "C": "Coding.",
-      "D": "Testing."
-    },
-    "correctAnswer": "B",
-    "explanation": "Keeping the lights on."
-  },
-  {
-    "id": 394,
-    "subject": "JavaScript",
-    "question": "What is a 'Callback'?",
-    "options": {
-      "A": "A phone call.",
-      "B": "A function passed as an argument to another function.",
-      "C": "A variable.",
-      "D": "An error."
-    },
-    "correctAnswer": "B",
-    "explanation": "Basis of async JS."
-  },
-  {
-    "id": 395,
-    "subject": "Mobile",
-    "question": "What is 'App Store'?",
-    "options": {
-      "A": "A shop.",
-      "B": "A digital distribution platform for mobile apps.",
-      "C": "A website.",
-      "D": "A database."
-    },
-    "correctAnswer": "B",
-    "explanation": "Where you get apps."
-  },
-  {
-    "id": 396,
-    "subject": "Networking",
-    "question": "What is 'Wifi'?",
-    "options": {
-      "A": "Magic.",
-      "B": "A wireless networking technology.",
-      "C": "A cable.",
-      "D": "A server."
-    },
-    "correctAnswer": "B",
-    "explanation": "Radio waves for internet."
-  },
-  {
-    "id": 397,
-    "subject": "Career",
-    "question": "What is a 'Resume'?",
-    "options": {
-      "A": "To continue.",
-      "B": "A document used to present your background, skills, and accomplishments.",
-      "C": "A job.",
-      "D": "A portfolio."
-    },
-    "correctAnswer": "B",
-    "explanation": "Your ticket to an interview."
-  },
-  {
-    "id": 398,
-    "subject": "Performance",
-    "question": "What is 'Compression'?",
-    "options": {
-      "A": "Squeezing.",
-      "B": "Encoding information using fewer bits than the original representation.",
-      "C": "Deleting.",
-      "D": "Coding."
-    },
-    "correctAnswer": "B",
-    "explanation": "Makes files smaller."
-  },
-  {
-    "id": 399,
-    "subject": "Data Structures",
-    "question": "What is a 'Stack'?",
-    "options": {
-      "A": "A pile.",
-      "B": "A Last-In-First-Out (LIFO) data structure.",
-      "C": "A queue.",
-      "D": "A list."
-    },
-    "correctAnswer": "B",
-    "explanation": "Like a stack of plates."
-  },
-  {
-    "id": 400,
-    "subject": "Final",
-    "question": "What is 'Code'?",
-    "options": {
-      "A": "Secret message.",
-      "B": "Instructions for a computer.",
-      "C": "A password.",
-      "D": "A game."
-    },
-    "correctAnswer": "B",
-    "explanation": "The language of machines."
-  }
+    {
+        "id": 201,
+        "subject": "System Design",
+        "question": "What is the 'Thundering Herd' problem?",
+        "options": {
+            "A": "Too many users signing up at once.",
+            "B": "When a large number of processes/users waiting for an event are awoken at once, causing a sudden spike in resource usage (CPU/Network) that crashes the system.",
+            "C": "A database migration error.",
+            "D": "Loud server fans."
+        },
+        "correctAnswer": "B",
+        "explanation": "Common in caching. When a cache expires, thousands of requests hit the database simultaneously before the cache is repopulated."
+    },
+    {
+        "id": 202,
+        "subject": "Soft Skills",
+        "question": "You are explaining 'Technical Debt' to a CFO. What is the most effective financial analogy?",
+        "options": {
+            "A": "It's like a messy room.",
+            "B": "It's like taking out a loan. You get the capital (speed) now, but you pay interest (slower development) on it until the principal is repaid (refactoring).",
+            "C": "It's bad code.",
+            "D": "It's an operational expense."
+        },
+        "correctAnswer": "B",
+        "explanation": "CFOs understand interest and principal. It frames the refactoring work as 'paying down debt' to stop losing money on interest."
+    },
+    {
+        "id": 203,
+        "subject": "Database",
+        "question": "What is ACID compliance?",
+        "options": {
+            "A": "A chemical test.",
+            "B": "Atomicity, Consistency, Isolation, Durability - properties that guarantee database transactions are processed reliably.",
+            "C": "Automatic Cloud Integration Data.",
+            "D": "A NoSQL feature."
+        },
+        "correctAnswer": "B",
+        "explanation": "Essential for financial systems where partial updates (e.g., money deducted but not credited) are unacceptable."
+    },
+    {
+        "id": 204,
+        "subject": "Architecture",
+        "question": "What is the 'Backends for Frontends' (BFF) pattern?",
+        "options": {
+            "A": "Making friends with backend devs.",
+            "B": "Creating separate backend services for specific frontend interfaces (e.g., one API for Mobile, one for Web) to optimize data delivery.",
+            "C": "A single monolithic API.",
+            "D": "Direct database access."
+        },
+        "correctAnswer": "B",
+        "explanation": "Prevents over-fetching on mobile devices by tailoring the API response specifically to the mobile UI needs."
+    },
+    {
+        "id": 205,
+        "subject": "React",
+        "question": "Why is mutating state directly in React (e.g., `this.state.count = 5`) bad?",
+        "options": {
+            "A": "It throws an error.",
+            "B": "It does not trigger a re-render because React compares references. You must use `setState` or hooks to notify React of the update.",
+            "C": "It is slow.",
+            "D": "It deletes the state."
+        },
+        "correctAnswer": "B",
+        "explanation": "React relies on immutability/setters to detect changes and schedule updates."
+    },
+    {
+        "id": 206,
+        "subject": "Security",
+        "question": "What is 'Salt' in password hashing?",
+        "options": {
+            "A": "Flavoring for code.",
+            "B": "Random data added to the password before hashing to ensure that identical passwords result in different hashes, defeating Rainbow Table attacks.",
+            "C": "Encryption key.",
+            "D": "Pepper."
+        },
+        "correctAnswer": "B",
+        "explanation": "Without salt, two users with the password 'password123' would have the same hash, making them easy to crack in bulk."
+    },
+    {
+        "id": 207,
+        "subject": "Networking",
+        "question": "What is the difference between IPv4 and IPv6?",
+        "options": {
+            "A": "IPv6 is just faster.",
+            "B": "IPv4 uses 32-bit addresses (ran out of space); IPv6 uses 128-bit addresses (virtually infinite space).",
+            "C": "IPv4 is for wifi.",
+            "D": "IPv6 is for mobile only."
+        },
+        "correctAnswer": "B",
+        "explanation": "The internet ran out of IPv4 addresses. IPv6 solves the address exhaustion problem."
+    },
+    {
+        "id": 208,
+        "subject": "DevOps",
+        "question": "What is 'Canary Deployment'?",
+        "options": {
+            "A": "Releasing to a coal mine.",
+            "B": "Rolling out a new feature to a small subset of users (e.g., 5%) to test stability before rolling it out to everyone.",
+            "C": "Deploying at night.",
+            "D": "Using birds."
+        },
+        "correctAnswer": "B",
+        "explanation": "Limits the 'blast radius' of a bad deploy. If the 5% crash, you rollback without affecting the other 95%."
+    },
+    {
+        "id": 209,
+        "subject": "Communication",
+        "question": "A junior dev asks for help, but you are swamped. What is the best response?",
+        "options": {
+            "A": "Ignore them.",
+            "B": "Help them immediately and miss your deadline.",
+            "C": "'I am heads-down on a critical task right now. Can you write down your specific question and what you've tried, and we can look at it at 4 PM?'",
+            "D": "Ask someone else."
+        },
+        "correctAnswer": "C",
+        "explanation": "Sets boundaries while still being supportive. Asking them to write it down often helps them solve it themselves (Rubber Ducking)."
+    },
+    {
+        "id": 210,
+        "subject": "Git",
+        "question": "What is `git bisect`?",
+        "options": {
+            "A": "Cutting a repo in half.",
+            "B": "A binary search tool used to find the specific commit that introduced a bug.",
+            "C": "Merging two branches.",
+            "D": "Deleting history."
+        },
+        "correctAnswer": "B",
+        "explanation": "The fastest way to debug regressions in a large codebase. 'It worked here, broken here, git finds the middle'."
+    },
+    {
+        "id": 211,
+        "subject": "Algorithms",
+        "question": "Why is Quicksort preferred over Bubblesort?",
+        "options": {
+            "A": "Bubblesort is O(n^2) average; Quicksort is O(n log n) average.",
+            "B": "Bubblesort is too hard to write.",
+            "C": "Quicksort uses less memory.",
+            "D": "Bubblesort pops."
+        },
+        "correctAnswer": "A",
+        "explanation": "Efficiency classes matter. O(n^2) is unusable for large datasets."
+    },
+    {
+        "id": 212,
+        "subject": "API",
+        "question": "What is the difference between Authentication (AuthN) and Authorization (AuthZ)?",
+        "options": {
+            "A": "AuthN is who you are; AuthZ is what you are allowed to do.",
+            "B": "AuthN is passwords; AuthZ is usernames.",
+            "C": "AuthN is secure; AuthZ is public.",
+            "D": "They are the same."
+        },
+        "correctAnswer": "A",
+        "explanation": "Identity (AuthN) vs Permissions (AuthZ). You can be Authenticated (logged in) but not Authorized (admin access)."
+    },
+    {
+        "id": 213,
+        "subject": "Cloud",
+        "question": "What is 'Vendor Lock-in'?",
+        "options": {
+            "A": "Security door.",
+            "B": "Building your system so deeply using proprietary tools of one cloud provider (e.g., AWS DynamoDB) that migrating to another (Azure/GCP) becomes prohibitively expensive.",
+            "C": "Signing a contract.",
+            "D": "Buying software."
+        },
+        "correctAnswer": "B",
+        "explanation": "A strategic risk to consider when choosing managed services vs open standards (like Postgres/Docker)."
+    },
+    {
+        "id": 214,
+        "subject": "Testing",
+        "question": "What is 'Fuzz Testing'?",
+        "options": {
+            "A": "Testing with fuzzy logic.",
+            "B": "Inputting massive amounts of random data ('fuzz') to the system to attempt to make it crash.",
+            "C": "UI testing.",
+            "D": "Unit testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Great for finding edge cases and security vulnerabilities that humans wouldn't think to test."
+    },
+    {
+        "id": 215,
+        "subject": "JavaScript",
+        "question": "What is a Closure?",
+        "options": {
+            "A": "The end of a function.",
+            "B": "The combination of a function bundled together with references to its surrounding state (lexical environment).",
+            "C": "A database connection.",
+            "D": "Closing a tag."
+        },
+        "correctAnswer": "B",
+        "explanation": "This allows a function to access variables from an outer function that has already returned."
+    },
+    {
+        "id": 216,
+        "subject": "Leadership",
+        "question": "What is the 'Bus Factor'?",
+        "options": {
+            "A": "Transportation cost.",
+            "B": "The number of team members that can be hit by a bus (or quit) before the project stalls due to lack of knowledge.",
+            "C": "Server load.",
+            "D": "API latency."
+        },
+        "correctAnswer": "B",
+        "explanation": "A risk metric. If only one person knows how the billing code works, your Bus Factor is 1 (Dangerous)."
+    },
+    {
+        "id": 217,
+        "subject": "Distributed Systems",
+        "question": "What is a 'Race Condition'?",
+        "options": {
+            "A": "Code running too fast.",
+            "B": "When a system's behavior depends on the sequence or timing of other uncontrollable events (e.g., two threads trying to update the same variable).",
+            "C": "A contest.",
+            "D": "Network lag."
+        },
+        "correctAnswer": "B",
+        "explanation": "Hard to debug because they are timing-dependent and often don't happen locally."
+    },
+    {
+        "id": 218,
+        "subject": "Productivity",
+        "question": "What is 'Yak Shaving'?",
+        "options": {
+            "A": "Grooming animals.",
+            "B": "A series of small tasks that must be performed before the project you actually want to do can be started.",
+            "C": "Coding fast.",
+            "D": "Cleaning code."
+        },
+        "correctAnswer": "B",
+        "explanation": "I want to deploy -> I need to update packages -> I need to update Node -> I need to update my OS -> Now I'm shaving a yak."
+    },
+    {
+        "id": 219,
+        "subject": "HTTP",
+        "question": "What is the purpose of the `OPTIONS` method in HTTP?",
+        "options": {
+            "A": "To choose a file.",
+            "B": "Used by browsers for CORS pre-flight requests to check which methods are allowed by the server.",
+            "C": "To configure the server.",
+            "D": "To delete data."
+        },
+        "correctAnswer": "B",
+        "explanation": "The browser asks 'Can I send a POST request here?' before actually sending the POST request."
+    },
+    {
+        "id": 220,
+        "subject": "Design Patterns",
+        "question": "What is the 'Factory Pattern'?",
+        "options": {
+            "A": "Making code in a factory.",
+            "B": "A creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.",
+            "C": "A singleton.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Decouples the instantiation logic from the usage logic."
+    },
+    {
+        "id": 221,
+        "subject": "SQL",
+        "question": "What is the difference between `DELETE` and `TRUNCATE`?",
+        "options": {
+            "A": "DELETE removes rows one by one and logs them (can be rolled back); TRUNCATE drops the table data instantly (faster, harder to rollback).",
+            "B": "They are the same.",
+            "C": "TRUNCATE is slower.",
+            "D": "DELETE drops the table structure."
+        },
+        "correctAnswer": "A",
+        "explanation": "Use TRUNCATE to wipe a table clean fast. Use DELETE for specific rows."
+    },
+    {
+        "id": 222,
+        "subject": "Mobile",
+        "question": "What is 'Deep Linking'?",
+        "options": {
+            "A": "Linking to the dark web.",
+            "B": "Using a URI (e.g., `twitter://`) that opens a specific page inside a mobile app instead of a website.",
+            "C": "SEO optimization.",
+            "D": "Linking databases."
+        },
+        "correctAnswer": "B",
+        "explanation": "Essential for UX transparency between web and app."
+    },
+    {
+        "id": 223,
+        "subject": "Communication",
+        "question": "You disagree with a code review comment. How do you respond?",
+        "options": {
+            "A": "Do what they say anyway.",
+            "B": "Explain your reasoning with evidence (links/docs) and ask: 'Do you think this approach outweighs the benefits?'",
+            "C": "Ignore it.",
+            "D": "Tell them they are wrong."
+        },
+        "correctAnswer": "B",
+        "explanation": "Turn the disagreement into a discussion about trade-offs."
+    },
+    {
+        "id": 224,
+        "subject": "Security",
+        "question": "What is 'Dependency Hell'?",
+        "options": {
+            "A": "Being lonely.",
+            "B": "When software relies on specific versions of other software packages, creating conflicts (Package A needs Lib v1, Package B needs Lib v2).",
+            "C": "A virus.",
+            "D": "A database lock."
+        },
+        "correctAnswer": "B",
+        "explanation": "Solved by Containerization (Docker) and better package managers."
+    },
+    {
+        "id": 225,
+        "subject": "Frontend",
+        "question": "What is 'Debouncing'?",
+        "options": {
+            "A": "Bouncing a ball.",
+            "B": "Limiting the rate at which a function fires. The function will only execute after a specified time has passed since the last call.",
+            "C": "Removing bugs.",
+            "D": "Cleaning CSS."
+        },
+        "correctAnswer": "B",
+        "explanation": "Crucial for search bars. Wait for the user to *stop* typing before hitting the API."
+    },
+    {
+        "id": 226,
+        "subject": "Architecture",
+        "question": "What is 'Dependency Injection'?",
+        "options": {
+            "A": "A security flaw.",
+            "B": "A technique where an object receives other objects that it depends on (dependencies) passed in, rather than creating them itself.",
+            "C": "Installing NPM packages.",
+            "D": "A database query."
+        },
+        "correctAnswer": "B",
+        "explanation": "Makes code testable. You can inject a 'Fake Database' for testing instead of the 'Real Database'."
+    },
+    {
+        "id": 227,
+        "subject": "DevOps",
+        "question": "What is 'Orchestration' (Kubernetes)?",
+        "options": {
+            "A": "Writing music.",
+            "B": "Automating the deployment, scaling, and management of containerized applications.",
+            "C": "Running a script.",
+            "D": "Testing code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Docker runs the container; Kubernetes decides *where* it runs and *how many* run."
+    },
+    {
+        "id": 228,
+        "subject": "Career",
+        "question": "What is the 'T-Shaped' Developer model?",
+        "options": {
+            "A": "A developer who likes tea.",
+            "B": "Deep knowledge in one area (Vertical bar) and broad knowledge across many areas (Horizontal bar).",
+            "C": "A developer who stands straight.",
+            "D": "Knowing only one thing."
+        },
+        "correctAnswer": "B",
+        "explanation": "The ideal modern engineer profile. Specialist in one thing, generalist in the rest."
+    },
+    {
+        "id": 229,
+        "subject": "Web",
+        "question": "What is WebSocket used for?",
+        "options": {
+            "A": "Standard web browsing.",
+            "B": "Full-duplex communication channels over a single TCP connection (Real-time chat, live feeds).",
+            "C": "Securing sockets.",
+            "D": "Database storage."
+        },
+        "correctAnswer": "B",
+        "explanation": "HTTP is request-response. WebSockets are persistent open channels for two-way data."
+    },
+    {
+        "id": 230,
+        "subject": "Python",
+        "question": "What is `__init__`?",
+        "options": {
+            "A": "A system command.",
+            "B": "The constructor method in Python classes, run when a new object is instantiated.",
+            "C": "A variable.",
+            "D": "An error."
+        },
+        "correctAnswer": "B",
+        "explanation": "Initializes the object's state."
+    },
+    {
+        "id": 231,
+        "subject": "Data",
+        "question": "What is ETL?",
+        "options": {
+            "A": "Extract, Transform, Load.",
+            "B": "Estimate Time Left.",
+            "C": "Error Tracking Log.",
+            "D": "Encrypted Text Layer."
+        },
+        "correctAnswer": "A",
+        "explanation": "The standard process for data pipelines and warehousing."
+    },
+    {
+        "id": 232,
+        "subject": "Performance",
+        "question": "What is 'Tree Shaking'?",
+        "options": {
+            "A": "Shaking the monitor.",
+            "B": "A build step that removes unused code from the final bundle to reduce file size.",
+            "C": "Optimizing images.",
+            "D": "Organizing folders."
+        },
+        "correctAnswer": "B",
+        "explanation": "You import a huge library but only use one function; Tree Shaking removes the rest."
+    },
+    {
+        "id": 233,
+        "subject": "Negotiation",
+        "question": "Product wants a fixed deadline for a complex research task. How do you respond?",
+        "options": {
+            "A": "Give a fake date.",
+            "B": "Say 'It's done when it's done.'",
+            "C": "Propose a 'Time-boxed Spike': 'Let's spend 2 days investigating. At the end, I will tell you if it's possible and give a better estimate.'",
+            "D": "Say 2 weeks."
+        },
+        "correctAnswer": "C",
+        "explanation": "A Spike buys knowledge. You cannot estimate the unknown."
+    },
+    {
+        "id": 234,
+        "subject": "Linux",
+        "question": "What is `sudo`?",
+        "options": {
+            "A": "SuperUser DO - executes a command with administrative (root) privileges.",
+            "B": "A pseudocode generator.",
+            "C": "System Update.",
+            "D": "Sustainable Development."
+        },
+        "correctAnswer": "A",
+        "explanation": "With great power comes great responsibility."
+    },
+    {
+        "id": 235,
+        "subject": "Quality Assurance",
+        "question": "What is 'Smoke Testing'?",
+        "options": {
+            "A": "Looking for fire.",
+            "B": "Preliminary testing to reveal simple failures severe enough to reject a release (e.g., 'Does the app even turn on?').",
+            "C": "Performance testing.",
+            "D": "Testing in the cloud."
+        },
+        "correctAnswer": "B",
+        "explanation": "If the smoke test fails, don't bother with the deep tests."
+    },
+    {
+        "id": 236,
+        "subject": "Agile",
+        "question": "What is 'Velocity' in Scrum?",
+        "options": {
+            "A": "Speed of code.",
+            "B": "The amount of work (story points) a team completes during a sprint.",
+            "C": "Running fast.",
+            "D": "A physics term."
+        },
+        "correctAnswer": "B",
+        "explanation": "Used for planning capacity, not for judging individual performance."
+    },
+    {
+        "id": 237,
+        "subject": "Security",
+        "question": "What is 'Zero Trust' architecture?",
+        "options": {
+            "A": "Trusting no one.",
+            "B": "A security model that requires all users/devices to be authenticated and authorized, regardless of whether they are inside or outside the organization's network.",
+            "C": "No passwords.",
+            "D": "VPN only."
+        },
+        "correctAnswer": "B",
+        "explanation": "Old model: 'Trust inside the firewall.' Zero Trust: 'Verify explicitly everywhere.'"
+    },
+    {
+        "id": 238,
+        "subject": "CSS",
+        "question": "What is `rem` vs `em` units?",
+        "options": {
+            "A": "rem is relative to the root (html) font-size; em is relative to the parent element's font-size.",
+            "B": "They are the same.",
+            "C": "em is for margins.",
+            "D": "rem is deprecated."
+        },
+        "correctAnswer": "A",
+        "explanation": "`rem` is preferred for consistency. `em` compounds (parent * child) which can get messy."
+    },
+    {
+        "id": 239,
+        "subject": "Git",
+        "question": "What is `git blame`?",
+        "options": {
+            "A": "Insulting coworkers.",
+            "B": "Shows what revision and author last modified each line of a file.",
+            "C": "Deleting history.",
+            "D": "Reporting bugs."
+        },
+        "correctAnswer": "B",
+        "explanation": "Useful for finding context: 'Why was this line changed 3 years ago?'"
+    },
+    {
+        "id": 240,
+        "subject": "Architecture",
+        "question": "What is 'Caching'?",
+        "options": {
+            "A": "Hiding money.",
+            "B": "Storing data in a temporary storage area so it can be retrieved faster than hitting the original source (DB/API).",
+            "C": "Deleting data.",
+            "D": "Encrypting data."
+        },
+        "correctAnswer": "B",
+        "explanation": "The fastest query is the one you don't make."
+    },
+    {
+        "id": 241,
+        "subject": "Coding",
+        "question": "What is 'Refactoring'?",
+        "options": {
+            "A": "Changing functionality.",
+            "B": "Restructuring existing computer code without changing its external behavior.",
+            "C": "Adding features.",
+            "D": "Fixing bugs."
+        },
+        "correctAnswer": "B",
+        "explanation": "Cleaning up the kitchen without cooking a new meal."
+    },
+    {
+        "id": 242,
+        "subject": "Leadership",
+        "question": "What is Psychological Safety?",
+        "options": {
+            "A": "Wearing a helmet.",
+            "B": "A belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes.",
+            "C": "Being happy.",
+            "D": "A safety drill."
+        },
+        "correctAnswer": "B",
+        "explanation": "The #1 predictor of high-performing teams (Google Project Aristotle)."
+    },
+    {
+        "id": 243,
+        "subject": "Web",
+        "question": "What is a 'Cookie'?",
+        "options": {
+            "A": "A snack.",
+            "B": "Small data stored on the user's computer by the web browser while browsing a website.",
+            "C": "A virus.",
+            "D": "A server."
+        },
+        "correctAnswer": "B",
+        "explanation": "Used for session management, personalization, and tracking."
+    },
+    {
+        "id": 244,
+        "subject": "Networking",
+        "question": "What is DHCP?",
+        "options": {
+            "A": "Dynamic Host Configuration Protocol - automatically assigns IP addresses to devices on a network.",
+            "B": "Data Host Control.",
+            "C": "Domain Host.",
+            "D": "A router."
+        },
+        "correctAnswer": "A",
+        "explanation": "Without it, you'd have to manually type an IP for every device you connect to wifi."
+    },
+    {
+        "id": 245,
+        "subject": "Security",
+        "question": "What is Public Key Infrastructure (PKI)?",
+        "options": {
+            "A": "A key store.",
+            "B": "The set of roles, policies, and hardware needed to create, manage, distribute, use, store, and revoke digital certificates.",
+            "C": "A database.",
+            "D": "A password manager."
+        },
+        "correctAnswer": "B",
+        "explanation": "The backbone of SSL/TLS and HTTPS."
+    },
+    {
+        "id": 246,
+        "subject": "Mobile",
+        "question": "What is 'Sandbox' in app development?",
+        "options": {
+            "A": "A playground.",
+            "B": "A security mechanism for separating running programs, preventing them from reading each other's data.",
+            "C": "A testing tool.",
+            "D": "A beach."
+        },
+        "correctAnswer": "B",
+        "explanation": "Why an iOS app can't steal your banking app's data."
+    },
+    {
+        "id": 247,
+        "subject": "Testing",
+        "question": "What is A/B Testing?",
+        "options": {
+            "A": "Testing alphabet.",
+            "B": "Comparing two versions of a webpage/app against each other to determine which one performs better.",
+            "C": "Unit testing.",
+            "D": "Beta testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Data-driven decision making for UI/UX."
+    },
+    {
+        "id": 248,
+        "subject": "Interview",
+        "question": "What is the difference between TCP and IP?",
+        "options": {
+            "A": "IP defines *where* data goes (address); TCP defines *how* data gets there reliably (delivery).",
+            "B": "They are the same.",
+            "C": "IP is for email.",
+            "D": "TCP is a website."
+        },
+        "correctAnswer": "A",
+        "explanation": "Together they form the internet protocol suite (TCP/IP)."
+    },
+    {
+        "id": 249,
+        "subject": "Cloud",
+        "question": "What is 'Latency'?",
+        "options": {
+            "A": "Speed.",
+            "B": "The time delay between the cause and the effect of some physical change in the system being observed.",
+            "C": "Bandwidth.",
+            "D": "Error rate."
+        },
+        "correctAnswer": "B",
+        "explanation": "Low latency = snappy feel."
+    },
+    {
+        "id": 250,
+        "subject": "Data Structures",
+        "question": "What is a Binary Tree?",
+        "options": {
+            "A": "A tree with two leaves.",
+            "B": "A tree data structure in which each node has at most two children (left and right).",
+            "C": "A database.",
+            "D": "A sorting algorithm."
+        },
+        "correctAnswer": "B",
+        "explanation": "Basis for Binary Search Trees (BST)."
+    },
+    {
+        "id": 251,
+        "subject": "Communication",
+        "question": "You are leading a meeting and it's going off-topic. What do you do?",
+        "options": {
+            "A": "Let it ride.",
+            "B": "End the meeting.",
+            "C": "'This is an interesting discussion, but let's take it offline so we can get through the agenda items for today.'",
+            "D": "Shout 'Focus!'."
+        },
+        "correctAnswer": "C",
+        "explanation": "Respect the time of the other attendees."
+    },
+    {
+        "id": 252,
+        "subject": "DevOps",
+        "question": "What is GitOps?",
+        "options": {
+            "A": "Using Git.",
+            "B": "Using Git repositories as the single source of truth for infrastructure definitions (IaC) and application code.",
+            "C": "GitHub actions.",
+            "D": "Coding."
+        },
+        "correctAnswer": "B",
+        "explanation": "If you want to change the server, you make a PR, not a manual change."
+    },
+    {
+        "id": 253,
+        "subject": "SQL",
+        "question": "What is Normalization?",
+        "options": {
+            "A": "Making things normal.",
+            "B": "Organizing data in a database to reduce redundancy and improve data integrity.",
+            "C": "Deleting data.",
+            "D": "Backing up."
+        },
+        "correctAnswer": "B",
+        "explanation": "Don't store the user's address in 5 different tables."
+    },
+    {
+        "id": 254,
+        "subject": "Frontend",
+        "question": "What is 'Hydration' in SSR?",
+        "options": {
+            "A": "Drinking water.",
+            "B": "The process of attaching event listeners to the static HTML served by the server to make it interactive on the client.",
+            "C": "Loading CSS.",
+            "D": "Refreshing the page."
+        },
+        "correctAnswer": "B",
+        "explanation": "Server sends HTML (fast paint); Client adds JS (interaction)."
+    },
+    {
+        "id": 255,
+        "subject": "Career",
+        "question": "What is the 'Bus Factor'?",
+        "options": {
+            "A": "Transportation.",
+            "B": "The minimum number of team members that have to suddenly disappear from a project before the project stalls due to lack of knowledgeable personnel.",
+            "C": "A coding style.",
+            "D": "A metric for speed."
+        },
+        "correctAnswer": "B",
+        "explanation": "A risk management metric. You want a high bus factor."
+    },
+    {
+        "id": 256,
+        "subject": "Architecture",
+        "question": "What is a 'Reverse Proxy'?",
+        "options": {
+            "A": "A hacker tool.",
+            "B": "A server that sits in front of web servers and forwards client requests to those web servers (e.g., Nginx).",
+            "C": "A database.",
+            "D": "A firewall."
+        },
+        "correctAnswer": "B",
+        "explanation": "Handles SSL termination, Load Balancing, and Caching."
+    },
+    {
+        "id": 257,
+        "subject": "JavaScript",
+        "question": "What is `undefined` vs `null`?",
+        "options": {
+            "A": "Same thing.",
+            "B": "`undefined` means a variable has been declared but not defined. `null` is an assignment value representing no value.",
+            "C": "`null` is an error.",
+            "D": "`undefined` is an object."
+        },
+        "correctAnswer": "B",
+        "explanation": "System-level missing value vs User-level empty value."
+    },
+    {
+        "id": 258,
+        "subject": "Soft Skills",
+        "question": "How do you give constructive feedback?",
+        "options": {
+            "A": "Be blunt.",
+            "B": "Be vague.",
+            "C": "Be specific, actionable, and timely. Focus on the work, not the person.",
+            "D": "Wait for the annual review."
+        },
+        "correctAnswer": "C",
+        "explanation": "SBI Model: Situation, Behavior, Impact."
+    },
+    {
+        "id": 259,
+        "subject": "Security",
+        "question": "What is 'Encryption at Rest'?",
+        "options": {
+            "A": "Sleeping security.",
+            "B": "Encrypting data when it is stored on disk (database/files) so if the hard drive is stolen, the data is unreadable.",
+            "C": "HTTPS.",
+            "D": "Password hashing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Protects against physical theft of servers."
+    },
+    {
+        "id": 260,
+        "subject": "Performance",
+        "question": "What is 'Code Splitting'?",
+        "options": {
+            "A": "Breaking monitors.",
+            "B": "Splitting code into various bundles which can then be loaded on demand or in parallel.",
+            "C": "Refactoring.",
+            "D": "Deleting code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Don't send the Admin Dashboard code to the Homepage user."
+    },
+    {
+        "id": 261,
+        "subject": "Git",
+        "question": "What is `HEAD` in git?",
+        "options": {
+            "A": "The leader.",
+            "B": "A reference to the current commit you are viewing/working on.",
+            "C": "The main branch.",
+            "D": "The server."
+        },
+        "correctAnswer": "B",
+        "explanation": "Detached HEAD means you are looking at a commit, not a branch tip."
+    },
+    {
+        "id": 262,
+        "subject": "Web",
+        "question": "What is a PWA (Progressive Web App)?",
+        "options": {
+            "A": "A slow website.",
+            "B": "A website that looks and behaves like a mobile app (offline mode, push notifications, installable).",
+            "C": "A native app.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Bridging the gap between Web and Native."
+    },
+    {
+        "id": 263,
+        "subject": "Backend",
+        "question": "What is 'Pagination'?",
+        "options": {
+            "A": "Writing books.",
+            "B": "Dividing a large dataset into smaller chunks (pages) to serve to the client.",
+            "C": "Database indexing.",
+            "D": "Sorting."
+        },
+        "correctAnswer": "B",
+        "explanation": "Don't return 1 million rows in one API call. Return 50."
+    },
+    {
+        "id": 264,
+        "subject": "Architecture",
+        "question": "What is 'Keep It Simple, Stupid' (KISS)?",
+        "options": {
+            "A": "Being rude.",
+            "B": "A design principle stating that systems work best if they are kept simple rather than made complex.",
+            "C": "Writing bad code.",
+            "D": "Using old tech."
+        },
+        "correctAnswer": "B",
+        "explanation": "Complexity is the enemy of reliability."
+    },
+    {
+        "id": 265,
+        "subject": "Testing",
+        "question": "What is 'Black Box Testing'?",
+        "options": {
+            "A": "Testing flight recorders.",
+            "B": "Testing without knowing the internal structure/code. Focusing on inputs and outputs.",
+            "C": "Unit testing.",
+            "D": "White box testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Testing as a user would."
+    },
+    {
+        "id": 266,
+        "subject": "Security",
+        "question": "What is OAUTH?",
+        "options": {
+            "A": "An author.",
+            "B": "An open standard for access delegation (e.g., Log in with Google).",
+            "C": "A password.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Allows you to grant a website access to your information on another website without giving them your password."
+    },
+    {
+        "id": 267,
+        "subject": "Career",
+        "question": "What is 'Burnout'?",
+        "options": {
+            "A": "Working hard.",
+            "B": "A state of emotional, physical, and mental exhaustion caused by excessive and prolonged stress.",
+            "C": "A fire.",
+            "D": "Being tired."
+        },
+        "correctAnswer": "B",
+        "explanation": "A career killer. Requires recovery time."
+    },
+    {
+        "id": 268,
+        "subject": "System Design",
+        "question": "What is 'Throughput'?",
+        "options": {
+            "A": "Latency.",
+            "B": "The number of requests a system can handle per second (RPS).",
+            "C": "Bandwidth.",
+            "D": "Error rate."
+        },
+        "correctAnswer": "B",
+        "explanation": "How wide is the pipe?"
+    },
+    {
+        "id": 269,
+        "subject": "Communication",
+        "question": "How do you explain 'API' to a non-technical person?",
+        "options": {
+            "A": "It's a coding interface.",
+            "B": "It's like a waiter in a restaurant. You (the user) give the waiter your order, the waiter takes it to the kitchen (system), and brings you back the food.",
+            "C": "It's HTTP.",
+            "D": "It's a database."
+        },
+        "correctAnswer": "B",
+        "explanation": "The Waiter Analogy is standard."
+    },
+    {
+        "id": 270,
+        "subject": "Mobile",
+        "question": "What is 'Push Notification'?",
+        "options": {
+            "A": "Email.",
+            "B": "A message sent from a server to a client application (even when the app is closed).",
+            "C": "A text message.",
+            "D": "A database update."
+        },
+        "correctAnswer": "B",
+        "explanation": "Re-engagement tool."
+    },
+    {
+        "id": 271,
+        "subject": "Linux",
+        "question": "What is `cron`?",
+        "options": {
+            "A": "A monster.",
+            "B": "A time-based job scheduler in Unix-like operating systems.",
+            "C": "A clock.",
+            "D": "A virus."
+        },
+        "correctAnswer": "B",
+        "explanation": "Running scripts automatically at specific times."
+    },
+    {
+        "id": 272,
+        "subject": "DevOps",
+        "question": "What is a 'Build Pipeline'?",
+        "options": {
+            "A": "Construction work.",
+            "B": "Automated set of processes that compile, test, and deploy code.",
+            "C": "A gas pipe.",
+            "D": "Writing code."
+        },
+        "correctAnswer": "B",
+        "explanation": "The assembly line for software."
+    },
+    {
+        "id": 273,
+        "subject": "Code Quality",
+        "question": "What is 'Linting'?",
+        "options": {
+            "A": "Cleaning clothes.",
+            "B": "Running a program that analyzes code for potential errors and stylistic issues.",
+            "C": "Compiling.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Catching typos and style violations before they hit the repo."
+    },
+    {
+        "id": 274,
+        "subject": "Network",
+        "question": "What is a 'Firewall'?",
+        "options": {
+            "A": "A wall on fire.",
+            "B": "A network security system that monitors and controls incoming and outgoing network traffic.",
+            "C": "Antivirus.",
+            "D": "A password."
+        },
+        "correctAnswer": "B",
+        "explanation": "The bouncer of the network."
+    },
+    {
+        "id": 275,
+        "subject": "Web",
+        "question": "What is 'Responsive Design'?",
+        "options": {
+            "A": "Fast website.",
+            "B": "Web design that adapts to different screen sizes and devices.",
+            "C": "Good colors.",
+            "D": "Native app."
+        },
+        "correctAnswer": "B",
+        "explanation": "One code base, many devices."
+    },
+    {
+        "id": 276,
+        "subject": "SQL",
+        "question": "What is a 'Foreign Key'?",
+        "options": {
+            "A": "A key from another country.",
+            "B": "A field in a table that links to the Primary Key of another table.",
+            "C": "A password.",
+            "D": "A index."
+        },
+        "correctAnswer": "B",
+        "explanation": "Creates the relationship in Relational Databases."
+    },
+    {
+        "id": 277,
+        "subject": "Agile",
+        "question": "What is 'Backlog Grooming'?",
+        "options": {
+            "A": "Cleaning the office.",
+            "B": "Reviewing and prioritizing items in the backlog to ensure they are ready for future sprints.",
+            "C": "Deleting tasks.",
+            "D": "A meeting."
+        },
+        "correctAnswer": "B",
+        "explanation": "Preparation work."
+    },
+    {
+        "id": 278,
+        "subject": "Leadership",
+        "question": "What is 'Imposter Syndrome'?",
+        "options": {
+            "A": "Being a fake.",
+            "B": "Feeling like you aren't as competent as others perceive you to be.",
+            "C": "Lying.",
+            "D": "Being new."
+        },
+        "correctAnswer": "B",
+        "explanation": "Very common in tech."
+    },
+    {
+        "id": 279,
+        "subject": "Cloud",
+        "question": "What is SaaS?",
+        "options": {
+            "A": "Software as a Service.",
+            "B": "System as a Server.",
+            "C": "Storage as a System.",
+            "D": "Safe and Secure."
+        },
+        "correctAnswer": "A",
+        "explanation": "Licensing software via subscription (e.g., Slack, Gmail)."
+    },
+    {
+        "id": 280,
+        "subject": "Coding",
+        "question": "What is Recursion?",
+        "options": {
+            "A": "A loop.",
+            "B": "A function calling itself.",
+            "C": "A bug.",
+            "D": "A crash."
+        },
+        "correctAnswer": "B",
+        "explanation": "Useful for traversing trees/graphs. Must have a base case to avoid stack overflow."
+    },
+    {
+        "id": 281,
+        "subject": "Security",
+        "question": "What is HTTPS?",
+        "options": {
+            "A": "Hyper Text Transfer Protocol Secure.",
+            "B": "Faster HTTP.",
+            "C": "Slow HTTP.",
+            "D": "A website."
+        },
+        "correctAnswer": "A",
+        "explanation": "Encrypted communication."
+    },
+    {
+        "id": 282,
+        "subject": "Performance",
+        "question": "What is 'Optimization'?",
+        "options": {
+            "A": "Writing code.",
+            "B": "Making a system as effective or functional as possible (faster, smaller).",
+            "C": "Deleting features.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Improving efficiency."
+    },
+    {
+        "id": 283,
+        "subject": "API",
+        "question": "What is SOAP?",
+        "options": {
+            "A": "Cleaning agent.",
+            "B": "Simple Object Access Protocol - an older, XML-based messaging protocol.",
+            "C": "A database.",
+            "D": "A REST replacement."
+        },
+        "correctAnswer": "B",
+        "explanation": "Heavyweight compared to REST/JSON. Still used in enterprise."
+    },
+    {
+        "id": 284,
+        "subject": "Architecture",
+        "question": "What is 'Scalability'?",
+        "options": {
+            "A": "Weighing code.",
+            "B": "The ability of a system to handle increased load.",
+            "C": "Writing good code.",
+            "D": "Security."
+        },
+        "correctAnswer": "B",
+        "explanation": "Growth potential."
+    },
+    {
+        "id": 285,
+        "subject": "Python",
+        "question": "What is a 'Tuple'?",
+        "options": {
+            "A": "A list.",
+            "B": "An immutable (unchangeable) ordered list of elements.",
+            "C": "A dictionary.",
+            "D": "A loop."
+        },
+        "correctAnswer": "B",
+        "explanation": "Like a list, but you can't change it."
+    },
+    {
+        "id": 286,
+        "subject": "Testing",
+        "question": "What is 'UAT'?",
+        "options": {
+            "A": "Unit Automated Test.",
+            "B": "User Acceptance Testing - final testing by the end user/client.",
+            "C": "Under A Tree.",
+            "D": "Integration testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "The final sign-off."
+    },
+    {
+        "id": 287,
+        "subject": "Git",
+        "question": "What is `git pull`?",
+        "options": {
+            "A": "Deleting code.",
+            "B": "Fetching changes from a remote repository and merging them into the current branch.",
+            "C": "Uploading code.",
+            "D": "Saving code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Get the latest code."
+    },
+    {
+        "id": 288,
+        "subject": "Soft Skills",
+        "question": "What is 'Active Listening'?",
+        "options": {
+            "A": "Hearing sound.",
+            "B": "Fully concentrating, understanding, responding, and remembering what is being said.",
+            "C": "Waiting to speak.",
+            "D": "Ignoring."
+        },
+        "correctAnswer": "B",
+        "explanation": "Crucial for requirement gathering."
+    },
+    {
+        "id": 289,
+        "subject": "Web",
+        "question": "What is a URL?",
+        "options": {
+            "A": "Uniform Resource Locator.",
+            "B": "User Real Link.",
+            "C": "Universal Request Line.",
+            "D": "A website."
+        },
+        "correctAnswer": "A",
+        "explanation": "The address of a resource."
+    },
+    {
+        "id": 290,
+        "subject": "Database",
+        "question": "What is a Query?",
+        "options": {
+            "A": "A question.",
+            "B": "A request for data or information from a database table.",
+            "C": "A server.",
+            "D": "A file."
+        },
+        "correctAnswer": "B",
+        "explanation": "Asking the database."
+    },
+    {
+        "id": 291,
+        "subject": "Architecture",
+        "question": "What is 'High Availability'?",
+        "options": {
+            "A": "Always online.",
+            "B": "Systems designed to be durable and likely to operate continuously without failure for a long time.",
+            "C": "Fast internet.",
+            "D": "Big servers."
+        },
+        "correctAnswer": "B",
+        "explanation": "Minimizing downtime."
+    },
+    {
+        "id": 292,
+        "subject": "Security",
+        "question": "What is a 'DDOS' attack?",
+        "options": {
+            "A": "Distributed Denial of Service.",
+            "B": "Deleting Data On Server.",
+            "C": "Direct Denial.",
+            "D": "A virus."
+        },
+        "correctAnswer": "A",
+        "explanation": "Overwhelming a server with traffic."
+    },
+    {
+        "id": 293,
+        "subject": "Mobile",
+        "question": "What is iOS?",
+        "options": {
+            "A": "Internet OS.",
+            "B": "Apple's mobile operating system.",
+            "C": "Android.",
+            "D": "A phone."
+        },
+        "correctAnswer": "B",
+        "explanation": "Runs on iPhone/iPad."
+    },
+    {
+        "id": 294,
+        "subject": "DevOps",
+        "question": "What is 'Version Control'?",
+        "options": {
+            "A": "Controlling people.",
+            "B": "Systems responsible for managing changes to computer programs/documents (e.g., Git).",
+            "C": "Backups.",
+            "D": "Writing code."
+        },
+        "correctAnswer": "B",
+        "explanation": "The time machine for code."
+    },
+    {
+        "id": 295,
+        "subject": "Frontend",
+        "question": "What is 'Bootstrap'?",
+        "options": {
+            "A": "Shoes.",
+            "B": "A popular CSS framework for developing responsive, mobile-first websites.",
+            "C": "A backend tool.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Rapid UI development."
+    },
+    {
+        "id": 296,
+        "subject": "Career",
+        "question": "What is a 'Stack'?",
+        "options": {
+            "A": "Pancakes.",
+            "B": "The combination of technologies used to build an application (e.g., MERN).",
+            "C": "A pile of papers.",
+            "D": "A server."
+        },
+        "correctAnswer": "B",
+        "explanation": "Full Stack = Frontend + Backend + DB."
+    },
+    {
+        "id": 297,
+        "subject": "Networking",
+        "question": "What is LAN?",
+        "options": {
+            "A": "Local Area Network.",
+            "B": "Large Area Network.",
+            "C": "Long Area Net.",
+            "D": "Wifi."
+        },
+        "correctAnswer": "A",
+        "explanation": "Network in a small area (home/office)."
+    },
+    {
+        "id": 298,
+        "subject": "Coding",
+        "question": "What is 'Compilation'?",
+        "options": {
+            "A": "Writing code.",
+            "B": "Transforming source code into machine code.",
+            "C": "Running code.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Turning human readable text into machine instructions."
+    },
+    {
+        "id": 299,
+        "subject": "Data",
+        "question": "What is Big Data?",
+        "options": {
+            "A": "Large files.",
+            "B": "Data sets that are too large or complex to be dealt with by traditional data-processing software.",
+            "C": "A database.",
+            "D": "Cloud."
+        },
+        "correctAnswer": "B",
+        "explanation": "Volume, Velocity, Variety."
+    },
+    {
+        "id": 300,
+        "subject": "Communication",
+        "question": "Why is 'Documentation' important?",
+        "options": {
+            "A": "It isn't.",
+            "B": "It ensures knowledge transfer, maintainability, and onboarding efficiency.",
+            "C": "To look busy.",
+            "D": "For legal reasons."
+        },
+        "correctAnswer": "B",
+        "explanation": "Code tells you how; Docs tell you why."
+    },
+    {
+        "id": 301,
+        "subject": "Kubernetes",
+        "question": "What is a 'Pod' in Kubernetes?",
+        "options": {
+            "A": "A small whale.",
+            "B": "The smallest deployable unit in K8s, representing a single instance of a running process (one or more containers).",
+            "C": "A server.",
+            "D": "A storage unit."
+        },
+        "correctAnswer": "B",
+        "explanation": "Containers live inside Pods. K8s scales Pods, not containers directly."
+    },
+    {
+        "id": 302,
+        "subject": "GraphQL",
+        "question": "What is the 'N+1 Problem' in GraphQL?",
+        "options": {
+            "A": "A math error.",
+            "B": "A performance issue where fetching a list of items (1 query) triggers a separate database query for each item's related data (N queries).",
+            "C": "Too many users.",
+            "D": "A schema error."
+        },
+        "correctAnswer": "B",
+        "explanation": "Solved by using 'DataLoaders' to batch requests."
+    },
+    {
+        "id": 303,
+        "subject": "Next.js",
+        "question": "What is Static Site Generation (SSG)?",
+        "options": {
+            "A": "Websites that don't move.",
+            "B": "Pre-rendering pages at build time. The HTML is generated once and reused for each request.",
+            "C": "Server Side Rendering.",
+            "D": "Client Side Rendering."
+        },
+        "correctAnswer": "B",
+        "explanation": "Fastest performance because the server just serves a file, no computation per request."
+    },
+    {
+        "id": 304,
+        "subject": "Distributed Systems",
+        "question": "What is 'Distributed Tracing'?",
+        "options": {
+            "A": "Drawing lines.",
+            "B": "A method used to track and profile application requests as they flow through distributed microservices.",
+            "C": "Logging.",
+            "D": "Debugging locally."
+        },
+        "correctAnswer": "B",
+        "explanation": "Essential for debugging 'Why was this request slow?' when it hit 10 different services."
+    },
+    {
+        "id": 305,
+        "subject": "Security",
+        "question": "What is 'JWT' (JSON Web Token)?",
+        "options": {
+            "A": "JavaScript Web Text.",
+            "B": "A compact, URL-safe means of representing claims to be transferred between two parties.",
+            "C": "A password.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Stateless auth. The server doesn't need to store the session; it just verifies the signature."
+    },
+    {
+        "id": 306,
+        "subject": "React",
+        "question": "What is a 'Higher-Order Component' (HOC)?",
+        "options": {
+            "A": "A tall component.",
+            "B": "A function that takes a component and returns a new component (for reusing logic).",
+            "C": "A parent component.",
+            "D": "A state manager."
+        },
+        "correctAnswer": "B",
+        "explanation": "A pattern for reusing component logic (e.g., `withAuth(ProfilePage)`)."
+    },
+    {
+        "id": 307,
+        "subject": "Database",
+        "question": "What is 'Replication'?",
+        "options": {
+            "A": "Copying data from one database server to another to ensure redundancy and high availability.",
+            "B": "Backups.",
+            "C": "Deleting data.",
+            "D": "Sharding."
+        },
+        "correctAnswer": "A",
+        "explanation": "If the primary DB fails, the replica takes over."
+    },
+    {
+        "id": 308,
+        "subject": "Leadership",
+        "question": "What is 'Delegation'?",
+        "options": {
+            "A": "Being lazy.",
+            "B": "Entrusting a task or responsibility to another person (usually a junior) to help them grow.",
+            "C": "Ordering food.",
+            "D": "Ignoring work."
+        },
+        "correctAnswer": "B",
+        "explanation": "Crucial for scaling yourself as a leader."
+    },
+    {
+        "id": 309,
+        "subject": "API",
+        "question": "What is gRPC?",
+        "options": {
+            "A": "Google RPC.",
+            "B": "A high-performance RPC framework that uses Protocol Buffers (binary) instead of JSON.",
+            "C": "A REST API.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Faster and lighter than REST, often used for internal microservice communication."
+    },
+    {
+        "id": 310,
+        "subject": "Architecture",
+        "question": "What is 'Event-Driven Architecture'?",
+        "options": {
+            "A": "Planning events.",
+            "B": "An architecture where services communicate by emitting and reacting to events (messages) rather than direct requests.",
+            "C": "A monolithic app.",
+            "D": "A calendar app."
+        },
+        "correctAnswer": "B",
+        "explanation": "Decouples services. Service A says 'UserSignedUp', Service B hears it and sends email."
+    },
+    {
+        "id": 311,
+        "subject": "Testing",
+        "question": "What is 'Chaos Engineering'?",
+        "options": {
+            "A": "Creating bugs.",
+            "B": "The discipline of experimenting on a system (e.g., turning off servers randomly) to build confidence in its capability to withstand turbulent conditions.",
+            "C": "Poor management.",
+            "D": "Writing bad code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Netflix 'Chaos Monkey'. Break it on purpose to ensure it auto-heals."
+    },
+    {
+        "id": 312,
+        "subject": "Career",
+        "question": "What is 'Mentorship'?",
+        "options": {
+            "A": "Teaching.",
+            "B": "A professional relationship in which a more experienced person guides a less experienced one.",
+            "C": "Bossing around.",
+            "D": "Friendship."
+        },
+        "correctAnswer": "B",
+        "explanation": "The fastest way to grow your career."
+    },
+    {
+        "id": 313,
+        "subject": "Web",
+        "question": "What is WebAssembly (Wasm)?",
+        "options": {
+            "A": "A new framework.",
+            "B": "A binary instruction format that allows code written in languages like C++/Rust to run in the browser at near-native speed.",
+            "C": "JavaScript.",
+            "D": "HTML5."
+        },
+        "correctAnswer": "B",
+        "explanation": "Bringing high-performance computing (games, video editing) to the web."
+    },
+    {
+        "id": 314,
+        "subject": "Security",
+        "question": "What is 'Encryption in Transit'?",
+        "options": {
+            "A": "Encrypting cars.",
+            "B": "Encrypting data while it is moving between two points (e.g., Browser to Server) using TLS/SSL.",
+            "C": "Database encryption.",
+            "D": "VPN."
+        },
+        "correctAnswer": "B",
+        "explanation": "Prevents interception (MitM attacks)."
+    },
+    {
+        "id": 315,
+        "subject": "DevOps",
+        "question": "What is 'Observability'?",
+        "options": {
+            "A": "Looking at screens.",
+            "B": "The ability to understand the internal state of a system based on its external outputs (Logs, Metrics, Traces).",
+            "C": "Monitoring.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Monitoring tells you the system is down; Observability tells you *why*."
+    },
+    {
+        "id": 316,
+        "subject": "Python",
+        "question": "What is a 'Virtual Environment'?",
+        "options": {
+            "A": "VR.",
+            "B": "An isolated environment for Python projects so dependencies don't conflict with system-wide packages.",
+            "C": "A virtual machine.",
+            "D": "A docker container."
+        },
+        "correctAnswer": "B",
+        "explanation": "Always use `venv` or `conda` to keep projects clean."
+    },
+    {
+        "id": 317,
+        "subject": "Data",
+        "question": "What is Redis?",
+        "options": {
+            "A": "A color.",
+            "B": "An in-memory data structure store, used as a database, cache, and message broker.",
+            "C": "A relational database.",
+            "D": "A frontend tool."
+        },
+        "correctAnswer": "B",
+        "explanation": "Extremely fast because it runs in RAM."
+    },
+    {
+        "id": 318,
+        "subject": "Networking",
+        "question": "What is a VPN?",
+        "options": {
+            "A": "Virtual Private Network.",
+            "B": "Very Private Net.",
+            "C": "Visual Protocol Node.",
+            "D": "Virus Protection."
+        },
+        "correctAnswer": "A",
+        "explanation": "Creates a secure tunnel over a public network."
+    },
+    {
+        "id": 319,
+        "subject": "Mobile",
+        "question": "What is 'Flutter'?",
+        "options": {
+            "A": "A bird.",
+            "B": "Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
+            "C": "A database.",
+            "D": "A testing tool."
+        },
+        "correctAnswer": "B",
+        "explanation": "Competitor to React Native, uses Dart language."
+    },
+    {
+        "id": 320,
+        "subject": "Soft Skills",
+        "question": "What is 'Stakeholder Management'?",
+        "options": {
+            "A": "Managing servers.",
+            "B": "The process of maintaining good relationships with the people who have the most impact on your work (Boss, PM, Client).",
+            "C": "Coding.",
+            "D": "Eating steak."
+        },
+        "correctAnswer": "B",
+        "explanation": "Engineering is easy; people are hard."
+    },
+    {
+        "id": 321,
+        "subject": "Git",
+        "question": "What is a 'Fork'?",
+        "options": {
+            "A": "Cutlery.",
+            "B": "A copy of a repository that you manage. Allows you to experiment without affecting the original project.",
+            "C": "A branch.",
+            "D": "A commit."
+        },
+        "correctAnswer": "B",
+        "explanation": "Standard for Open Source contributions."
+    },
+    {
+        "id": 322,
+        "subject": "Frontend",
+        "question": "What is 'Tailwind CSS'?",
+        "options": {
+            "A": "A wind.",
+            "B": "A utility-first CSS framework that allows you to build designs directly in your markup.",
+            "C": "A JavaScript library.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Rapid styling without writing custom CSS files."
+    },
+    {
+        "id": 323,
+        "subject": "Cloud",
+        "question": "What is 'Lambda' (AWS)?",
+        "options": {
+            "A": "A greek letter.",
+            "B": "A serverless compute service that runs your code in response to events and automatically manages resources.",
+            "C": "A database.",
+            "D": "A virtual machine."
+        },
+        "correctAnswer": "B",
+        "explanation": "No servers to manage. Pay per millisecond."
+    },
+    {
+        "id": 324,
+        "subject": "JavaScript",
+        "question": "What is 'Async/Await'?",
+        "options": {
+            "A": "Waiting for code.",
+            "B": "Syntactic sugar built on top of Promises that makes asynchronous code look and behave like synchronous code.",
+            "C": "A slow function.",
+            "D": "An error."
+        },
+        "correctAnswer": "B",
+        "explanation": "Makes reading async code much easier."
+    },
+    {
+        "id": 325,
+        "subject": "Architecture",
+        "question": "What is 'Domain Driven Design' (DDD)?",
+        "options": {
+            "A": "Buying domains.",
+            "B": "An approach to software development that centers the design on the core domain and domain logic.",
+            "C": "Designing UIs.",
+            "D": "Database design."
+        },
+        "correctAnswer": "B",
+        "explanation": "Aligning the code structure with the business reality."
+    },
+    {
+        "id": 326,
+        "subject": "Security",
+        "question": "What is 'Penetration Testing'?",
+        "options": {
+            "A": "Testing pens.",
+            "B": "A simulated cyberattack against your computer system to check for exploitable vulnerabilities.",
+            "C": "Unit testing.",
+            "D": "Code review."
+        },
+        "correctAnswer": "B",
+        "explanation": "Ethical hacking."
+    },
+    {
+        "id": 327,
+        "subject": "Performance",
+        "question": "What is 'Server Side Rendering' (SSR)?",
+        "options": {
+            "A": "Rendering on the client.",
+            "B": "Generating the full HTML for a page on the server in response to a navigation request.",
+            "C": "A database.",
+            "D": "Caching."
+        },
+        "correctAnswer": "B",
+        "explanation": "Better for SEO and initial load speed than Client Side Rendering."
+    },
+    {
+        "id": 328,
+        "subject": "Data Structures",
+        "question": "What is a Graph?",
+        "options": {
+            "A": "A chart.",
+            "B": "A non-linear data structure consisting of nodes (vertices) and edges.",
+            "C": "A table.",
+            "D": "A list."
+        },
+        "correctAnswer": "B",
+        "explanation": "Social networks are Graphs (People = Nodes, Friendships = Edges)."
+    },
+    {
+        "id": 329,
+        "subject": "Communication",
+        "question": "What is 'Managing Up'?",
+        "options": {
+            "A": "Being bossy.",
+            "B": "Proactively communicating with your manager to make their job easier (and yours better).",
+            "C": "Getting promoted.",
+            "D": "Quitting."
+        },
+        "correctAnswer": "B",
+        "explanation": "Don't wait to be managed. Manage the relationship."
+    },
+    {
+        "id": 330,
+        "subject": "DevOps",
+        "question": "What is 'Terraform'?",
+        "options": {
+            "A": "A video game.",
+            "B": "An infrastructure-as-code tool for building, changing, and versioning infrastructure safely and efficiently.",
+            "C": "A database.",
+            "D": "A cloud provider."
+        },
+        "correctAnswer": "B",
+        "explanation": "Define your AWS/Azure/GCP resources in code."
+    },
+    {
+        "id": 331,
+        "subject": "SQL",
+        "question": "What is an 'Outer Join'?",
+        "options": {
+            "A": "Joining outside.",
+            "B": "Returns all records when there is a match in either left or right table record.",
+            "C": "Inner join.",
+            "D": "Deleting data."
+        },
+        "correctAnswer": "B",
+        "explanation": "Includes unmatched rows."
+    },
+    {
+        "id": 332,
+        "subject": "Career",
+        "question": "What is 'Networking' (Social)?",
+        "options": {
+            "A": "Connecting cables.",
+            "B": "Building professional relationships to exchange information and develop contacts.",
+            "C": "Using LinkedIn.",
+            "D": "Internet."
+        },
+        "correctAnswer": "B",
+        "explanation": "Who you know matters as much as what you know."
+    },
+    {
+        "id": 333,
+        "subject": "Mobile",
+        "question": "What is 'Swift'?",
+        "options": {
+            "A": "Fast.",
+            "B": "A powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS.",
+            "C": "A bird.",
+            "D": "Android language."
+        },
+        "correctAnswer": "B",
+        "explanation": "Replaced Objective-C."
+    },
+    {
+        "id": 334,
+        "subject": "System Design",
+        "question": "What is a 'Message Queue' (RabbitMQ/Kafka)?",
+        "options": {
+            "A": "A chat room.",
+            "B": "A form of asynchronous service-to-service communication used in serverless and microservices architectures.",
+            "C": "A database.",
+            "D": "A load balancer."
+        },
+        "correctAnswer": "B",
+        "explanation": "Decouples producers from consumers. Buffer traffic spikes."
+    },
+    {
+        "id": 335,
+        "subject": "React",
+        "question": "What is 'Redux'?",
+        "options": {
+            "A": "A reducer.",
+            "B": "A predictable state container for JavaScript apps (Global State Management).",
+            "C": "A database.",
+            "D": "A backend."
+        },
+        "correctAnswer": "B",
+        "explanation": "Centralizes application state."
+    },
+    {
+        "id": 336,
+        "subject": "Security",
+        "question": "What is 'Hashing' vs 'Encryption'?",
+        "options": {
+            "A": "Same thing.",
+            "B": "Encryption is two-way (can decrypt); Hashing is one-way (cannot retrieve original data).",
+            "C": "Hashing is reversible.",
+            "D": "Encryption is for passwords."
+        },
+        "correctAnswer": "B",
+        "explanation": "Passwords should be hashed. Messages should be encrypted."
+    },
+    {
+        "id": 337,
+        "subject": "Web",
+        "question": "What is 'Localhost'?",
+        "options": {
+            "A": "The internet.",
+            "B": "The default name describing the local computer address (loopback address 127.0.0.1).",
+            "C": "A server.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "There's no place like 127.0.0.1."
+    },
+    {
+        "id": 338,
+        "subject": "Testing",
+        "question": "What is 'Mocking'?",
+        "options": {
+            "A": "Making fun.",
+            "B": "Creating objects that simulate the behavior of real objects for testing purposes.",
+            "C": "Running production code.",
+            "D": "Deploying."
+        },
+        "correctAnswer": "B",
+        "explanation": "Don't hit the real credit card API in your tests."
+    },
+    {
+        "id": 339,
+        "subject": "Productivity",
+        "question": "What is 'Deep Work'?",
+        "options": {
+            "A": "Working underground.",
+            "B": "Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit.",
+            "C": "Working at night.",
+            "D": "Easy work."
+        },
+        "correctAnswer": "B",
+        "explanation": "Where real coding happens."
+    },
+    {
+        "id": 340,
+        "subject": "Git",
+        "question": "What is `git branch`?",
+        "options": {
+            "A": "A tree.",
+            "B": "A command to list, create, or delete branches.",
+            "C": "A commit.",
+            "D": "A repository."
+        },
+        "correctAnswer": "B",
+        "explanation": "Branches allow parallel development."
+    },
+    {
+        "id": 341,
+        "subject": "DevOps",
+        "question": "What is 'SRE'?",
+        "options": {
+            "A": "Super Real Engineer.",
+            "B": "Site Reliability Engineering.",
+            "C": "System Reset Error.",
+            "D": "Server Reboot Engine."
+        },
+        "correctAnswer": "B",
+        "explanation": "Applying software engineering principles to operations/infrastructure problems."
+    },
+    {
+        "id": 342,
+        "subject": "Architecture",
+        "question": "What is 'Middleware'?",
+        "options": {
+            "A": "Software that lies between an operating system and the applications running on it (or between request and response in web frameworks).",
+            "B": "Hardware.",
+            "C": "A database.",
+            "D": "A frontend."
+        },
+        "correctAnswer": "A",
+        "explanation": "The 'glue' of software."
+    },
+    {
+        "id": 343,
+        "subject": "Cloud",
+        "question": "What is 'Elasticity'?",
+        "options": {
+            "A": "Rubber bands.",
+            "B": "The degree to which a system is able to adapt to workload changes by provisioning and de-provisioning resources in an autonomic manner.",
+            "C": "Cost.",
+            "D": "Speed."
+        },
+        "correctAnswer": "B",
+        "explanation": "Scale up when busy, scale down when quiet."
+    },
+    {
+        "id": 344,
+        "subject": "JavaScript",
+        "question": "What is `NaN`?",
+        "options": {
+            "A": "Bread.",
+            "B": "Not-a-Number (a property of the global object).",
+            "C": "A number.",
+            "D": "Null."
+        },
+        "correctAnswer": "B",
+        "explanation": "Result of invalid math operations (e.g., 5 * 'apple')."
+    },
+    {
+        "id": 345,
+        "subject": "Data",
+        "question": "What is 'Data Warehouse'?",
+        "options": {
+            "A": "A building.",
+            "B": "A large store of data accumulated from a wide range of sources within a company and used to guide management decisions.",
+            "C": "A database.",
+            "D": "A backup."
+        },
+        "correctAnswer": "B",
+        "explanation": "Optimized for analysis (OLAP), not transactions (OLTP)."
+    },
+    {
+        "id": 346,
+        "subject": "Security",
+        "question": "What is 'Phishing'?",
+        "options": {
+            "A": "Fishing.",
+            "B": "The fraudulent practice of sending emails purporting to be from reputable companies to induce individuals to reveal personal information.",
+            "C": "Hacking.",
+            "D": "Coding."
+        },
+        "correctAnswer": "B",
+        "explanation": "Social engineering attack."
+    },
+    {
+        "id": 347,
+        "subject": "Networking",
+        "question": "What is 'Bandwidth'?",
+        "options": {
+            "A": "Width of a band.",
+            "B": "The maximum rate of data transfer across a given path.",
+            "C": "Speed.",
+            "D": "Latency."
+        },
+        "correctAnswer": "B",
+        "explanation": "Capacity, not speed."
+    },
+    {
+        "id": 348,
+        "subject": "Communication",
+        "question": "How do you handle a mistake?",
+        "options": {
+            "A": "Hide it.",
+            "B": "Admit it quickly, fix it, and learn from it.",
+            "C": "Blame others.",
+            "D": "Quit."
+        },
+        "correctAnswer": "B",
+        "explanation": "Ownership is a senior trait."
+    },
+    {
+        "id": 349,
+        "subject": "Mobile",
+        "question": "What is 'Android'?",
+        "options": {
+            "A": "A robot.",
+            "B": "A mobile operating system based on a modified version of the Linux kernel.",
+            "C": "iOS.",
+            "D": "A phone."
+        },
+        "correctAnswer": "B",
+        "explanation": "Open source OS by Google."
+    },
+    {
+        "id": 350,
+        "subject": "API",
+        "question": "What is 'Status Code 200'?",
+        "options": {
+            "A": "Error.",
+            "B": "OK (Success).",
+            "C": "Not Found.",
+            "D": "Server Error."
+        },
+        "correctAnswer": "B",
+        "explanation": "Everything is fine."
+    },
+    {
+        "id": 351,
+        "subject": "Linux",
+        "question": "What is `ls`?",
+        "options": {
+            "A": "Loss.",
+            "B": "List directory contents.",
+            "C": "Less.",
+            "D": "Last."
+        },
+        "correctAnswer": "B",
+        "explanation": "The most used command."
+    },
+    {
+        "id": 352,
+        "subject": "Design Patterns",
+        "question": "What is 'MVC'?",
+        "options": {
+            "A": "Model View Controller.",
+            "B": "Make View Code.",
+            "C": "Move Value Check.",
+            "D": "A database."
+        },
+        "correctAnswer": "A",
+        "explanation": "Separation of concerns."
+    },
+    {
+        "id": 353,
+        "subject": "Testing",
+        "question": "What is 'Unit Testing'?",
+        "options": {
+            "A": "Testing the whole app.",
+            "B": "Testing individual units or components of a software.",
+            "C": "Manual testing.",
+            "D": "Integration testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Smallest scope of testing."
+    },
+    {
+        "id": 354,
+        "subject": "Web",
+        "question": "What is 'CSS'?",
+        "options": {
+            "A": "Cascading Style Sheets.",
+            "B": "Computer Style Sheets.",
+            "C": "Creative Style System.",
+            "D": "Coding Style Sheets."
+        },
+        "correctAnswer": "A",
+        "explanation": "Makes the web look good."
+    },
+    {
+        "id": 355,
+        "subject": "Database",
+        "question": "What is 'CRUD'?",
+        "options": {
+            "A": "Bad code.",
+            "B": "Create, Read, Update, Delete.",
+            "C": "Create, Run, Update, Do.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "The 4 basic functions of persistent storage."
+    },
+    {
+        "id": 356,
+        "subject": "Career",
+        "question": "What is a 'Full Stack Developer'?",
+        "options": {
+            "A": "A developer who eats a lot.",
+            "B": "Someone who can work on both the front-end (client) and back-end (server) portions of an application.",
+            "C": "A designer.",
+            "D": "A manager."
+        },
+        "correctAnswer": "B",
+        "explanation": "Jack of all trades."
+    },
+    {
+        "id": 357,
+        "subject": "Security",
+        "question": "What is 'SSL'?",
+        "options": {
+            "A": "Secure Sockets Layer.",
+            "B": "Super Safe Link.",
+            "C": "System Secure Level.",
+            "D": "A lock."
+        },
+        "correctAnswer": "A",
+        "explanation": "The predecessor to TLS."
+    },
+    {
+        "id": 358,
+        "subject": "Git",
+        "question": "What is `git push`?",
+        "options": {
+            "A": "Pushing buttons.",
+            "B": "Uploading local repository content to a remote repository.",
+            "C": "Downloading code.",
+            "D": "Deleting code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Sharing your work."
+    },
+    {
+        "id": 359,
+        "subject": "DevOps",
+        "question": "What is 'Continuous Integration'?",
+        "options": {
+            "A": "Working all the time.",
+            "B": "The practice of merging all developers' working copies to a shared mainline several times a day.",
+            "C": "Deploying.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Detects integration errors early."
+    },
+    {
+        "id": 360,
+        "subject": "Agile",
+        "question": "What is 'Kanban'?",
+        "options": {
+            "A": "A city.",
+            "B": "A visual method for managing work (Boards, Lists, Cards).",
+            "C": "A coding language.",
+            "D": "A meeting."
+        },
+        "correctAnswer": "B",
+        "explanation": "Focuses on flow and limiting Work In Progress (WIP)."
+    },
+    {
+        "id": 361,
+        "subject": "Performance",
+        "question": "What is 'Lazy Loading'?",
+        "options": {
+            "A": "Being lazy.",
+            "B": "Loading resources only when they are required.",
+            "C": "Loading everything at once.",
+            "D": "A slow server."
+        },
+        "correctAnswer": "B",
+        "explanation": "Improves initial load time."
+    },
+    {
+        "id": 362,
+        "subject": "Networking",
+        "question": "What is 'DNS'?",
+        "options": {
+            "A": "Do Not Sleep.",
+            "B": "Domain Name System - translates domain names to IP addresses.",
+            "C": "Data Network System.",
+            "D": "A server."
+        },
+        "correctAnswer": "B",
+        "explanation": "The phonebook of the internet."
+    },
+    {
+        "id": 363,
+        "subject": "Soft Skills",
+        "question": "What is 'Emotional Intelligence' (EQ)?",
+        "options": {
+            "A": "Being smart.",
+            "B": "The ability to understand, use, and manage your own emotions in positive ways.",
+            "C": "Crying.",
+            "D": "Being angry."
+        },
+        "correctAnswer": "B",
+        "explanation": "Critical for leadership and teamwork."
+    },
+    {
+        "id": 364,
+        "subject": "Architecture",
+        "question": "What is 'Monolithic Architecture'?",
+        "options": {
+            "A": "A statue.",
+            "B": "A unified model for the design of a software program (all in one).",
+            "C": "Microservices.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Simple to deploy, hard to scale."
+    },
+    {
+        "id": 365,
+        "subject": "JavaScript",
+        "question": "What is `npm`?",
+        "options": {
+            "A": "Node Package Manager.",
+            "B": "No Problem Man.",
+            "C": "New Package Mode.",
+            "D": "A database."
+        },
+        "correctAnswer": "A",
+        "explanation": "Manages dependencies."
+    },
+    {
+        "id": 366,
+        "subject": "SQL",
+        "question": "What is a 'Table'?",
+        "options": {
+            "A": "Furniture.",
+            "B": "A collection of related data held in a structured format within a database.",
+            "C": "A list.",
+            "D": "A file."
+        },
+        "correctAnswer": "B",
+        "explanation": "Columns and Rows."
+    },
+    {
+        "id": 367,
+        "subject": "Testing",
+        "question": "What is 'Integration Testing'?",
+        "options": {
+            "A": "Testing math.",
+            "B": "Testing where individual units are combined and tested as a group.",
+            "C": "Unit testing.",
+            "D": "Manual testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Ensures modules work together."
+    },
+    {
+        "id": 368,
+        "subject": "Security",
+        "question": "What is 'Encryption'?",
+        "options": {
+            "A": "Hiding.",
+            "B": "The process of converting information or data into a code, especially to prevent unauthorized access.",
+            "C": "Deleting.",
+            "D": "Locking."
+        },
+        "correctAnswer": "B",
+        "explanation": "Confidentiality."
+    },
+    {
+        "id": 369,
+        "subject": "Frontend",
+        "question": "What is 'DOM'?",
+        "options": {
+            "A": "Document Object Model.",
+            "B": "Data On Monitor.",
+            "C": "Disk Operating Mode.",
+            "D": "A person."
+        },
+        "correctAnswer": "A",
+        "explanation": "The interface between JS and HTML."
+    },
+    {
+        "id": 370,
+        "subject": "Cloud",
+        "question": "What is 'IaaS'?",
+        "options": {
+            "A": "Internet as a Service.",
+            "B": "Infrastructure as a Service (e.g., EC2).",
+            "C": "Info as a Service.",
+            "D": "Apple."
+        },
+        "correctAnswer": "B",
+        "explanation": "Rent raw servers."
+    },
+    {
+        "id": 371,
+        "subject": "Mobile",
+        "question": "What is 'Kotlin'?",
+        "options": {
+            "A": "A ketchup brand.",
+            "B": "A programming language used for Android development.",
+            "C": "A database.",
+            "D": "An iOS tool."
+        },
+        "correctAnswer": "B",
+        "explanation": "Replaced Java for Android."
+    },
+    {
+        "id": 372,
+        "subject": "Career",
+        "question": "What is 'LinkedIn'?",
+        "options": {
+            "A": "A game.",
+            "B": "A professional networking site.",
+            "C": "A dating site.",
+            "D": "A coding tool."
+        },
+        "correctAnswer": "B",
+        "explanation": "Where recruiters live."
+    },
+    {
+        "id": 373,
+        "subject": "Git",
+        "question": "What is `git status`?",
+        "options": {
+            "A": "Checking Facebook.",
+            "B": "Displays the state of the working directory and the staging area.",
+            "C": "Deleting files.",
+            "D": "Saving code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Check before you commit."
+    },
+    {
+        "id": 374,
+        "subject": "Data Structures",
+        "question": "What is a 'Queue'?",
+        "options": {
+            "A": "A line.",
+            "B": "A First-In-First-Out (FIFO) data structure.",
+            "C": "A stack.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Like a line at a store."
+    },
+    {
+        "id": 375,
+        "subject": "DevOps",
+        "question": "What is 'Docker'?",
+        "options": {
+            "A": "Pants.",
+            "B": "A platform for developing, shipping, and running applications in containers.",
+            "C": "A boat.",
+            "D": "A server."
+        },
+        "correctAnswer": "B",
+        "explanation": "Standard for containers."
+    },
+    {
+        "id": 376,
+        "subject": "Communication",
+        "question": "What is 'Over-communication'?",
+        "options": {
+            "A": "Talking too much.",
+            "B": "Communicating more than necessary to ensure clarity, especially in remote teams.",
+            "C": "Spam.",
+            "D": "Bad."
+        },
+        "correctAnswer": "B",
+        "explanation": "Better to say it twice than have it misunderstood."
+    },
+    {
+        "id": 377,
+        "subject": "Web",
+        "question": "What is 'HTTP'?",
+        "options": {
+            "A": "Hypertext Transfer Protocol.",
+            "B": "High Tech Transfer Program.",
+            "C": "HTML.",
+            "D": "A website."
+        },
+        "correctAnswer": "A",
+        "explanation": "The protocol of the web."
+    },
+    {
+        "id": 378,
+        "subject": "System Design",
+        "question": "What is 'Load Balancing'?",
+        "options": {
+            "A": "Weighing scales.",
+            "B": "Distributing network traffic across multiple servers.",
+            "C": "Coding.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Prevents overload."
+    },
+    {
+        "id": 379,
+        "subject": "Python",
+        "question": "What is `print()`?",
+        "options": {
+            "A": "A printer.",
+            "B": "A function that outputs text to the console.",
+            "C": "A variable.",
+            "D": "An error."
+        },
+        "correctAnswer": "B",
+        "explanation": "Basic output."
+    },
+    {
+        "id": 380,
+        "subject": "Security",
+        "question": "What is 'Vulnerability'?",
+        "options": {
+            "A": "Being sad.",
+            "B": "A weakness which can be exploited by a cyber attack.",
+            "C": "Strong code.",
+            "D": "A firewall."
+        },
+        "correctAnswer": "B",
+        "explanation": "A hole in the armor."
+    },
+    {
+        "id": 381,
+        "subject": "Agile",
+        "question": "What is a 'Stand-up'?",
+        "options": {
+            "A": "Comedy.",
+            "B": "A daily short meeting to discuss progress and blockers.",
+            "C": "Standing up.",
+            "D": "A presentation."
+        },
+        "correctAnswer": "B",
+        "explanation": "Daily synchronization."
+    },
+    {
+        "id": 382,
+        "subject": "Linux",
+        "question": "What is `cd`?",
+        "options": {
+            "A": "A disk.",
+            "B": "Change Directory.",
+            "C": "Create Directory.",
+            "D": "Copy Data."
+        },
+        "correctAnswer": "B",
+        "explanation": "Navigation."
+    },
+    {
+        "id": 383,
+        "subject": "Frontend",
+        "question": "What is 'UX'?",
+        "options": {
+            "A": "User Experience.",
+            "B": "User Xylophone.",
+            "C": "Under Xray.",
+            "D": "Code."
+        },
+        "correctAnswer": "A",
+        "explanation": "How it feels."
+    },
+    {
+        "id": 384,
+        "subject": "Career",
+        "question": "What is a 'Portfolio'?",
+        "options": {
+            "A": "A bag.",
+            "B": "A collection of work samples to show potential employers.",
+            "C": "A resume.",
+            "D": "A stock market."
+        },
+        "correctAnswer": "B",
+        "explanation": "Proof of skills."
+    },
+    {
+        "id": 385,
+        "subject": "API",
+        "question": "What is 'JSON'?",
+        "options": {
+            "A": "A person.",
+            "B": "JavaScript Object Notation.",
+            "C": "Java Source.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Data format."
+    },
+    {
+        "id": 386,
+        "subject": "Architecture",
+        "question": "What is 'Microservices'?",
+        "options": {
+            "A": "Small computers.",
+            "B": "An architectural style that structures an application as a collection of services.",
+            "C": "One big app.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Complex but scalable."
+    },
+    {
+        "id": 387,
+        "subject": "Git",
+        "question": "What is `git init`?",
+        "options": {
+            "A": "Initializing a new Git repository.",
+            "B": "Starting computer.",
+            "C": "Deleting repo.",
+            "D": "Uploading."
+        },
+        "correctAnswer": "A",
+        "explanation": "Start here."
+    },
+    {
+        "id": 388,
+        "subject": "Testing",
+        "question": "What is a 'Bug Report'?",
+        "options": {
+            "A": "An insect list.",
+            "B": "A document describing a software defect.",
+            "C": "A fix.",
+            "D": "Code."
+        },
+        "correctAnswer": "B",
+        "explanation": "Communication of defects."
+    },
+    {
+        "id": 389,
+        "subject": "Soft Skills",
+        "question": "What is 'Time Management'?",
+        "options": {
+            "A": "Wearing a watch.",
+            "B": "The process of organizing and planning how to divide your time between specific activities.",
+            "C": "Working fast.",
+            "D": "Being late."
+        },
+        "correctAnswer": "B",
+        "explanation": "Essential for productivity."
+    },
+    {
+        "id": 390,
+        "subject": "Data",
+        "question": "What is 'Backup'?",
+        "options": {
+            "A": "Going back.",
+            "B": "A copy of data taken and stored elsewhere so that it may be used to restore the original after a data loss event.",
+            "C": "Deleting.",
+            "D": "Coding."
+        },
+        "correctAnswer": "B",
+        "explanation": "Insurance for data."
+    },
+    {
+        "id": 391,
+        "subject": "Web",
+        "question": "What is 'IP'?",
+        "options": {
+            "A": "Intellectual Property.",
+            "B": "Internet Protocol.",
+            "C": "Internal Port.",
+            "D": "Address."
+        },
+        "correctAnswer": "B",
+        "explanation": "The rules of the internet."
+    },
+    {
+        "id": 392,
+        "subject": "Security",
+        "question": "What is 'Malware'?",
+        "options": {
+            "A": "Bad wear.",
+            "B": "Malicious Software.",
+            "C": "A hardware.",
+            "D": "A User."
+        },
+        "correctAnswer": "B",
+        "explanation": "Viruses, worms, trojans."
+    },
+    {
+        "id": 393,
+        "subject": "DevOps",
+        "question": "What is 'Monitoring'?",
+        "options": {
+            "A": "Watching TV.",
+            "B": "The process of collecting, analyzing, and using information to track applications and infrastructure.",
+            "C": "Coding.",
+            "D": "Testing."
+        },
+        "correctAnswer": "B",
+        "explanation": "Keeping the lights on."
+    },
+    {
+        "id": 394,
+        "subject": "JavaScript",
+        "question": "What is a 'Callback'?",
+        "options": {
+            "A": "A phone call.",
+            "B": "A function passed as an argument to another function.",
+            "C": "A variable.",
+            "D": "An error."
+        },
+        "correctAnswer": "B",
+        "explanation": "Basis of async JS."
+    },
+    {
+        "id": 395,
+        "subject": "Mobile",
+        "question": "What is 'App Store'?",
+        "options": {
+            "A": "A shop.",
+            "B": "A digital distribution platform for mobile apps.",
+            "C": "A website.",
+            "D": "A database."
+        },
+        "correctAnswer": "B",
+        "explanation": "Where you get apps."
+    },
+    {
+        "id": 396,
+        "subject": "Networking",
+        "question": "What is 'Wifi'?",
+        "options": {
+            "A": "Magic.",
+            "B": "A wireless networking technology.",
+            "C": "A cable.",
+            "D": "A server."
+        },
+        "correctAnswer": "B",
+        "explanation": "Radio waves for internet."
+    },
+    {
+        "id": 397,
+        "subject": "Career",
+        "question": "What is a 'Resume'?",
+        "options": {
+            "A": "To continue.",
+            "B": "A document used to present your background, skills, and accomplishments.",
+            "C": "A job.",
+            "D": "A portfolio."
+        },
+        "correctAnswer": "B",
+        "explanation": "Your ticket to an interview."
+    },
+    {
+        "id": 398,
+        "subject": "Performance",
+        "question": "What is 'Compression'?",
+        "options": {
+            "A": "Squeezing.",
+            "B": "Encoding information using fewer bits than the original representation.",
+            "C": "Deleting.",
+            "D": "Coding."
+        },
+        "correctAnswer": "B",
+        "explanation": "Makes files smaller."
+    },
+    {
+        "id": 399,
+        "subject": "Data Structures",
+        "question": "What is a 'Stack'?",
+        "options": {
+            "A": "A pile.",
+            "B": "A Last-In-First-Out (LIFO) data structure.",
+            "C": "A queue.",
+            "D": "A list."
+        },
+        "correctAnswer": "B",
+        "explanation": "Like a stack of plates."
+    },
+    {
+        "id": 400,
+        "subject": "Final",
+        "question": "What is 'Code'?",
+        "options": {
+            "A": "Secret message.",
+            "B": "Instructions for a computer.",
+            "C": "A password.",
+            "D": "A game."
+        },
+        "correctAnswer": "B",
+        "explanation": "The language of machines."
+    }
 ]
