@@ -5,26 +5,16 @@ import { BackButton } from "@/components/app/Backbutton";
 import Navbar from "@/components/app/Navbar";
 import { ReportDocument } from "@/components/app/ReportDocument";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { STORIES_READ, TEST_RESULTS } from "@/constants";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import {
-  ChevronRight,
   Download,
   FileCheck,
   Loader2,
-  Sparkles,
   TrendingUp,
   Trophy,
-  Users
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Bar,
   BarChart,
@@ -52,14 +42,6 @@ interface UserStats {
   averageScore: number;
 }
 
-interface StudentProfile {
-  name: string;
-  gradient: string;
-  image: string;
-  url: string | null;
-  accentColor: string; // CSS color for shadows/rings
-}
-
 // --- THEME UTILS ---
 const getColorForScore = (score: number) => {
   if (score >= 90) return "#34d399"; // Emerald 400
@@ -77,43 +59,6 @@ const Results = () => {
   });
   const [graphData, setGraphData] = useState<any[]>([]);
   const [isClient, setIsClient] = useState(false);
-  const navigate = useNavigate();
-
-  // Dialog State
-  const [showSelectionDialog, setShowSelectionDialog] = useState(true);
-
-  // Student Profiles Data
-  const profiles: StudentProfile[] = [
-    {
-      name: "Matilda",
-      gradient: "from-indigo-500 to-purple-600",
-      accentColor: "indigo",
-      image: "/images/matilda.png",
-      url: null,
-    },
-    {
-      name: "Ryanne",
-      gradient: "from-blue-400 to-cyan-500",
-      accentColor: "blue",
-      image: "/images/ryanne.png",
-      url: "/ryanne/results",
-    },
-    {
-      name: "Sowon",
-      gradient: "from-emerald-400 to-teal-500",
-      accentColor: "emerald",
-      image: "/images/sowon.png",
-      url: "/gavin/results",
-    },
-  ];
-
-  const handleProfileSelect = (profile: StudentProfile) => {
-    if (profile.url === null) {
-      setShowSelectionDialog(false);
-    } else {
-      navigate(profile.url);
-    }
-  };
 
   useEffect(() => {
     setIsClient(true);
@@ -167,90 +112,7 @@ const Results = () => {
   return (
     <div className="min-h-screen bg-gray-50/50 dark:bg-gray-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BackButton />
-      {/* --- SELECTION DIALOG --- */}
-      <Dialog open={showSelectionDialog} onOpenChange={setShowSelectionDialog}>
-        <DialogContent
-          className="sm:max-w-3xl border-none shadow-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl p-8"
-          onInteractOutside={(e) => e.preventDefault()}
-        >
-          <DialogHeader className="mb-6 ">
-            <DialogTitle className="text-center">
-              <span className="block text-3xl font-extrabold text-gray-900 dark:text-gray-100 mb-2 tracking-tight">
-                Welcome Back
-              </span>
-              <span className="text-gray-500 font-medium text-base">
-                Who is checking their progress today?
-              </span>
-            </DialogTitle>
-          </DialogHeader>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {profiles.map((profile) => {
-              const isActive = profile.url === null;
-              return (
-                <div
-                  key={profile.name}
-                  onClick={() => handleProfileSelect(profile)}
-                  className={`
-                    group relative cursor-pointer 
-                    flex flex-col items-center justify-center 
-                    p-6 rounded-3xl 
-                    bg-white dark:bg-gray-800 
-                    border border-gray-100 dark:border-gray-700
-                    shadow-sm hover:shadow-xl hover:shadow-${
-                      profile.accentColor
-                    }-100 dark:hover:shadow-none
-                    transition-all duration-300 ease-out
-                    hover:-translate-y-1
-                    ${
-                      isActive
-                        ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-gray-900"
-                        : ""
-                    }
-                  `}
-                >
-                  {/* Active Badge */}
-                  {isActive && (
-                    <div className="absolute top-4 right-4 flex items-center gap-1 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">
-                      <Sparkles className="w-3 h-3" />
-                      You
-                    </div>
-                  )}
-
-                  {/* Avatar Section */}
-                  <div className="relative w-24 h-24 mb-5">
-                    {/* Soft Glow Background */}
-                    <div
-                      className={`absolute inset-0 rounded-full bg-gradient-to-br ${profile.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
-                    />
-
-                    {/* Image Container - Clean Ring instead of Border */}
-                    <div className="relative w-full h-full rounded-full p-1 bg-white dark:bg-gray-800 shadow-lg ring-1 ring-gray-100 dark:ring-gray-700">
-                      <div className="w-full h-full rounded-full overflow-hidden relative">
-                        <img
-                          src={profile.image}
-                          alt={profile.name}
-                          className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <h3 className="font-bold text-gray-900 dark:text-white text-lg group-hover:text-indigo-600 transition-colors">
-                    {profile.name}
-                  </h3>
-
-                  <div className="mt-2 flex items-center text-xs font-semibold text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
-                    {isActive ? "View Dashboard" : "Switch Profile"}
-                    <ChevronRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </DialogContent>
-      </Dialog>
-
+      
       <Navbar />
 
       <div className="max-w-7xl mx-auto">
@@ -269,15 +131,6 @@ const Results = () => {
           </div>
 
           <div className="flex max-md:hidden flex-row gap-3">
-            <Button
-              variant="outline"
-              onClick={() => setShowSelectionDialog(true)}
-              className="bg-white hover:bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700"
-            >
-              <Users className="w-4 h-4 mr-2" />
-              Switch Profile
-            </Button>
-
             {isClient && graphData.length > 0 && (
               <PDFDownloadLink
                 document={
@@ -304,15 +157,6 @@ const Results = () => {
         </div>
 
         <div className="flex w-full md:hidden justify-end items-center mb-4  flex-row gap-3">
-          <Button
-            variant="outline"
-            onClick={() => setShowSelectionDialog(true)}
-            className="bg-white hover:bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700"
-          >
-            <Users className="w-4 h-4 mr-2" />
-            Switch Profile
-          </Button>
-
           {isClient && graphData.length > 0 && (
             <PDFDownloadLink
               document={<ReportDocument stats={stats} graphData={graphData} />}
