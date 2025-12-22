@@ -800,5 +800,1605 @@ export const quizData: QuizType[] = [
     "options": { "A": "are", "B": "is", "C": "am", "D": "were" },
     "correctAnswer": "B",
     "explanation": "My name 'is' John."
+  },
+  {
+    "id": 101,
+    "subject": "Mathematics Activities",
+    "question": "Which number comes before 20?",
+    "options": { "A": "19", "B": "21", "C": "18", "D": "10" },
+    "correctAnswer": "A",
+    "explanation": "19 comes just before 20."
+  },
+  {
+    "id": 102,
+    "subject": "English Activities",
+    "question": "Choose the vowel: a, b, c, d",
+    "options": { "A": "b", "B": "c", "C": "a", "D": "d" },
+    "correctAnswer": "C",
+    "explanation": "'a' is a vowel. The vowels are a, e, i, o, u."
+  },
+  {
+    "id": 103,
+    "subject": "Kiswahili Activities",
+    "question": "Hii ni nini? (Picha ya kitabu)",
+    "options": { "A": "Kalamu", "B": "Kitabu", "C": "Mfuko", "D": "Rula" },
+    "correctAnswer": "B",
+    "explanation": "Hiki ni kitabu cha kusoma."
+  },
+  {
+    "id": 104,
+    "subject": "Environmental Activities",
+    "question": "A hen lives in a ________.",
+    "options": { "A": "Kennel", "B": "Hutch", "C": "Coop", "D": "Shed" },
+    "correctAnswer": "C",
+    "explanation": "A house for a hen is called a coop."
+  },
+  {
+    "id": 105,
+    "subject": "Hygiene and Nutrition",
+    "question": "We use a ________ to wipe our nose.",
+    "options": { "A": "Shirt", "B": "Handkerchief", "C": "Hand", "D": "Paper" },
+    "correctAnswer": "B",
+    "explanation": "We use a handkerchief to clean the nose."
+  },
+  {
+    "id": 106,
+    "subject": "CRE",
+    "question": "God calls us by our ________.",
+    "options": { "A": "Clothes", "B": "Shoes", "C": "Names", "D": "Hair" },
+    "correctAnswer": "C",
+    "explanation": "God knows us by our names."
+  },
+  {
+    "id": 107,
+    "subject": "Creative Arts",
+    "question": "Which bird is found on the Kenyan flag?",
+    "options": { "A": "Eagle", "B": "Rooster", "C": "Dove", "D": "Owl" },
+    "correctAnswer": "B",
+    "explanation": "The rooster holding an axe is on the coat of arms/flag shield."
+  },
+  {
+    "id": 108,
+    "subject": "Mathematics Activities",
+    "question": "Which object is long?",
+    "options": { "A": "A Stick", "B": "A Stone", "C": "A Ball", "D": "An Apple" },
+    "correctAnswer": "A",
+    "explanation": "Sticks are usually long."
+  },
+  {
+    "id": 109,
+    "subject": "English Activities",
+    "question": "The cow is ________ the tree.",
+    "options": { "A": "under", "B": "top", "C": "in", "D": "over" },
+    "correctAnswer": "A",
+    "explanation": "The cow stands under the tree for shade."
+  },
+  {
+    "id": 110,
+    "subject": "Kiswahili Activities",
+    "question": "Wingi wa neno 'Jicho' ni ________.",
+    "options": { "A": "Macho", "B": "Vijicho", "C": "Majicho", "D": "Jicho" },
+    "correctAnswer": "A",
+    "explanation": "Jicho moja, macho mawili."
+  },
+  {
+    "id": 111,
+    "subject": "Environmental Activities",
+    "question": "We get light from ________ at night.",
+    "options": { "A": "Sun", "B": "Electricity/Lamp", "C": "Darkness", "D": "Wind" },
+    "correctAnswer": "B",
+    "explanation": "Lamps or electricity give light at night."
+  },
+  {
+    "id": 112,
+    "subject": "Hygiene and Nutrition",
+    "question": "Which of these is a body building food?",
+    "options": { "A": "Beans", "B": "Sweets", "C": "Cabbage", "D": "Orange" },
+    "correctAnswer": "A",
+    "explanation": "Beans help the body to grow."
+  },
+  {
+    "id": 113,
+    "subject": "CRE",
+    "question": "The Bible has ________ parts.",
+    "options": { "A": "One", "B": "Two", "C": "Three", "D": "Four" },
+    "correctAnswer": "B",
+    "explanation": "The Old Testament and the New Testament."
+  },
+  {
+    "id": 114,
+    "subject": "Creative Arts",
+    "question": "We wear costumes when we ________.",
+    "options": { "A": "Sleep", "B": "Act a play", "C": "Bath", "D": "Eat" },
+    "correctAnswer": "B",
+    "explanation": "Costumes are for acting and performing."
+  },
+  {
+    "id": 115,
+    "subject": "Mathematics Activities",
+    "question": "How many legs does a cow have?",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "correctAnswer": "C",
+    "explanation": "A cow has 4 legs."
+  },
+  {
+    "id": 116,
+    "subject": "English Activities",
+    "question": "A cat ________.",
+    "options": { "A": "barks", "B": "purrs", "C": "roars", "D": "quacks" },
+    "correctAnswer": "B",
+    "explanation": "Cats purr when they are happy."
+  },
+  {
+    "id": 117,
+    "subject": "Kiswahili Activities",
+    "question": "Mwalimu wetu ni ________.",
+    "options": { "A": "Mzuri", "B": "Mbaya", "C": "Mchafu", "D": "Mjinga" },
+    "correctAnswer": "A",
+    "explanation": "Tunapenda mwalimu wetu, ni mzuri."
+  },
+  {
+    "id": 118,
+    "subject": "Environmental Activities",
+    "question": "Which animal lives in a hole?",
+    "options": { "A": "Cow", "B": "Snake", "C": "Bird", "D": "Goat" },
+    "correctAnswer": "B",
+    "explanation": "Snakes often live in holes."
+  },
+  {
+    "id": 119,
+    "subject": "Hygiene and Nutrition",
+    "question": "We should keep the toilet ________.",
+    "options": { "A": "Wet", "B": "Dirty", "C": "Clean", "D": "Open" },
+    "correctAnswer": "C",
+    "explanation": "A clean toilet prevents diseases."
+  },
+  {
+    "id": 120,
+    "subject": "CRE",
+    "question": "Jesus healed the ________.",
+    "options": { "A": "Sick", "B": "Trees", "C": "Houses", "D": "Stones" },
+    "correctAnswer": "A",
+    "explanation": "Jesus healed sick people."
+  },
+  {
+    "id": 121,
+    "subject": "Creative Arts",
+    "question": "Which line is curved? C or |",
+    "options": { "A": "|", "B": "C", "C": "T", "D": "L" },
+    "correctAnswer": "B",
+    "explanation": "C is a curved line."
+  },
+  {
+    "id": 122,
+    "subject": "Mathematics Activities",
+    "question": "Which number is greater: 15 or 51?",
+    "options": { "A": "15", "B": "51", "C": "Equal", "D": "None" },
+    "correctAnswer": "B",
+    "explanation": "51 has 5 tens, 15 has 1 ten."
+  },
+  {
+    "id": 123,
+    "subject": "English Activities",
+    "question": "Today is Monday. Yesterday was ________.",
+    "options": { "A": "Tuesday", "B": "Sunday", "C": "Friday", "D": "Saturday" },
+    "correctAnswer": "B",
+    "explanation": "Sunday comes before Monday."
+  },
+  {
+    "id": 124,
+    "subject": "Kiswahili Activities",
+    "question": "Mtoto wa ng'ombe anaitwa ________.",
+    "options": { "A": "Ndama", "B": "Kwana", "C": "Kifaranga", "D": "Mbuzi" },
+    "correctAnswer": "A",
+    "explanation": "Mtoto wa ng'ombe ni ndama."
+  },
+  {
+    "id": 125,
+    "subject": "Environmental Activities",
+    "question": "We sit on a ________.",
+    "options": { "A": "Table", "B": "Chair", "C": "Wall", "D": "Roof" },
+    "correctAnswer": "B",
+    "explanation": "Chairs are made for sitting."
+  },
+  {
+    "id": 126,
+    "subject": "Hygiene and Nutrition",
+    "question": "Rotten teeth cause ________.",
+    "options": { "A": "Joy", "B": "Pain", "C": "Health", "D": "Sleep" },
+    "correctAnswer": "B",
+    "explanation": "Bad teeth are painful."
+  },
+  {
+    "id": 127,
+    "subject": "CRE",
+    "question": "Zacchaeus was a ________ man.",
+    "options": { "A": "Tall", "B": "Short", "C": "Big", "D": "Fat" },
+    "correctAnswer": "B",
+    "explanation": "Zacchaeus was short and climbed a tree."
+  },
+  {
+    "id": 128,
+    "subject": "Creative Arts",
+    "question": "A kayamba is filled with ________.",
+    "options": { "A": "Water", "B": "Seeds", "C": "Air", "D": "Cotton" },
+    "correctAnswer": "B",
+    "explanation": "Seeds inside the kayamba make the shaking sound."
+  },
+  {
+    "id": 129,
+    "subject": "Mathematics Activities",
+    "question": "3 + 0 = ?",
+    "options": { "A": "3", "B": "0", "C": "30", "D": "13" },
+    "correctAnswer": "A",
+    "explanation": "Adding zero changes nothing."
+  },
+  {
+    "id": 130,
+    "subject": "English Activities",
+    "question": "The plural of 'Book' is ________.",
+    "options": { "A": "Bookes", "B": "Book", "C": "Books", "D": "Bookies" },
+    "correctAnswer": "C",
+    "explanation": "Add 's' to make book plural."
+  },
+  {
+    "id": 131,
+    "subject": "Kiswahili Activities",
+    "question": "Mkono una vidole vingapi?",
+    "options": { "A": "Vinne", "B": "Viwili", "C": "Vitano", "D": "Kumi" },
+    "correctAnswer": "C",
+    "explanation": "Mkono mmoja una vidole vitano."
+  },
+  {
+    "id": 132,
+    "subject": "Environmental Activities",
+    "question": "A policeman keeps us ________.",
+    "options": { "A": "Safe", "B": "Sad", "C": "Sick", "D": "Cold" },
+    "correctAnswer": "A",
+    "explanation": "Police maintain safety and order."
+  },
+  {
+    "id": 133,
+    "subject": "Hygiene and Nutrition",
+    "question": "We should cover food to keep away ________.",
+    "options": { "A": "Flies", "B": "Children", "C": "Spoons", "D": "Plates" },
+    "correctAnswer": "A",
+    "explanation": "Flies carry germs to uncovered food."
+  },
+  {
+    "id": 134,
+    "subject": "CRE",
+    "question": "The three wise men brought ________.",
+    "options": { "A": "Food", "B": "Gifts", "C": "Books", "D": "Cars" },
+    "correctAnswer": "B",
+    "explanation": "They brought gifts of gold, frankincense, and myrrh."
+  },
+  {
+    "id": 135,
+    "subject": "Creative Arts",
+    "question": "We use our ________ to draw.",
+    "options": { "A": "Feet", "B": "Hands", "C": "Nose", "D": "Ears" },
+    "correctAnswer": "B",
+    "explanation": "We hold pencils with our hands."
+  },
+  {
+    "id": 136,
+    "subject": "Mathematics Activities",
+    "question": "Which shape has 3 sides?",
+    "options": { "A": "Square", "B": "Triangle", "C": "Circle", "D": "Rectangle" },
+    "correctAnswer": "B",
+    "explanation": "A triangle has three sides."
+  },
+  {
+    "id": 137,
+    "subject": "English Activities",
+    "question": "A fish can ________.",
+    "options": { "A": "Walk", "B": "Swim", "C": "Fly", "D": "Run" },
+    "correctAnswer": "B",
+    "explanation": "Fish swim in water."
+  },
+  {
+    "id": 138,
+    "subject": "Kiswahili Activities",
+    "question": "Kinyume cha 'Lia' ni ________.",
+    "options": { "A": "Cheka", "B": "Imba", "C": "Kimbia", "D": "Lala" },
+    "correctAnswer": "A",
+    "explanation": "Kinyume cha kulia ni kucheka."
+  },
+  {
+    "id": 139,
+    "subject": "Environmental Activities",
+    "question": "Trees give us ________.",
+    "options": { "A": "Milk", "B": "Shade", "C": "Plastic", "D": "Metal" },
+    "correctAnswer": "B",
+    "explanation": "Trees provide shade from the sun."
+  },
+  {
+    "id": 140,
+    "subject": "Hygiene and Nutrition",
+    "question": "Medicine should be kept away from ________.",
+    "options": { "A": "Doctors", "B": "Children", "C": "Nurses", "D": "Adults" },
+    "correctAnswer": "B",
+    "explanation": "Medicine is dangerous if children play with it."
+  },
+  {
+    "id": 141,
+    "subject": "CRE",
+    "question": "God is our ________.",
+    "options": { "A": "Father", "B": "Enemy", "C": "Stranger", "D": "Toy" },
+    "correctAnswer": "A",
+    "explanation": "We call God our Father in heaven."
+  },
+  {
+    "id": 142,
+    "subject": "Creative Arts",
+    "question": "Blue and Yellow makes ________.",
+    "options": { "A": "Red", "B": "Green", "C": "Black", "D": "White" },
+    "correctAnswer": "B",
+    "explanation": "Blue mixed with Yellow creates Green."
+  },
+  {
+    "id": 143,
+    "subject": "Mathematics Activities",
+    "question": "10 - 2 = ?",
+    "options": { "A": "8", "B": "12", "C": "9", "D": "7" },
+    "correctAnswer": "A",
+    "explanation": "10 take away 2 is 8."
+  },
+  {
+    "id": 144,
+    "subject": "English Activities",
+    "question": "I have a big ________.",
+    "options": { "A": "boll", "B": "ball", "C": "bell", "D": "bull" },
+    "correctAnswer": "B",
+    "explanation": "The correct word for the toy is 'ball'."
+  },
+  {
+    "id": 145,
+    "subject": "Kiswahili Activities",
+    "question": "Jina langu ________ Ali.",
+    "options": { "A": "ni", "B": "na", "C": "wa", "D": "ya" },
+    "correctAnswer": "A",
+    "explanation": "Jina langu ni Ali."
+  },
+  {
+    "id": 146,
+    "subject": "Environmental Activities",
+    "question": "During the day, we see the ________.",
+    "options": { "A": "Moon", "B": "Sun", "C": "Stars", "D": "Bats" },
+    "correctAnswer": "B",
+    "explanation": "The sun shines during the day."
+  },
+  {
+    "id": 147,
+    "subject": "Hygiene and Nutrition",
+    "question": "We wipe a wet table with a ________.",
+    "options": { "A": "Paper", "B": "Cloth", "C": "Leaf", "D": "Stick" },
+    "correctAnswer": "B",
+    "explanation": "A cloth absorbs water and cleans the table."
+  },
+  {
+    "id": 148,
+    "subject": "CRE",
+    "question": "The wife of Adam was ________.",
+    "options": { "A": "Mary", "B": "Eve", "C": "Sarah", "D": "Ruth" },
+    "correctAnswer": "B",
+    "explanation": "Eve was the first woman and wife of Adam."
+  },
+  {
+    "id": 149,
+    "subject": "Creative Arts",
+    "question": "We skip using a ________.",
+    "options": { "A": "Rope", "B": "Stone", "C": "Ball", "D": "Mat" },
+    "correctAnswer": "A",
+    "explanation": "A skipping rope is used for skipping."
+  },
+  {
+    "id": 150,
+    "subject": "Mathematics Activities",
+    "question": "Which one is empty?",
+    "options": { "A": "Full cup", "B": "Cup with no water", "C": "Half cup", "D": "Heavy cup" },
+    "correctAnswer": "B",
+    "explanation": "Empty means containing nothing."
+  },
+  {
+    "id": 151,
+    "subject": "English Activities",
+    "question": "Mother is cooking in the ________.",
+    "options": { "A": "Bedroom", "B": "Kitchen", "C": "Toilet", "D": "Bus" },
+    "correctAnswer": "B",
+    "explanation": "Cooking is done in the kitchen."
+  },
+  {
+    "id": 152,
+    "subject": "Kiswahili Activities",
+    "question": "Bendera yetu ina rangi ________.",
+    "options": { "A": "Nne", "B": "Tatu", "C": "Mbili", "D": "Moja" },
+    "correctAnswer": "A",
+    "explanation": "Bendera ya Kenya ina rangi nne: Nyeusi, Nyeupe, Nyekundu, Kijani."
+  },
+  {
+    "id": 153,
+    "subject": "Environmental Activities",
+    "question": "We go to school to ________.",
+    "options": { "A": "Sleep", "B": "Learn", "C": "Fight", "D": "Cry" },
+    "correctAnswer": "B",
+    "explanation": "School is a place for learning."
+  },
+  {
+    "id": 154,
+    "subject": "Hygiene and Nutrition",
+    "question": "Uncooked food is called ________.",
+    "options": { "A": "Raw", "B": "Ripe", "C": "Bad", "D": "Hot" },
+    "correctAnswer": "A",
+    "explanation": "Food that hasn't been cooked is raw."
+  },
+  {
+    "id": 155,
+    "subject": "CRE",
+    "question": "Who killed the giant Goliath?",
+    "options": { "A": "Saul", "B": "David", "C": "Samuel", "D": "Jesse" },
+    "correctAnswer": "B",
+    "explanation": "David defeated Goliath."
+  },
+  {
+    "id": 156,
+    "subject": "Creative Arts",
+    "question": "A song sung by one person is a ________.",
+    "options": { "A": "Solo", "B": "Choir", "C": "Dance", "D": "Duet" },
+    "correctAnswer": "A",
+    "explanation": "Solo means alone."
+  },
+  {
+    "id": 157,
+    "subject": "Mathematics Activities",
+    "question": "How many toes do you have on one foot?",
+    "options": { "A": "4", "B": "5", "C": "10", "D": "2" },
+    "correctAnswer": "B",
+    "explanation": "One foot has 5 toes."
+  },
+  {
+    "id": 158,
+    "subject": "English Activities",
+    "question": "The sun is ________.",
+    "options": { "A": "Cold", "B": "Hot", "C": "Wet", "D": "Dark" },
+    "correctAnswer": "B",
+    "explanation": "The sun produces heat."
+  },
+  {
+    "id": 159,
+    "subject": "Kiswahili Activities",
+    "question": "Siku ya kwanza ya wiki ni ________.",
+    "options": { "A": "Jumamosi", "B": "Jumapili", "C": "Jumatatu", "D": "Ijumaa" },
+    "correctAnswer": "B",
+    "explanation": "Jumapili ni siku ya kwanza."
+  },
+  {
+    "id": 160,
+    "subject": "Environmental Activities",
+    "question": "A goat eats ________.",
+    "options": { "A": "Meat", "B": "Grass", "C": "Stones", "D": "Sand" },
+    "correctAnswer": "B",
+    "explanation": "Goats are herbivores and eat grass."
+  },
+  {
+    "id": 161,
+    "subject": "Hygiene and Nutrition",
+    "question": "We should not eat food with ________ hands.",
+    "options": { "A": "Clean", "B": "Dirty", "C": "Soft", "D": "Warm" },
+    "correctAnswer": "B",
+    "explanation": "Dirty hands transfer germs."
+  },
+  {
+    "id": 162,
+    "subject": "CRE",
+    "question": "Jesus had ________ disciples.",
+    "options": { "A": "10", "B": "12", "C": "5", "D": "7" },
+    "correctAnswer": "B",
+    "explanation": "There were 12 disciples."
+  },
+  {
+    "id": 163,
+    "subject": "Creative Arts",
+    "question": "Which color is dark?",
+    "options": { "A": "Yellow", "B": "Black", "C": "White", "D": "Pink" },
+    "correctAnswer": "B",
+    "explanation": "Black is the darkest color."
+  },
+  {
+    "id": 164,
+    "subject": "Mathematics Activities",
+    "question": "1, 2, 3, 4, ________.",
+    "options": { "A": "6", "B": "5", "C": "7", "D": "8" },
+    "correctAnswer": "B",
+    "explanation": "The next number is 5."
+  },
+  {
+    "id": 165,
+    "subject": "English Activities",
+    "question": "An elephant is ________.",
+    "options": { "A": "Small", "B": "Big", "C": "Tiny", "D": "Thin" },
+    "correctAnswer": "B",
+    "explanation": "Elephants are large animals."
+  },
+  {
+    "id": 166,
+    "subject": "Kiswahili Activities",
+    "question": "Ninasikia na ________.",
+    "options": { "A": "Macho", "B": "Masikio", "C": "Pua", "D": "Mdomo" },
+    "correctAnswer": "B",
+    "explanation": "Masikio hutumika kusikia."
+  },
+  {
+    "id": 167,
+    "subject": "Environmental Activities",
+    "question": "Which one is a source of water?",
+    "options": { "A": "Tap", "B": "Stone", "C": "Chair", "D": "Fire" },
+    "correctAnswer": "A",
+    "explanation": "We get water from a tap, river, or rain."
+  },
+  {
+    "id": 168,
+    "subject": "Hygiene and Nutrition",
+    "question": "Milk is good for our ________.",
+    "options": { "A": "Hair", "B": "Bones and Teeth", "C": "Clothes", "D": "Shoes" },
+    "correctAnswer": "B",
+    "explanation": "Calcium in milk builds strong bones."
+  },
+  {
+    "id": 169,
+    "subject": "CRE",
+    "question": "We should ________ those who wrong us.",
+    "options": { "A": "Beat", "B": "Forgive", "C": "Hate", "D": "Bite" },
+    "correctAnswer": "B",
+    "explanation": "God teaches us to forgive."
+  },
+  {
+    "id": 170,
+    "subject": "Creative Arts",
+    "question": "We use a ________ to cut paper.",
+    "options": { "A": "Spoon", "B": "Scissors", "C": "Pencil", "D": "Stick" },
+    "correctAnswer": "B",
+    "explanation": "Scissors are used for cutting."
+  },
+  {
+    "id": 171,
+    "subject": "Mathematics Activities",
+    "question": "How many wheels does a bicycle have?",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "B",
+    "explanation": "Bi-cycle means two wheels."
+  },
+  {
+    "id": 172,
+    "subject": "English Activities",
+    "question": "The teacher sits on a ________.",
+    "options": { "A": "Desk", "B": "Chair", "C": "Table", "D": "Floor" },
+    "correctAnswer": "B",
+    "explanation": "Teachers sit on chairs."
+  },
+  {
+    "id": 173,
+    "subject": "Kiswahili Activities",
+    "question": "Hii ni rangi gani? (Picha ya nyasi)",
+    "options": { "A": "Kijani", "B": "Nyekundu", "C": "Nyeusi", "D": "Manjano" },
+    "correctAnswer": "A",
+    "explanation": "Nyasi ni za kijani."
+  },
+  {
+    "id": 174,
+    "subject": "Environmental Activities",
+    "question": "A baby dog is called a ________.",
+    "options": { "A": "Kitten", "B": "Puppy", "C": "Cub", "D": "Calf" },
+    "correctAnswer": "B",
+    "explanation": "A young dog is a puppy."
+  },
+  {
+    "id": 175,
+    "subject": "Hygiene and Nutrition",
+    "question": "We wash our hands with soap and ________.",
+    "options": { "A": "Water", "B": "Dirt", "C": "Oil", "D": "Sand" },
+    "correctAnswer": "A",
+    "explanation": "Water is needed to rinse the soap."
+  },
+  {
+    "id": 176,
+    "subject": "CRE",
+    "question": "Who is our creator?",
+    "options": { "A": "Man", "B": "God", "C": "Satan", "D": "Trees" },
+    "correctAnswer": "B",
+    "explanation": "God created everyone."
+  },
+  {
+    "id": 177,
+    "subject": "Creative Arts",
+    "question": "A circle is ________.",
+    "options": { "A": "Round", "B": "Square", "C": "Straight", "D": "Sharp" },
+    "correctAnswer": "A",
+    "explanation": "Circles are round shapes."
+  },
+  {
+    "id": 178,
+    "subject": "Mathematics Activities",
+    "question": "Which is the smallest number?",
+    "options": { "A": "1", "B": "5", "C": "10", "D": "20" },
+    "correctAnswer": "A",
+    "explanation": "1 is the smallest here."
+  },
+  {
+    "id": 179,
+    "subject": "English Activities",
+    "question": "I go to school by ________.",
+    "options": { "A": "Bus", "B": "House", "C": "Tree", "D": "Bed" },
+    "correctAnswer": "A",
+    "explanation": "A bus is a vehicle."
+  },
+  {
+    "id": 180,
+    "subject": "Kiswahili Activities",
+    "question": "Mama anapika ________.",
+    "options": { "A": "Chakula", "B": "Maji", "C": "Ubao", "D": "Nguo" },
+    "correctAnswer": "A",
+    "explanation": "Tunapika chakula."
+  },
+  {
+    "id": 181,
+    "subject": "Environmental Activities",
+    "question": "We hear with our ________.",
+    "options": { "A": "Eyes", "B": "Ears", "C": "Nose", "D": "Skin" },
+    "correctAnswer": "B",
+    "explanation": "Ears are for hearing."
+  },
+  {
+    "id": 182,
+    "subject": "Hygiene and Nutrition",
+    "question": "A clean body smells ________.",
+    "options": { "A": "Bad", "B": "Good", "C": "Stinky", "D": "Sour" },
+    "correctAnswer": "B",
+    "explanation": "Cleanliness results in a good smell."
+  },
+  {
+    "id": 183,
+    "subject": "CRE",
+    "question": "Noah built an ________.",
+    "options": { "A": "Ark", "B": "Aeroplane", "C": "Car", "D": "House" },
+    "correctAnswer": "A",
+    "explanation": "Noah built the Ark."
+  },
+  {
+    "id": 184,
+    "subject": "Creative Arts",
+    "question": "We use paint and a ________.",
+    "options": { "A": "Brush", "B": "Needle", "C": "Hammer", "D": "Spoon" },
+    "correctAnswer": "A",
+    "explanation": "Paintbrushes are used to paint."
+  },
+  {
+    "id": 185,
+    "subject": "Mathematics Activities",
+    "question": "5 + 5 = ?",
+    "options": { "A": "5", "B": "10", "C": "15", "D": "20" },
+    "correctAnswer": "B",
+    "explanation": "5 plus 5 equals 10."
+  },
+  {
+    "id": 186,
+    "subject": "English Activities",
+    "question": "The boy is ________ a ball.",
+    "options": { "A": "kicking", "B": "kick", "C": "kicks", "D": "kicked" },
+    "correctAnswer": "A",
+    "explanation": "Present continuous: kicking."
+  },
+  {
+    "id": 187,
+    "subject": "Kiswahili Activities",
+    "question": "Mtu anayefunza watoto shuleni ni ________.",
+    "options": { "A": "Daktari", "B": "Mwalimu", "C": "Polisi", "D": "Dereva" },
+    "correctAnswer": "B",
+    "explanation": "Mwalimu hufundisha."
+  },
+  {
+    "id": 188,
+    "subject": "Environmental Activities",
+    "question": "We model using ________ soil.",
+    "options": { "A": "Sand", "B": "Clay", "C": "Dust", "D": "Stones" },
+    "correctAnswer": "B",
+    "explanation": "Clay soil sticks together."
+  },
+  {
+    "id": 189,
+    "subject": "Hygiene and Nutrition",
+    "question": "We should brush our teeth ________ a day.",
+    "options": { "A": "Once", "B": "Twice", "C": "Never", "D": "Monthly" },
+    "correctAnswer": "B",
+    "explanation": "Morning and evening (twice)."
+  },
+  {
+    "id": 190,
+    "subject": "CRE",
+    "question": "The Bible is a Holy ________.",
+    "options": { "A": "Book", "B": "Stone", "C": "Stick", "D": "Table" },
+    "correctAnswer": "A",
+    "explanation": "The Bible is the Holy Book."
+  },
+  {
+    "id": 191,
+    "subject": "Creative Arts",
+    "question": "Which one is a musical instrument?",
+    "options": { "A": "Drum", "B": "Book", "C": "Chair", "D": "Pencil" },
+    "correctAnswer": "A",
+    "explanation": "A drum produces music."
+  },
+  {
+    "id": 192,
+    "subject": "Mathematics Activities",
+    "question": "Count the stars: * * *",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "There are 3 stars."
+  },
+  {
+    "id": 193,
+    "subject": "English Activities",
+    "question": "Opposite of 'Boy' is ________.",
+    "options": { "A": "Man", "B": "Girl", "C": "Lady", "D": "Baby" },
+    "correctAnswer": "B",
+    "explanation": "Girl is the opposite gender of Boy."
+  },
+  {
+    "id": 194,
+    "subject": "Kiswahili Activities",
+    "question": "Tunda gani ni jekundu?",
+    "options": { "A": "Nyanya/Tufaha", "B": "Ndizi", "C": "Chungwa", "D": "Nanasi" },
+    "correctAnswer": "A",
+    "explanation": "Nyanya au Tufaha (Apple) ni jekundu."
+  },
+  {
+    "id": 195,
+    "subject": "Environmental Activities",
+    "question": "Which animal gives us wool?",
+    "options": { "A": "Cow", "B": "Sheep", "C": "Goat", "D": "Pig" },
+    "correctAnswer": "B",
+    "explanation": "Sheep provide wool."
+  },
+  {
+    "id": 196,
+    "subject": "Hygiene and Nutrition",
+    "question": "We cut our nails using a ________.",
+    "options": { "A": "Knife", "B": "Nail cutter", "C": "Panga", "D": "Teeth" },
+    "correctAnswer": "B",
+    "explanation": "Use a nail cutter or razor blade safely."
+  },
+  {
+    "id": 197,
+    "subject": "CRE",
+    "question": "The father of Jesus on earth was ________.",
+    "options": { "A": "Peter", "B": "Joseph", "C": "Paul", "D": "John" },
+    "correctAnswer": "B",
+    "explanation": "Joseph was the earthly father of Jesus."
+  },
+  {
+    "id": 198,
+    "subject": "Creative Arts",
+    "question": "We dance to the ________ of music.",
+    "options": { "A": "Smell", "B": "Rhythm", "C": "Color", "D": "Taste" },
+    "correctAnswer": "B",
+    "explanation": "Rhythm helps us dance."
+  },
+  {
+    "id": 199,
+    "subject": "Mathematics Activities",
+    "question": "Which number comes after 9?",
+    "options": { "A": "8", "B": "10", "C": "11", "D": "7" },
+    "correctAnswer": "B",
+    "explanation": "10 follows 9."
+  },
+  {
+    "id": 200,
+    "subject": "English Activities",
+    "question": "We sleep at ________.",
+    "options": { "A": "Noon", "B": "Morning", "C": "Night", "D": "Evening" },
+    "correctAnswer": "C",
+    "explanation": "Night is for sleeping."
+  },
+  {
+    "id": 201,
+    "subject": "Mathematics Activities",
+    "question": "What is 2 + 1?",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "1" },
+    "correctAnswer": "B",
+    "explanation": "2 plus 1 makes 3."
+  },
+  {
+    "id": 202,
+    "subject": "English Activities",
+    "question": "My mother's sister is my ______.",
+    "options": { "A": "Uncle", "B": "Aunt", "C": "Grandma", "D": "Sister" },
+    "correctAnswer": "B",
+    "explanation": "Your mother's sister is your aunt."
+  },
+  {
+    "id": 203,
+    "subject": "Kiswahili Activities",
+    "question": "Mimi nina miguu ______.",
+    "options": { "A": "Miaka", "B": "Miwili", "C": "Mitatu", "D": "Nne" },
+    "correctAnswer": "B",
+    "explanation": "Binadamu ana miguu miwili."
+  },
+  {
+    "id": 204,
+    "subject": "Environmental Activities",
+    "question": "A cow gives us ______.",
+    "options": { "A": "Wool", "B": "Milk", "C": "Eggs", "D": "Honey" },
+    "correctAnswer": "B",
+    "explanation": "We get milk from cows."
+  },
+  {
+    "id": 205,
+    "subject": "Hygiene and Nutrition",
+    "question": "We wash our hands ______ eating.",
+    "options": { "A": "Before", "B": "After", "C": "While", "D": "Never" },
+    "correctAnswer": "A",
+    "explanation": "We must wash hands before eating to remove germs."
+  },
+  {
+    "id": 206,
+    "subject": "CRE",
+    "question": "God created the world in ______ days.",
+    "options": { "A": "5", "B": "6", "C": "7", "D": "10" },
+    "correctAnswer": "B",
+    "explanation": "Creation took 6 days, and He rested on the 7th."
+  },
+  {
+    "id": 207,
+    "subject": "Creative Arts",
+    "question": "The colour of grass is ______.",
+    "options": { "A": "Red", "B": "Green", "C": "Blue", "D": "Yellow" },
+    "correctAnswer": "B",
+    "explanation": "Healthy grass is green."
+  },
+  {
+    "id": 208,
+    "subject": "Mathematics Activities",
+    "question": "Which shape is round?",
+    "options": { "A": "Square", "B": "Circle", "C": "Triangle", "D": "Rectangle" },
+    "correctAnswer": "B",
+    "explanation": "A circle is round."
+  },
+  {
+    "id": 209,
+    "subject": "English Activities",
+    "question": "I ______ with my eyes.",
+    "options": { "A": "See", "B": "Hear", "C": "Smell", "D": "Touch" },
+    "correctAnswer": "A",
+    "explanation": "Eyes are for seeing."
+  },
+  {
+    "id": 210,
+    "subject": "Kiswahili Activities",
+    "question": "Hujambo?",
+    "options": { "A": "Marahaba", "B": "Sijambo", "C": "Asante", "D": "Kwaheri" },
+    "correctAnswer": "B",
+    "explanation": "Jibu la Hujambo ni Sijambo."
+  },
+  {
+    "id": 211,
+    "subject": "Environmental Activities",
+    "question": "When it rains, we use an ______.",
+    "options": { "A": "Umbrella", "B": "Apple", "C": "Egg", "D": "Orange" },
+    "correctAnswer": "A",
+    "explanation": "An umbrella protects us from rain."
+  },
+  {
+    "id": 212,
+    "subject": "Hygiene and Nutrition",
+    "question": "We use a ______ to brush teeth.",
+    "options": { "A": "Comb", "B": "Toothbrush", "C": "Spoon", "D": "Knife" },
+    "correctAnswer": "B",
+    "explanation": "A toothbrush cleans teeth."
+  },
+  {
+    "id": 213,
+    "subject": "CRE",
+    "question": "The first man was ______.",
+    "options": { "A": "Eve", "B": "Adam", "C": "Moses", "D": "Jesus" },
+    "correctAnswer": "B",
+    "explanation": "Adam was the first man."
+  },
+  {
+    "id": 214,
+    "subject": "Creative Arts",
+    "question": "We use ______ to stick paper.",
+    "options": { "A": "Water", "B": "Glue", "C": "Sand", "D": "Stone" },
+    "correctAnswer": "B",
+    "explanation": "Glue is an adhesive."
+  },
+  {
+    "id": 215,
+    "subject": "Mathematics Activities",
+    "question": "Count: 1, 2, 3, 4, __",
+    "options": { "A": "5", "B": "6", "C": "7", "D": "8" },
+    "correctAnswer": "A",
+    "explanation": "5 follows 4."
+  },
+  {
+    "id": 216,
+    "subject": "English Activities",
+    "question": "A dog says ______.",
+    "options": { "A": "Moo", "B": "Woof", "C": "Meow", "D": "Quack" },
+    "correctAnswer": "B",
+    "explanation": "Dogs bark 'woof'."
+  },
+  {
+    "id": 217,
+    "subject": "Kiswahili Activities",
+    "question": "Baba wa baba yangu ni ______.",
+    "options": { "A": "Mjomba", "B": "Babu", "C": "Kaka", "D": "Dada" },
+    "correctAnswer": "B",
+    "explanation": "Baba wa baba ni Babu."
+  },
+  {
+    "id": 218,
+    "subject": "Environmental Activities",
+    "question": "Fish live in ______.",
+    "options": { "A": "Air", "B": "Water", "C": "Sand", "D": "Fire" },
+    "correctAnswer": "B",
+    "explanation": "Fish need water to survive."
+  },
+  {
+    "id": 219,
+    "subject": "Hygiene and Nutrition",
+    "question": "Dirty nails have ______.",
+    "options": { "A": "Germs", "B": "Food", "C": "Money", "D": "Sweets" },
+    "correctAnswer": "A",
+    "explanation": "Germs hide in dirty nails."
+  },
+  {
+    "id": 220,
+    "subject": "CRE",
+    "question": "We talk to God through ______.",
+    "options": { "A": "Sleep", "B": "Prayer", "C": "Food", "D": "Play" },
+    "correctAnswer": "B",
+    "explanation": "Prayer is talking to God."
+  },
+  {
+    "id": 221,
+    "subject": "Creative Arts",
+    "question": "The sky is ______.",
+    "options": { "A": "Green", "B": "Blue", "C": "Red", "D": "Yellow" },
+    "correctAnswer": "B",
+    "explanation": "On a clear day, the sky is blue."
+  },
+  {
+    "id": 222,
+    "subject": "Mathematics Activities",
+    "question": "5 take away 2 is ______.",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "correctAnswer": "B",
+    "explanation": "5 - 2 = 3."
+  },
+  {
+    "id": 223,
+    "subject": "English Activities",
+    "question": "I write with a ______.",
+    "options": { "A": "Book", "B": "Pencil", "C": "Ruler", "D": "Rubber" },
+    "correctAnswer": "B",
+    "explanation": "Pencils are for writing."
+  },
+  {
+    "id": 224,
+    "subject": "Kiswahili Activities",
+    "question": "Kichwa, mabega, magoti na ______.",
+    "options": { "A": "Macho", "B": "Vidole", "C": "Mikono", "D": "Miguu" },
+    "correctAnswer": "B",
+    "explanation": "Wimbo: ...na vidole."
+  },
+  {
+    "id": 225,
+    "subject": "Environmental Activities",
+    "question": "Which one is a domestic animal?",
+    "options": { "A": "Lion", "B": "Cat", "C": "Zebra", "D": "Snake" },
+    "correctAnswer": "B",
+    "explanation": "Cats are kept at home."
+  },
+  {
+    "id": 226,
+    "subject": "Hygiene and Nutrition",
+    "question": "We should ______ fruits before eating.",
+    "options": { "A": "Cook", "B": "Wash", "C": "Cut", "D": "Paint" },
+    "correctAnswer": "B",
+    "explanation": "Washing removes dirt."
+  },
+  {
+    "id": 227,
+    "subject": "CRE",
+    "question": "Jesus was born in ______.",
+    "options": { "A": "Nairobi", "B": "Bethlehem", "C": "Egypt", "D": "Nazareth" },
+    "correctAnswer": "B",
+    "explanation": "Jesus was born in Bethlehem."
+  },
+  {
+    "id": 228,
+    "subject": "Creative Arts",
+    "question": "We clap our ______.",
+    "options": { "A": "Legs", "B": "Hands", "C": "Ears", "D": "Eyes" },
+    "correctAnswer": "B",
+    "explanation": "We clap hands."
+  },
+  {
+    "id": 229,
+    "subject": "Mathematics Activities",
+    "question": "Which is smaller: 1 or 10?",
+    "options": { "A": "1", "B": "10", "C": "Both", "D": "None" },
+    "correctAnswer": "A",
+    "explanation": "1 is less than 10."
+  },
+  {
+    "id": 230,
+    "subject": "English Activities",
+    "question": "Opposite of 'Happy' is ______.",
+    "options": { "A": "Good", "B": "Sad", "C": "Big", "D": "Tall" },
+    "correctAnswer": "B",
+    "explanation": "Sad is opposite of happy."
+  },
+  {
+    "id": 231,
+    "subject": "Kiswahili Activities",
+    "question": "Jina la nchi yetu ni ______.",
+    "options": { "A": "Uganda", "B": "Kenya", "C": "Tanzania", "D": "China" },
+    "correctAnswer": "B",
+    "explanation": "Tunaishi Kenya."
+  },
+  {
+    "id": 232,
+    "subject": "Environmental Activities",
+    "question": "The sun gives us ______.",
+    "options": { "A": "Water", "B": "Light", "C": "Darkness", "D": "Cold" },
+    "correctAnswer": "B",
+    "explanation": "Sun provides light."
+  },
+  {
+    "id": 233,
+    "subject": "Hygiene and Nutrition",
+    "question": "A dentist treats our ______.",
+    "options": { "A": "Eyes", "B": "Teeth", "C": "Ears", "D": "Legs" },
+    "correctAnswer": "B",
+    "explanation": "Dentists care for teeth."
+  },
+  {
+    "id": 234,
+    "subject": "CRE",
+    "question": "The mother of Jesus is ______.",
+    "options": { "A": "Eve", "B": "Mary", "C": "Sarah", "D": "Ruth" },
+    "correctAnswer": "B",
+    "explanation": "Mary is Jesus' mother."
+  },
+  {
+    "id": 235,
+    "subject": "Creative Arts",
+    "question": "Drum makes sound by ______.",
+    "options": { "A": "Blowing", "B": "Hitting", "C": "Shaking", "D": "Plucking" },
+    "correctAnswer": "B",
+    "explanation": "You hit a drum."
+  },
+  {
+    "id": 236,
+    "subject": "Mathematics Activities",
+    "question": "7 days make one ______.",
+    "options": { "A": "Year", "B": "Week", "C": "Month", "D": "Day" },
+    "correctAnswer": "B",
+    "explanation": "A week has 7 days."
+  },
+  {
+    "id": 237,
+    "subject": "English Activities",
+    "question": "Plural of 'Cat' is ______.",
+    "options": { "A": "Cates", "B": "Cats", "C": "Cat", "D": "Kitten" },
+    "correctAnswer": "B",
+    "explanation": "Add 's': Cats."
+  },
+  {
+    "id": 238,
+    "subject": "Kiswahili Activities",
+    "question": "Kinyume cha 'Simama' ni ______.",
+    "options": { "A": "Keti", "B": "Tembea", "C": "Lala", "D": "Kimbia" },
+    "correctAnswer": "A",
+    "explanation": "Keti (sit) is opposite of simama (stand)."
+  },
+  {
+    "id": 239,
+    "subject": "Environmental Activities",
+    "question": "Clay soil is best for ______.",
+    "options": { "A": "Farming", "B": "Modeling", "C": "Building", "D": "Playing" },
+    "correctAnswer": "B",
+    "explanation": "Clay is sticky for modeling."
+  },
+  {
+    "id": 240,
+    "subject": "Hygiene and Nutrition",
+    "question": "We sleep in the ______.",
+    "options": { "A": "Kitchen", "B": "Bedroom", "C": "Toilet", "D": "Class" },
+    "correctAnswer": "B",
+    "explanation": "Bedrooms are for sleeping."
+  },
+  {
+    "id": 241,
+    "subject": "CRE",
+    "question": "Who built the Ark?",
+    "options": { "A": "Moses", "B": "Noah", "C": "David", "D": "Paul" },
+    "correctAnswer": "B",
+    "explanation": "Noah built it."
+  },
+  {
+    "id": 242,
+    "subject": "Creative Arts",
+    "question": "Red + Yellow = ______.",
+    "options": { "A": "Green", "B": "Orange", "C": "Blue", "D": "Black" },
+    "correctAnswer": "B",
+    "explanation": "Red mixed with Yellow makes Orange."
+  },
+  {
+    "id": 243,
+    "subject": "Mathematics Activities",
+    "question": "Which line is straight? | or S",
+    "options": { "A": "S", "B": "|", "C": "C", "D": "O" },
+    "correctAnswer": "B",
+    "explanation": "| is straight."
+  },
+  {
+    "id": 244,
+    "subject": "English Activities",
+    "question": "A pair of shoes means ______.",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "B",
+    "explanation": "A pair is two items."
+  },
+  {
+    "id": 245,
+    "subject": "Kiswahili Activities",
+    "question": "Ng'ombe hula ______.",
+    "options": { "A": "Nyama", "B": "Nyasi", "C": "Maziwa", "D": "Mayai" },
+    "correctAnswer": "B",
+    "explanation": "Ng'ombe hula nyasi."
+  },
+  {
+    "id": 246,
+    "subject": "Environmental Activities",
+    "question": "We wear gumboots in ______.",
+    "options": { "A": "Mud", "B": "Bed", "C": "School", "D": "Sun" },
+    "correctAnswer": "A",
+    "explanation": "Gumboots protect from mud."
+  },
+  {
+    "id": 247,
+    "subject": "Hygiene and Nutrition",
+    "question": "We comb our ______.",
+    "options": { "A": "Teeth", "B": "Hair", "C": "Eyes", "D": "Nose" },
+    "correctAnswer": "B",
+    "explanation": "Hair is combed."
+  },
+  {
+    "id": 248,
+    "subject": "CRE",
+    "question": "David used a ______ to kill Goliath.",
+    "options": { "A": "Gun", "B": "Stone", "C": "Knife", "D": "Stick" },
+    "correctAnswer": "B",
+    "explanation": "A stone in a sling."
+  },
+  {
+    "id": 249,
+    "subject": "Creative Arts",
+    "question": "Crayons are for ______.",
+    "options": { "A": "Eating", "B": "Colouring", "C": "Writing", "D": "Cutting" },
+    "correctAnswer": "B",
+    "explanation": "Crayons add colour."
+  },
+  {
+    "id": 250,
+    "subject": "Mathematics Activities",
+    "question": "10 - 5 = ?",
+    "options": { "A": "2", "B": "5", "C": "10", "D": "15" },
+    "correctAnswer": "B",
+    "explanation": "10 take away 5 is 5."
+  },
+  {
+    "id": 251,
+    "subject": "English Activities",
+    "question": "The baby is ______.",
+    "options": { "A": "Cry", "B": "Crying", "C": "Cries", "D": "Cried" },
+    "correctAnswer": "B",
+    "explanation": "Currently crying."
+  },
+  {
+    "id": 252,
+    "subject": "Kiswahili Activities",
+    "question": "Mwalimu hutumia ______ ubaoni.",
+    "options": { "A": "Kalamu", "B": "Chaki", "C": "Penseli", "D": "Wino" },
+    "correctAnswer": "B",
+    "explanation": "Chaki (chalk) hutumika ubaoni."
+  },
+  {
+    "id": 253,
+    "subject": "Environmental Activities",
+    "question": "Wild animals live in the ______.",
+    "options": { "A": "Home", "B": "Forest", "C": "School", "D": "Town" },
+    "correctAnswer": "B",
+    "explanation": "Forests are for wild animals."
+  },
+  {
+    "id": 254,
+    "subject": "Hygiene and Nutrition",
+    "question": "Handkerchief is for the ______.",
+    "options": { "A": "Feet", "B": "Nose", "C": "Hair", "D": "Ear" },
+    "correctAnswer": "B",
+    "explanation": "We wipe the nose."
+  },
+  {
+    "id": 255,
+    "subject": "CRE",
+    "question": "Jonah was swallowed by a ______.",
+    "options": { "A": "Lion", "B": "Fish", "C": "Dog", "D": "Cat" },
+    "correctAnswer": "B",
+    "explanation": "A big fish."
+  },
+  {
+    "id": 256,
+    "subject": "Creative Arts",
+    "question": "Camera takes ______.",
+    "options": { "A": "Sound", "B": "Photos", "C": "Food", "D": "Water" },
+    "correctAnswer": "B",
+    "explanation": "Photos/Pictures."
+  },
+  {
+    "id": 257,
+    "subject": "Mathematics Activities",
+    "question": "Which is heavy? Stone or Feather?",
+    "options": { "A": "Feather", "B": "Stone", "C": "Same", "D": "None" },
+    "correctAnswer": "B",
+    "explanation": "Stones are heavy."
+  },
+  {
+    "id": 258,
+    "subject": "English Activities",
+    "question": "An egg is an ______ shape.",
+    "options": { "A": "Circle", "B": "Oval", "C": "Square", "D": "Star" },
+    "correctAnswer": "B",
+    "explanation": "Eggs are oval."
+  },
+  {
+    "id": 259,
+    "subject": "Kiswahili Activities",
+    "question": "Mtoto wa kuku ni ______.",
+    "options": { "A": "Kifaranga", "B": "Ndama", "C": "Paka", "D": "Mbwa" },
+    "correctAnswer": "A",
+    "explanation": "Kifaranga (chick)."
+  },
+  {
+    "id": 260,
+    "subject": "Environmental Activities",
+    "question": "White colour on flag means ______.",
+    "options": { "A": "Blood", "B": "Peace", "C": "Land", "D": "People" },
+    "correctAnswer": "B",
+    "explanation": "White for peace."
+  },
+  {
+    "id": 261,
+    "subject": "Hygiene and Nutrition",
+    "question": "An orange is a ______.",
+    "options": { "A": "Vegetable", "B": "Fruit", "C": "Meat", "D": "Root" },
+    "correctAnswer": "B",
+    "explanation": "Orange is a fruit."
+  },
+  {
+    "id": 262,
+    "subject": "CRE",
+    "question": "Good children ______.",
+    "options": { "A": "Steal", "B": "Share", "C": "Fight", "D": "Insult" },
+    "correctAnswer": "B",
+    "explanation": "Sharing is good."
+  },
+  {
+    "id": 263,
+    "subject": "Creative Arts",
+    "question": "Clay is found in ______.",
+    "options": { "A": "Air", "B": "Soil/Swamp", "C": "Tree", "D": "Sky" },
+    "correctAnswer": "B",
+    "explanation": "Clay is a type of soil."
+  },
+  {
+    "id": 264,
+    "subject": "Mathematics Activities",
+    "question": "10 + 10 = ?",
+    "options": { "A": "10", "B": "20", "C": "30", "D": "40" },
+    "correctAnswer": "B",
+    "explanation": "20."
+  },
+  {
+    "id": 265,
+    "subject": "English Activities",
+    "question": "This is ______ apple.",
+    "options": { "A": "a", "B": "an", "C": "at", "D": "in" },
+    "correctAnswer": "B",
+    "explanation": "'an' before vowels."
+  },
+  {
+    "id": 266,
+    "subject": "Kiswahili Activities",
+    "question": "Damu ni ______.",
+    "options": { "A": "Nyeusi", "B": "Nyekundu", "C": "Nyeupe", "D": "Kijani" },
+    "correctAnswer": "B",
+    "explanation": "Nyekundu (Red)."
+  },
+  {
+    "id": 267,
+    "subject": "Environmental Activities",
+    "question": "Broom is for ______.",
+    "options": { "A": "Cooking", "B": "Sweeping", "C": "Washing", "D": "Digging" },
+    "correctAnswer": "B",
+    "explanation": "Sweeping floors."
+  },
+  {
+    "id": 268,
+    "subject": "Hygiene and Nutrition",
+    "question": "Don't share ______.",
+    "options": { "A": "Books", "B": "Toothbrush", "C": "Desks", "D": "Pencils" },
+    "correctAnswer": "B",
+    "explanation": "Hygiene rule."
+  },
+  {
+    "id": 269,
+    "subject": "CRE",
+    "question": "We pray on ______ (Church day).",
+    "options": { "A": "Monday", "B": "Sunday", "C": "Friday", "D": "Tuesday" },
+    "correctAnswer": "B",
+    "explanation": "Sunday service."
+  },
+  {
+    "id": 270,
+    "subject": "Creative Arts",
+    "question": "National Anthem is a ______.",
+    "options": { "A": "Story", "B": "Song", "C": "Game", "D": "Dance" },
+    "correctAnswer": "B",
+    "explanation": "It is a prayer song."
+  },
+  {
+    "id": 271,
+    "subject": "Mathematics Activities",
+    "question": "Value of 2 tens?",
+    "options": { "A": "2", "B": "20", "C": "12", "D": "10" },
+    "correctAnswer": "B",
+    "explanation": "2 tens = 20."
+  },
+  {
+    "id": 272,
+    "subject": "English Activities",
+    "question": "Fingers are on ______.",
+    "options": { "A": "Feet", "B": "Hands", "C": "Head", "D": "Back" },
+    "correctAnswer": "B",
+    "explanation": "Hands have fingers."
+  },
+  {
+    "id": 273,
+    "subject": "Kiswahili Activities",
+    "question": "Umoja ni ______.",
+    "options": { "A": "Udhaifu", "B": "Nguvu", "C": "Vita", "D": "Chuki" },
+    "correctAnswer": "B",
+    "explanation": "Methali: Umoja ni nguvu."
+  },
+  {
+    "id": 274,
+    "subject": "Environmental Activities",
+    "question": "Plants need ______ to grow.",
+    "options": { "A": "Soda", "B": "Water", "C": "Milk", "D": "Tea" },
+    "correctAnswer": "B",
+    "explanation": "Water is essential."
+  },
+  {
+    "id": 275,
+    "subject": "Hygiene and Nutrition",
+    "question": "Tongue is for ______.",
+    "options": { "A": "Seeing", "B": "Tasting", "C": "Hearing", "D": "Walking" },
+    "correctAnswer": "B",
+    "explanation": "Taste buds are on the tongue."
+  },
+  {
+    "id": 276,
+    "subject": "CRE",
+    "question": "Creation story is in ______.",
+    "options": { "A": "Matthew", "B": "Genesis", "C": "Mark", "D": "Luke" },
+    "correctAnswer": "B",
+    "explanation": "Genesis book."
+  },
+  {
+    "id": 277,
+    "subject": "Creative Arts",
+    "question": "Shakers are ______ instruments.",
+    "options": { "A": "Wind", "B": "Percussion", "C": "String", "D": "Brass" },
+    "correctAnswer": "B",
+    "explanation": "Percussion (shaken/hit)."
+  },
+  {
+    "id": 278,
+    "subject": "Mathematics Activities",
+    "question": "How many months in a year?",
+    "options": { "A": "10", "B": "12", "C": "7", "D": "30" },
+    "correctAnswer": "B",
+    "explanation": "12 months."
+  },
+  {
+    "id": 279,
+    "subject": "English Activities",
+    "question": "Grandfather is ______.",
+    "options": { "A": "Mother's sister", "B": "Father's father", "C": "Sister", "D": "Brother" },
+    "correctAnswer": "B",
+    "explanation": "Father of your father."
+  },
+  {
+    "id": 280,
+    "subject": "Kiswahili Activities",
+    "question": "Baada ya sita ni ______.",
+    "options": { "A": "Tano", "B": "Saba", "C": "Nane", "D": "Tisa" },
+    "correctAnswer": "B",
+    "explanation": "Saba (7)."
+  },
+  {
+    "id": 281,
+    "subject": "Environmental Activities",
+    "question": "Gumboots are for ______.",
+    "options": { "A": "Rain/Mud", "B": "Sun", "C": "Sleep", "D": "Class" },
+    "correctAnswer": "A",
+    "explanation": "Protects feet from mud."
+  },
+  {
+    "id": 282,
+    "subject": "Hygiene and Nutrition",
+    "question": "Keep nails ______.",
+    "options": { "A": "Long", "B": "Short", "C": "Dirty", "D": "Black" },
+    "correctAnswer": "B",
+    "explanation": "Short is clean."
+  },
+  {
+    "id": 283,
+    "subject": "CRE",
+    "question": "David was a ______ boy.",
+    "options": { "A": "Soldier", "B": "Shepherd", "C": "King", "D": "Carpenter" },
+    "correctAnswer": "B",
+    "explanation": "He looked after sheep."
+  },
+  {
+    "id": 284,
+    "subject": "Creative Arts",
+    "question": "We weave ______.",
+    "options": { "A": "Stones", "B": "Mats", "C": "Water", "D": "Sand" },
+    "correctAnswer": "B",
+    "explanation": "Mats are woven."
+  },
+  {
+    "id": 285,
+    "subject": "Mathematics Activities",
+    "question": "A square has ______ sides.",
+    "options": { "A": "3", "B": "4", "C": "5", "D": "1" },
+    "correctAnswer": "B",
+    "explanation": "4 equal sides."
+  },
+  {
+    "id": 286,
+    "subject": "English Activities",
+    "question": "A chair has ______ legs.",
+    "options": { "A": "2", "B": "4", "C": "6", "D": "8" },
+    "correctAnswer": "B",
+    "explanation": "Usually 4 legs."
+  },
+  {
+    "id": 287,
+    "subject": "Kiswahili Activities",
+    "question": "Daktari hutibu ______.",
+    "options": { "A": "Gari", "B": "Wagonjwa", "C": "Miti", "D": "Viatu" },
+    "correctAnswer": "B",
+    "explanation": "Sick people (Wagonjwa)."
+  },
+  {
+    "id": 288,
+    "subject": "Environmental Activities",
+    "question": "Rubbish goes in the ______.",
+    "options": { "A": "Desk", "B": "Dustbin", "C": "Floor", "D": "Pocket" },
+    "correctAnswer": "B",
+    "explanation": "Use a dustbin."
+  },
+  {
+    "id": 289,
+    "subject": "Hygiene and Nutrition",
+    "question": "Soap makes ______.",
+    "options": { "A": "Dirt", "B": "Foam", "C": "Mud", "D": "Dust" },
+    "correctAnswer": "B",
+    "explanation": "Foam/Lather."
+  },
+  {
+    "id": 290,
+    "subject": "CRE",
+    "question": "Jesus loves ______ children.",
+    "options": { "A": "Bad", "B": "Good", "C": "Rude", "D": "Lazy" },
+    "correctAnswer": "B",
+    "explanation": "Obedient/Good children."
+  },
+  {
+    "id": 291,
+    "subject": "Creative Arts",
+    "question": "Dance uses the ______ body.",
+    "options": { "A": "Head only", "B": "Whole", "C": "Hands only", "D": "Legs only" },
+    "correctAnswer": "B",
+    "explanation": "Whole body movement."
+  },
+  {
+    "id": 292,
+    "subject": "Mathematics Activities",
+    "question": "Which is a coin?",
+    "options": { "A": "1000 note", "B": "20 shillings", "C": "Paper", "D": "Card" },
+    "correctAnswer": "B",
+    "explanation": "20 shillings is a coin."
+  },
+  {
+    "id": 293,
+    "subject": "English Activities",
+    "question": "My name ______ Peter.",
+    "options": { "A": "are", "B": "is", "C": "am", "D": "were" },
+    "correctAnswer": "B",
+    "explanation": "'is' Peter."
+  },
+  {
+    "id": 294,
+    "subject": "Kiswahili Activities",
+    "question": "Hii ni ______ (Image: Ball).",
+    "options": { "A": "Mpira", "B": "Kiatu", "C": "Gari", "D": "Nyumba" },
+    "correctAnswer": "A",
+    "explanation": "Mpira (Ball)."
+  },
+  {
+    "id": 295,
+    "subject": "Environmental Activities",
+    "question": "We cook on a ______.",
+    "options": { "A": "Bed", "B": "Stove/Fire", "C": "Table", "D": "Chair" },
+    "correctAnswer": "B",
+    "explanation": "Heat source (jiko/stove)."
+  },
+  {
+    "id": 296,
+    "subject": "Hygiene and Nutrition",
+    "question": "A ripe banana is ______.",
+    "options": { "A": "Green", "B": "Yellow", "C": "Blue", "D": "Red" },
+    "correctAnswer": "B",
+    "explanation": "Yellow when ripe."
+  },
+  {
+    "id": 297,
+    "subject": "CRE",
+    "question": "We give ______ to God.",
+    "options": { "A": "Stones", "B": "Offerings", "C": "Papers", "D": "Trash" },
+    "correctAnswer": "B",
+    "explanation": "Offerings/Tithes."
+  },
+  {
+    "id": 298,
+    "subject": "Creative Arts",
+    "question": "We draw with a ______.",
+    "options": { "A": "Spoon", "B": "Pencil", "C": "Knife", "D": "Stick" },
+    "correctAnswer": "B",
+    "explanation": "Pencil."
+  },
+  {
+    "id": 299,
+    "subject": "Mathematics Activities",
+    "question": "Number after 19?",
+    "options": { "A": "18", "B": "20", "C": "21", "D": "10" },
+    "correctAnswer": "B",
+    "explanation": "20."
+  },
+  {
+    "id": 300,
+    "subject": "English Activities",
+    "question": "I have ______ ears.",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "B",
+    "explanation": "Two ears."
   }
 ]
