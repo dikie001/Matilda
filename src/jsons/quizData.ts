@@ -802,2366 +802,1326 @@ const quizzes: QuizType[] = [
     "correctAnswer": "A",
     "explanation": "A slasher is specifically designed to cut long grass."
   },
-  {
-    id: 101,
-    subject: "Science & Technology",
-    question:
-      "Which part of a plant is mainly responsible for making food using sunlight?",
-    options: {
-      A: "Roots",
-      B: "Stem",
-      C: "Leaves",
-      D: "Seed",
-    },
-    correctAnswer: "C",
-    explanation:
-      "Leaves contain chlorophyll and perform photosynthesis, converting sunlight into food for the plant.",
-  },
-  {
-    id: 102,
-    subject: "Social Studies",
-    question: "What does the term 'democracy' mean?",
-    options: {
-      A: "Rule by one person",
-      B: "Rule by the people where citizens participate in decisions",
-      C: "No rules at all",
-      D: "Rule by foreign powers",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Democracy involves citizens participating in government decisions, typically through voting and representation.",
-  },
-  {
-    id: 103,
-    subject: "CRE",
-    question:
-      "Which Old Testament figure built an ark to save his family and animals from a flood?",
-    options: {
-      A: "Noah",
-      B: "David",
-      C: "Samuel",
-      D: "Elijah",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Noah was instructed to build an ark to survive the great flood and save living creatures.",
-  },
-  {
-    id: 104,
-    subject: "Agriculture",
-    question: "Why is drainage important in crop fields?",
-    options: {
-      A: "It prevents waterlogging and root rot",
-      B: "It increases soil acidity only",
-      C: "It makes soil salty",
-      D: "It reduces sunlight",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Proper drainage removes excess water that would otherwise suffocate roots and cause diseases.",
-  },
-  {
-    id: 105,
-    subject: "Music",
-    question: "Which sign tells the musician to repeat a section of music?",
-    options: {
-      A: "Repeat sign (double bar with dots)",
-      B: "Sharp sign",
-      C: "Flat sign",
-      D: "Natural sign",
-    },
-    correctAnswer: "A",
-    explanation:
-      "The repeat sign (double bar lines with two dots) indicates that a passage should be played again.",
-  },
-  {
-    id: 106,
-    subject: "Home Science",
-    question: "Which action conserves electricity at home?",
-    options: {
-      A: "Leaving lights on in empty rooms",
-      B: "Using energy-efficient bulbs and switching off unused appliances",
-      C: "Running all appliances at once",
-      D: "Keeping doors open when heating",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Energy-efficient bulbs and switching off appliances when not in use reduce electricity consumption.",
-  },
-  {
-    id: 107,
-    subject: "Physical & Health Education",
-    question:
-      "Which symptom suggests someone may be dehydrated during exercise?",
-    options: {
-      A: "Clear, frequent urine",
-      B: "Dry mouth and dark yellow urine",
-      C: "Feeling very cold",
-      D: "Increased appetite",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Dry mouth and dark yellow urine indicate reduced body water and are signs of dehydration.",
-  },
-  {
-    id: 108,
-    subject: "ICT/Computer Studies",
-    question: "What is the function of a web browser?",
-    options: {
-      A: "To create text documents only",
-      B: "To access and view websites on the internet",
-      C: "To edit videos",
-      D: "To print photos",
-    },
-    correctAnswer: "B",
-    explanation:
-      "A web browser (e.g., Chrome) lets users access, retrieve, and view web pages from the internet.",
-  },
-  {
-    id: 109,
-    subject: "Mathematics",
-    question: "Solve: 45 ÷ 9 + 6 = ?",
-    options: {
-      A: "11",
-      B: "15",
-      C: "5",
-      D: "10",
-    },
-    correctAnswer: "A",
-    explanation: "First divide 45 by 9 = 5, then add 6 giving 11.",
-  },
-  {
-    id: 110,
-    subject: "English",
-    question: "Which sentence shows a correct use of capital letters?",
-    options: {
-      A: "my friend lives in Nairobi.",
-      B: "My friend lives in Nairobi.",
-      C: "My friend lives in nairobi.",
-      D: "my Friend lives in Nairobi.",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The sentence starts with a capital letter and uses a capital for the proper noun 'Nairobi'.",
-  },
-  {
-    id: 111,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri sahihi ya 'Please close the door.'",
-    options: {
-      A: "Tafadhali fungua dirisha.",
-      B: "Tafadhali fungua mlango.",
-      C: "Tafadhali fikisha mlango.",
-      D: "Tafadhali funga mlango.",
-    },
-    correctAnswer: "D",
-    explanation:
-      "'Tafadhali funga mlango' directly translates to 'Please close the door', so D ni sahihi.",
-  },
-  {
-    id: 112,
-    subject: "Science & Technology",
-    question: "Which tool is best to observe tiny organisms in detail?",
-    options: {
-      A: "Telescope",
-      B: "Microscope",
-      C: "Magnifying glass only",
-      D: "Thermometer",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Microscopes magnify small organisms to a level where their structures can be seen clearly.",
-  },
-  {
-    id: 113,
-    subject: "Social Studies",
-    question: "Which body makes laws in a country with a parliament?",
-    options: {
-      A: "Judiciary",
-      B: "Parliament or legislature",
-      C: "Police",
-      D: "Hospitals",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The parliament (legislature) debates and passes laws for the country.",
-  },
-  {
-    id: 114,
-    subject: "CRE",
-    question:
-      "Which fruit is used in the Bible to test Abraham's faith (metaphorically as offering)?",
-    options: {
-      A: "Olive",
-      B: "Fig",
-      C: "There is no specific fruit; Abraham was asked to offer his son Isaac",
-      D: "Grapes",
-    },
-    correctAnswer: "C",
-    explanation:
-      "The test of Abraham involved the command to offer his son Isaac, not a specific fruit, so C is accurate.",
-  },
-  {
-    id: 115,
-    subject: "Agriculture",
-    question: "Which practice helps prevent soil erosion on slopes?",
-    options: {
-      A: "Planting trees and contour farming",
-      B: "Ploughing up and down the slope",
-      C: "Removing all vegetation",
-      D: "Burning topsoil",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Trees hold soil and contour farming follows slope lines to reduce runoff and erosion.",
-  },
-  {
-    id: 116,
-    subject: "Music",
-    question: "Which word refers to the highness or lowness of a musical note?",
-    options: {
-      A: "Tempo",
-      B: "Pitch",
-      C: "Rhythm",
-      D: "Timbre",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Pitch describes how high or low a note sounds and is measured by frequency.",
-  },
-  {
-    id: 117,
-    subject: "Home Science",
-    question: "Which is the most hygienic way to dry dishes after washing?",
-    options: {
-      A: "Leave them to air dry on a clean rack",
-      B: "Wipe with a dirty cloth",
-      C: "Shake them dry outside",
-      D: "Stack them while wet",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Air drying on a clean rack reduces recontamination and is hygienic compared to using dirty cloths.",
-  },
-  {
-    id: 118,
-    subject: "Physical & Health Education",
-    question: "Which exercise improves flexibility?",
-    options: {
-      A: "Static stretching",
-      B: "Only weightlifting",
-      C: "Sitting still",
-      D: "Watching TV",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Static stretching gently lengthens muscles and improves range of motion and flexibility.",
-  },
-  {
-    id: 119,
-    subject: "ICT/Computer Studies",
-    question: "Which device stores data permanently on a computer system?",
-    options: {
-      A: "RAM",
-      B: "Hard disk or SSD",
-      C: "CPU",
-      D: "Monitor",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Hard disks and SSDs store data long-term even when the computer is switched off; RAM is temporary.",
-  },
-  {
-    id: 120,
-    subject: "Mathematics",
-    question: "Which is an acute angle?",
-    options: {
-      A: "100 degrees",
-      B: "90 degrees",
-      C: "45 degrees",
-      D: "180 degrees",
-    },
-    correctAnswer: "C",
-    explanation:
-      "An acute angle is less than 90 degrees; 45 degrees fits this definition.",
-  },
-  {
-    id: 121,
-    subject: "English",
-    question:
-      "Which word completes the comparison: 'This book is ___ than that one.'",
-    options: {
-      A: "more interesting",
-      B: "most interesting",
-      C: "interestinger",
-      D: "interest",
-    },
-    correctAnswer: "A",
-    explanation:
-      "For comparing two items we use the comparative 'more interesting', making A correct.",
-  },
-  {
-    id: 122,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri ya 'He is a good friend.'",
-    options: {
-      A: "Yeye ni rafiki mwema.",
-      B: "Yeye ni rafiki mbaya.",
-      C: "Yeye ni mwenye furaha.",
-      D: "Yeye ni mgonjwa.",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'Yeye ni rafiki mwema' directly translates to 'He is a good friend', so A ni sahihi.",
-  },
-  {
-    id: 123,
-    subject: "Science & Technology",
-    question: "Which planet is known as the Red Planet?",
-    options: {
-      A: "Venus",
-      B: "Mars",
-      C: "Jupiter",
-      D: "Mercury",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Mars appears reddish because of iron oxide (rust) on its surface, earning the name Red Planet.",
-  },
-  {
-    id: 124,
-    subject: "Social Studies",
-    question:
-      "Which right allows citizens to choose their leaders in elections?",
-    options: {
-      A: "Right to vote",
-      B: "Right to steal",
-      C: "Right to pollute",
-      D: "Right to avoid school",
-    },
-    correctAnswer: "A",
-    explanation:
-      "The right to vote enables citizens to participate in choosing leaders through elections.",
-  },
-  {
-    id: 125,
-    subject: "CRE",
-    question: "Which commandment teaches that people should not steal?",
-    options: {
-      A: "Third commandment",
-      B: "Seventh commandment",
-      C: "Fourth commandment",
-      D: "Tenth commandment",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The seventh commandment states 'You shall not steal', teaching respect for others' property.",
-  },
-  {
-    id: 126,
-    subject: "Agriculture",
-    question:
-      "Which practice helps increase soil fertility by adding organic matter?",
-    options: {
-      A: "Applying chemical pesticides only",
-      B: "Adding compost to the soil",
-      C: "Removing crop residues",
-      D: "Burning crop fields",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Adding compost returns organic matter and nutrients to the soil, improving fertility and structure.",
-  },
-  {
-    id: 127,
-    subject: "Mathematics",
-    question: "What is 15% of 200?",
-    options: {
-      A: "15",
-      B: "30",
-      C: "25",
-      D: "20",
-    },
-    correctAnswer: "B",
-    explanation: "15% of 200 = 0.15 × 200 = 30.",
-  },
-  {
-    id: 128,
-    subject: "English",
-    question:
-      "Choose the correct sentence with proper tense: 'By the time we arrived, the film ___.'",
-    options: {
-      A: "has started",
-      B: "had started",
-      C: "will start",
-      D: "starts",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The past perfect 'had started' is used to show the film began before we arrived.",
-  },
-  {
-    id: 129,
-    subject: "Kiswahili",
-    question: "Chagua sahihi: 'Wazee waliketi ___ chini ya mti.'",
-    options: {
-      A: "sana",
-      B: "pale",
-      C: "kando",
-      D: "mara",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Waliketi pale chini ya mti' uses 'pale' to indicate the specific place under the tree.",
-  },
-  {
-    id: 130,
-    subject: "Science & Technology",
-    question: "Which of these materials is a conductor of electricity?",
-    options: {
-      A: "Plastic",
-      B: "Glass",
-      C: "Copper",
-      D: "Rubber",
-    },
-    correctAnswer: "C",
-    explanation:
-      "Copper is a metal with free electrons that allow electric current to flow, making it a conductor.",
-  },
-  {
-    id: 131,
-    subject: "Social Studies",
-    question: "What is a passport used for?",
-    options: {
-      A: "To vote in local elections",
-      B: "To travel legally to another country",
-      C: "To buy food",
-      D: "To measure distance",
-    },
-    correctAnswer: "B",
-    explanation:
-      "A passport is an official document that allows a person to travel and be identified in foreign countries.",
-  },
-  {
-    id: 132,
-    subject: "CRE",
-    question: "Which action shows compassion according to Christian teaching?",
-    options: {
-      A: "Ignoring someone's need",
-      B: "Helping a neighbour who is sick",
-      C: "Laughing at misfortune",
-      D: "Taking from the poor",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Helping someone who is sick demonstrates compassion and care, values taught in Christianity.",
-  },
-  {
-    id: 133,
-    subject: "Music",
-    question: "Which symbol raises a note by one semitone?",
-    options: {
-      A: "Flat (♭)",
-      B: "Sharp (♯)",
-      C: "Natural (♮)",
-      D: "Treble clef",
-    },
-    correctAnswer: "B",
-    explanation: "A sharp (♯) raises the pitch of a note by one semitone.",
-  },
-  {
-    id: 134,
-    subject: "Home Science",
-    question: "Which method is safest for thawing frozen meat at home?",
-    options: {
-      A: "Leaving it on the kitchen counter all day",
-      B: "Thawing in the refrigerator",
-      C: "Thawing in direct sunlight",
-      D: "Using hot water for a long time",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Thawing in the refrigerator keeps the meat at safe temperatures, reducing bacterial growth.",
-  },
-  {
-    id: 135,
-    subject: "Physical & Health Education",
-    question: "Which habit lowers the chance of catching infections?",
-    options: {
-      A: "Sharing toothbrushes",
-      B: "Covering mouth when coughing",
-      C: "Never washing hands",
-      D: "Eating spoiled food",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Covering the mouth when coughing stops droplets spreading, reducing transmission of infections.",
-  },
-  {
-    id: 136,
-    subject: "ICT/Computer Studies",
-    question:
-      "Which part of a computer is considered the 'brain' that processes instructions?",
-    options: {
-      A: "Monitor",
-      B: "CPU (central processing unit)",
-      C: "Printer",
-      D: "Mouse",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The CPU executes instructions and performs calculations, making it the computer's processing core.",
-  },
-  {
-    id: 137,
-    subject: "Mathematics",
-    question: "If 4 pens cost 160 shillings, what is the cost of one pen?",
-    options: {
-      A: "40 shillings",
-      B: "30 shillings",
-      C: "50 shillings",
-      D: "45 shillings",
-    },
-    correctAnswer: "A",
-    explanation: "Cost per pen = 160 ÷ 4 = 40 shillings.",
-  },
-  {
-    id: 138,
-    subject: "English",
-    question: "Which word correctly completes: 'He gave her a ___ smile.'",
-    options: {
-      A: "warm",
-      B: "warmer",
-      C: "warmest",
-      D: "warming",
-    },
-    correctAnswer: "A",
-    explanation:
-      "An adjective 'warm' describes the noun 'smile'; comparative or superlative are not needed here.",
-  },
-  {
-    id: 139,
-    subject: "Kiswahili",
-    question: "Tafsiri kwa Kiswahili: 'They will finish the work tomorrow.'",
-    options: {
-      A: "Watafanya kazi kesho.",
-      B: "Watamaliza kazi kesho.",
-      C: "Walifanya kazi jana.",
-      D: "Wanamaliza kazi sasa.",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Watamaliza kazi kesho' accurately means 'They will finish the work tomorrow.'",
-  },
-  {
-    id: 140,
-    subject: "Science & Technology",
-    question:
-      "Which renewable energy source uses flowing water to produce electricity?",
-    options: {
-      A: "Coal",
-      B: "Hydropower",
-      C: "Oil",
-      D: "Natural gas",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Hydropower converts the energy of flowing water into electricity using turbines and generators.",
-  },
-  {
-    id: 141,
-    subject: "Social Studies",
-    question: "Which group helps keep order and enforce laws in a community?",
-    options: {
-      A: "Police",
-      B: "Chefs",
-      C: "Farmers",
-      D: "Artists",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Police are tasked with enforcing laws and maintaining public order in the community.",
-  },
-  {
-    id: 142,
-    subject: "CRE",
-    question:
-      "Which fruit is often used as a symbol of peace in Christian art (and elsewhere)?",
-    options: {
-      A: "Apple",
-      B: "Olive branch (fruit/leaf)",
-      C: "Banana",
-      D: "Mango",
-    },
-    correctAnswer: "B",
-    explanation:
-      "An olive branch is a long-standing symbol of peace and reconciliation in Christian and other traditions.",
-  },
-  {
-    id: 143,
-    subject: "Agriculture",
-    question:
-      "Which crop is commonly intercropped with maize to improve use of space on small farms?",
-    options: {
-      A: "Rice",
-      B: "Beans",
-      C: "Wheat",
-      D: "Barley",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Beans are often intercropped with maize because they grow well together and beans fix nitrogen helping soil.",
-  },
-  {
-    id: 144,
-    subject: "Music",
-    question: "Which of the following shows a slow tempo instruction in music?",
-    options: {
-      A: "Allegro",
-      B: "Presto",
-      C: "Largo",
-      D: "Vivace",
-    },
-    correctAnswer: "C",
-    explanation:
-      "Largo indicates a slow and broad tempo; Allegro and Presto are fast, Vivace is lively.",
-  },
-  {
-    id: 145,
-    subject: "Home Science",
-    question: "What is the safest way to store cleaning chemicals at home?",
-    options: {
-      A: "On a low shelf away from food and reach of children",
-      B: "Next to baby food",
-      C: "Unlabelled in a drinking cup",
-      D: "On the floor in the kitchen sink",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Storing chemicals on a low, locked shelf away from food and children reduces accidental poisoning risks.",
-  },
-  {
-    id: 146,
-    subject: "Physical & Health Education",
-    question: "Which habit supports good mental health for children?",
-    options: {
-      A: "Regular sleep and playtime",
-      B: "Never talking about feelings",
-      C: "Skipping meals often",
-      D: "Isolating from friends all the time",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Regular sleep and play help emotional regulation, social skills, and overall mental well-being in children.",
-  },
-  {
-    id: 147,
-    subject: "ICT/Computer Studies",
-    question: "Which of the following is a safe practice online?",
-    options: {
-      A: "Sharing your password with friends",
-      B: "Using strong, unique passwords and not sharing them",
-      C: "Clicking unknown links without checking",
-      D: "Posting your home address publicly",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Using strong, unique passwords and keeping them private helps protect online accounts from unauthorized access.",
-  },
-  {
-    id: 148,
-    subject: "Mathematics",
-    question: "Which number is a factor of both 8 and 12?",
-    options: {
-      A: "5",
-      B: "4",
-      C: "7",
-      D: "9",
-    },
-    correctAnswer: "B",
-    explanation:
-      "4 divides both 8 (8 ÷ 4 = 2) and 12 (12 ÷ 4 = 3), so it is a common factor.",
-  },
-  {
-    id: 149,
-    subject: "English",
-    question: "Which word is a synonym for 'happy'?",
-    options: {
-      A: "Sad",
-      B: "Angry",
-      C: "Joyful",
-      D: "Tired",
-    },
-    correctAnswer: "C",
-    explanation:
-      "'Joyful' has a similar meaning to 'happy', both expressing positive emotion.",
-  },
-  {
-    id: 150,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri sahihi ya 'My mother is cooking lunch.'",
-    options: {
-      A: "Mama yangu anapika chakula cha mchana.",
-      B: "Mama yangu anasafisha nyumba.",
-      C: "Baba yangu anapika chakula cha mchana.",
-      D: "Mama yangu anakula mchana.",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'Mama yangu anapika chakula cha mchana' directly means 'My mother is cooking lunch', so A is correct.",
-  },
-  {
-    id: 151,
-    subject: "Science & Technology",
-    question:
-      "Which observed change indicates a chemical reaction has occurred?",
-    options: {
-      A: "Change of shape",
-      B: "Formation of gas or bubbles",
-      C: "Moving an object",
-      D: "Folding a paper",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The formation of gas or bubbles often shows new substances are being produced, a sign of a chemical reaction.",
-  },
-  {
-    id: 152,
-    subject: "Mathematics",
-    question: "Convert 2 hours 30 minutes to minutes.",
-    options: {
-      A: "120 minutes",
-      B: "150 minutes",
-      C: "180 minutes",
-      D: "200 minutes",
-    },
-    correctAnswer: "B",
-    explanation:
-      "2 hours = 120 minutes; plus 30 minutes gives 150 minutes in total.",
-  },
-  {
-    id: 153,
-    subject: "English",
-    question:
-      "Choose the correct homophone: 'They went to ___ house to visit.'",
-    options: {
-      A: "there",
-      B: "their",
-      C: "they're",
-      D: "thare",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Their' is the possessive form used before 'house' to show ownership: 'their house.'",
-  },
-  {
-    id: 154,
-    subject: "Kiswahili",
-    question: "Tafsiri: 'He reads quietly every morning.' Which is correct?",
-    options: {
-      A: "Anasoma kwa sauti kila asubuhi.",
-      B: "Anasoma kimya kimya kila asubuhi.",
-      C: "Anakula kila asubuhi.",
-      D: "Analala kila usiku.",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Anasoma kimya kimya kila asubuhi' means 'He reads quietly every morning', so B is correct.",
-  },
-  {
-    id: 155,
-    subject: "Social Studies",
-    question:
-      "Which organization helps countries work together on health issues worldwide?",
-    options: {
-      A: "World Health Organization (WHO)",
-      B: "Local bakery",
-      C: "Football club",
-      D: "Private bank",
-    },
-    correctAnswer: "A",
-    explanation:
-      "The World Health Organization coordinates international public health efforts and guidance.",
-  },
-  {
-    id: 156,
-    subject: "CRE",
-    question:
-      "Which act is an example of showing love to your neighbour in Christian teaching?",
-    options: {
-      A: "Ignoring someone in need",
-      B: "Helping a neighbour with food",
-      C: "Harming others",
-      D: "Stealing from a friend",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Helping a neighbour with food shows compassion and love, which Christianity teaches to practise.",
-  },
-  {
-    id: 157,
-    subject: "Agriculture",
-    question:
-      "Which tool is best for cutting grass in a small homestead garden?",
-    options: {
-      A: "Sickle",
-      B: "Combine harvester",
-      C: "Ploughing tractor",
-      D: "Threshing machine",
-    },
-    correctAnswer: "A",
-    explanation:
-      "A sickle is a simple hand tool suitable for cutting grass and harvesting small crops around a homestead.",
-  },
-  {
-    id: 158,
-    subject: "Music",
-    question: "Which voice type typically sings the highest notes in a choir?",
-    options: {
-      A: "Bass",
-      B: "Alto",
-      C: "Tenor",
-      D: "Soprano",
-    },
-    correctAnswer: "D",
-    explanation:
-      "Soprano is the highest female voice in a choir and usually sings the highest melodic lines.",
-  },
-  {
-    id: 159,
-    subject: "Home Science",
-    question: "Which practice prevents spoilage of cooked food left overnight?",
-    options: {
-      A: "Cooling quickly and refrigerating",
-      B: "Leaving it uncovered at room temperature",
-      C: "Storing in direct sunlight",
-      D: "Keeping it near the stove",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Cooling food quickly and refrigerating slows bacterial growth and prevents spoilage and foodborne illness.",
-  },
-  {
-    id: 160,
-    subject: "Physical & Health Education",
-    question:
-      "Which activity helps improve balance and coordination in children?",
-    options: {
-      A: "Swinging and hopping games",
-      B: "Only sitting quietly",
-      C: "Watching television",
-      D: "Eating fast food",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Active play like swinging and hopping develops balance, coordination, and motor skills in children.",
-  },
-  {
-    id: 161,
-    subject: "ICT/Computer Studies",
-    question: "Which part of an email holds the main message you write?",
-    options: {
-      A: "Subject line",
-      B: "Attachment",
-      C: "Body",
-      D: "Signature",
-    },
-    correctAnswer: "C",
-    explanation:
-      "The body of an email is where you type the main message content for the recipient to read.",
-  },
-  {
-    id: 162,
-    subject: "Mathematics",
-    question: "What is 7 × 8?",
-    options: {
-      A: "48",
-      B: "54",
-      C: "56",
-      D: "63",
-    },
-    correctAnswer: "C",
-    explanation: "Multiplying 7 by 8 gives 56, a basic multiplication fact.",
-  },
-  {
-    id: 163,
-    subject: "English",
-    question:
-      "Choose the correct article: 'She adopted ___ cat from the shelter.'",
-    options: {
-      A: "a",
-      B: "an",
-      C: "the",
-      D: "no article needed",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'A' is used before a consonant sound for a singular, non-specific noun: 'a cat.'",
-  },
-  {
-    id: 164,
-    subject: "Kiswahili",
-    question: "Chagua jibu sahihi: 'Suku zote ninasafiri ___ basi.'",
-    options: {
-      A: "kwa",
-      B: "kwenda",
-      C: "kwa mpira",
-      D: "kusafiri",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'Siku zote ninasafiri kwa basi' uses the preposition 'kwa' to indicate the means of travel.",
-  },
-  {
-    id: 165,
-    subject: "Science & Technology",
-    question:
-      "Which metal is commonly used to make cooking pots because it conducts heat well?",
-    options: {
-      A: "Aluminium",
-      B: "Wood",
-      C: "Glass",
-      D: "Plastic",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Aluminium is lightweight and a good heat conductor, making it suitable for cooking pots.",
-  },
-  {
-    id: 166,
-    subject: "Social Studies",
-    question: "Which feature helps a town develop into a city?",
-    options: {
-      A: "Reduced trade",
-      B: "Improved infrastructure and services",
-      C: "Less population",
-      D: "Closed schools",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Improved infrastructure (roads, hospitals) and services attract people and businesses, leading to city growth.",
-  },
-  {
-    id: 167,
-    subject: "CRE",
-    question:
-      "Which act is an example of forgiveness taught in Christian faith?",
-    options: {
-      A: "Holding a grudge",
-      B: "Forgiving someone who apologizes",
-      C: "Seeking revenge",
-      D: "Refusing to listen",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Forgiving someone who apologises reflects the Christian value of mercy and reconciliation.",
-  },
-  {
-    id: 168,
-    subject: "Agriculture",
-    question:
-      "Which method helps farmers protect crops from wild animals at night?",
-    options: {
-      A: "Leaving fields unattended",
-      B: "Using scarecrows or guarding at night",
-      C: "Planting in forested areas only",
-      D: "Watering continuously",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Scarecrows, fencing, or guarding can deter animals and protect crops during vulnerable night hours.",
-  },
-  {
-    id: 169,
-    subject: "Music",
-    question: "Which term means to play very softly in musical notation?",
-    options: {
-      A: "Forte (f)",
-      B: "Piano (p)",
-      C: "Fortissimo (ff)",
-      D: "Crescendo",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Piano, indicated by 'p', directs musicians to play softly; forte indicates loud playing.",
-  },
-  {
-    id: 170,
-    subject: "Home Science",
-    question:
-      "Which is a balanced meal component that should be included for growth?",
-    options: {
-      A: "Proteins, carbohydrates, and vegetables",
-      B: "Only sweets",
-      C: "Only salty snacks",
-      D: "Only drinks",
-    },
-    correctAnswer: "A",
-    explanation:
-      "A balanced meal includes proteins, carbohydrates, and vegetables to provide energy and nutrients for growth.",
-  },
-  {
-    id: 171,
-    subject: "Physical & Health Education",
-    question: "Which warm-up action prepares muscles for running?",
-    options: {
-      A: "Static sitting",
-      B: "Light jogging and dynamic stretches",
-      C: "Sleeping",
-      D: "Eating a large meal immediately",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Light jogging and dynamic stretches gently raise heart rate and loosen muscles for safer running.",
-  },
-  {
-    id: 172,
-    subject: "ICT/Computer Studies",
-    question:
-      "Which device would you use to listen to audio from a computer privately?",
-    options: {
-      A: "Printer",
-      B: "Headphones",
-      C: "Router",
-      D: "Keyboard",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Headphones deliver sound directly to the ears, allowing private listening of computer audio.",
-  },
-  {
-    id: 173,
-    subject: "Mathematics",
-    question: "How many faces does a cube have?",
-    options: {
-      A: "6",
-      B: "8",
-      C: "4",
-      D: "12",
-    },
-    correctAnswer: "A",
-    explanation:
-      "A cube has 6 square faces, one on each side of the solid shape.",
-  },
-  {
-    id: 174,
-    subject: "English",
-    question:
-      "Which word is a verb in the sentence: 'Children play games after school.'",
-    options: {
-      A: "Children",
-      B: "play",
-      C: "games",
-      D: "school",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Play' is the action performed and functions as the verb in this sentence.",
-  },
-  {
-    id: 175,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri sahihi: 'She sells fruits at the market.'",
-    options: {
-      A: "Anauza matunda sokoni.",
-      B: "Anakula matunda sokoni.",
-      C: "Ananunua matunda sokoni.",
-      D: "Anapika matunda sokoni.",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'Anauza matunda sokoni' means 'She sells fruits at the market', so A is correct.",
-  },
-  {
-    id: 176,
-    subject: "Science & Technology",
-    question:
-      "Which material is transparent and lets light pass through clearly?",
-    options: {
-      A: "Glass",
-      B: "Wood",
-      C: "Brick",
-      D: "Metal",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Glass is transparent, allowing light to pass through so objects can be seen clearly.",
-  },
-  {
-    id: 177,
-    subject: "Social Studies",
-    question: "What does the term 'heritage' refer to in a community?",
-    options: {
-      A: "Only modern buildings",
-      B: "History, culture and traditions passed from ancestors",
-      C: "Only food markets",
-      D: "Private toys",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Heritage includes a community's history, customs, language, and traditions inherited from past generations.",
-  },
-  {
-    id: 178,
-    subject: "CRE",
-    question:
-      "Which action by Joseph in the Bible showed forgiveness to his brothers?",
-    options: {
-      A: "He punished them harshly",
-      B: "He forgave them and helped them during famine",
-      C: "He ignored them forever",
-      D: "He left the country",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Joseph forgave his brothers and later provided for them during the famine, demonstrating forgiveness.",
-  },
-  {
-    id: 179,
-    subject: "Agriculture",
-    question:
-      "Which factor is most important when selecting crop seeds for planting?",
-    options: {
-      A: "Color of seed packet only",
-      B: "Suitability to local climate and soil",
-      C: "Size of the shop",
-      D: "Shape of the farmer's house",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Seeds should be chosen for compatibility with local climate and soil to ensure good germination and yield.",
-  },
-  {
-    id: 180,
-    subject: "Music",
-    question: "Which instrument family includes trumpets and trombones?",
-    options: {
-      A: "String family",
-      B: "Brass family",
-      C: "Percussion family",
-      D: "Keyboard family",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Trumpets and trombones are brass instruments that produce sound when the player vibrates their lips.",
-  },
-  {
-    id: 181,
-    subject: "Home Science",
-    question:
-      "Which kitchen habit reduces the spread of bacteria while preparing food?",
-    options: {
-      A: "Washing hands before handling food",
-      B: "Using the same towel for raw meat and hands",
-      C: "Leaving food uncovered outside",
-      D: "Tasting with a dirty spoon",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Washing hands removes germs and prevents them from contaminating food during preparation.",
-  },
-  {
-    id: 182,
-    subject: "Physical & Health Education",
-    question: "Which mineral is essential for strong bones and teeth?",
-    options: {
-      A: "Sodium",
-      B: "Calcium",
-      C: "Lead",
-      D: "Mercury",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Calcium is necessary for building and maintaining strong bones and teeth, especially during growth.",
-  },
-  {
-    id: 183,
-    subject: "ICT/Computer Studies",
-    question:
-      "Which action saves a file under a new name, keeping the original unchanged?",
-    options: {
-      A: "Open",
-      B: "Save As",
-      C: "Delete",
-      D: "Print",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Save As' allows you to store the current document with a new filename while preserving the original file.",
-  },
-  {
-    id: 184,
-    subject: "Mathematics",
-    question:
-      "If a classroom has 24 pupils and they sit in rows of 6, how many rows are there?",
-    options: {
-      A: "2",
-      B: "3",
-      C: "4",
-      D: "6",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Divide 24 pupils by 6 per row to get 4 rows. (24 ÷ 6 = 4). Correct answer is C.",
-  },
-  {
-    id: 185,
-    subject: "English",
-    question:
-      "Which word is an adverb in the sentence: 'She sings beautifully.'",
-    options: {
-      A: "She",
-      B: "sings",
-      C: "beautifully",
-      D: "none",
-    },
-    correctAnswer: "C",
-    explanation:
-      "'Beautifully' describes how she sings, modifying the verb and functioning as an adverb.",
-  },
-  {
-    id: 186,
-    subject: "Kiswahili",
-    question: "Chagua neno sahihi: 'Watoto wanacheza ___ bustani.'",
-    options: {
-      A: "kwa",
-      B: "katika",
-      C: "juu",
-      D: "chini",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Watoto wanacheza katika bustani' uses 'katika' to indicate location inside or within the garden.",
-  },
-  {
-    id: 187,
-    subject: "Science & Technology",
-    question:
-      "Which device converts electrical energy into light and heat in many homes?",
-    options: {
-      A: "Battery",
-      B: "Light bulb",
-      C: "Switch",
-      D: "Socket",
-    },
-    correctAnswer: "B",
-    explanation:
-      "A light bulb transforms electrical energy into light and some heat when current passes through it.",
-  },
-  {
-    id: 188,
-    subject: "Social Studies",
-    question: "Which is an example of voluntary community service?",
-    options: {
-      A: "Forced labour",
-      B: "Helping clean a neighbourhood playground",
-      C: "Stealing from shops",
-      D: "Ignoring community meetings",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Voluntary service involves willingly helping others, such as joining to clean a playground for community benefit.",
-  },
-  {
-    id: 189,
-    subject: "CRE",
-    question:
-      "Which Psalm is often associated with trust in God (common example used in schools)?",
-    options: {
-      A: "Psalm 23",
-      B: "Psalm 150",
-      C: "Psalm 1",
-      D: "Psalm 100",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Psalm 23 ('The Lord is my shepherd') is frequently cited as a passage about trust and God's care.",
-  },
-  {
-    id: 190,
-    subject: "Agriculture",
-    question: "Which practice reduces weed growth between crop rows?",
-    options: {
-      A: "Weeding and mulching",
-      B: "Ignoring weeds",
-      C: "Planting weeds intentionally",
-      D: "Watering only weeds",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Regular weeding and using mulch prevent weeds from competing with crops for nutrients and water.",
-  },
-  {
-    id: 191,
-    subject: "Music",
-    question: "Which sign indicates the end of a piece of music?",
-    options: {
-      A: "Repeat sign",
-      B: "Double bar line",
-      C: "Sharp sign",
-      D: "Treble clef",
-    },
-    correctAnswer: "B",
-    explanation:
-      "A double bar line marks the end of a section or the end of a piece of music.",
-  },
-  {
-    id: 192,
-    subject: "Home Science",
-    question:
-      "Which food should be stored separately to avoid contaminating other foods?",
-    options: {
-      A: "Fresh fruit",
-      B: "Raw meat",
-      C: "Dry cereal",
-      D: "Cooked rice",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Raw meat can carry harmful bacteria so it must be stored separately to prevent cross-contamination.",
-  },
-  {
-    id: 193,
-    subject: "Physical & Health Education",
-    question:
-      "Which practice helps prevent heat exhaustion during hot weather?",
-    options: {
-      A: "Drinking plenty of water and resting in shade",
-      B: "Ignoring thirst",
-      C: "Wearing heavy clothing in sun",
-      D: "Running without breaks",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Hydration and resting in shade reduce the risk of heat exhaustion during high temperatures.",
-  },
-  {
-    id: 194,
-    subject: "ICT/Computer Studies",
-    question: "Which of these is a secure way to unlock a personal device?",
-    options: {
-      A: "Using a common PIN like 1234",
-      B: "Using a strong PIN or biometric login",
-      C: "Leaving it unlocked",
-      D: "Sharing the PIN with everyone",
-    },
-    correctAnswer: "B",
-    explanation:
-      "A strong PIN or biometric (fingerprint) reduces risk of unauthorized access and improves device security.",
-  },
-  {
-    id: 195,
-    subject: "Mathematics",
-    question: "What fraction of 20 is 5?",
-    options: {
-      A: "1/4",
-      B: "1/2",
-      C: "1/5",
-      D: "1/3",
-    },
-    correctAnswer: "A",
-    explanation:
-      "5 is one quarter of 20, so the fraction is 1/4 (5 ÷ 20 = 1/4).",
-  },
-  {
-    id: 196,
-    subject: "English",
-    question: "Which sentence uses correct comparative form?",
-    options: {
-      A: "This road is more shorter than that one.",
-      B: "This road is shorter than that one.",
-      C: "This road is the short than that one.",
-      D: "This road is shortest than that one.",
-    },
-    correctAnswer: "B",
-    explanation:
-      "For comparing two items use 'shorter', so 'This road is shorter than that one.' is correct.",
-  },
-  {
-    id: 197,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri sahihi: 'We helped our neighbours yesterday.'",
-    options: {
-      A: "Tulisaidia majirani zetu jana.",
-      B: "Tusaidia majirani zetu kesho.",
-      C: "Tutawaidia majirani zetu leo.",
-      D: "Walisaidia majirani zetu jana.",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'Tulisaidia majirani zetu jana' means 'We helped our neighbours yesterday', so A is correct.",
-  },
-  {
-    id: 198,
-    subject: "Science & Technology",
-    question:
-      "Which organ helps in breathing by exchanging gases in the human body?",
-    options: {
-      A: "Heart",
-      B: "Lungs",
-      C: "Stomach",
-      D: "Liver",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Lungs take in oxygen and remove carbon dioxide through the process of gas exchange during breathing.",
-  },
-  {
-    id: 199,
-    subject: "Social Studies",
-    question:
-      "Which is a responsibility of children at home to help the family?",
-    options: {
-      A: "Refusing to do any chores",
-      B: "Helping with simple tasks like sweeping",
-      C: "Spending all time playing video games",
-      D: "Ignoring family rules",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Helping with age-appropriate tasks like sweeping teaches responsibility and supports the household.",
-  },
-  {
-    id: 200,
-    subject: "CRE",
-    question:
-      "Which fruit did Jesus use in a teaching about faith (metaphorically compared to small faith)?",
-    options: {
-      A: "Mustard seed (metaphor)",
-      B: "Apple",
-      C: "Orange",
-      D: "Banana",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Jesus compared faith to a mustard seed to show that even small faith can grow and do great things.",
-  },
-  {
-    id: 201,
-    subject: "Agriculture",
-    question:
-      "Which practice helps improve soil structure by adding earthworms and organic matter?",
-    options: {
-      A: "Overwatering",
-      B: "Adding compost",
-      C: "Using only chemical fertilizer",
-      D: "Burning the field",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Adding compost increases organic matter and encourages earthworms, which improve soil structure and fertility.",
-  },
-  {
-    id: 202,
-    subject: "Mathematics",
-    question: "What is 125 ÷ 5?",
-    options: {
-      A: "20",
-      B: "25",
-      C: "30",
-      D: "15",
-    },
-    correctAnswer: "B",
-    explanation: "Divide 125 by 5: 125 ÷ 5 = 25.",
-  },
-  {
-    id: 203,
-    subject: "English",
-    question: "Choose the correct pronoun: '___ gave me the book.'",
-    options: {
-      A: "Him",
-      B: "They",
-      C: "Who",
-      D: "She",
-    },
-    correctAnswer: "D",
-    explanation:
-      "'She gave me the book.' uses the subject pronoun 'She' correctly at the start of the sentence.",
-  },
-  {
-    id: 204,
-    subject: "Kiswahili",
-    question: "Tafsiri: 'We will meet at eight o'clock.'",
-    options: {
-      A: "Tutakutana saa mbili.",
-      B: "Tutakutana saa nane.",
-      C: "Tutakutana saa kumi.",
-      D: "Tulikutana saa nane.",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Tutakutana saa nane' means 'We will meet at eight o'clock', with the future tense marker 'tuta-'.",
-  },
-  {
-    id: 205,
-    subject: "Science & Technology",
-    question: "Which process do plants use to turn light into food?",
-    options: {
-      A: "Evaporation",
-      B: "Photosynthesis",
-      C: "Condensation",
-      D: "Combustion",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Photosynthesis is the process where plants use sunlight, carbon dioxide and water to make glucose (food).",
-  },
-  {
-    id: 206,
-    subject: "Social Studies",
-    question:
-      "Which institution is responsible for teaching children in a community?",
-    options: {
-      A: "School",
-      B: "Factory",
-      C: "Bus stop",
-      D: "Bank",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Schools provide formal education and are responsible for teaching children in a community.",
-  },
-  {
-    id: 207,
-    subject: "CRE",
-    question: "Which miracle did Jesus perform according to the New Testament?",
-    options: {
-      A: "Parting the Red Sea",
-      B: "Feeding five thousand people with loaves and fish",
-      C: "Writing the Ten Commandments",
-      D: "Building the temple",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Jesus fed five thousand people with a few loaves and fish according to Gospel accounts.",
-  },
-  {
-    id: 208,
-    subject: "Music",
-    question: "Which note value lasts for two beats in common time?",
-    options: {
-      A: "Whole note",
-      B: "Half note",
-      C: "Quarter note",
-      D: "Eighth note",
-    },
-    correctAnswer: "B",
-    explanation: "A half note lasts for two beats in 4/4 (common) time.",
-  },
-  {
-    id: 209,
-    subject: "Home Science",
-    question: "Which nutrient helps the body repair tissues and build muscles?",
-    options: {
-      A: "Proteins",
-      B: "Sugars",
-      C: "Salt",
-      D: "Water only",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Proteins provide amino acids essential for body tissue repair and muscle growth.",
-  },
-  {
-    id: 210,
-    subject: "Physical & Health Education",
-    question: "Which exercise helps strengthen leg muscles?",
-    options: {
-      A: "Squats",
-      B: "Neck rolls",
-      C: "Finger taps",
-      D: "Blinking",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Squats work the major leg muscles (quadriceps, hamstrings and glutes), strengthening them with repeated action.",
-  },
-  {
-    id: 211,
-    subject: "ICT/Computer Studies",
-    question: "Which device do you use to move the cursor on the screen?",
-    options: {
-      A: "Monitor",
-      B: "Printer",
-      C: "Mouse",
-      D: "Speaker",
-    },
-    correctAnswer: "C",
-    explanation:
-      "A mouse controls the cursor position on the computer screen and is an input device.",
-  },
-  {
-    id: 212,
-    subject: "Mathematics",
-    question: "Which is the largest number: 0.5, 0.75, 0.25, 0.6?",
-    options: {
-      A: "0.5",
-      B: "0.75",
-      C: "0.25",
-      D: "0.6",
-    },
-    correctAnswer: "B",
-    explanation:
-      "0.75 is greater than 0.6, 0.5 and 0.25 when comparing decimal values.",
-  },
-  {
-    id: 213,
-    subject: "English",
-    question: "Select the correct past tense: 'They ___ soccer yesterday.'",
-    options: {
-      A: "play",
-      B: "plays",
-      C: "played",
-      D: "playing",
-    },
-    correctAnswer: "C",
-    explanation:
-      "The past tense of 'play' is 'played': 'They played soccer yesterday.'",
-  },
-  {
-    id: 214,
-    subject: "Kiswahili",
-    question: "Chagua jina la mahali: 'Pale watoto walikimbia ni ___.'",
-    options: {
-      A: "mashariki",
-      B: "bweni",
-      C: "shamba",
-      D: "kuhifadhi",
-    },
-    correctAnswer: "C",
-    explanation:
-      "'Shamba' means field; the sentence indicates a place where children ran, so 'shamba' fits contextually.",
-  },
-  {
-    id: 215,
-    subject: "Science & Technology",
-    question: "Which organ in plants transports water upward from the roots?",
-    options: {
-      A: "Xylem",
-      B: "Phloem",
-      C: "Chloroplast",
-      D: "Stoma",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Xylem vessels carry water and dissolved minerals from roots to stems and leaves in plants.",
-  },
-  {
-    id: 216,
-    subject: "Social Studies",
-    question:
-      "Which term describes people who move into a country from another country?",
-    options: {
-      A: "Emigrants",
-      B: "Immigrants",
-      C: "Tourists",
-      D: "Citizens",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Immigrants are people who come into a country to live there from another country.",
-  },
-  {
-    id: 217,
-    subject: "CRE",
-    question: "Which Psalm begins 'The Lord is my shepherd'?",
-    options: {
-      A: "Psalm 23",
-      B: "Psalm 1",
-      C: "Psalm 100",
-      D: "Psalm 150",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Psalm 23 opens with 'The Lord is my shepherd,' a well-known passage expressing trust in God.",
-  },
-  {
-    id: 218,
-    subject: "Agriculture",
-    question: "Which practice reduces water loss from the soil surface?",
-    options: {
-      A: "Mulching",
-      B: "Over-tilling",
-      C: "Burning residues",
-      D: "Removing shade trees",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Mulching covers the soil, reducing evaporation and helping retain moisture for crops.",
-  },
-  {
-    id: 219,
-    subject: "Music",
-    question: "Which two notes together that sound pleasant are called?",
-    options: {
-      A: "Dissonance",
-      B: "Harmony",
-      C: "Rhythm",
-      D: "Tempo",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Harmony is the combination of notes sounding together to produce a pleasing effect.",
-  },
-  {
-    id: 220,
-    subject: "Home Science",
-    question: "Which cleaning method best removes grease from plates?",
-    options: {
-      A: "Warm water and dish soap",
-      B: "Cold water only",
-      C: "Rinsing with oil",
-      D: "Drying without washing",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Warm water and dish soap cut through grease more effectively than cold water alone.",
-  },
-  {
-    id: 221,
-    subject: "Physical & Health Education",
-    question: "Which activity builds stamina and endurance?",
-    options: {
-      A: "Long-distance running",
-      B: "Only short naps",
-      C: "Watching TV",
-      D: "Sitting for long hours",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Long-distance running improves the body's ability to sustain physical activity over time, building endurance.",
-  },
-  {
-    id: 222,
-    subject: "ICT/Computer Studies",
-    question:
-      "Which symbol is commonly used to send an email message in an email client?",
-    options: {
-      A: "Paper clip",
-      B: "Trash can",
-      C: "Send (paper airplane icon or button)",
-      D: "Lock icon",
-    },
-    correctAnswer: "C",
-    explanation:
-      "The 'send' icon (often a paper airplane) or button is used to transmit an email to recipients.",
-  },
-  {
-    id: 223,
-    subject: "Mathematics",
-    question: "Which is the mean (average) of these numbers: 10, 12, 8, 10?",
-    options: {
-      A: "9",
-      B: "10",
-      C: "12",
-      D: "8",
-    },
-    correctAnswer: "B",
-    explanation: "Average = (10 + 12 + 8 + 10) ÷ 4 = 40 ÷ 4 = 10.",
-  },
-  {
-    id: 224,
-    subject: "English",
-    question:
-      "Which word is a noun in the sentence: 'The cat chased the mouse.'",
-    options: {
-      A: "chased",
-      B: "the",
-      C: "cat",
-      D: "fast",
-    },
-    correctAnswer: "C",
-    explanation:
-      "'Cat' is a person, place or thing and functions as a noun in this sentence.",
-  },
-  {
-    id: 225,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri ya 'I am hungry.'",
-    options: {
-      A: "Nina kiu.",
-      B: "Nina njaa.",
-      C: "Niko furahi.",
-      D: "Nina dudui.",
-    },
-    correctAnswer: "B",
-    explanation:
-      "'Nina njaa' means 'I am hungry', whereas 'Nina kiu' means 'I am thirsty'.",
-  },
-  {
-    id: 226,
-    subject: "Science & Technology",
-    question:
-      "Which simple machine is a ramp that helps lift objects more easily?",
-    options: {
-      A: "Wedge",
-      B: "Inclined plane",
-      C: "Pulley",
-      D: "Lever",
-    },
-    correctAnswer: "B",
-    explanation:
-      "An inclined plane (ramp) reduces the effort needed to raise an object by increasing the distance over which the force acts.",
-  },
-  {
-    id: 227,
-    subject: "Social Studies",
-    question: "Which action is a sign of good citizenship?",
-    options: {
-      A: "Littering in public places",
-      B: "Voting in elections",
-      C: "Avoiding taxes illegally",
-      D: "Destroying public property",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Voting is a civic duty where citizens participate in choosing their leaders, showing responsible citizenship.",
-  },
-  {
-    id: 228,
-    subject: "CRE",
-    question:
-      "Which figure in the Bible is famous for great wisdom and building a temple?",
-    options: {
-      A: "Solomon",
-      B: "Cain",
-      C: "Jonah",
-      D: "Saul",
-    },
-    correctAnswer: "A",
-    explanation:
-      "King Solomon is known for his wisdom and for building the temple in Jerusalem according to the Bible.",
-  },
-  {
-    id: 229,
-    subject: "Agriculture",
-    question:
-      "Which method helps farmers keep pests away using living organisms?",
-    options: {
-      A: "Chemical spraying only",
-      B: "Biological control using predators or parasites",
-      C: "Planting only one crop type continuously",
-      D: "Cutting down beneficial trees",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Biological control uses natural enemies of pests (predators, parasitoids) to reduce pest populations without chemicals.",
-  },
-  {
-    id: 230,
-    subject: "Music",
-    question:
-      "Which word describes the pattern of long and short sounds in music?",
-    options: {
-      A: "Pitch",
-      B: "Dynamics",
-      C: "Rhythm",
-      D: "Harmony",
-    },
-    correctAnswer: "C",
-    explanation:
-      "Rhythm is the sequence of durations and accents that organize music in time.",
-  },
-  {
-    id: 231,
-    subject: "Home Science",
-    question:
-      "Which container is best for storing leftover soup in the refrigerator?",
-    options: {
-      A: "Sealable airtight container",
-      B: "Open bowl covered with cloth",
-      C: "Paper bag",
-      D: "Left uncovered on the counter",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Airtight containers keep food fresh and prevent contamination and absorption of other odors in the fridge.",
-  },
-  {
-    id: 232,
-    subject: "Physical & Health Education",
-    question: "Which vitamin helps the body absorb calcium for bone health?",
-    options: {
-      A: "Vitamin C",
-      B: "Vitamin D",
-      C: "Vitamin B12",
-      D: "Vitamin K",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Vitamin D aids calcium absorption in the intestines, supporting bone growth and health.",
-  },
-  {
-    id: 233,
-    subject: "ICT/Computer Studies",
-    question: "What does 'URL' stand for when visiting a webpage?",
-    options: {
-      A: "Universal Relay Link",
-      B: "Uniform Resource Locator",
-      C: "User Resource List",
-      D: "Universal Remote Login",
-    },
-    correctAnswer: "B",
-    explanation:
-      "URL means Uniform Resource Locator; it is the web address used to find resources on the internet.",
-  },
-  {
-    id: 234,
-    subject: "Mathematics",
-    question: "What is the product of 9 and 7?",
-    options: {
-      A: "56",
-      B: "63",
-      C: "72",
-      D: "49",
-    },
-    correctAnswer: "B",
-    explanation: "Multiply 9 × 7 to get 63.",
-  },
-  {
-    id: 235,
-    subject: "English",
-    question:
-      "Which word completes the sentence: 'She is the ___ student in class.'",
-    options: {
-      A: "taller",
-      B: "tallest",
-      C: "tall",
-      D: "tallishly",
-    },
-    correctAnswer: "B",
-    explanation:
-      "When comparing one among many, the superlative 'tallest' is used: 'the tallest student'.",
-  },
-  {
-    id: 236,
-    subject: "Kiswahili",
-    question: "Chagua tafsiri sahihi ya 'Clean the classroom.'",
-    options: {
-      A: "Safisha darasa.",
-      B: "Pendeza darasa.",
-      C: "Lala darasa.",
-      D: "Osha darasa.",
-    },
-    correctAnswer: "A",
-    explanation:
-      "'Safisha darasa' is the command meaning 'Clean the classroom'; 'osha' is usually for washing objects.",
-  },
-  {
-    id: 237,
-    subject: "Science & Technology",
-    question:
-      "Which simple tool helps compare temperatures between two places?",
-    options: {
-      A: "Thermometer",
-      B: "Ruler",
-      C: "Compass",
-      D: "Scales",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Thermometers measure temperature and can be used to compare temperatures in different locations.",
-  },
-  {
-    id: 238,
-    subject: "Social Studies",
-    question:
-      "Which festival is often celebrated to remember a nation's independence?",
-    options: {
-      A: "Independence Day",
-      B: "Weekly market day",
-      C: "Sports day only",
-      D: "School reunion",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Independence Day commemorates the anniversary of a nation's independence and is a national celebration.",
-  },
-  {
-    id: 239,
-    subject: "CRE",
-    question:
-      "Which prophet in the Old Testament was swallowed by a big fish according to the Bible story?",
-    options: {
-      A: "Jonah",
-      B: "Elijah",
-      C: "Daniel",
-      D: "Isaiah",
-    },
-    correctAnswer: "A",
-    explanation:
-      "The story of Jonah describes him being swallowed by a large fish and later being released after repentance.",
-  },
-  {
-    id: 240,
-    subject: "Agriculture",
-    question: "Which crop is known for fixing nitrogen when grown in a field?",
-    options: {
-      A: "Rice",
-      B: "Beans",
-      C: "Maize",
-      D: "Banana",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Legumes like beans host nitrogen-fixing bacteria in root nodules that convert atmospheric nitrogen to usable forms.",
-  },
-  {
-    id: 241,
-    subject: "Music",
-    question: "Which tempo marking indicates a fast speed?",
-    options: {
-      A: "Adagio",
-      B: "Moderato",
-      C: "Presto",
-      D: "Largo",
-    },
-    correctAnswer: "C",
-    explanation:
-      "Presto indicates a very fast tempo; Adagio and Largo are slow, Moderato is moderate.",
-  },
-  {
-    id: 242,
-    subject: "Home Science",
-    question: "Which item should be used to handle hot pots safely?",
-    options: {
-      A: "Oven mitt or potholder",
-      B: "Plastic bag",
-      C: "Wet towel only",
-      D: "Bare hands",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Oven mitts or potholders protect hands from heat when handling hot cookware safely.",
-  },
-  {
-    id: 243,
-    subject: "Physical & Health Education",
-    question:
-      "Which heart rate change shows that exercise intensity is increasing?",
-    options: {
-      A: "Heart rate decreases",
-      B: "Heart rate increases",
-      C: "Heart rate stays the same",
-      D: "Heart stops",
-    },
-    correctAnswer: "B",
-    explanation:
-      "As exercise becomes more intense, the heart rate typically rises to supply more oxygenated blood to muscles.",
-  },
-  {
-    id: 244,
-    subject: "ICT/Computer Studies",
-    question: "Which of these is used to attach files to an email?",
-    options: {
-      A: "Send button",
-      B: "Attachment (paper clip) icon",
-      C: "Subject line",
-      D: "Signature",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The attachment icon (often a paper clip) allows users to add files to an email message before sending.",
-  },
-  {
-    id: 245,
-    subject: "Mathematics",
-    question: "Which decimal is equal to 3/10?",
-    options: {
-      A: "0.03",
-      B: "0.3",
-      C: "3.0",
-      D: "0.33",
-    },
-    correctAnswer: "B",
-    explanation: "3 divided by 10 equals 0.3, so 3/10 is 0.3 in decimal form.",
-  },
-  {
-    id: 246,
-    subject: "English",
-    question: "Which word is an antonym of 'increase'?",
-    options: {
-      A: "Rise",
-      B: "Grow",
-      C: "Decrease",
-      D: "Expand",
-    },
-    correctAnswer: "C",
-    explanation:
-      "'Decrease' means to become smaller or less, which is the opposite of 'increase'.",
-  },
-  {
-    id: 247,
-    subject: "Kiswahili",
-    question: "Chagua jibu sahihi: 'Je, unaweza kunisaidia ___ kazi hizi?'",
-    options: {
-      A: "na",
-      B: "kwa",
-      C: "kufanya",
-      D: "wote",
-    },
-    correctAnswer: "C",
-    explanation:
-      "'Kufanya kazi hizi' means 'to do these tasks'; 'kufanya' is the verb 'to do' and fits the sentence.",
-  },
-  {
-    id: 248,
-    subject: "Science & Technology",
-    question:
-      "What is the boiling point of water at sea level in degrees Celsius?",
-    options: {
-      A: "0°C",
-      B: "50°C",
-      C: "100°C",
-      D: "212°C",
-    },
-    correctAnswer: "C",
-    explanation:
-      "At sea level, pure water boils at 100 degrees Celsius; 212°F equals 100°C is incorrect (it's 212°F), but the correct Celsius value is 100°C.",
-  },
-  {
-    id: 249,
-    subject: "Social Studies",
-    question:
-      "Which is a reason people form groups like clubs or associations?",
-    options: {
-      A: "To work together on common interests",
-      B: "To prevent learning",
-      C: "To stop trading",
-      D: "To refuse help",
-    },
-    correctAnswer: "A",
-    explanation:
-      "People form groups to share ideas, support each other and work on common goals or interests.",
-  },
-  {
-    id: 250,
-    subject: "CRE",
-    question: "Which Christian festival celebrates the resurrection of Jesus?",
-    options: {
-      A: "Christmas",
-      B: "Easter",
-      C: "Pentecost",
-      D: "Lent",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Easter commemorates the resurrection of Jesus from the dead in Christian belief.",
-  },
-  {
-    id: 251,
-    subject: "Agriculture",
-    question:
-      "Which farming activity should be done soon after planting to reduce weed competition?",
-    options: {
-      A: "Weeding early",
-      B: "Irrigating only once a month",
-      C: "Harvesting immediately",
-      D: "Leaving field fallow",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Early weeding removes young weeds before they compete strongly with crops for nutrients and light.",
-  },
-  {
-    id: 252,
-    subject: "Music",
-    question: "Which instrument family does the xylophone belong to?",
-    options: {
-      A: "Brass",
-      B: "Percussion",
-      C: "String",
-      D: "Woodwind",
-    },
-    correctAnswer: "B",
-    explanation:
-      "The xylophone produces sound when struck and is part of the percussion family.",
-  },
-  {
-    id: 253,
-    subject: "Home Science",
-    question: "Which is an example of using resources wisely at home?",
-    options: {
-      A: "Turning off lights when not needed",
-      B: "Leaving taps running",
-      C: "Wasting food",
-      D: "Keeping appliances on standby always",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Turning off lights when not in use saves energy and is a responsible way to use household resources.",
-  },
-  {
-    id: 254,
-    subject: "Physical & Health Education",
-    question: "Which snack is a healthy choice before exercise?",
-    options: {
-      A: "A banana",
-      B: "A chocolate bar with lots of sugar",
-      C: "A bag of salty chips",
-      D: "A soda drink only",
-    },
-    correctAnswer: "A",
-    explanation:
-      "A banana provides carbohydrates and potassium that supply energy and help muscle function during exercise.",
-  },
-  {
-    id: 255,
-    subject: "ICT/Computer Studies",
-    question:
-      "Which is a commonly used operating system for personal computers?",
-    options: {
-      A: "Windows",
-      B: "HTML",
-      C: "JPEG",
-      D: "USB",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Windows is an operating system that manages computer hardware and software; HTML and JPEG are file standards, USB is an interface.",
-  },
-  {
-    id: 256,
-    subject: "Mathematics",
-    question: "Which angle measures exactly 90 degrees?",
-    options: {
-      A: "Right angle",
-      B: "Acute angle",
-      C: "Obtuse angle",
-      D: "Straight angle",
-    },
-    correctAnswer: "A",
-    explanation: "A right angle is defined as an angle of 90 degrees.",
-  },
-  {
-    id: 257,
-    subject: "English",
-    question:
-      "Choose the correct comparative: 'This puzzle is ___ than the other one.'",
-    options: {
-      A: "easyest",
-      B: "easier",
-      C: "most easy",
-      D: "easy",
-    },
-    correctAnswer: "B",
-    explanation:
-      "For two items we use the comparative 'easier' to compare difficulty levels.",
-  },
-  {
-    id: 258,
-    subject: "Kiswahili",
-    question: "Chagua sawa: 'Ninaanza kazi mpya ___ Jumatatu.'",
-    options: {
-      A: "mwaka",
-      B: "siku",
-      C: "wiki",
-      D: "Jumatatu",
-    },
-    correctAnswer: "D",
-    explanation:
-      "'Ninaanza kazi mpya Jumatatu' correctly places the day 'Jumatatu' (Monday) when the work starts.",
-  },
-  {
-    id: 259,
-    subject: "Science & Technology",
-    question: "Which type of rock forms from cooled lava?",
-    options: {
-      A: "Sedimentary",
-      B: "Igneous",
-      C: "Metamorphic",
-      D: "Soil",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Igneous rocks form when molten lava or magma cools and solidifies.",
-  },
-  {
-    id: 260,
-    subject: "Social Studies",
-    question: "Which is an example of a local government service?",
-    options: {
-      A: "Community health centre",
-      B: "Foreign diplomacy",
-      C: "Space exploration",
-      D: "Printing banknotes",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Local governments often provide community health services such as clinics or health centres.",
-  },
-  {
-    id: 261,
-    subject: "CRE",
-    question:
-      "Which miracle showed Jesus' power over nature by calming a storm?",
-    options: {
-      A: "Healing the blind",
-      B: "Calming the storm on the sea",
-      C: "Turning water into wine",
-      D: "Feeding the five thousand",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Jesus calmed the storm while on a boat with his disciples, demonstrating authority over natural forces.",
-  },
-  {
-    id: 262,
-    subject: "Agriculture",
-    question:
-      "Which is an advantage of planting cover crops during off-season?",
-    options: {
-      A: "They increase soil erosion",
-      B: "They improve soil fertility and reduce erosion",
-      C: "They deplete all nutrients",
-      D: "They attract only pests",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Cover crops protect soil from erosion, add organic matter and can improve fertility when incorporated into the soil.",
-  },
-  {
-    id: 263,
-    subject: "Music",
-    question: "Which dynamic marking means to play loudly?",
-    options: {
-      A: "p (piano)",
-      B: "f (forte)",
-      C: "mp (mezzo-piano)",
-      D: "pp (pianissimo)",
-    },
-    correctAnswer: "B",
-    explanation:
-      "Forte (f) instructs musicians to play loudly; piano (p) means softly.",
-  },
-  {
-    id: 264,
-    subject: "Home Science",
-    question:
-      "Which practice prevents cross-contamination when preparing food?",
-    options: {
-      A: "Using separate chopping boards for raw meat and vegetables",
-      B: "Using a single board for everything",
-      C: "Tasting food with the main serving spoon repeatedly",
-      D: "Leaving raw food on the kitchen floor",
-    },
-    correctAnswer: "A",
-    explanation:
-      "Separate chopping boards for raw meat and vegetables prevent bacteria from raw meat contaminating ready-to-eat foods.",
-  },
-  {
-    id: 265,
-    subject: "Physical & Health Education",
-    question: "Which is a common symptom of a sprained ankle?",
-    options: {
-      A: "Swelling and pain around the joint",
-      B: "Improved flexibility immediately",
-      C: "Better balance",
-      D: "No change at all",
-    },
-    correctAnswer: "A",
-    explanation:
-      "A sprain often causes swelling, pain and sometimes bruising around the injured joint.",
+
+  {
+    "id": 101,
+    "subject": "Mathematics",
+    "question": "What is the LCM of 12, 18 and 24?",
+    "options": { "A": "72", "B": "48", "C": "36", "D": "24" },
+    "correctAnswer": "A",
+    "explanation": "Multiples of 24: 24, 48, 72. 72 is divisible by both 12 and 18."
+  },
+  {
+    "id": 102,
+    "subject": "Science & Technology",
+    "question": "Which one of the following is a function of the plasma in blood?",
+    "options": { "A": "Transporting oxygen", "B": "Fighting germs", "C": "Clotting blood", "D": "Transporting digested food" },
+    "correctAnswer": "D",
+    "explanation": "Plasma is the liquid part of blood that transports digested food, waste products, and hormones."
+  },
+  {
+    "id": 103,
+    "subject": "English",
+    "question": "Choose the correct question tag: 'She is a good swimmer, ________?'",
+    "options": { "A": "isn't she", "B": "is she", "C": "does she", "D": "didn't she" },
+    "correctAnswer": "A",
+    "explanation": "A positive statement takes a negative question tag."
+  },
+  {
+    "id": 104,
+    "subject": "Kiswahili",
+    "question": "Akisami 1/8 kwa maneno ni ________.",
+    "options": { "A": "Robo", "B": "Thumni", "C": "Nusu", "D": "Sudusi" },
+    "correctAnswer": "B",
+    "explanation": "1/8 inaitwa thumni."
+  },
+  {
+    "id": 105,
+    "subject": "Social Studies",
+    "question": "The equator divides the earth into two equal parts called ________.",
+    "options": { "A": "Zones", "B": "Hemispheres", "C": "Longitudes", "D": "Poles" },
+    "correctAnswer": "B",
+    "explanation": "The equator divides the earth into the Northern and Southern Hemispheres."
+  },
+  {
+    "id": 106,
+    "subject": "Agriculture",
+    "question": "Which farm animal is kept in a hutch?",
+    "options": { "A": "Chicken", "B": "Rabbit", "C": "Pig", "D": "Goat" },
+    "correctAnswer": "B",
+    "explanation": "A hutch is a housing structure for rabbits."
+  },
+  {
+    "id": 107,
+    "subject": "CRE",
+    "question": "The first Passover meal was eaten in ________.",
+    "options": { "A": "Canaan", "B": "Egypt", "C": "Jerusalem", "D": "Bethlehem" },
+    "correctAnswer": "B",
+    "explanation": "The Israelites ate the first Passover in Egypt before their liberation."
+  },
+  {
+    "id": 108,
+    "subject": "Home Science",
+    "question": "Which method of cooking involves cooking food in hot oil?",
+    "options": { "A": "Boiling", "B": "Steaming", "C": "Frying", "D": "Baking" },
+    "correctAnswer": "C",
+    "explanation": "Frying uses hot fat or oil to cook food."
+  },
+  {
+    "id": 109,
+    "subject": "ICT/Computer Studies",
+    "question": "A portable computer that can be used on your lap is called a ________.",
+    "options": { "A": "Desktop", "B": "Server", "C": "Laptop", "D": "Supercomputer" },
+    "correctAnswer": "C",
+    "explanation": "Laptops are portable computers suitable for mobile use."
+  },
+  {
+    "id": 110,
+    "subject": "Physical & Health Education",
+    "question": "In long jump, the board from which the athlete jumps is called the ________.",
+    "options": { "A": "Take-off board", "B": "Landing area", "C": "Runway", "D": "Starting block" },
+    "correctAnswer": "A",
+    "explanation": "Athletes jump from the take-off board into the pit."
+  },
+  {
+    "id": 111,
+    "subject": "Mathematics",
+    "question": "What is the value of 5² + 4²?",
+    "options": { "A": "18", "B": "41", "C": "81", "D": "9" },
+    "correctAnswer": "B",
+    "explanation": "25 + 16 = 41."
+  },
+  {
+    "id": 112,
+    "subject": "Science & Technology",
+    "question": "Which of these is a vertebrate?",
+    "options": { "A": "Spider", "B": "Crab", "C": "Snake", "D": "Snail" },
+    "correctAnswer": "C",
+    "explanation": "A snake has a backbone, making it a vertebrate."
+  },
+  {
+    "id": 113,
+    "subject": "English",
+    "question": "Complete the proverb: 'A stitch in time ________.'",
+    "options": { "A": "saves nine", "B": "saves money", "C": "heals wounds", "D": "makes perfect" },
+    "correctAnswer": "A",
+    "explanation": "Proverb: A stitch in time saves nine."
+  },
+  {
+    "id": 114,
+    "subject": "Kiswahili",
+    "question": "Andika wingi wa sentensi: 'Mtoto analia.'",
+    "options": { "A": "Watoto wanalia.", "B": "Mtoto wanalia.", "C": "Watoto yanalia.", "D": "Vitoto vinalia." },
+    "correctAnswer": "A",
+    "explanation": "Mtoto (m-wa) inakuwa Watoto."
+  },
+  {
+    "id": 115,
+    "subject": "Art & Craft",
+    "question": "Which tool is used to apply paint onto a canvas?",
+    "options": { "A": "Chisel", "B": "Brush", "C": "Hammer", "D": "Saw" },
+    "correctAnswer": "B",
+    "explanation": "Paintbrushes are used to apply paint."
+  },
+  {
+    "id": 116,
+    "subject": "Social Studies",
+    "question": "The main economic activity of the Maasai community is ________.",
+    "options": { "A": "Fishing", "B": "Pastoralism", "C": "Mining", "D": "Trading" },
+    "correctAnswer": "B",
+    "explanation": "The Maasai are traditionally pastoralists who keep livestock."
+  },
+  {
+    "id": 117,
+    "subject": "Mathematics",
+    "question": "Convert 3/5 to a percentage.",
+    "options": { "A": "30%", "B": "50%", "C": "60%", "D": "75%" },
+    "correctAnswer": "C",
+    "explanation": "(3/5) * 100 = 60%."
+  },
+  {
+    "id": 118,
+    "subject": "CRE",
+    "question": "The parable of the Good Samaritan teaches us about ________.",
+    "options": { "A": "Prayer", "B": "Helping others/Neighbourliness", "C": "Farming", "D": "Forgiveness" },
+    "correctAnswer": "B",
+    "explanation": "It teaches that everyone is our neighbour and we should help those in need."
+  },
+  {
+    "id": 119,
+    "subject": "Music",
+    "question": "A song sung to soothe a baby to sleep is called a ________.",
+    "options": { "A": "Carol", "B": "Hymn", "C": "Lullaby", "D": "Anthem" },
+    "correctAnswer": "C",
+    "explanation": "Lullabies are soothing songs for babies."
+  },
+  {
+    "id": 120,
+    "subject": "Agriculture",
+    "question": "Removing excess seedlings to allow space for the remaining ones to grow is called ________.",
+    "options": { "A": "Gapping", "B": "Thinning", "C": "Pruning", "D": "Weeding" },
+    "correctAnswer": "B",
+    "explanation": "Thinning reduces overcrowding."
+  },
+  {
+    "id": 121,
+    "subject": "English",
+    "question": "Identify the adjective: 'The tall giraffe ate the leaves.'",
+    "options": { "A": "Giraffe", "B": "Ate", "C": "Tall", "D": "Leaves" },
+    "correctAnswer": "C",
+    "explanation": "'Tall' describes the noun 'giraffe'."
+  },
+  {
+    "id": 122,
+    "subject": "Science & Technology",
+    "question": "Which simple machine is found in a wheelbarrow?",
+    "options": { "A": "Pulley", "B": "Inclined Plane", "C": "Lever", "D": "Wedge" },
+    "correctAnswer": "C",
+    "explanation": "A wheelbarrow acts as a second-class lever."
+  },
+  {
+    "id": 123,
+    "subject": "Kiswahili",
+    "question": "Kifaa kinachotumiwa kufagia ni ________.",
+    "options": { "A": "Ufunguo", "B": "Ufagio", "C": "Jembe", "D": "Kisu" },
+    "correctAnswer": "B",
+    "explanation": "Tunatumia ufagio kufanya usafi."
+  },
+  {
+    "id": 124,
+    "subject": "Home Science",
+    "question": "Which of these is a natural fibre?",
+    "options": { "A": "Nylon", "B": "Polyester", "C": "Cotton", "D": "Acrylic" },
+    "correctAnswer": "C",
+    "explanation": "Cotton is a natural plant fibre; others are synthetic."
+  },
+  {
+    "id": 125,
+    "subject": "Mathematics",
+    "question": "Solve for x: 3x + 4 = 19",
+    "options": { "A": "3", "B": "4", "C": "5", "D": "6" },
+    "correctAnswer": "C",
+    "explanation": "3x = 19 - 4; 3x = 15; x = 5."
+  },
+  {
+    "id": 126,
+    "subject": "Social Studies",
+    "question": "Lake Victoria is shared by Kenya, Uganda, and ________.",
+    "options": { "A": "Rwanda", "B": "Burundi", "C": "Tanzania", "D": "Sudan" },
+    "correctAnswer": "C",
+    "explanation": "The three East African countries share the lake."
+  },
+  {
+    "id": 127,
+    "subject": "ICT/Computer Studies",
+    "question": "Ctrl + S is a shortcut used to ________.",
+    "options": { "A": "Open", "B": "Save", "C": "Print", "D": "Cut" },
+    "correctAnswer": "B",
+    "explanation": "Ctrl + S saves the document."
+  },
+  {
+    "id": 128,
+    "subject": "Physical & Health Education",
+    "question": "Which of the following is a swimming stroke?",
+    "options": { "A": "Breaststroke", "B": "Dribble", "C": "Serve", "D": "Smash" },
+    "correctAnswer": "A",
+    "explanation": "Breaststroke is a style of swimming."
+  },
+  {
+    "id": 129,
+    "subject": "CRE",
+    "question": "The last book of the New Testament is ________.",
+    "options": { "A": "Matthew", "B": "Acts", "C": "Revelation", "D": "Jude" },
+    "correctAnswer": "C",
+    "explanation": "Revelation is the final book of the Bible."
+  },
+  {
+    "id": 130,
+    "subject": "English",
+    "question": "The young one of a sheep is called a ________.",
+    "options": { "A": "Kid", "B": "Lamb", "C": "Calf", "D": "Foal" },
+    "correctAnswer": "B",
+    "explanation": "A young sheep is a lamb."
+  },
+  {
+    "id": 131,
+    "subject": "Science & Technology",
+    "question": "Sound travels fastest in ________.",
+    "options": { "A": "Vacuum", "B": "Gases", "C": "Liquids", "D": "Solids" },
+    "correctAnswer": "D",
+    "explanation": "Particles are packed closest in solids, transmitting sound fastest."
+  },
+  {
+    "id": 132,
+    "subject": "Mathematics",
+    "question": "What is the area of a square with side 9 cm?",
+    "options": { "A": "18 cm²", "B": "36 cm²", "C": "81 cm²", "D": "27 cm²" },
+    "correctAnswer": "C",
+    "explanation": "Area = side × side = 9 × 9 = 81."
+  },
+  {
+    "id": 133,
+    "subject": "Kiswahili",
+    "question": "Tunda la 'embe' liko katika ngeli gani?",
+    "options": { "A": "A-WA", "B": "LI-YA", "C": "KI-VI", "D": "I-ZI" },
+    "correctAnswer": "B",
+    "explanation": "Embe (moja) - Maembe (wingi). Hii ni ngeli ya LI-YA."
+  },
+  {
+    "id": 134,
+    "subject": "Art & Craft",
+    "question": "Mixing Blue and Yellow creates which colour?",
+    "options": { "A": "Orange", "B": "Purple", "C": "Green", "D": "Brown" },
+    "correctAnswer": "C",
+    "explanation": "Blue and Yellow are primary colours that make Green."
+  },
+  {
+    "id": 135,
+    "subject": "Agriculture",
+    "question": "Which of these is a climbing crop?",
+    "options": { "A": "Maize", "B": "Passion fruit", "C": "Cabbage", "D": "Carrot" },
+    "correctAnswer": "B",
+    "explanation": "Passion fruits are climbers and need support."
+  },
+  {
+    "id": 136,
+    "subject": "Social Studies",
+    "question": "The Bantus migrated from ________.",
+    "options": { "A": "Horn of Africa", "B": "Congo Forest", "C": "South Sudan", "D": "Egypt" },
+    "correctAnswer": "B",
+    "explanation": "The original homeland of the Bantus is believed to be the Congo Forest."
+  },
+  {
+    "id": 137,
+    "subject": "Music",
+    "question": "A flute belongs to which family of instruments?",
+    "options": { "A": "String", "B": "Percussion", "C": "Woodwind", "D": "Brass" },
+    "correctAnswer": "C",
+    "explanation": "Flutes are woodwind instruments."
+  },
+  {
+    "id": 138,
+    "subject": "Mathematics",
+    "question": "How many degrees are in a full circle?",
+    "options": { "A": "90", "B": "180", "C": "270", "D": "360" },
+    "correctAnswer": "D",
+    "explanation": "A full revolution is 360 degrees."
+  },
+  {
+    "id": 139,
+    "subject": "English",
+    "question": "Choose the correct pronoun: 'My brother and ________ went to the shop.'",
+    "options": { "A": "I", "B": "Me", "C": "Him", "D": "Her" },
+    "correctAnswer": "A",
+    "explanation": "'I' is the subject pronoun. 'My brother and I' is the subject."
+  },
+  {
+    "id": 140,
+    "subject": "Science & Technology",
+    "question": "Which of the following materials is a conductor of electricity?",
+    "options": { "A": "Plastic", "B": "Copper wire", "C": "Wood", "D": "Rubber" },
+    "correctAnswer": "B",
+    "explanation": "Metals like copper conduct electricity."
+  },
+  {
+    "id": 141,
+    "subject": "Home Science",
+    "question": "Which item is used for serving soup?",
+    "options": { "A": "Fork", "B": "Ladle", "C": "Knife", "D": "Teaspoon" },
+    "correctAnswer": "B",
+    "explanation": "A ladle is a deep spoon used for serving liquids like soup."
+  },
+  {
+    "id": 142,
+    "subject": "Kiswahili",
+    "question": "Jaza pengo: 'Nyumba ________ imejengwa vizuri.'",
+    "options": { "A": "mwenye", "B": "yenyewe", "C": "yote", "D": "yoyote" },
+    "correctAnswer": "B",
+    "explanation": "'Nyumba yenyewe' inasisitiza nomino."
+  },
+  {
+    "id": 143,
+    "subject": "CRE",
+    "question": "Moses received the Ten Commandments on Mount ________.",
+    "options": { "A": "Nebo", "B": "Sinai", "C": "Olives", "D": "Carmel" },
+    "correctAnswer": "B",
+    "explanation": "The commandments were given at Mt. Sinai."
+  },
+  {
+    "id": 144,
+    "subject": "Physical & Health Education",
+    "question": "Which activity helps to improve flexibility?",
+    "options": { "A": "Weight lifting", "B": "Sprinting", "C": "Stretching/Gymnastics", "D": "Sleeping" },
+    "correctAnswer": "C",
+    "explanation": "Stretching exercises improve the range of motion in joints."
+  },
+  {
+    "id": 145,
+    "subject": "Mathematics",
+    "question": "Which of these is an obtuse angle?",
+    "options": { "A": "45 degrees", "B": "90 degrees", "C": "120 degrees", "D": "190 degrees" },
+    "correctAnswer": "C",
+    "explanation": "An obtuse angle is between 90 and 180 degrees."
+  },
+  {
+    "id": 146,
+    "subject": "ICT/Computer Studies",
+    "question": "Which component is considered the 'brain' of the computer?",
+    "options": { "A": "Hard Disk", "B": "CPU", "C": "Monitor", "D": "Keyboard" },
+    "correctAnswer": "B",
+    "explanation": "The Central Processing Unit (CPU) processes instructions."
+  },
+  {
+    "id": 147,
+    "subject": "Social Studies",
+    "question": "The legislative arm of the government is called ________.",
+    "options": { "A": "Judiciary", "B": "Executive", "C": "Parliament", "D": "Cabinet" },
+    "correctAnswer": "C",
+    "explanation": "Parliament makes the laws."
+  },
+  {
+    "id": 148,
+    "subject": "English",
+    "question": "Which word is a synonym for 'Huge'?",
+    "options": { "A": "Tiny", "B": "Small", "C": "Enormous", "D": "Weak" },
+    "correctAnswer": "C",
+    "explanation": "Enormous means very large, same as huge."
+  },
+  {
+    "id": 149,
+    "subject": "Agriculture",
+    "question": "Which animal is used for ploughing?",
+    "options": { "A": "Donkey", "B": "Ox", "C": "Goat", "D": "Sheep" },
+    "correctAnswer": "B",
+    "explanation": "Oxen are strong and commonly trained for ploughing fields."
+  },
+  {
+    "id": 150,
+    "subject": "Science & Technology",
+    "question": "The breaking down of food into simpler forms is called ________.",
+    "options": { "A": "Breathing", "B": "Digestion", "C": "Circulation", "D": "Excretion" },
+    "correctAnswer": "B",
+    "explanation": "Digestion is the process of breaking down food."
+  },
+  {
+    "id": 151,
+    "subject": "Mathematics",
+    "question": "Write 2022 in Roman Numerals.",
+    "options": { "A": "MMXXII", "B": "MMXII", "C": "MCMXXII", "D": "MMII" },
+    "correctAnswer": "A",
+    "explanation": "M=1000, so MM=2000, X=10, XX=20, II=2. MMXXII."
+  },
+  {
+    "id": 152,
+    "subject": "Kiswahili",
+    "question": "Tafsiri neno 'Library' kwa Kiswahili.",
+    "options": { "A": "Maabara", "B": "Maktaba", "C": "Darasa", "D": "Ofisi" },
+    "correctAnswer": "B",
+    "explanation": "Maktaba ni mahali pa kusomea au kuweka vitabu."
+  },
+  {
+    "id": 153,
+    "subject": "Art & Craft",
+    "question": "A drawing of a person's face is called a ________.",
+    "options": { "A": "Landscape", "B": "Still life", "C": "Portrait", "D": "Mosaic" },
+    "correctAnswer": "C",
+    "explanation": "A portrait focuses on the face/head of a person."
+  },
+  {
+    "id": 154,
+    "subject": "Home Science",
+    "question": "We use a ________ to clean our teeth.",
+    "options": { "A": "Comb", "B": "Chewing stick/Toothbrush", "C": "Needle", "D": "Spoon" },
+    "correctAnswer": "B",
+    "explanation": "Toothbrushes or chewing sticks are for oral hygiene."
+  },
+  {
+    "id": 155,
+    "subject": "CRE",
+    "question": "God created the world in ________ days.",
+    "options": { "A": "5", "B": "6", "C": "7", "D": "40" },
+    "correctAnswer": "B",
+    "explanation": "He created for 6 days and rested on the 7th."
+  },
+  {
+    "id": 156,
+    "subject": "English",
+    "question": "Use the correct article: 'I saw ________ ostrich.'",
+    "options": { "A": "a", "B": "an", "C": "the", "D": "none" },
+    "correctAnswer": "B",
+    "explanation": "Ostrich starts with a vowel sound, so use 'an'."
+  },
+  {
+    "id": 157,
+    "subject": "Social Studies",
+    "question": "Which one is a basic need?",
+    "options": { "A": "Car", "B": "Shelter", "C": "Phone", "D": "Television" },
+    "correctAnswer": "B",
+    "explanation": "Basic needs are Food, Shelter, and Clothing."
+  },
+  {
+    "id": 158,
+    "subject": "Mathematics",
+    "question": "Multiply: 12 × 12",
+    "options": { "A": "120", "B": "144", "C": "124", "D": "24" },
+    "correctAnswer": "B",
+    "explanation": "12 squared is 144."
+  },
+  {
+    "id": 159,
+    "subject": "Science & Technology",
+    "question": "Water exists in the atmosphere as ________.",
+    "options": { "A": "Ice", "B": "Water vapour", "C": "Rain", "D": "Dew" },
+    "correctAnswer": "B",
+    "explanation": "Water vapour is the gaseous state of water in the air."
+  },
+  {
+    "id": 160,
+    "subject": "Physical & Health Education",
+    "question": "The main purpose of a warm-up is to ________.",
+    "options": { "A": "Tire the body", "B": "Prevent injuries", "C": "Cool down", "D": "Waste time" },
+    "correctAnswer": "B",
+    "explanation": "Warm-ups prepare muscles and reduce injury risk."
+  },
+  {
+    "id": 161,
+    "subject": "Music",
+    "question": "Which of these is a string instrument?",
+    "options": { "A": "Nyatiti", "B": "Drum", "C": "Horn", "D": "Shaker" },
+    "correctAnswer": "A",
+    "explanation": "The Nyatiti is a traditional Kenyan string instrument."
+  },
+  {
+    "id": 162,
+    "subject": "Agriculture",
+    "question": "Which type of soil has the finest particles?",
+    "options": { "A": "Sand", "B": "Loam", "C": "Clay", "D": "Silt" },
+    "correctAnswer": "C",
+    "explanation": "Clay soil has very fine particles and holds water well."
+  },
+  {
+    "id": 163,
+    "subject": "Kiswahili",
+    "question": "Kinyume cha 'Rafiki' ni ________.",
+    "options": { "A": "Ndugu", "B": "Adui", "C": "Jirani", "D": "Mgeni" },
+    "correctAnswer": "B",
+    "explanation": "Adui ni mtu asiyekupenda (enemy)."
+  },
+  {
+    "id": 164,
+    "subject": "ICT/Computer Studies",
+    "question": "What does WWW stand for?",
+    "options": { "A": "World Wide Web", "B": "Wide World Web", "C": "Web World Wide", "D": "World Web Wide" },
+    "correctAnswer": "A",
+    "explanation": "WWW stands for World Wide Web."
+  },
+  {
+    "id": 165,
+    "subject": "Mathematics",
+    "question": "Which fraction is equivalent to 1/2?",
+    "options": { "A": "2/3", "B": "4/8", "C": "3/5", "D": "1/3" },
+    "correctAnswer": "B",
+    "explanation": "4/8 simplifies to 1/2."
+  },
+  {
+    "id": 166,
+    "subject": "English",
+    "question": "Which sentence is in the Past Continuous Tense?",
+    "options": { "A": "I was eating.", "B": "I am eating.", "C": "I eat.", "D": "I will eat." },
+    "correctAnswer": "A",
+    "explanation": "'Was eating' shows an action happening in the past."
+  },
+  {
+    "id": 167,
+    "subject": "CRE",
+    "question": "The prayer Jesus taught his disciples is called the ________.",
+    "options": { "A": "Apostle's Creed", "B": "Lord's Prayer", "C": "Grace", "D": "Psalm 23" },
+    "correctAnswer": "B",
+    "explanation": "It is known as the Lord's Prayer."
+  },
+  {
+    "id": 168,
+    "subject": "Social Studies",
+    "question": "The capital city of Kenya is ________.",
+    "options": { "A": "Mombasa", "B": "Kisumu", "C": "Nairobi", "D": "Nakuru" },
+    "correctAnswer": "C",
+    "explanation": "Nairobi is the capital city."
+  },
+  {
+    "id": 169,
+    "subject": "Science & Technology",
+    "question": "Which force pulls objects towards the center of the earth?",
+    "options": { "A": "Friction", "B": "Gravity", "C": "Magnetic", "D": "Upthrust" },
+    "correctAnswer": "B",
+    "explanation": "Gravity is the force of attraction by the earth."
+  },
+  {
+    "id": 170,
+    "subject": "Home Science",
+    "question": "A balanced diet must contain ________.",
+    "options": { "A": "Only proteins", "B": "All nutrients in right proportions", "C": "Only fruits", "D": "Plenty of fats" },
+    "correctAnswer": "B",
+    "explanation": "A balanced diet has carbohydrates, proteins, vitamins, etc., in correct amounts."
+  },
+  {
+    "id": 171,
+    "subject": "Mathematics",
+    "question": "What is the next number in the sequence: 2, 4, 6, 8, ...?",
+    "options": { "A": "9", "B": "10", "C": "12", "D": "11" },
+    "correctAnswer": "B",
+    "explanation": "The sequence increases by 2."
+  },
+  {
+    "id": 172,
+    "subject": "Art & Craft",
+    "question": "Pottery items are made from ________.",
+    "options": { "A": "Wood", "B": "Clay", "C": "Plastic", "D": "Glass" },
+    "correctAnswer": "B",
+    "explanation": "Clay is the primary material for pottery."
+  },
+  {
+    "id": 173,
+    "subject": "Kiswahili",
+    "question": "Andika sentensi hii katika wakati ujao: 'Mwanafunzi anasoma.'",
+    "options": { "A": "Mwanafunzi alisoma.", "B": "Mwanafunzi atasoma.", "C": "Mwanafunzi amesoma.", "D": "Mwanafunzi asoma." },
+    "correctAnswer": "B",
+    "explanation": "Wakati ujao unatumia kiambishi 'ta'."
+  },
+  {
+    "id": 174,
+    "subject": "Agriculture",
+    "question": "Domestic animals kept for companionship are called ________.",
+    "options": { "A": "Livestock", "B": "Pets", "C": "Poultry", "D": "Wild animals" },
+    "correctAnswer": "B",
+    "explanation": "Pets like dogs and cats are kept for company."
+  },
+  {
+    "id": 175,
+    "subject": "English",
+    "question": "Choose the correct spelling.",
+    "options": { "A": "Recieve", "B": "Receive", "C": "Riceive", "D": "Receve" },
+    "correctAnswer": "B",
+    "explanation": "Correct spelling is Receive (i before e except after c)."
+  },
+  {
+    "id": 176,
+    "subject": "Science & Technology",
+    "question": "The breathing organ in fish is called ________.",
+    "options": { "A": "Lungs", "B": "Gills", "C": "Skin", "D": "Mouth" },
+    "correctAnswer": "B",
+    "explanation": "Fish use gills to extract oxygen from water."
+  },
+  {
+    "id": 177,
+    "subject": "Physical & Health Education",
+    "question": "In soccer, only the ________ is allowed to handle the ball within the penalty area.",
+    "options": { "A": "Defender", "B": "Striker", "C": "Goalkeeper", "D": "Referee" },
+    "correctAnswer": "C",
+    "explanation": "The goalkeeper can use hands inside the penalty box."
+  },
+  {
+    "id": 178,
+    "subject": "Mathematics",
+    "question": "Work out: 4.5 + 3.2",
+    "options": { "A": "7.7", "B": "7.5", "C": "8.7", "D": "7.2" },
+    "correctAnswer": "A",
+    "explanation": "4.5 + 3.2 = 7.7."
+  },
+  {
+    "id": 179,
+    "subject": "Social Studies",
+    "question": "Which document contains the laws of Kenya?",
+    "options": { "A": "The Bible", "B": "The Constitution", "C": "The Atlas", "D": "The Newspaper" },
+    "correctAnswer": "B",
+    "explanation": "The Constitution is the supreme law of the land."
+  },
+  {
+    "id": 180,
+    "subject": "Music",
+    "question": "A fast speed in music is called ________.",
+    "options": { "A": "Adagio", "B": "Allegro", "C": "Largo", "D": "Andante" },
+    "correctAnswer": "B",
+    "explanation": "Allegro indicates a fast and lively tempo."
+  },
+  {
+    "id": 181,
+    "subject": "CRE",
+    "question": "Who betrayed Jesus?",
+    "options": { "A": "Peter", "B": "Judas Iscariot", "C": "Thomas", "D": "John" },
+    "correctAnswer": "B",
+    "explanation": "Judas betrayed Jesus for 30 pieces of silver."
+  },
+  {
+    "id": 182,
+    "subject": "Home Science",
+    "question": "Which disease is caused by stagnant water?",
+    "options": { "A": "Malaria", "B": "Flu", "C": "Diabetes", "D": "Measles" },
+    "correctAnswer": "A",
+    "explanation": "Stagnant water breeds mosquitoes which spread Malaria."
+  },
+  {
+    "id": 183,
+    "subject": "Kiswahili",
+    "question": "Mnyama gani ana shingo ndefu?",
+    "options": { "A": "Tembo", "B": "Twiga", "C": "Simba", "D": "Kiboko" },
+    "correctAnswer": "B",
+    "explanation": "Twiga ana shingo ndefu sana."
+  },
+  {
+    "id": 184,
+    "subject": "English",
+    "question": "The past tense of 'Fly' is ________.",
+    "options": { "A": "Flew", "B": "Flown", "C": "Flied", "D": "Flying" },
+    "correctAnswer": "A",
+    "explanation": "Fly -> Flew -> Flown."
+  },
+  {
+    "id": 185,
+    "subject": "ICT/Computer Studies",
+    "question": "Which device is used to print documents?",
+    "options": { "A": "Scanner", "B": "Printer", "C": "Speaker", "D": "Microphone" },
+    "correctAnswer": "B",
+    "explanation": "A printer produces hard copies of documents."
+  },
+  {
+    "id": 186,
+    "subject": "Mathematics",
+    "question": "Find the perimeter of a square of side 5cm.",
+    "options": { "A": "25cm", "B": "20cm", "C": "10cm", "D": "15cm" },
+    "correctAnswer": "B",
+    "explanation": "Perimeter = 4 × side = 4 × 5 = 20."
+  },
+  {
+    "id": 187,
+    "subject": "Agriculture",
+    "question": "Which of these is a cereal crop?",
+    "options": { "A": "Beans", "B": "Maize", "C": "Cabbage", "D": "Coffee" },
+    "correctAnswer": "B",
+    "explanation": "Maize, wheat, and rice are examples of cereals."
+  },
+  {
+    "id": 188,
+    "subject": "Science & Technology",
+    "question": "Which of these transmits light but you cannot see through it clearly?",
+    "options": { "A": "Transparent", "B": "Translucent", "C": "Opaque", "D": "Reflective" },
+    "correctAnswer": "B",
+    "explanation": "Translucent materials (like frosted glass) let light through but scatter it."
+  },
+  {
+    "id": 189,
+    "subject": "Social Studies",
+    "question": "The National flag of Kenya has ________ colours.",
+    "options": { "A": "3", "B": "4", "C": "5", "D": "2" },
+    "correctAnswer": "B",
+    "explanation": "Black, Red, Green, and White."
+  },
+  {
+    "id": 190,
+    "subject": "Kiswahili",
+    "question": "Tegua kitendawili: 'Kuku wangu hutaga miibani.'",
+    "options": { "A": "Nanasi", "B": "Chungwa", "C": "Embe", "D": "Ndizi" },
+    "correctAnswer": "A",
+    "explanation": "Nanasi ni tunda lenye miiba."
+  },
+  {
+    "id": 191,
+    "subject": "Mathematics",
+    "question": "What is 100 divided by 4?",
+    "options": { "A": "20", "B": "25", "C": "50", "D": "40" },
+    "correctAnswer": "B",
+    "explanation": "100 / 4 = 25."
+  },
+  {
+    "id": 192,
+    "subject": "English",
+    "question": "Identify the conjunction: 'I like tea but I don't like coffee.'",
+    "options": { "A": "Like", "B": "But", "C": "Tea", "D": "Coffee" },
+    "correctAnswer": "B",
+    "explanation": "'But' is a connecting word."
+  },
+  {
+    "id": 193,
+    "subject": "CRE",
+    "question": "The parents of Jesus went to Jerusalem every year for the Feast of ________.",
+    "options": { "A": "Tabernacles", "B": "Passover", "C": "Weeks", "D": "Dedication" },
+    "correctAnswer": "B",
+    "explanation": "They went for the Passover feast."
+  },
+  {
+    "id": 194,
+    "subject": "Art & Craft",
+    "question": "Which colour represents danger?",
+    "options": { "A": "Blue", "B": "Red", "C": "Green", "D": "Yellow" },
+    "correctAnswer": "B",
+    "explanation": "Red is universally used to signal danger or stop."
+  },
+  {
+    "id": 195,
+    "subject": "Science & Technology",
+    "question": "Which animal lays eggs?",
+    "options": { "A": "Cow", "B": "Hen", "C": "Cat", "D": "Dog" },
+    "correctAnswer": "B",
+    "explanation": "Hens (birds) reproduce by laying eggs."
+  },
+  {
+    "id": 196,
+    "subject": "Home Science",
+    "question": "A needle is used for ________.",
+    "options": { "A": "Cooking", "B": "Sewing", "C": "Digging", "D": "Writing" },
+    "correctAnswer": "B",
+    "explanation": "Needles are used for stitching fabric."
+  },
+  {
+    "id": 197,
+    "subject": "Mathematics",
+    "question": "What is the product of 9 and 8?",
+    "options": { "A": "17", "B": "72", "C": "63", "D": "81" },
+    "correctAnswer": "B",
+    "explanation": "9 times 8 equals 72."
+  },
+  {
+    "id": 198,
+    "subject": "Physical & Health Education",
+    "question": "Which of these is used to protect the head when cycling?",
+    "options": { "A": "Gloves", "B": "Helmet", "C": "Knee pads", "D": "Boots" },
+    "correctAnswer": "B",
+    "explanation": "Helmets protect the skull from injury."
+  },
+  {
+    "id": 199,
+    "subject": "Social Studies",
+    "question": "Which compass direction is opposite to North?",
+    "options": { "A": "East", "B": "South", "C": "West", "D": "North-East" },
+    "correctAnswer": "B",
+    "explanation": "South is directly opposite North."
+  },
+  {
+    "id": 200,
+    "subject": "Agriculture",
+    "question": "Manure is used to ________.",
+    "options": { "A": "Kill weeds", "B": "Improve soil fertility", "C": "Kill pests", "D": "Harvest crops" },
+    "correctAnswer": "B",
+    "explanation": "Manure adds nutrients to the soil."
+  },
+  {
+    "id": 201,
+    "subject": "Mathematics",
+    "question": "What is 50% of 200?",
+    "options": { "A": "50", "B": "100", "C": "150", "D": "20" },
+    "correctAnswer": "B",
+    "explanation": "50% is half. Half of 200 is 100."
+  },
+  {
+    "id": 202,
+    "subject": "English",
+    "question": "Choose the correct collective noun: A ________ of bees.",
+    "options": { "A": "Pack", "B": "Swarm", "C": "Herd", "D": "Flock" },
+    "correctAnswer": "B",
+    "explanation": "A group of bees is called a swarm."
+  },
+  {
+    "id": 203,
+    "subject": "Kiswahili",
+    "question": "Neno 'Mwalimu' liko katika ngeli gani?",
+    "options": { "A": "M-WA", "B": "KI-VI", "C": "LI-YA", "D": "I-ZI" },
+    "correctAnswer": "A",
+    "explanation": "Mwalimu (mtu) ni ngeli ya M-WA."
+  },
+  {
+    "id": 204,
+    "subject": "Science & Technology",
+    "question": "The tiny particles that make up matter are called ________.",
+    "options": { "A": "Cells", "B": "Atoms/Molecules", "C": "Dust", "D": "Drops" },
+    "correctAnswer": "B",
+    "explanation": "Atoms or molecules are the basic units of matter."
+  },
+  {
+    "id": 205,
+    "subject": "Social Studies",
+    "question": "Who represents the constituency in parliament?",
+    "options": { "A": "Senator", "B": "Member of Parliament (MP)", "C": "Governor", "D": "MCA" },
+    "correctAnswer": "B",
+    "explanation": "The MP represents a constituency."
+  },
+  {
+    "id": 206,
+    "subject": "CRE",
+    "question": "Who built the Ark?",
+    "options": { "A": "Moses", "B": "Noah", "C": "Abraham", "D": "David" },
+    "correctAnswer": "B",
+    "explanation": "Noah built the Ark to save his family and animals from the flood."
+  },
+  {
+    "id": 207,
+    "subject": "Agriculture",
+    "question": "Which tool is used to level the seedbed?",
+    "options": { "A": "Jembe", "B": "Rake", "C": "Panga", "D": "Axe" },
+    "correctAnswer": "B",
+    "explanation": "A rake is used to break soil lumps and level the ground."
+  },
+  {
+    "id": 208,
+    "subject": "Home Science",
+    "question": "Personal hygiene refers to cleanliness of the ________.",
+    "options": { "A": "House", "B": "Body", "C": "School", "D": "Environment" },
+    "correctAnswer": "B",
+    "explanation": "Personal hygiene is about keeping one's own body clean."
+  },
+  {
+    "id": 209,
+    "subject": "Music",
+    "question": "Which symbol raises a note by a semitone?",
+    "options": { "A": "Flat", "B": "Sharp", "C": "Natural", "D": "Clef" },
+    "correctAnswer": "B",
+    "explanation": "A sharp symbol (#) raises the pitch."
+  },
+  {
+    "id": 210,
+    "subject": "ICT/Computer Studies",
+    "question": "Which part of the computer shows us pictures and text?",
+    "options": { "A": "Mouse", "B": "Monitor/Screen", "C": "Keyboard", "D": "CPU" },
+    "correctAnswer": "B",
+    "explanation": "The monitor is the visual display unit."
+  },
+  {
+    "id": 211,
+    "subject": "Mathematics",
+    "question": "How many grams are in 1 kilogram?",
+    "options": { "A": "100", "B": "1000", "C": "10", "D": "500" },
+    "correctAnswer": "B",
+    "explanation": "Kilo means 1000."
+  },
+  {
+    "id": 212,
+    "subject": "English",
+    "question": "The comparative form of 'Good' is ________.",
+    "options": { "A": "Gooder", "B": "Better", "C": "Best", "D": "More good" },
+    "correctAnswer": "B",
+    "explanation": "Good -> Better -> Best."
+  },
+  {
+    "id": 213,
+    "subject": "Kiswahili",
+    "question": "Jaza pengo: 'Huyu ________ mtoto wangu.'",
+    "options": { "A": "ni", "B": "si", "C": "ndiye", "D": "kama" },
+    "correctAnswer": "A",
+    "explanation": "'Ni' hutumika kama kiunganishi cha kutambulisha."
+  },
+  {
+    "id": 214,
+    "subject": "Physical & Health Education",
+    "question": "In volleyball, how many players are on one side of the court?",
+    "options": { "A": "5", "B": "6", "C": "7", "D": "11" },
+    "correctAnswer": "B",
+    "explanation": "A standard volleyball team has 6 players on the court."
+  },
+  {
+    "id": 215,
+    "subject": "Art & Craft",
+    "question": "Which of these is a primary colour?",
+    "options": { "A": "Green", "B": "Red", "C": "Orange", "D": "Purple" },
+    "correctAnswer": "B",
+    "explanation": "Red, Blue, and Yellow are primary colours."
+  },
+  {
+    "id": 216,
+    "subject": "Science & Technology",
+    "question": "The process by which plants lose water through leaves is ________.",
+    "options": { "A": "Photosynthesis", "B": "Transpiration", "C": "Absorption", "D": "Respiration" },
+    "correctAnswer": "B",
+    "explanation": "Transpiration is water loss from plant leaves."
+  },
+  {
+    "id": 217,
+    "subject": "Social Studies",
+    "question": "Which of these is a river in Kenya?",
+    "options": { "A": "River Nile", "B": "River Tana", "C": "River Congo", "D": "River Zambezi" },
+    "correctAnswer": "B",
+    "explanation": "River Tana is the longest river in Kenya."
+  },
+  {
+    "id": 218,
+    "subject": "Mathematics",
+    "question": "Which number comes next: 5, 10, 15, 20, ...?",
+    "options": { "A": "21", "B": "25", "C": "30", "D": "24" },
+    "correctAnswer": "B",
+    "explanation": "Counting by 5s."
+  },
+  {
+    "id": 219,
+    "subject": "CRE",
+    "question": "The first man created by God was ________.",
+    "options": { "A": "Eve", "B": "Adam", "C": "Cain", "D": "Abel" },
+    "correctAnswer": "B",
+    "explanation": "Adam was the first human created."
+  },
+  {
+    "id": 220,
+    "subject": "Agriculture",
+    "question": "Which pest destroys maize grains in the store?",
+    "options": { "A": "Weevil", "B": "Aphid", "C": "Cutworm", "D": "Stalk borer" },
+    "correctAnswer": "A",
+    "explanation": "Weevils bore into stored grains."
+  },
+  {
+    "id": 221,
+    "subject": "English",
+    "question": "Which sentence is correct?",
+    "options": { "A": "She has went home.", "B": "She has gone home.", "C": "She have gone home.", "D": "She gone home." },
+    "correctAnswer": "B",
+    "explanation": "Present perfect tense: Has + Past Participle (Gone)."
+  },
+  {
+    "id": 222,
+    "subject": "Kiswahili",
+    "question": "Kanusha: 'Tunasoma.'",
+    "options": { "A": "Hatusomi.", "B": "Hujasoma.", "C": "Hutasoma.", "D": "Hatukusoma." },
+    "correctAnswer": "A",
+    "explanation": "Tu- (sisi) inakanushwa na Hatu-."
+  },
+  {
+    "id": 223,
+    "subject": "Mathematics",
+    "question": "What is the total value of digit 3 in 4350?",
+    "options": { "A": "3", "B": "30", "C": "300", "D": "3000" },
+    "correctAnswer": "C",
+    "explanation": "The 3 is in the hundreds place, so 300."
+  },
+  {
+    "id": 224,
+    "subject": "Science & Technology",
+    "question": "Which planet is known as the Red Planet?",
+    "options": { "A": "Mars", "B": "Venus", "C": "Jupiter", "D": "Saturn" },
+    "correctAnswer": "A",
+    "explanation": "Mars appears red due to iron oxide."
+  },
+  {
+    "id": 225,
+    "subject": "Home Science",
+    "question": "We use a ________ to wipe our nose.",
+    "options": { "A": "Towel", "B": "Handkerchief", "C": "Curtain", "D": "Blanket" },
+    "correctAnswer": "B",
+    "explanation": "A handkerchief is for personal hygiene (nose/face)."
+  },
+  {
+    "id": 226,
+    "subject": "Social Studies",
+    "question": "A low lying land between two mountains is called a ________.",
+    "options": { "A": "Hill", "B": "Valley", "C": "Plateau", "D": "Plain" },
+    "correctAnswer": "B",
+    "explanation": "A valley is the depression between hills or mountains."
+  },
+  {
+    "id": 227,
+    "subject": "ICT/Computer Studies",
+    "question": "Which device is used to click and select items on the screen?",
+    "options": { "A": "Keyboard", "B": "Mouse", "C": "Printer", "D": "Speaker" },
+    "correctAnswer": "B",
+    "explanation": "A mouse is a pointing device."
+  },
+  {
+    "id": 228,
+    "subject": "Music",
+    "question": "The person who directs a choir is called a ________.",
+    "options": { "A": "Soloist", "B": "Conductor", "C": "Manager", "D": "Singer" },
+    "correctAnswer": "B",
+    "explanation": "A conductor leads and directs the musical performance."
+  },
+  {
+    "id": 229,
+    "subject": "Mathematics",
+    "question": "Subtract 2.5 from 10.",
+    "options": { "A": "8.5", "B": "7.5", "C": "6.5", "D": "7.0" },
+    "correctAnswer": "B",
+    "explanation": "10.0 - 2.5 = 7.5."
+  },
+  {
+    "id": 230,
+    "subject": "English",
+    "question": "The plural of 'Foot' is ________.",
+    "options": { "A": "Foots", "B": "Feet", "C": "Feets", "D": "Footes" },
+    "correctAnswer": "B",
+    "explanation": "Irregular plural: Foot -> Feet."
+  },
+  {
+    "id": 231,
+    "subject": "Agriculture",
+    "question": "Which gas is produced by plants during photosynthesis?",
+    "options": { "A": "Carbon dioxide", "B": "Oxygen", "C": "Nitrogen", "D": "Hydrogen" },
+    "correctAnswer": "B",
+    "explanation": "Plants release oxygen as a byproduct of making food."
+  },
+  {
+    "id": 232,
+    "subject": "Kiswahili",
+    "question": "Jina la nchi yetu ni ________.",
+    "options": { "A": "Nairobi", "B": "Kenya", "C": "Uganda", "D": "Mombasa" },
+    "correctAnswer": "B",
+    "explanation": "Tunatoka Kenya."
+  },
+  {
+    "id": 233,
+    "subject": "CRE",
+    "question": "Which disciple denied Jesus three times?",
+    "options": { "A": "John", "B": "Peter", "C": "Judas", "D": "James" },
+    "correctAnswer": "B",
+    "explanation": "Peter denied knowing Jesus."
+  },
+  {
+    "id": 234,
+    "subject": "Art & Craft",
+    "question": "A pattern created by repeating shapes is called ________.",
+    "options": { "A": "Texture", "B": "Rhythm/Pattern", "C": "Form", "D": "Space" },
+    "correctAnswer": "B",
+    "explanation": "Repetition creates a visual rhythm or pattern."
+  },
+  {
+    "id": 235,
+    "subject": "Physical & Health Education",
+    "question": "Which of these is a track event?",
+    "options": { "A": "Shot put", "B": "100m sprint", "C": "Javelin", "D": "Long jump" },
+    "correctAnswer": "B",
+    "explanation": "Running events on the track are track events."
+  },
+  {
+    "id": 236,
+    "subject": "Mathematics",
+    "question": "What is the sum of 145 and 255?",
+    "options": { "A": "300", "B": "400", "C": "390", "D": "410" },
+    "correctAnswer": "B",
+    "explanation": "145 + 255 = 400."
+  },
+  {
+    "id": 237,
+    "subject": "Science & Technology",
+    "question": "Which part of the flower attracts insects?",
+    "options": { "A": "Sepal", "B": "Petal", "C": "Stem", "D": "Root" },
+    "correctAnswer": "B",
+    "explanation": "Brightly coloured petals attract pollinators."
+  },
+  {
+    "id": 238,
+    "subject": "Social Studies",
+    "question": "People who buy and sell goods are called ________.",
+    "options": { "A": "Farmers", "B": "Traders", "C": "Teachers", "D": "Doctors" },
+    "correctAnswer": "B",
+    "explanation": "Trade involves buying and selling."
+  },
+  {
+    "id": 239,
+    "subject": "English",
+    "question": "Which word means the same as 'Happy'?",
+    "options": { "A": "Sad", "B": "Joyful", "C": "Angry", "D": "Tired" },
+    "correctAnswer": "B",
+    "explanation": "Joyful is a synonym for Happy."
+  },
+  {
+    "id": 240,
+    "subject": "Home Science",
+    "question": "Which of these is a method of waste disposal?",
+    "options": { "A": "Buying", "B": "Recycling/Composting", "C": "Cooking", "D": "Eating" },
+    "correctAnswer": "B",
+    "explanation": "Recycling reduces waste."
+  },
+  {
+    "id": 241,
+    "subject": "Mathematics",
+    "question": "How many days are there in a leap year?",
+    "options": { "A": "365", "B": "366", "C": "360", "D": "350" },
+    "correctAnswer": "B",
+    "explanation": "A leap year has one extra day (Feb 29)."
+  },
+  {
+    "id": 242,
+    "subject": "Kiswahili",
+    "question": "Mtoto wa ng'ombe anaitwa ________.",
+    "options": { "A": "Kifaranga", "B": "Ndama", "C": "Mwanakondoo", "D": "Kiwavi" },
+    "correctAnswer": "B",
+    "explanation": "Ndama ni mtoto wa ng'ombe."
+  },
+  {
+    "id": 243,
+    "subject": "Agriculture",
+    "question": "Which tool is used to carry manure?",
+    "options": { "A": "Jembe", "B": "Wheelbarrow", "C": "Rake", "D": "Panga" },
+    "correctAnswer": "B",
+    "explanation": "A wheelbarrow carries heavy loads."
+  },
+  {
+    "id": 244,
+    "subject": "CRE",
+    "question": "The Bible is divided into ________ Testaments.",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "B",
+    "explanation": "Old Testament and New Testament."
+  },
+  {
+    "id": 245,
+    "subject": "ICT/Computer Studies",
+    "question": "Which key is used to make letters capital?",
+    "options": { "A": "Enter", "B": "Caps Lock/Shift", "C": "Spacebar", "D": "Tab" },
+    "correctAnswer": "B",
+    "explanation": "Caps Lock or Shift toggles capitalization."
+  },
+  {
+    "id": 246,
+    "subject": "Music",
+    "question": "The speed of music is called ________.",
+    "options": { "A": "Pitch", "B": "Tempo", "C": "Volume", "D": "Tone" },
+    "correctAnswer": "B",
+    "explanation": "Tempo refers to the speed."
+  },
+  {
+    "id": 247,
+    "subject": "Mathematics",
+    "question": "What is 3/4 of 20?",
+    "options": { "A": "10", "B": "15", "C": "12", "D": "16" },
+    "correctAnswer": "B",
+    "explanation": "(3/4) * 20 = 3 * 5 = 15."
+  },
+  {
+    "id": 248,
+    "subject": "Science & Technology",
+    "question": "Which organ pumps blood in the body?",
+    "options": { "A": "Lungs", "B": "Heart", "C": "Kidney", "D": "Liver" },
+    "correctAnswer": "B",
+    "explanation": "The heart pumps blood."
+  },
+  {
+    "id": 249,
+    "subject": "English",
+    "question": "Identify the noun: 'The dog barked loudly.'",
+    "options": { "A": "Loudly", "B": "Dog", "C": "Barked", "D": "The" },
+    "correctAnswer": "B",
+    "explanation": "Dog is the naming word (Noun)."
+  },
+  {
+    "id": 250,
+    "subject": "Social Studies",
+    "question": "The weather instrument used to measure wind direction is ________.",
+    "options": { "A": "Thermometer", "B": "Wind vane", "C": "Raingauge", "D": "Barometer" },
+    "correctAnswer": "B",
+    "explanation": "A wind vane points to where the wind is coming from."
+  },
+  {
+    "id": 251,
+    "subject": "Kiswahili",
+    "question": "Tafsiri: 'School' kwa Kiswahili.",
+    "options": { "A": "Sokoni", "B": "Shule", "C": "Nyumbani", "D": "Kanisani" },
+    "correctAnswer": "B",
+    "explanation": "School ni Shule."
+  },
+  {
+    "id": 252,
+    "subject": "Physical & Health Education",
+    "question": "Which nutrient provides the body with energy?",
+    "options": { "A": "Water", "B": "Carbohydrates", "C": "Vitamins", "D": "Minerals" },
+    "correctAnswer": "B",
+    "explanation": "Carbs are energy giving."
+  },
+  {
+    "id": 253,
+    "subject": "Mathematics",
+    "question": "Write 'Forty-five' in figures.",
+    "options": { "A": "405", "B": "45", "C": "54", "D": "450" },
+    "correctAnswer": "B",
+    "explanation": "45."
+  },
+  {
+    "id": 254,
+    "subject": "Home Science",
+    "question": "Which of these is unsafe in the kitchen?",
+    "options": { "A": "Clean hands", "B": "Wet floor", "C": "Sharp knife", "D": "Dry cloth" },
+    "correctAnswer": "B",
+    "explanation": "A wet floor causes slipping accidents."
+  },
+  {
+    "id": 255,
+    "subject": "CRE",
+    "question": "David was a ________ before he became king.",
+    "options": { "A": "Fisherman", "B": "Shepherd", "C": "Carpenter", "D": "Tax collector" },
+    "correctAnswer": "B",
+    "explanation": "David looked after his father's sheep."
+  },
+  {
+    "id": 256,
+    "subject": "Art & Craft",
+    "question": "Which item is used to weave a mat?",
+    "options": { "A": "Clay", "B": "Reeds/Sisal", "C": "Stone", "D": "Wood" },
+    "correctAnswer": "B",
+    "explanation": "Flexible fibres like sisal or reeds are used."
+  },
+  {
+    "id": 257,
+    "subject": "English",
+    "question": "Choose the correct preposition: 'The bird flew ________ the tree.'",
+    "options": { "A": "Over", "B": "In", "C": "At", "D": "On" },
+    "correctAnswer": "A",
+    "explanation": "'Over' indicates movement above."
+  },
+  {
+    "id": 258,
+    "subject": "Agriculture",
+    "question": "Which soil is best for farming?",
+    "options": { "A": "Clay", "B": "Loam", "C": "Sand", "D": "Gravel" },
+    "correctAnswer": "B",
+    "explanation": "Loam has a balance of nutrients and drainage."
+  },
+  {
+    "id": 259,
+    "subject": "Science & Technology",
+    "question": "Which of these is a sense organ?",
+    "options": { "A": "Hair", "B": "Eye", "C": "Teeth", "D": "Nail" },
+    "correctAnswer": "B",
+    "explanation": "The eye is the organ of sight."
+  },
+  {
+    "id": 260,
+    "subject": "Mathematics",
+    "question": "What is the remainder when 14 is divided by 3?",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "B",
+    "explanation": "14 = 3 × 4 + 2. Remainder is 2."
+  },
+  {
+    "id": 261,
+    "subject": "Social Studies",
+    "question": "Which community is known for long distance running?",
+    "options": { "A": "Mijikenda", "B": "Kalenjin", "C": "Luo", "D": "Luhya" },
+    "correctAnswer": "B",
+    "explanation": "The Kalenjin are famous for athletics."
+  },
+  {
+    "id": 262,
+    "subject": "Kiswahili",
+    "question": "Mtu anayefundisha anaitwa ________.",
+    "options": { "A": "Mwanafunzi", "B": "Mwalimu", "C": "Mzazi", "D": "Mlinzi" },
+    "correctAnswer": "B",
+    "explanation": "Mwalimu hufundisha."
+  },
+  {
+    "id": 263,
+    "subject": "ICT/Computer Studies",
+    "question": "To type capital letters, we press the ________ key.",
+    "options": { "A": "Enter", "B": "Shift/Caps Lock", "C": "Space", "D": "Alt" },
+    "correctAnswer": "B",
+    "explanation": "Caps Lock or Shift."
+  },
+  {
+    "id": 264,
+    "subject": "Music",
+    "question": "The Kenya National Anthem has ________ verses.",
+    "options": { "A": "2", "B": "3", "C": "4", "D": "1" },
+    "correctAnswer": "B",
+    "explanation": "It has three verses."
+  },
+  {
+    "id": 265,
+    "subject": "Mathematics",
+    "question": "Which shape has 3 sides?",
+    "options": { "A": "Square", "B": "Triangle", "C": "Rectangle", "D": "Circle" },
+    "correctAnswer": "B",
+    "explanation": "A triangle has three sides."
   },
   {
     id: 266,
