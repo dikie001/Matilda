@@ -13,7 +13,6 @@ import {
   Laptop2,
   Lightbulb,
   Mic,
-  Notebook,
   Sparkles,
   Trees,
   Trophy,

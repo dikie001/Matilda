@@ -24,7 +24,7 @@ import {
   Trees,
   X,
   Zap,
-  type LucideIcon
+  type LucideIcon,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -34,12 +34,6 @@ interface MenuItem {
   label: string;
   icon: LucideIcon;
   to: string;
-}
-
-interface User {
-  name: string;
-  hobby: string;
-  subject: string;
 }
 
 // --- Constants ---
@@ -117,25 +111,12 @@ function useAppUpdate(playSound: () => void) {
   return { showModal, setShowModal, status, checkForUpdates, applyUpdate };
 }
 
-function useUserProfile() {
-  const [user, setUser] = useState<User>({ name: "", hobby: "", subject: "" });
-
-  useEffect(() => {
-    const data = localStorage.getItem("user-info");
-    if (data) setUser(JSON.parse(data));
-  }, []);
-
-  return user;
-}
-
 // --- Sub-Components ---
 
 const NavHeader = ({
-  user,
   onClose,
   playSound,
 }: {
-  user: User;
   onClose: () => void;
   playSound: () => void;
 }) => {
@@ -175,10 +156,10 @@ const NavHeader = ({
         />
         <div>
           <h2 className="text-xl font-bold text-white tracking-tight">
-            {user.name || "Brillia"}
+            Brillia
           </h2>
           <span className="inline-flex items-center px-2 py-0.5 mt-1 rounded-full text-xs font-medium bg-indigo-500/30 text-indigo-100 border border-indigo-400/30">
-            {user.hobby || "Explorer"}
+            Explorer
           </span>
         </div>
       </div>
@@ -318,7 +299,6 @@ export default function MobileNav({
   const navigate = useNavigate();
   const location = useLocation();
   const { playSend } = useSound();
-  const user = useUserProfile();
 
   // State
   const [sectionsOpen, setSectionsOpen] = useState({
@@ -349,7 +329,7 @@ export default function MobileNav({
 
       {/* Sidebar */}
       <div className="fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-white dark:bg-slate-950 z-50 flex flex-col shadow-2xl shadow-indigo-900/20 animate-in slide-in-from-right duration-300 border-l border-indigo-100 dark:border-indigo-900">
-        <NavHeader user={user} onClose={onClose} playSound={playSend} />
+        <NavHeader onClose={onClose} playSound={playSend} />
 
         {/* Scroll Area */}
         <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6 scrollbar-hide bg-gradient-to-b from-white to-indigo-50/30 dark:from-slate-950 dark:to-slate-900">
@@ -365,7 +345,7 @@ export default function MobileNav({
           </div>
 
           <NavGroup
-            title="Matilda Awino"
+            title="Activities"
             icon={ListTodo}
             items={MENUS.ACTIVITIES}
             isOpen={sectionsOpen.activities}
@@ -374,11 +354,10 @@ export default function MobileNav({
           />
 
           {/* ======================================================== */}
-          {/* ⚡ NEW CUSTOM USER BUTTONS (Ryanne & Gavin) ⚡         */}
-          {/* Moved BELOW Activities as requested                    */}
+          {/* ⚡ RESTORED CUSTOM USER BUTTONS ⚡                        */}
           {/* ======================================================== */}
           <div className="grid gap-3 pt-2">
-            {/* Gavin: Green Theme */}
+            {/* Ann Judith: Green Theme */}
             <button
               onClick={() => handleNav("/gavin/quiz")}
               className={cn(
@@ -399,7 +378,7 @@ export default function MobileNav({
               <span>Ann Judith</span>
             </button>
 
-            {/* Ryanne : Blue theme */}
+            {/* Dikie001 : Blue theme */}
             <button
               onClick={() => handleNav("/ryanne/quiz")}
               className={cn(
@@ -420,14 +399,14 @@ export default function MobileNav({
               <span>Dikie001</span>
             </button>
 
-            {/* Daniel: orange Theme */}
+            {/* Daniel: Orange Theme */}
             <button
               onClick={() => handleNav("/daniel/quiz")}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
                 location.pathname === "/daniel/quiz"
-                  ? "bg-orange-600 text-white border-orange-600 shadow-md shadow-blue-200"
-                  : "bg-orange-50 dark:bg-orange-950/30 text-orange-900 dark:text-blue-100 border-orange-100 dark:border-orange-900 hover:bg-blue-100 dark:hover:bg-orange-900/50"
+                  ? "bg-orange-600 text-white border-orange-600 shadow-md shadow-orange-200"
+                  : "bg-orange-50 dark:bg-orange-950/30 text-orange-900 dark:text-orange-100 border-orange-100 dark:border-orange-900 hover:bg-orange-100 dark:hover:bg-orange-900/50"
               )}
             >
               <Bike
@@ -441,12 +420,12 @@ export default function MobileNav({
               <span>Daniel Otieno</span>
             </button>
 
-            {/* Lincoln: purple Theme */}
+            {/* Lincoln: Purple Theme */}
             <button
               onClick={() => handleNav("/lincoln/quiz")}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer font-medium transition-all duration-200 group relative overflow-hidden border",
-                location.pathname === "/daniel/quiz"
+                location.pathname === "/lincoln/quiz"
                   ? "bg-purple-600 text-white border-purple-600 shadow-md shadow-purple-200"
                   : "bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100 border-purple-100 dark:border-purple-900 hover:bg-purple-100 dark:hover:bg-purple-900/50"
               )}
@@ -462,7 +441,7 @@ export default function MobileNav({
               <span>Abraham Lincoln</span>
             </button>
 
-            {/* Reading practice */}
+            {/* Reading: Orange/Book Theme */}
             <button
               onClick={() => handleNav("/reading")}
               className={cn(
