@@ -35,19 +35,19 @@ const theme = {
 
 // --- CBC GRADE LOGIC ---
 const getCBCGrade = (score: number) => {
-  if (score >= 85)
+  if (score >= 82)
     return {
       grade: "EE",
       label: "Exceeding Expectations",
-      color: "#9D174D", // Pink 800
+      color: "#73fc03ff", 
     };
-  if (score >= 75)
+  if (score >= 72)
     return { grade: "ME", label: "Meeting Expectations", color: theme.primary };
-  if (score >= 55)
+  if (score >= 52)
     return {
       grade: "AE",
       label: "Approaching Expectations",
-      color: "#BE185D", // Pink 700
+      color: theme.warning,
     };
   return { grade: "BE", label: "Below Expectations", color: theme.danger };
 };
