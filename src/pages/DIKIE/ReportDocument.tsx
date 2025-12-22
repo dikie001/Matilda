@@ -276,6 +276,27 @@ const styles = StyleSheet.create({
     color: theme.primary,
     fontWeight: "bold",
   },
+  // ---  ABOUT SECTION ---
+  aboutSection: {
+    backgroundColor: theme.bg,
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 15,
+    marginHorizontal: 40,
+    borderLeftWidth: 3,
+    borderLeftColor: theme.primary,
+  },
+  aboutTitle: {
+    fontSize: 10,
+    fontWeight: "bold",
+    color: theme.primary,
+    marginBottom: 4,
+  },
+  aboutText: {
+    fontSize: 9,
+    color: theme.secondary,
+    lineHeight: 1.4,
+  },
 });
 
 // --- MATH HELPERS ---
@@ -351,9 +372,8 @@ export const ReportDocument = ({
   });
 
   const pathD = svgPath(points, bezierCommand);
-  const areaD = `${pathD} L ${graphWidth + paddingLeft},${
-    paddingTop + graphHeight
-  } L ${paddingLeft},${paddingTop + graphHeight} Z`;
+  const areaD = `${pathD} L ${graphWidth + paddingLeft},${paddingTop + graphHeight
+    } L ${paddingLeft},${paddingTop + graphHeight} Z`;
 
   const today = new Date().toLocaleDateString("en-KE", {
     year: "numeric",
@@ -406,6 +426,16 @@ export const ReportDocument = ({
               <Text style={styles.stampLabel}>{cbcInfo.label}</Text>
             </View>
           </View>
+        </View>
+
+        {/* ABOUT */}
+        <View style={styles.aboutSection}>
+          <Text style={styles.aboutTitle}>Executive Summary for {userName}</Text>
+          <Text style={styles.aboutText}>
+            This document serves as a comprehensive record of your learning journey on {appName}.
+            It details your assessment history, visualizes your performance trends over the last 15 tests,
+            and provides an analyzed CBC grade based on your cumulative average.
+          </Text>
         </View>
 
         {/* BODY */}
