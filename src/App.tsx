@@ -16,6 +16,7 @@ import UsersPage from "./pages/ADMIN/Users";
 import AdminSettings from "./pages/ADMIN/Settings";
 import AdminReports from "./pages/ADMIN/Reports";
 import AdminNotifications from "./pages/ADMIN/Notifications";
+import AdminResetPanel from "./pages/ADMIN/AdminResetPanel";
 import PracticeCommunication from "./pages/DEV/PracticeCommunication";
 import { useUpdateListener } from "./hooks/useUpdateListener";
 import WordPower from "./pages/MATILDA/WordPower";
@@ -97,6 +98,8 @@ const App = () => {
           <Route path="/lincoln/quiz" element={<LincolnQuickQuiz />} />
           <Route path="/lincoln/results" element={<LincolnResults />} />
           <Route path="/reading" element={<Reading />} />
+          {/* Hidden Admin Reset Panel */}
+          <Route path="/admin/reset-panel" element={<AdminResetPanel />} />
         </Routes>
       </Suspense>
     </Router>
