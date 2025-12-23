@@ -100,8 +100,8 @@ Secure admin dashboard for managing content, viewing analytics, and administerin
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/dikie001/Brillia
-   cd Brillia
+   git clone https://github.com/dikie001/Matilda
+   cd Matilda
    ```
 
 2. **Install dependencies**
@@ -254,7 +254,7 @@ Brillia is designed as a PWA, offering a native app-like experience in your brow
 
 ### Installation
 
-1. Visit [brillia-six.vercel.app](https://brillia-six.vercel.app) in a supported browser (Chrome, Edge, Safari)
+1. Visit [matilda001.vercel.app](https://matilda001.vercel.app) in a supported browser (Chrome, Edge, Safari)
 2. Look for the install prompt or click the install button in the app
 3. Follow the browser's installation instructions
 4. Brillia will appear as a native app on your device
