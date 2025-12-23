@@ -333,7 +333,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Dickens Omondi**
 
 - Website: [dikie.vercel.app](https://dikie.vercel.app)
-- Email: dickensomondi@gmail.com
+- Email: omondidickens255@gmail.com
 <!-- - LinkedIn:  -->
 
 Built with ❤️ using modern web technologies. Designed to be fast, accessible, and enjoyable for all users.
