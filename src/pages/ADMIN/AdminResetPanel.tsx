@@ -23,7 +23,7 @@ import {
     Trash2,
     X,
 } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { toast, Toaster } from "sonner";
 
 interface SelectedKeys {
@@ -307,11 +307,6 @@ const AdminResetPanel: React.FC = () => {
         }, 500);
     };
 
-    // Get current value of a key
-    const getKeyValue = (key: string): string | null => {
-        return localStorage.getItem(key);
-    };
-
     // Check if a key has data
     const keyHasData = (key: string): boolean => {
         const value = localStorage.getItem(key);
@@ -415,9 +410,9 @@ const AdminResetPanel: React.FC = () => {
                         </div>
 
                         {/* Modal Body */}
-                        <div className="p-6 space-y-4">
+                        <div className="p-6 space-y-4 overflow-y-auto flex-1">
                             {editingKey.value === "" ? (
-                                <div className="bg-gray-900/50 rounded-xl p-8 text-center">
+                                <div className="bg-gray-900/50 rounded-xl p-6 text-center">
                                     <p className="text-gray-400">No data stored for this key</p>
                                     <p className="text-gray-500 text-sm mt-2">
                                         Enter a value below to create it
@@ -432,7 +427,7 @@ const AdminResetPanel: React.FC = () => {
                                 <textarea
                                     value={editingKey.value}
                                     onChange={(e) => setEditingKey({ ...editingKey, value: e.target.value })}
-                                    className="w-full h-64 px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none text-white font-mono text-sm resize-none"
+                                    className="w-full h-48 px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none text-white font-mono text-sm resize-y min-h-[120px]"
                                     placeholder="Enter value..."
                                 />
                             </div>
