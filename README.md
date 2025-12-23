@@ -11,7 +11,7 @@
 
 > Your daily companion for inspiration, learning, and fun. Discover Fun Facts, challenge your mind, and grow every day.
 
-[🌐 Live Demo](https://brillia-six.vercel.app) | [📱 Install PWA](https://brillia-six.vercel.app) | [📧 Contact Developer](mailto:dickensomondi@gmail.com)
+[🌐 Live Demo](https://matilda001.vercel.app) | [📱 Install PWA](https://matilda001.vercel.app) | [📧 Contact Developer](mailto:omondidickens255@gmail.com)
 
 ---
 
