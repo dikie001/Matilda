@@ -12,21 +12,32 @@ import {
     Check,
     CheckCircle2,
     ChevronDown,
+    Edit3,
     Eye,
     EyeOff,
     Loader2,
     Lock,
     RotateCcw,
+    Save,
     Shield,
     Trash2,
     X,
 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast, Toaster } from "sonner";
 
 interface SelectedKeys {
     userKeys: Record<UserId, string[]>;
     sharedKeys: string[];
+}
+
+type PanelMode = "delete" | "edit";
+
+interface EditingKey {
+    key: string;
+    label: string;
+    value: string;
+    originalValue: string;
 }
 
 const AdminResetPanel: React.FC = () => {
@@ -36,6 +47,9 @@ const AdminResetPanel: React.FC = () => {
     const [loading] = useState(false);
     const [deleteLoading, setDeleteLoading] = useState(false);
     const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+    // Panel mode: delete or edit
+    const [panelMode, setPanelMode] = useState<PanelMode>("delete");
 
     // Selected users and keys
     const [selectedUsers, setSelectedUsers] = useState<UserId[]>([]);
@@ -49,6 +63,10 @@ const AdminResetPanel: React.FC = () => {
         },
         sharedKeys: [],
     });
+
+    // Edit mode state
+    const [editingKey, setEditingKey] = useState<EditingKey | null>(null);
+    const [saveLoading, setSaveLoading] = useState(false);
 
     // Expand/collapse categories
     const [expandedCategories, setExpandedCategories] = useState<
@@ -234,6 +252,72 @@ const AdminResetPanel: React.FC = () => {
         return colorMap[user?.color || "gray"] || "bg-gray-500";
     };
 
+    // ==================== EDIT MODE FUNCTIONS ====================
+
+    // Open key for editing
+    const openKeyForEdit = (key: string, label: string) => {
+        const currentValue = localStorage.getItem(key);
+        let formattedValue = "";
+
+        if (currentValue) {
+            try {
+                // Try to parse and format as JSON
+                const parsed = JSON.parse(currentValue);
+                formattedValue = JSON.stringify(parsed, null, 2);
+            } catch {
+                // If not JSON, use as-is
+                formattedValue = currentValue;
+            }
+        }
+
+        setEditingKey({
+            key,
+            label,
+            value: formattedValue,
+            originalValue: formattedValue,
+        });
+    };
+
+    // Save edited value
+    const saveEditedValue = () => {
+        if (!editingKey) return;
+
+        setSaveLoading(true);
+
+        setTimeout(() => {
+            try {
+                // Validate JSON if it looks like JSON
+                let valueToSave = editingKey.value;
+                if (editingKey.value.trim().startsWith("{") || editingKey.value.trim().startsWith("[")) {
+                    // Validate by parsing
+                    JSON.parse(editingKey.value);
+                    // Compact it for storage
+                    valueToSave = JSON.stringify(JSON.parse(editingKey.value));
+                }
+
+                localStorage.setItem(editingKey.key, valueToSave);
+                toast.success(`Saved changes to ${editingKey.label}!`);
+                setEditingKey(null);
+            } catch (err) {
+                console.error(err);
+                toast.error("Invalid JSON format. Please fix and try again.");
+            } finally {
+                setSaveLoading(false);
+            }
+        }, 500);
+    };
+
+    // Get current value of a key
+    const getKeyValue = (key: string): string | null => {
+        return localStorage.getItem(key);
+    };
+
+    // Check if a key has data
+    const keyHasData = (key: string): boolean => {
+        const value = localStorage.getItem(key);
+        return value !== null && value !== "";
+    };
+
     // Login screen
     if (!isAuthenticated) {
         return (
@@ -302,6 +386,118 @@ const AdminResetPanel: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 md:p-8">
             <Toaster richColors position="top-center" />
+
+            {/* Edit Key Modal */}
+            {editingKey && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+                    <div className="w-full max-w-2xl bg-gray-800 rounded-2xl border border-gray-700 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col my-auto">
+                        {/* Modal Header */}
+                        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 px-6 py-4 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                                    <Edit3 className="w-5 h-5 text-white" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold text-white">
+                                        Edit: {editingKey.label}
+                                    </h3>
+                                    <p className="text-blue-100 text-xs font-mono">
+                                        {editingKey.key}
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                                onClick={() => setEditingKey(null)}
+                                className="p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+                            >
+                                <X className="w-4 h-4" />
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <div className="p-6 space-y-4">
+                            {editingKey.value === "" ? (
+                                <div className="bg-gray-900/50 rounded-xl p-8 text-center">
+                                    <p className="text-gray-400">No data stored for this key</p>
+                                    <p className="text-gray-500 text-sm mt-2">
+                                        Enter a value below to create it
+                                    </p>
+                                </div>
+                            ) : null}
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                    Value (JSON or plain text)
+                                </label>
+                                <textarea
+                                    value={editingKey.value}
+                                    onChange={(e) => setEditingKey({ ...editingKey, value: e.target.value })}
+                                    className="w-full h-64 px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none text-white font-mono text-sm resize-none"
+                                    placeholder="Enter value..."
+                                />
+                            </div>
+
+                            {/* Quick Actions for common edits */}
+                            {editingKey.key.includes("CURRENT_TEST_INDEX") && (
+                                <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
+                                    <p className="text-sm text-blue-300 mb-3">Quick Actions:</p>
+                                    <div className="flex gap-2 flex-wrap">
+                                        {[0, 1, 2, 3, 4, 5].map((num) => (
+                                            <button
+                                                key={num}
+                                                onClick={() => setEditingKey({ ...editingKey, value: num.toString() })}
+                                                className="px-3 py-1.5 bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 rounded-lg text-sm font-medium transition-colors"
+                                            >
+                                                Set to Test {num + 1}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Action buttons */}
+                            <div className="flex gap-3 pt-2">
+                                <button
+                                    onClick={() => setEditingKey(null)}
+                                    disabled={saveLoading}
+                                    className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-xl transition-colors"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        localStorage.removeItem(editingKey.key);
+                                        toast.success(`Deleted ${editingKey.label}`);
+                                        setEditingKey(null);
+                                    }}
+                                    disabled={saveLoading}
+                                    className="py-3 px-4 bg-red-600/20 hover:bg-red-600/30 text-red-400 font-semibold rounded-xl transition-colors flex items-center gap-2"
+                                >
+                                    <Trash2 className="w-4 h-4" />
+                                    Delete
+                                </button>
+                                <button
+                                    onClick={saveEditedValue}
+                                    disabled={saveLoading || editingKey.value === editingKey.originalValue}
+                                    className={`flex-1 py-3 font-bold rounded-xl transition-colors flex items-center justify-center gap-2 ${editingKey.value !== editingKey.originalValue
+                                        ? "bg-blue-600 hover:bg-blue-500 text-white"
+                                        : "bg-gray-700 text-gray-500 cursor-not-allowed"
+                                        }`}
+                                >
+                                    {saveLoading ? (
+                                        <Loader2 className="w-5 h-5 animate-spin" />
+                                    ) : (
+                                        <>
+                                            <Save className="w-4 h-4" />
+                                            Save Changes
+                                        </>
+                                    )}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Confirm Delete Modal */}
             {showConfirmModal && (
@@ -389,17 +585,43 @@ const AdminResetPanel: React.FC = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="mb-8">
-                    <div className="flex items-center gap-4 mb-2">
-                        <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
-                            <RotateCcw className="w-6 h-6 text-white" />
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
+                                <RotateCcw className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                                <h1 className="text-3xl font-bold text-white">
+                                    Admin Reset Panel
+                                </h1>
+                                <p className="text-gray-400">
+                                    Manage and reset user data selectively
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <h1 className="text-3xl font-bold text-white">
-                                Admin Reset Panel
-                            </h1>
-                            <p className="text-gray-400">
-                                Manage and reset user data selectively
-                            </p>
+
+                        {/* Mode Toggle */}
+                        <div className="flex bg-gray-800 rounded-xl p-1 border border-gray-700">
+                            <button
+                                onClick={() => setPanelMode("delete")}
+                                className={`px-4 py-2 rounded-lg font-medium text-sm flex items-center gap-2 transition-all ${panelMode === "delete"
+                                    ? "bg-red-600 text-white shadow-lg"
+                                    : "text-gray-400 hover:text-white"
+                                    }`}
+                            >
+                                <Trash2 className="w-4 h-4" />
+                                Delete Mode
+                            </button>
+                            <button
+                                onClick={() => setPanelMode("edit")}
+                                className={`px-4 py-2 rounded-lg font-medium text-sm flex items-center gap-2 transition-all ${panelMode === "edit"
+                                    ? "bg-blue-600 text-white shadow-lg"
+                                    : "text-gray-400 hover:text-white"
+                                    }`}
+                            >
+                                <Edit3 className="w-4 h-4" />
+                                Edit Mode
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -411,20 +633,22 @@ const AdminResetPanel: React.FC = () => {
                         <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl border border-gray-700/50 overflow-hidden">
                             <div className="px-5 py-4 border-b border-gray-700/50 flex items-center justify-between">
                                 <h2 className="text-lg font-bold text-white">Select Users</h2>
-                                <div className="flex gap-2">
-                                    <button
-                                        onClick={selectAllUsers}
-                                        className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
-                                    >
-                                        All
-                                    </button>
-                                    <button
-                                        onClick={deselectAllUsers}
-                                        className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
-                                    >
-                                        None
-                                    </button>
-                                </div>
+                                {panelMode === "delete" && (
+                                    <div className="flex gap-2">
+                                        <button
+                                            onClick={selectAllUsers}
+                                            className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                                        >
+                                            All
+                                        </button>
+                                        <button
+                                            onClick={deselectAllUsers}
+                                            className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                                        >
+                                            None
+                                        </button>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-4 space-y-2">
@@ -467,20 +691,22 @@ const AdminResetPanel: React.FC = () => {
                                     <h2 className="text-lg font-bold text-white">
                                         User Quiz Data
                                     </h2>
-                                    <div className="flex gap-2">
-                                        <button
-                                            onClick={() => selectAllUserKeys(true)}
-                                            className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
-                                        >
-                                            All
-                                        </button>
-                                        <button
-                                            onClick={() => selectAllUserKeys(false)}
-                                            className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
-                                        >
-                                            None
-                                        </button>
-                                    </div>
+                                    {panelMode === "delete" && (
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={() => selectAllUserKeys(true)}
+                                                className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                                            >
+                                                All
+                                            </button>
+                                            <button
+                                                onClick={() => selectAllUserKeys(false)}
+                                                className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                                            >
+                                                None
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="p-4 space-y-4">
@@ -502,6 +728,30 @@ const AdminResetPanel: React.FC = () => {
                                                     const fullKey = `${userId}_${suffix}`;
                                                     const isSelected =
                                                         selectedKeys.userKeys[userId].includes(fullKey);
+                                                    const hasData = keyHasData(fullKey);
+
+                                                    if (panelMode === "edit") {
+                                                        return (
+                                                            <button
+                                                                key={fullKey}
+                                                                onClick={() => openKeyForEdit(fullKey, `${userId} ${suffix}`)}
+                                                                className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${hasData
+                                                                    ? "bg-blue-500/20 text-blue-300 hover:bg-blue-500/30"
+                                                                    : "bg-gray-800/30 text-gray-500 hover:bg-gray-700/30"
+                                                                    }`}
+                                                            >
+                                                                <Edit3 className="w-4 h-4" />
+                                                                <span className="font-mono text-xs flex-1 text-left">
+                                                                    {suffix}
+                                                                </span>
+                                                                {hasData && (
+                                                                    <span className="text-xs bg-blue-500/30 px-2 py-0.5 rounded">
+                                                                        Has Data
+                                                                    </span>
+                                                                )}
+                                                            </button>
+                                                        );
+                                                    }
 
                                                     return (
                                                         <button
@@ -544,7 +794,10 @@ const AdminResetPanel: React.FC = () => {
                                     Shared Storage Keys
                                 </h2>
                                 <p className="text-sm text-gray-400">
-                                    These keys are shared across all users
+                                    {panelMode === "edit"
+                                        ? "Click any key to view and edit its value"
+                                        : "These keys are shared across all users"
+                                    }
                                 </p>
                             </div>
 
@@ -576,18 +829,20 @@ const AdminResetPanel: React.FC = () => {
                                                 <span className="text-xs text-gray-500 mr-2">
                                                     {categoryKeys.length} keys
                                                 </span>
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        selectAllInCategory(category, !isFullySelected);
-                                                    }}
-                                                    className={`text-xs px-2 py-1 rounded transition-colors ${isFullySelected
-                                                        ? "bg-red-500/20 text-red-400"
-                                                        : "bg-gray-700 text-gray-400 hover:bg-gray-600"
-                                                        }`}
-                                                >
-                                                    {isFullySelected ? "Deselect" : "Select All"}
-                                                </button>
+                                                {panelMode === "delete" && (
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            selectAllInCategory(category, !isFullySelected);
+                                                        }}
+                                                        className={`text-xs px-2 py-1 rounded transition-colors ${isFullySelected
+                                                            ? "bg-red-500/20 text-red-400"
+                                                            : "bg-gray-700 text-gray-400 hover:bg-gray-600"
+                                                            }`}
+                                                    >
+                                                        {isFullySelected ? "Deselect" : "Select All"}
+                                                    </button>
+                                                )}
                                                 <ChevronDown
                                                     className={`w-4 h-4 text-gray-500 transition-transform ${isExpanded ? "rotate-180" : ""
                                                         }`}
@@ -601,6 +856,42 @@ const AdminResetPanel: React.FC = () => {
                                                         const isSelected = selectedKeys.sharedKeys.includes(
                                                             keyDef.key
                                                         );
+                                                        const hasData = keyHasData(keyDef.key);
+
+                                                        if (panelMode === "edit") {
+                                                            return (
+                                                                <button
+                                                                    key={keyDef.key}
+                                                                    onClick={() => openKeyForEdit(keyDef.key, keyDef.label)}
+                                                                    className={`w-full flex items-start gap-3 p-3 rounded-lg text-left transition-all ${hasData
+                                                                        ? "bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20"
+                                                                        : "bg-gray-800/30 border border-transparent hover:bg-gray-700/30"
+                                                                        }`}
+                                                                >
+                                                                    <Edit3 className={`w-5 h-5 mt-0.5 flex-shrink-0 ${hasData ? "text-blue-400" : "text-gray-500"
+                                                                        }`} />
+                                                                    <div className="flex-1 min-w-0">
+                                                                        <div className="flex items-center gap-2">
+                                                                            <span className={`font-medium ${hasData ? "text-gray-200" : "text-gray-400"
+                                                                                }`}>
+                                                                                {keyDef.label}
+                                                                            </span>
+                                                                            {hasData && (
+                                                                                <span className="text-xs bg-blue-500/30 text-blue-300 px-2 py-0.5 rounded">
+                                                                                    Has Data
+                                                                                </span>
+                                                                            )}
+                                                                        </div>
+                                                                        <div className="text-xs text-gray-500 mt-0.5">
+                                                                            {keyDef.description}
+                                                                        </div>
+                                                                        <code className="text-xs text-gray-600 font-mono mt-1 block truncate">
+                                                                            {keyDef.key}
+                                                                        </code>
+                                                                    </div>
+                                                                </button>
+                                                            );
+                                                        }
 
                                                         return (
                                                             <button
@@ -645,45 +936,47 @@ const AdminResetPanel: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Bottom Action Bar */}
-                <div className="fixed bottom-0 left-0 right-0 bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50 p-4">
-                    <div className="max-w-6xl mx-auto flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                                <span className="text-gray-300">
-                                    <span className="font-bold text-white">
-                                        {getAllSelectedKeys().length}
-                                    </span>{" "}
-                                    keys selected
-                                </span>
-                            </div>
-                            {selectedUsers.length > 0 && (
+                {/* Bottom Action Bar - Only in Delete Mode */}
+                {panelMode === "delete" && (
+                    <div className="fixed bottom-0 left-0 right-0 bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50 p-4">
+                        <div className="max-w-6xl mx-auto flex items-center justify-between">
+                            <div className="flex items-center gap-4">
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-500">•</span>
-                                    <span className="text-gray-400">
-                                        {selectedUsers.length} user(s)
+                                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                                    <span className="text-gray-300">
+                                        <span className="font-bold text-white">
+                                            {getAllSelectedKeys().length}
+                                        </span>{" "}
+                                        keys selected
                                     </span>
                                 </div>
-                            )}
-                        </div>
+                                {selectedUsers.length > 0 && (
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-gray-500">•</span>
+                                        <span className="text-gray-400">
+                                            {selectedUsers.length} user(s)
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
 
-                        <button
-                            onClick={() => setShowConfirmModal(true)}
-                            disabled={getAllSelectedKeys().length === 0}
-                            className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${getAllSelectedKeys().length > 0
-                                ? "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-500/20"
-                                : "bg-gray-700 text-gray-500 cursor-not-allowed"
-                                }`}
-                        >
-                            <Trash2 className="w-5 h-5" />
-                            Delete Selected Keys
-                        </button>
+                            <button
+                                onClick={() => setShowConfirmModal(true)}
+                                disabled={getAllSelectedKeys().length === 0}
+                                className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${getAllSelectedKeys().length > 0
+                                    ? "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-500/20"
+                                    : "bg-gray-700 text-gray-500 cursor-not-allowed"
+                                    }`}
+                            >
+                                <Trash2 className="w-5 h-5" />
+                                Delete Selected Keys
+                            </button>
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* Spacer for fixed bottom bar */}
-                <div className="h-24" />
+                {panelMode === "delete" && <div className="h-24" />}
             </div>
         </div>
     );
